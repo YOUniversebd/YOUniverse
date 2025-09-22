@@ -8,15 +8,14 @@
     body {
       margin: 0;
       height: 100vh;
-      background: url('images/landing.jpg') no-repeat center center;
-      background-size: 100% 100%;
+      background: url('images/landing.jpg') no-repeat center center/cover;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end; /* কন্টেন্টকে ডানদিকে নিয়ে যাবে */
+      align-items: center;       /* উলম্বভাবে মাঝখানে বসবে */
       font-family: Arial, sans-serif;
-      color: #004d26; /* Dark Green */
-      text-align: center;
+      color: #004d26;
+      text-align: right;         /* টেক্সট ডানদিকে align */
+      padding-right: 10%;        /* ডানপাশ থেকে একটু ফাঁকা */
     }
     h1 { font-size: 48px; margin: 10px 0; }
     p { font-size: 20px; margin-bottom: 30px; }
@@ -32,14 +31,16 @@
     a:hover {
       background: #007f3f;
     }
+    .content {
+      max-width: 40%; /* টেক্সট এরিয়া খুব চওড়া না হয় */
+    }
   </style>
 </head>
 <body>
-  <h1>Your Search Ends Here...</h1>
-  <p>Welcome to YOUniverse</p>
-
-  <!-- এইখানেই Enter Site বাটন থাকবে -->
-  <a href="main.html">Enter Site</a>
-
+  <div class="content">
+    <h1>Your Search Ends Here...</h1>
+    <p>Welcome to YOUniverse</p>
+    <a href="main.html">Enter Site</a>
+  </div>
 </body>
 </html>
