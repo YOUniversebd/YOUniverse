@@ -10,15 +10,31 @@
       height: 100vh;
       background: url('images/landing.jpg') no-repeat center center/cover;
       display: flex;
-      justify-content: flex-end; /* কন্টেন্টকে ডানদিকে নিয়ে যাবে */
-      align-items: center;       /* উলম্বভাবে মাঝখানে বসবে */
+      justify-content: flex-end; /* কন্টেন্ট ডানদিকে */
+      align-items: center;       /* উলম্বভাবে মাঝখানে */
       font-family: Arial, sans-serif;
       color: #004d26;
-      text-align: right;         /* টেক্সট ডানদিকে align */
-      padding-right: 10%;        /* ডানপাশ থেকে একটু ফাঁকা */
+      text-align: right;
+      padding-right: 10%;
     }
-    h1 { font-size: 48px; margin: 10px 0; }
-    p { font-size: 20px; margin-bottom: 30px; }
+    h1 {
+      margin: 0;
+      line-height: 1.1;
+    }
+    h1 .small {
+      display: block;
+      font-size: 36px;
+      font-weight: normal;
+    }
+    h1 .big {
+      display: block;
+      font-size: 96px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+      margin: 20px 0 30px;
+    }
     a {
       text-decoration: none;
       background: #004d26;
@@ -32,13 +48,17 @@
       background: #007f3f;
     }
     .content {
-      max-width: 40%; /* টেক্সট এরিয়া খুব চওড়া না হয় */
+      max-width: 40%;
     }
   </style>
 </head>
 <body>
   <div class="content">
-    <h1>Your Search Ends Here...</h1>
+    <h1>
+      <span class="small">Your</span>
+      <span class="big">Search</span>
+      <span class="small">Ends Here</span>
+    </h1>
     <p>Welcome to YOUniverse</p>
     <a href="main.html">Enter Site</a>
   </div>
