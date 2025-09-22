@@ -50,6 +50,22 @@
     .content {
       max-width: 40%;
     }
+     /* 🐦 পাখির animation */
+    .bird {
+      position: absolute;
+      top: 20%;
+      left: -150px; /* স্ক্রিনের বাইরে থেকে শুরু করবে */
+      width: 100px;
+      animation: fly 5s ease-in-out infinite alternate;
+
+    }
+
+    @keyframes fly {
+      0%   { top: 20%; left: -150px; transform: scale(0.8) rotate(0deg); }
+      50%  { top: 30%; left: 40%; transform: scale(1) rotate(10deg); }
+      80%  { top: 50%; left: 65%; transform: scale(1.1) rotate(-5deg); }
+      100% { top: 65%; left: 70%; transform: scale(1) rotate(0deg); }
+    }
   </style>
 </head>
 <body>
@@ -60,6 +76,7 @@
       <span class="small">Ends Here</span>
     </h1>
     <p>Welcome to YOUniverse</p>
+    <img src="images/bird.png" alt="Flying Bird" class="bird">
     <a href="main.html">Enter Site</a>
   </div>
 </body>
