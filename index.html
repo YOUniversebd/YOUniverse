@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh; /* vh = viewport height */
       background: url('images/landing.jpg') no-repeat center center/cover;
       display: flex;
       justify-content: flex-end; /* কন্টেন্ট ডানদিকে */
@@ -66,6 +66,25 @@
       80%  { top: 50%; left: 65%; transform: scale(1.1) rotate(-5deg); }
       100% { top: 65%; left: 70%; transform: scale(1) rotate(0deg); }
     }
+    /* মোবাইল স্ক্রিনের জন্য Responsive Styles */
+@media (max-width: 768px) {
+  h1 .big {
+    font-size: 48px; /* বড় টেক্সট ছোট হবে */
+  }
+  h1 .small {
+    font-size: 24px; /* ছোট টেক্সটও আরও ছোট হবে */
+  }
+  p {
+    font-size: 16px; /* Welcome টেক্সট ছোট হবে */
+  }
+  .bird {
+    width: 60px; /* মোবাইলে পাখি ছোট হবে */
+  }
+  .content {
+    max-width: 90%; /* টেক্সট বক্স বড় হয়ে গেলে স্ক্রিন ভরবে না */
+    padding-right: 5%; /* ডানদিক থেকে ফাঁকা রাখবে */
+  }
+}
   </style>
 </head>
 <body>
