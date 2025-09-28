@@ -1,134 +1,249 @@
-```html
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="utf-8">
-  <title>YOUniverse — Creative Agency in Bangladesh</title>
+  <title>YOUniverse — Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="YOUniverse is a creative agency in Bangladesh since 2017. Videography, photography, design, printing, TV production and media marketing.">
+  <meta name="description" content="YOUniverse — Creative agency. Portfolio, clients and team.">
   <style>
     :root {
-      --primary:#006400; /* Dark Green */
-      --dark:#111;
-      --light:#f7f9fc;
+      --primary: #006400; /* dark green */
+      --accent: #0b63ff;
+      --muted: #555;
+      --lightbg: #fafafa;
+      --card: #ffffff;
+      --maxw: 1150px;
     }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Segoe UI',Arial,sans-serif;color:#222;line-height:1.6;background:#fff;}
-    h1,h2,h3{font-weight:700;color:var(--primary);}
-    section{padding:70px 20px;max-width:1200px;margin:auto;}
-    header{background:var(--primary);color:#fff;padding:15px 30px;position:sticky;top:0;z-index:1000;}
-    header nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-    nav a{color:#fff;margin-left:15px;text-decoration:none;font-weight:600;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: "Noto Sans Bengali", "Segoe UI", Arial, sans-serif;color:#222;background:var(--lightbg);line-height:1.6}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{background:#fff;border-bottom:6px solid var(--primary)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
+    .brand {display:flex;gap:14px;align-items:center}
+    .brand img{height:56px}
+    .brand h1{font-size:20px;color:var(--primary);margin:0}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    /* HERO / COVER */
     .hero{
-      background:#004d26;
-      color:#fff;text-align:center;padding:100px 20px;
+      display:flex;gap:30px;align-items:center;background:#fff;padding:36px;border-radius:8px;margin:20px 0;
+      box-shadow:0 6px 20px rgba(10,10,10,0.05)
     }
-    .hero h1{font-size:56px;margin-bottom:15px;}
-    .hero p{font-size:22px;max-width:700px;margin:auto;}
-    .grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-    .portfolio img,.clients img{max-width:100%;border-radius:8px;}
-    .clients{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center;}
-    .clients img{height:60px;object-fit:contain;filter:grayscale(100%);}
-    footer{background:var(--dark);color:#ccc;text-align:center;padding:30px 20px;}
-    footer a{color:var(--primary);text-decoration:none;}
-    /* Responsive */
-    @media(max-width:768px){
-      .hero h1{font-size:36px;}
-      .hero p{font-size:18px;}
-      nav a{margin:5px;}
+    .hero-left{flex:1}
+    .hero-right{flex:1;display:flex;justify-content:center}
+    .hero h2{color:var(--primary);font-size:34px;margin-bottom:8px}
+    .hero p{color:#444;font-size:16px}
+    .cta{display:inline-block;margin-top:16px;background:var(--primary);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none}
+    .hero-img{max-width:100%;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    /* TWO-COLUMN TEXT/IMAGE SECTIONS */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin:28px 0}
+    .panel{background:var(--card);padding:20px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .panel h3{color:var(--primary);margin-bottom:8px}
+    .panel p{color:#333}
+    /* SERVICES GRID */
+    .services .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{background:#fff;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
+    .service-card h4{color:var(--primary);margin-bottom:8px}
+    /* PORTFOLIO (cards) */
+    .portfolio .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .port-card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 6px 20px rgba(0,0,0,0.04)}
+    .port-card img{width:100%;height:180px;object-fit:cover;border-radius:6px;margin-bottom:10px}
+    .meta{font-size:13px;color:#666;margin-bottom:8px}
+    /* CLIENTS row */
+    .clients{background:#fff;padding:18px;border-radius:8px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center}
+    .clients img{height:56px;object-fit:contain;filter:grayscale(80%)}
+    /* TEAM grid */
+    .team .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .member{background:#fff;padding:12px;border-radius:8px;text-align:center;box-shadow:0 6px 14px rgba(0,0,0,0.04)}
+    .member img{width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:10px}
+    .member strong{display:block;color:var(--primary)}
+    /* CONTACT */
+    .contact .box{background:#fff;padding:18px;border-radius:8px;display:flex;gap:16px;align-items:flex-start;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .contact .left{flex:1}
+    .contact .right{width:320px}
+    .contact .info p{margin-bottom:8px}
+    /* FOOTER */
+    footer{margin-top:30px;padding:20px;text-align:center;color:#777}
+    /* responsive */
+    @media (max-width:1000px){
+      .services .grid,.portfolio .grid{grid-template-columns:repeat(2,1fr)}
+      .team .grid{grid-template-columns:repeat(2,1fr)}
+      .hero{flex-direction:column}
+      .two{grid-template-columns:1fr;gap:18px}
     }
+    @media (max-width:600px){
+      nav a{display:none}
+      .brand h1{font-size:16px}
+      .services .grid,.portfolio .grid{grid-template-columns:1fr}
+      .team .grid{grid-template-columns:1fr}
+      .contact .right{width:100%}
+    }
+    /* small helpers */
+    .muted{color:#666;font-size:14px}
+    .lead{font-size:18px;color:#333;margin-bottom:8px}
+    .kicker{font-size:13px;color:var(--primary);font-weight:700;margin-bottom:6px}
   </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div><strong>YOUniverse</strong></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#clients">Clients</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-      <a href="blog.html">Blog</a>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <!-- আপনার লোগো যেটা নাম দিয়ে আপলোড করবে -->
+        <img src="images/logo.png" alt="YOUniverse Logo">
+        <div><h1>YOUniverse</h1><div class="muted">Creative Agency — Bangladesh</div></div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#clients">Clients</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="blog.html">Blog</a>
+      </nav>
     </div>
-  </nav>
-</header>
+  </header>
 
-<div class="hero">
-  <h1>YOUniverse</h1>
-  <p>Your story, our creativity — building bridges between you and your audience since 2017.</p>
-</div>
+  <main class="wrap">
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>YOUniverse is a creative agency established in Bangladesh in 2017. We provide videography, photography, design, printing, TV production and media marketing services. Our talented photographers, cinematographers, designers, and writers deliver effective visual solutions with artistic depth. From concept to delivery, we ensure creativity and impact.</p>
-</section>
+    <!-- HERO (PDF cover style) -->
+    <section class="hero panel" id="hero">
+      <div class="hero-left">
+        <div class="kicker">YOUniverse</div>
+        <h2>আপনার ক্রিয়েটিভ স্টোরি, ডিজিটাল স্টেজে</h2>
+        <p class="lead">ভিডিও প্রোডাকশন, মিউজিক ভিডিও, ডকুমেন্টারি ও কনটেন্ট স্ট্রাটেজি — আমরা গল্প বানাই যা মানুষ মনে রাখে।</p>
+        <a class="cta" href="#contact">প্রোজেক্ট শুরু করুন</a>
+      </div>
+      <div class="hero-right">
+        <!-- আপনার কভার/ব্যানার ছবি এখানে বসাবেন -->
+        <img src="images/cover_banner.png" alt="Cover" class="hero-img">
+      </div>
+    </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Photography</h3><p>Event, corporate, industrial and development photography.</p></div>
-    <div class="card"><h3>Videography</h3><p>Documentary, TVC, OVC, Feature Film, Animation, Motion Graphics, Editing.</p></div>
-    <div class="card"><h3>Writing</h3><p>Business, technical, blog & social media content writing.</p></div>
-    <div class="card"><h3>TV Production</h3><p>Drama, Telefilm, Talk Show, Reality Show, Awareness Programs.</p></div>
-    <div class="card"><h3>Media Marketing</h3><p>Negotiation, sponsorships, vendor relations, incentives & promotions.</p></div>
-    <div class="card"><h3>Design & Printing</h3><p>Posters, leaflets, banners, cards and creative layouts.</p></div>
-  </div>
-</section>
+    <!-- ABOUT (PDF style two-column) -->
+    <section id="about" class="two">
+      <div class="panel">
+        <h3>আমাদের কথা</h3>
+        <p>YOUniverse প্রতিষ্ঠিত হয়েছে 2017 সালে — আমরা NGO, development সেক্টর এবং ক্রিয়েটিভ ব্র্যান্ডের জন্য কাজ করি। স্ক্রিপ্ট, প্রোডাকশন, এডিটিং এবং পোস্ট-প্রোডাকশনে শক্তিশালী দক্ষতা রাখি।</p>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="grid">
-    <div class="card"><!-- <img src="images/portfolio1.png"> --><p>Black Tiger Shrimp Processing Documentary</p></div>
-    <div class="card"><p>Covid-19 Emergency Response</p></div>
-    <div class="card"><p>Inclusive Employment of Hijra Community</p></div>
-    <div class="card"><p>Silent Sorrow — Short Film</p></div>
-    <div class="card"><p>Save Koheliya — River Documentary</p></div>
-    <div class="card"><p>Docu-Drama — Rickets and Nutrition</p></div>
-  </div>
-</section>
+        <p><strong>বিশেষায়িত:</strong> ডকুমেন্টারি, কেস-স্টাডি ভিডিও, অ্যাওয়ারনেস প্রোগ্রাম, এবং কনটেন্ট মার্কেটিং।</p>
+      </div>
+      <div class="panel">
+        <!-- ছোট-খাটো শক্তিশালী কী-পয়েন্টস -->
+        <h3>Core Strengths</h3>
+        <ul style="margin-top:8px;color:#444;line-height:1.6">
+          <li>কনসেপ্ট উন্নয়ন ও রিসার্চ</li>
+          <li>ফিল্মিং & কেমেরা অপারেশন</li>
+          <li>প্রফেশনাল এডিটিং — কালার, সাউন্ড, মোশন গ্রাফিক্স</li>
+          <li>ডিস্ট্রিবিউশন স্ট্রাটেজি (YouTube & Social)</li>
+        </ul>
+      </div>
+    </section>
 
-<section id="clients">
-  <h2>Our Clients</h2>
-  <div class="clients">
-    <!-- ক্লায়েন্ট লোগো এখানে img দিয়ে বসাবে -->
-    <p>[Client Logos Placeholder]</p>
-  </div>
-</section>
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="service-card">
+          <h4>Video Production</h4>
+          <p>Concept → Script → Shoot → Post. Documentary, TVC & Short Films.</p>
+        </div>
+        <div class="service-card">
+          <h4>Music Video</h4>
+          <p>Creative concept, choreography planning and production support.</p>
+        </div>
+        <div class="service-card">
+          <h4>Documentary</h4>
+          <p>Field research, interviews, storytelling for development sector.</p>
+        </div>
+        <div class="service-card">
+          <h4>Content Marketing</h4>
+          <p>YouTube optimization, cutdowns, social teasers & distribution.</p>
+        </div>
+        <div class="service-card">
+          <h4>Design & Print</h4>
+          <p>Posters, leaflets, banners and print-ready artwork.</p>
+        </div>
+        <div class="service-card">
+          <h4>Writing & Research</h4>
+          <p>Feature scripts, proposals, donor reports and article writing.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="team">
-  <h2>Our Creative Team</h2>
-  <div class="grid">
-    <div class="card"><strong>Mahfuzur Rahman Sabuj</strong><br>Director / Proprietor</div>
-    <div class="card"><strong>Tasmina Akther</strong><br>Art Director</div>
-    <div class="card"><strong>Naoshin Jannatul</strong><br>Business Development Manager</div>
-    <div class="card"><strong>Rakib Rabbani</strong><br>Photographer</div>
-    <div class="card"><strong>Mahfuzur Rahman Jibon</strong><br>Creative Editor</div>
-    <div class="card"><strong>Alamgir Hossain</strong><br>Creative Designer</div>
-    <div class="card"><strong>Rocky Hasan</strong><br>Cinematographer</div>
-    <div class="card"><strong>Maksudur Rahman</strong><br>Accounts Manager</div>
-    <div class="card"><strong>Mizanur Rahaman</strong><br>Marketing Manager</div>
-    <div class="card"><strong>Rokib Hasan</strong><br>Post Production Supervisor</div>
-    <div class="card"><strong>Tabassum Tansi</strong><br>Assistant Director</div>
-  </div>
-</section>
+    <!-- PORTFOLIO (Case studies matching PDF) -->
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio — Selected Works</h2>
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="port-card">
+          <img src="images/image_7_2.png" alt="Shrimp Documentary">
+          <div class="meta">Client: (example) UN Partner & Production Year: 2020</div>
+          <h3>Black Tiger Shrimp Processing Documentary</h3>
+          <p>অভিনব প্রোডাকশন প্রক্রিয়ার মাধ্যমে ফিশারিজ সেক্টরের প্যাকেজিং ও মাননিয়ন্ত্রণ তুলে ধরা হয়েছে।</p>
+        </article>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Mahfuzur Rahman Sabuj</strong><br>Proprietor / Creative Director</p>
-  <p><strong>Address:</strong> Plot 8, Block B, Kolwalapara Main Road, Mirpur 1, Dhaka 1216, Bangladesh</p>
-  <p><strong>Phone:</strong> +8801012266271</p>
-  <p><strong>Email:</strong> <a href="mailto:bdyouniverse@gmail.com">bdyouniverse@gmail.com</a></p>
-  <p><strong>Website:</strong> www.youniversebd.com</p>
-</section>
+        <!-- Card 2 -->
+        <article class="port-card">
+          <img src="images/image_7_4.png" alt="Covid Response">
+          <div class="meta">Client: Humanitarian Partner — 2020</div>
+          <h3>Covid-19 Emergency Response (Rohingya)</h3>
+          <p>ফিল্ড রেসপন্সে মানবিক সহায়তা ও সচেতনতা প্রচারের ডকুমেন্টারি।</p>
+        </article>
 
-<footer>
-  <p>© 2025 YOUniverse — Creative Agency in Bangladesh</p>
-</footer>
+        <!-- Card 3 -->
+        <article class="port-card">
+          <img src="images/image_7_10.png" alt="Hijra Community">
+          <div class="meta">Client: NGO — 2019</div>
+          <h3>Inclusive Employment of Hijra Community</h3>
+          <p>কিভাবে ইনক্লুসিভ এমপ্লয়মেন্ট তাদের জীবনমান বদলে দিয়েছে — কেস স্টাডি।</p>
+        </article>
 
-</body>
-</html>
-```
+        <!-- Card 4 -->
+        <article class="port-card">
+          <img src="images/image_7_5.png" alt="Silent Sorrow">
+          <div class="meta">Short Film / Environmental</div>
+          <h3>Silent Sorrow — Short Film on Environment</h3>
+          <p>পরিবেশগত জাগরণ তৈরি করে এমন সংক্ষিপ্ত ফিল্ম প্রোডাকশন।</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="port-card">
+          <img src="images/image_7_3.png" alt="Koheliya">
+          <div class="meta">Documentary</div>
+          <h3>Save Koheliya — River Documentary</h3>
+          <p>নদীর ইকোসিস্টেম ও স্থানীয় জীবিকার ওপর প্রভাব তুলে ধরা হয়েছে।</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="port-card">
+          <img src="images/image_7_1.png" alt="Rickets">
+          <div class="meta">Health Awareness</div>
+          <h3>Docu-Drama — Rickets and Nutrition</h3>
+          <p>স্বাস্থ্য সচেতনতামূলক ডকু-ড্রামা, রিকটস বিষয়ক প্রোগ্রাম।</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients">
+      <h2>Our Clients & Partners</h2>
+      <div class="clients">
+        <!-- প্রতিটা লোগো নিজের কাছে থাকা ফাইল নাম দিয়ে বসাবে -->
+        <img src="images/image_8_1.png" alt="Christian Aid">
+        <img src="images/image_8_12.png" alt="Muslim Aid">
+        <img src="images/image_8_3.png" alt="SMKK">
+        <img src="images/image_8_10.png" alt="SARPV">
+        <img src="images/image_8_13.png" alt="ESDO">
+        <img src="images/image_7_11.png" alt="BANDHU">
+        <img src="images/image_8_7.png" alt="IDF">
+        <img src="images/image_8_14.png" alt="Symantech">
+        <img src="images/image_8_6.png" alt="MU Sea Food Ltd.">
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="team">
+      <h2>Our Creative Team</h2>
+     
