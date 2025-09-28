@@ -4,111 +4,72 @@
   <meta charset="utf-8">
   <title>YOUniverse — Company Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="YOUniverse is a creative agency in Bangladesh. Full company profile with services, portfolio, clients and contact.">
-  <!-- Open Graph (share previews) -->
-  <meta property="og:title" content="YOUniverse — Creative Agency" />
-  <meta property="og:description" content="YOUniverse is a creative agency in Bangladesh since 2017. Videography, photography, design, printing and media marketing." />
-  <meta property="og:type" content="website" />
-  <!-- Basic styling (responsive) -->
+  <meta name="description" content="YOUniverse company profile — videography, photography, design, printing, TV production and media marketing.">
   <style>
     :root{
-      --primary: #006400; /* dark green */
-      --accent: #004d26;
-      --muted: #666;
-      --bg: #fff;
-      --card: #ffffff;
+      --primary:#006400;
+      --accent:#004d26;
+      --muted:#666;
+      --bg:#ffffff;
+      --card:#ffffff;
     }
     *{box-sizing:border-box}
-    body{
-      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      margin:0;
-      color:#222;
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.55;
-    }
+    body{font-family: "Segoe UI", Roboto, Arial, sans-serif; margin:0; color:#222; background:var(--bg); line-height:1.55;}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px;}
 
-    /* container */
-    .wrap{max-width:1200px;margin:0 auto;padding:32px 20px;}
+    /* Header */
+    header{background:var(--primary);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:50}
+    header .inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1100px;margin:0 auto;}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand img{height:44px}
+    nav a{color:#fff;text-decoration:none;margin-left:14px;font-weight:600;font-size:14px}
 
-    header.site-header{
-      background: var(--primary);
-      color:#fff;
-      padding:18px 20px;
-      position:sticky;
-      top:0;
-      z-index:200;
-    }
-    header .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;}
-    header .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
-    header nav a{color:#fff;text-decoration:none;margin-left:12px;font-weight:600;font-size:14px}
-    /* hero / intro */
-    .hero{
-      background: linear-gradient(180deg, rgba(0,77,38,0.95), rgba(0,77,38,0.85));
-      color:#fff;
-      padding:56px 20px;
-      text-align:center;
-    }
-    .hero .strap{font-size:20px;opacity:.95;margin-bottom:12px;letter-spacing:0.2px}
-    .hero h1{font-weight:800;font-size:44px;line-height:1.02;margin:8px 0 18px}
-    .hero .byline{max-width:900px;margin:0 auto;font-size:18px;color:#e7f5ea}
-    .hero .intro-meta{margin-top:18px;font-size:14px;color:#d4f0d7}
+    /* Hero / Intro (PDF style: stacked lines + tagline + intro paragraphs) */
+    .hero{background:linear-gradient(180deg, rgba(0,77,38,0.96), rgba(0,77,38,0.9));color:#fff;padding:48px 18px 64px;text-align:left}
+    .hero .stack{font-weight:700;line-height:1; font-size:28px; letter-spacing:0.2px}
+    .hero .stack .line1{display:block}
+    .hero .stack .line2{display:block;margin-left:6px}
+    .hero h1{font-size:42px;margin:16px 0 10px;font-weight:800}
+    .hero .subtitle{font-size:16px;color:#eaf2ea;max-width:900px}
+    .hero p.lead{color:#eaf2ea;max-width:960px;margin-top:14px;white-space:pre-wrap}
 
-    /* two-column content blocks similar to brochure */
-    .two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    .box{background:var(--card);padding:22px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    .lead{font-size:16px;color:var(--muted);white-space:pre-wrap}
+    /* two column blocks */
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+    .box{background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
 
-    /* headings and section layout */
-    h2{color:var(--accent);font-size:26px;margin:0 0 12px}
+    h2{color:var(--accent);font-size:24px;margin:0 0 10px}
     h3{font-size:18px;margin:0 0 8px;color:#0b3b1a}
-    section{padding:42px 20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .lead{color:var(--muted);white-space:pre-wrap}
 
-    /* lists */
-    ul.clean{list-style:none;padding:0;margin:0}
-    ul.clean li{padding:8px 0;border-bottom:1px dashed #eee;color:#333}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:#fff;padding:14px;border-radius:8px;border:1px solid #f0f0f0}
+    .portfolio-list,.clients-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .client-card{text-align:center;padding:12px;border-radius:8px;background:#fafafa;border:1px solid #f3f3f3;font-weight:600}
 
-    /* portfolio / clients */
-    .portfolio-list, .clients-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .client-card{background:#fafafa;padding:10px;border-radius:8px;border:1px solid #f0f0f0;text-align:center;color:#333}
-
-    /* contact */
     .contact-card{display:flex;flex-direction:column;gap:8px}
-    .muted{color:var(--muted);font-size:14px}
+    .small{font-size:14px;color:var(--muted)}
+    .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 
-    footer{background:#111;color:#ddd;padding:28px 20px;text-align:center;font-size:14px}
+    footer{background:#111;color:#ddd;padding:22px;text-align:center;font-size:14px}
 
     /* responsive */
-    @media (max-width:1000px){
-      .two-col{grid-template-columns:1fr}
-      header .inner{flex-direction:column;align-items:flex-start;gap:10px}
-      .hero h1{font-size:36px}
-    }
-    @media (max-width:600px){
-      .hero{padding:36px 12px}
+    @media (max-width:1000px){ .two-col{grid-template-columns:1fr} }
+    @media (max-width:640px){
+      .hero{padding:28px 14px}
       .hero h1{font-size:28px}
-      .hero .strap{font-size:16px}
-      .grid{grid-template-columns:1fr}
-      .portfolio-list,.clients-list{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+      .hero .stack{font-size:20px}
+      nav{display:none} /* simple: hide nav in very small screens */
     }
-
-    /* subtle helpers */
-    .kicker{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-    .small{font-size:14px;color:var(--muted)}
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700}
   </style>
 </head>
 <body>
 
-  <!-- header -->
-  <header class="site-header" role="banner">
+  <!-- Header -->
+  <header role="banner">
     <div class="inner wrap">
       <div class="brand">
-        <!-- Replace with your logo image if you want:
-             <img src="images/logo.png" alt="YOUniverse Logo" style="height:40px">
-        -->
+        <!-- Replace with your logo file e.g. images/logo.png -->
+        <!-- <img src="images/logo.png" alt="YOUniverse Logo"> -->
         YOUniverse
       </div>
       <nav aria-label="Main navigation">
@@ -124,21 +85,44 @@
     </div>
   </header>
 
-  <!-- hero / intro -->
+  <!-- Hero / Intro (stacked lines like PDF) -->
   <section class="hero" aria-label="Intro">
     <div class="wrap">
-      <div class="strap">Let us built<br>the bridge<br>between you and<br>your audiance</div>
+      <div class="stack">
+        <span class="line1">Let us built</span>
+        <span class="line2">the bridge</span>
+        <span class="line2">between you and</span>
+        <span class="line2">your audiance</span>
+      </div>
+
       <h1>Cause we play with creativity</h1>
-      <p class="byline">
-        Intro — www.youniversebd.com company profile
+
+      <p class="kicker">Intro</p>
+      <p class="subtitle">www.youniversebd.com company profile</p>
+
+      <p class="lead">
+YOUniverse is a creative agency that offers a complete
+range of videography, photography, design, printing and
+media marketing services that enable the growth of your
+business. YOUniverse was established as a creative agency
+in Bangladesh in 2017. YOUniverse help and provide you
+trusted service for local as well as international partner.
+Our main strength is based on providing our customers
+with effective visual solutions with a valuable artistic
+depth.
+From the concept through production to delivery, we offer
+the optimum balance of value and experience. Our team of
+talented photographers, cinematographers, designers
+and writers serve all areas in Bangladesh.
+Our approach is one of collaboration. We like to hear your
+views and reactions to our work. You deal directly with the
+team, forming a close working relationship to deliver
+clear, strategic solutions.
       </p>
-      <p class="intro-meta">YOUniverse is a creative agency that offers a complete range of videography, photography, design, printing and media marketing services that enable the growth of your business. Established as a creative agency in Bangladesh in 2017, YOUniverse provides trusted service for local as well as international partners.</p>
-      <p class="intro-meta">From concept through production to delivery, we offer the optimum balance of value and experience. Our team of talented photographers, cinematographers, designers and writers serve all areas in Bangladesh.</p>
-      <p class="intro-meta"><strong>Our approach</strong> is one of collaboration. We like to hear your views and reactions to our work. You deal directly with the team, forming a close working relationship to deliver clear, strategic solutions.</p>
     </div>
   </section>
 
-  <!-- About + Vision/Mission/Strategy (two-column-like block) -->
+  <!-- About + Vision/Mission/Strategy -->
   <section id="about" class="wrap">
     <div class="two-col">
       <div>
@@ -159,17 +143,17 @@ Our approach is one of collaboration. We like to hear your views and reactions t
           <p class="small"><strong>To be among the most recognized media communication domain in Bangladesh.</strong></p>
         </div>
 
-        <h2 id="mission" style="margin-top:20px">MISSION</h2>
+        <h2 id="mission" style="margin-top:18px">MISSION</h2>
         <div class="box">
           <p class="small"><strong>To build long term relationships with our clients and provide exceptional media related services through innovation.</strong></p>
         </div>
 
-        <h2 id="strategy" style="margin-top:20px">OUR STRATEGY</h2>
+        <h2 style="margin-top:18px">OUR STRATEGY</h2>
         <div class="box">
           <p class="small">Through interpreting the vision of our clients, we deliver artwork that will enable them be pioneers in their respective fields thus increasing their scope of influence and effectiveness.</p>
         </div>
 
-        <h2 style="margin-top:20px">GOALS</h2>
+        <h2 style="margin-top:18px">GOALS</h2>
         <div class="box">
           <ul class="clean">
             <li>Regional expansion in the field of motion, design and photography.</li>
@@ -178,7 +162,7 @@ Our approach is one of collaboration. We like to hear your views and reactions t
           </ul>
         </div>
 
-        <h2 style="margin-top:20px">CORE VALUES</h2>
+        <h2 style="margin-top:18px">CORE VALUES</h2>
         <div class="box">
           <ul class="clean">
             <li>Integrity</li>
@@ -191,10 +175,10 @@ Our approach is one of collaboration. We like to hear your views and reactions t
     </div>
   </section>
 
-  <!-- Team / Creative Personnel -->
+  <!-- Creative Personnel -->
   <section id="team" class="wrap">
     <h2>Creative Personnel</h2>
-    <div class="grid">
+    <div class="grid" style="margin-top:14px;">
       <div class="card"><strong>MAHFUZUR RAHMAN SABUJ</strong><div class="small">Director/Proprietor</div></div>
       <div class="card"><strong>TASMINA AKTHER</strong><div class="small">Art Director</div></div>
       <div class="card"><strong>NAOSHIN JANNATUL</strong><div class="small">Business Development Manager</div></div>
@@ -212,14 +196,12 @@ Our approach is one of collaboration. We like to hear your views and reactions t
   <!-- Services -->
   <section id="services" class="wrap">
     <h2>How can we help you?</h2>
-    <p class="small">Photograpy, Videography, Writing services, TV Production, Media Marketing, Design & Printing — one-stop creative solutions</p>
-
+    <p class="small">Photography / Videography / Writing services / TV Production / Media Marketing / Design & printing</p>
     <div style="height:12px"></div>
-
     <div class="grid">
       <div class="card">
         <h3>Photography</h3>
-        <p class="lead">Our in-house creative photography team made up of professional photographers can add value to your brand, product or event with development photography, event photography, corporate photography, industrial photography and so on.</p>
+        <p class="lead">Our in-house creative photography team made up of professional photographers can add value to your brand, product or event with Development photography, Event Photography, corporate photography, industrial photography and so on.</p>
       </div>
 
       <div class="card">
@@ -249,10 +231,10 @@ Our approach is one of collaboration. We like to hear your views and reactions t
     </div>
   </section>
 
-  <!-- Portfolio / Our Works -->
+  <!-- Portfolio -->
   <section id="portfolio" class="wrap">
     <h2>Portfolios — Our Works</h2>
-    <div class="portfolio-list">
+    <div class="portfolio-list" style="margin-top:12px;">
       <div class="card"><h3>Video Documentary on Black Tiger Shrimp Processing</h3></div>
       <div class="card"><h3>Video Documentary on Emergency Response to the Covid-19 for the Rohingya Refugee</h3></div>
       <div class="card"><h3>Docu-Drama on Rickets and Nutrition</h3></div>
@@ -263,10 +245,10 @@ Our approach is one of collaboration. We like to hear your views and reactions t
       <div class="card"><h3>Documentary Film on Koheliya River (Save Koheliya) — a film by Mahfuzur Rahman Sabuj</h3></div>
     </div>
 
-    <div style="margin-top:18px" class="small">Enlisted with: #ChristianAid</div>
+    <div style="margin-top:14px" class="small">Enlisted with: #ChristianAid</div>
   </section>
 
-  <!-- Plan / Tagline -->
+  <!-- Planning / Work phrase -->
   <section class="wrap">
     <div class="two-col" style="grid-template-columns:1fr 320px; gap:18px">
       <div>
@@ -279,7 +261,8 @@ Our approach is one of collaboration. We like to hear your views and reactions t
         <h3>OUR WORK IS</h3>
         <div class="box">
           <p style="font-weight:700;font-size:20px;margin:6px 0;">TASTY</p>
-          <p class="small">NGO Documentary — Covid 19 response Project (Funded by Muslim Aid / Implemented by SMKK), Industrial Documentary.</p>
+          <p class="small">NGO Documentary</p>
+          <p class="small">Covid 19 response Project — Funded by Muslim Aid / Implemented by SMKK</p>
         </div>
       </aside>
     </div>
@@ -288,8 +271,8 @@ Our approach is one of collaboration. We like to hear your views and reactions t
   <!-- Clientele -->
   <section id="clients" class="wrap">
     <h2>Clientele</h2>
-    <p class="small">We have worked with the following (and many more):</p>
-    <div class="clients-list">
+    <p class="small">We have worked with (and many more):</p>
+    <div class="clients-list" style="margin-top:12px;">
       <div class="client-card">UN Women</div>
       <div class="client-card">United Purpose Bangladesh</div>
       <div class="client-card">The Asia Foundation</div>
@@ -299,30 +282,21 @@ Our approach is one of collaboration. We like to hear your views and reactions t
       <div class="client-card">Muslim Aid</div>
       <div class="client-card">Christian Aid</div>
       <div class="client-card">SMKK</div>
-      <!-- add more client cards or replace with logos -->
+      <!-- add more if needed -->
     </div>
   </section>
 
-  <!-- Highlights / Work Notes -->
+  <!-- Highlights -->
   <section class="wrap">
-    <h2>Highlights & Notes</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Covid 19 response Project</h3>
-        <p class="small">Funded by Muslim Aid — Implemented by SMKK</p>
-      </div>
-      <div class="card">
-        <h3>Industrial Documentary</h3>
-        <p class="small">Documentaries produced for industrial and development stakeholders.</p>
-      </div>
-      <div class="card">
-        <h3>Shooting Time</h3>
-        <p class="small">Scheduling and pre-production planning are essential for field projects.</p>
-      </div>
+    <h2>Highlights & Projects</h2>
+    <div class="grid" style="margin-top:12px;">
+      <div class="card"><h3>Covid 19 response Project</h3><p class="small">Funded by Muslim Aid — Implemented by SMKK</p></div>
+      <div class="card"><h3>Industrial Documentary</h3><p class="small">Documentaries produced for industrial and development stakeholders.</p></div>
+      <div class="card"><h3>Shooting Time</h3><p class="small">Scheduling and pre-production planning are essential for field projects.</p></div>
     </div>
   </section>
 
-  <!-- Keep in touch / Contact CTA -->
+  <!-- Contact -->
   <section id="contact" class="wrap">
     <h2>Keep in Touch / Contact Us</h2>
     <div class="two-col">
@@ -357,9 +331,9 @@ Our approach is one of collaboration. We like to hear your views and reactions t
       <aside>
         <div class="box">
           <h3>We create fresh concept, creative idea & great execution.</h3>
-          <p class="lead">We understand every client needs different concepts for the businesses, dynamic & flexible ideas for best results and On-Time deliver.</p>
+          <p class="lead">We understand every client needs different concepts for the Businesses, dynamic & flexible ideas for best results and On-Time deliver.</p>
           <p class="small">Need more information? Feel free to contact us.</p>
-          <a class="cta" href="mailto:bdyouniverse@gmail.com">Contact Us</a>
+          <p style="margin-top:10px"><a class="cta" href="mailto:bdyouniverse@gmail.com">Contact Us</a></p>
         </div>
       </aside>
     </div>
