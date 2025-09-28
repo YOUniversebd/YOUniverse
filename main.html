@@ -1,24 +1,30 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>YOUniverse — Creative Agency in Bangladesh</title>
-  <meta name="google-site-verification" content="saBeP6vFMnBMleFos6TYBk954NsXf1GBFxpEztuf5mk" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="YOUniverse is a creative agency in Bangladesh, since 2017. Videography, photography, design, printing, TV production and media marketing.">
+  <meta name="description" content="YOUniverse is a creative agency in Bangladesh since 2017. Videography, photography, design, printing, TV production and media marketing.">
   <style>
-    :root {--primary:#006400;--dark:#111;--light:#f7f9fc;}
+    :root {
+      --primary:#006400; /* Dark Green */
+      --dark:#111;
+      --light:#f7f9fc;
+    }
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Segoe UI',Arial,sans-serif;color:#222;line-height:1.6;background:#fff;}
-    header{background:var(--primary);color:#fff;padding:15px 30px;position:sticky;top:0;z-index:1000;}
-    header nav{display:flex;justify-content:space-between;align-items:center;}
-    nav a{color:#fff;margin-left:15px;text-decoration:none;font-weight:600;}
-    .hero{background:linear-gradient(rgba(11,99,255,0.7),rgba(11,99,255,0.7)),url('images/image_1_1.png') center/cover no-repeat;
-      color:#fff;text-align:center;padding:100px 20px;}
-    .hero h1{font-size:48px;margin-bottom:15px;}
-    .hero p{font-size:20px;max-width:700px;margin:auto;}
+    h1,h2,h3{font-weight:700;color:var(--primary);}
     section{padding:70px 20px;max-width:1200px;margin:auto;}
-    h2{text-align:center;color:var(--primary);margin-bottom:40px;font-size:32px;}
+    header{background:var(--primary);color:#fff;padding:15px 30px;position:sticky;top:0;z-index:1000;}
+    header nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    nav a{color:#fff;margin-left:15px;text-decoration:none;font-weight:600;}
+    .hero{
+      background:#004d26;
+      color:#fff;text-align:center;padding:100px 20px;
+    }
+    .hero h1{font-size:56px;margin-bottom:15px;}
+    .hero p{font-size:22px;max-width:700px;margin:auto;}
     .grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
     .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
     .portfolio img,.clients img{max-width:100%;border-radius:8px;}
@@ -26,15 +32,19 @@
     .clients img{height:60px;object-fit:contain;filter:grayscale(100%);}
     footer{background:var(--dark);color:#ccc;text-align:center;padding:30px 20px;}
     footer a{color:var(--primary);text-decoration:none;}
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
+      nav a{margin:5px;}
+    }
   </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div>
-  <img src="image_logo.png" alt="YOUniverse Logo" style="height:50px;">
-</div>
+    <div><strong>YOUniverse</strong></div>
     <div>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -42,9 +52,9 @@
       <a href="#clients">Clients</a>
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
+      <a href="blog.html">Blog</a>
     </div>
-  </nav> 
-  <a href="blog.html">Blog</a>
+  </nav>
 </header>
 
 <div class="hero">
@@ -62,37 +72,30 @@
   <div class="grid">
     <div class="card"><h3>Photography</h3><p>Event, corporate, industrial and development photography.</p></div>
     <div class="card"><h3>Videography</h3><p>Documentary, TVC, OVC, Feature Film, Animation, Motion Graphics, Editing.</p></div>
-    <div class="card"><h3>Writing Services</h3><p>Business, technical, blog & social media content writing.</p></div>
+    <div class="card"><h3>Writing</h3><p>Business, technical, blog & social media content writing.</p></div>
     <div class="card"><h3>TV Production</h3><p>Drama, Telefilm, Talk Show, Reality Show, Awareness Programs.</p></div>
     <div class="card"><h3>Media Marketing</h3><p>Negotiation, sponsorships, vendor relations, incentives & promotions.</p></div>
     <div class="card"><h3>Design & Printing</h3><p>Posters, leaflets, banners, cards and creative layouts.</p></div>
   </div>
 </section>
 
-<section id="portfolio" class="portfolio">
+<section id="portfolio">
   <h2>Portfolio</h2>
   <div class="grid">
-    <div class="card"><img src="image_7_2.png" alt="Portfolio 1"><p>Black Tiger Shrimp Processing Documentary</p></div>
-    <div class="card"><img src="image_7_4.png" alt="Portfolio 2"><p>Covid-19 Emergency Response</p></div>
-    <div class="card"><img src="image_7_10.png" alt="Portfolio 3"><p>Inclusive Employment of Hijra Community</p></div>
-    <div class="card"><img src="image_7_5.png" alt="Portfolio 4"><p>Silent Sorrow — Short Film</p></div>
-    <div class="card"><img src="image_7_3.png" alt="Portfolio 5"><p>Save Koheliya — River Documentary</p></div>
-    <div class="card"><img src="image_7_1.png" alt="Portfolio 5"><p>Docu-Drama — Rickets and Nutrition</p></div>
+    <div class="card"><!-- <img src="images/portfolio1.png"> --><p>Black Tiger Shrimp Processing Documentary</p></div>
+    <div class="card"><p>Covid-19 Emergency Response</p></div>
+    <div class="card"><p>Inclusive Employment of Hijra Community</p></div>
+    <div class="card"><p>Silent Sorrow — Short Film</p></div>
+    <div class="card"><p>Save Koheliya — River Documentary</p></div>
+    <div class="card"><p>Docu-Drama — Rickets and Nutrition</p></div>
   </div>
 </section>
 
 <section id="clients">
   <h2>Our Clients</h2>
   <div class="clients">
-    <img src="image_8_1.png" alt="Christian Aid">
-    <img src="image_8_12.png" alt="Muslim Aid">
-    <img src="image_8_3.png" alt="SMKK">
-    <img src="image_8_10.png" alt="SARPV">
-    <img src="image_8_13.png" alt="ESDO">
-    <img src="image_7_11.png" alt="BANDHU">
-    <img src="image_8_7.png" alt="IDF">
-    <img src="image_8_14.png" alt="Symantech">
-    <img src="image_8_6.png" alt="MU Sea Food Ltd.">
+    <!-- ক্লায়েন্ট লোগো এখানে img দিয়ে বসাবে -->
+    <p>[Client Logos Placeholder]</p>
   </div>
 </section>
 
@@ -104,7 +107,7 @@
     <div class="card"><strong>Naoshin Jannatul</strong><br>Business Development Manager</div>
     <div class="card"><strong>Rakib Rabbani</strong><br>Photographer</div>
     <div class="card"><strong>Mahfuzur Rahman Jibon</strong><br>Creative Editor</div>
-        <div class="card"><strong>Alamgir Hossain</strong><br>Creative Designer</div>
+    <div class="card"><strong>Alamgir Hossain</strong><br>Creative Designer</div>
     <div class="card"><strong>Rocky Hasan</strong><br>Cinematographer</div>
     <div class="card"><strong>Maksudur Rahman</strong><br>Accounts Manager</div>
     <div class="card"><strong>Mizanur Rahaman</strong><br>Marketing Manager</div>
@@ -128,3 +131,4 @@
 
 </body>
 </html>
+```
