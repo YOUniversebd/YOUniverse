@@ -5,286 +5,77 @@
   <title>YOUniverse — Creative Agency in Bangladesh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="YOUniverse is a creative agency in Bangladesh offering videography, photography, design, printing and media marketing services since 2017.">
-  <!-- Font Awesome CDN for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts for Film Production Style -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
+  <meta name="author" content="YOUniverse — Creative Agency in Bangladesh">
+  <meta property="og:title" content="YOUniverse — Creative Agency in Bangladesh">
+  <meta property="og:description" content="Videography, photography, design, printing, TV production & media marketing since 2017.">
+  <meta property="og:image" content="https://youniversebd.com/images/image_2_1.png">
+  <meta property="og:url" content="https://youniversebd.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {--primary:#006400;--dark:#111;--light:#f7f9fc;}
     *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Segoe UI',Arial,sans-serif;color:#222;line-height:1.6;background:#fff;}
+    html {scroll-behavior:smooth;}
+    body{font-family:'Segoe UI',Arial,sans-serif;color:#222;line-height:1.6;background:#fff;animation:fadeIn 1.2s ease-in;}
     img{max-width:100%;display:block;}
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
 
     /* ==== HEADER ==== */
-    header{background:var(--primary);color:#fff;padding:15px 30px;position:sticky;top:0;z-index:1000;}
+    header{background:rgba(0,100,0,0.9);backdrop-filter:blur(6px);color:#fff;padding:15px 30px;position:sticky;top:0;z-index:1000;transition:all 0.3s;}
     header nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-    nav a{color:#fff;margin:10px;text-decoration:none;font-weight:600;}
+    nav a{color:#fff;margin:8px;text-decoration:none;font-weight:600;transition:0.3s;}
+    nav a:hover, nav a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
 
-    /* ==== Hello Section ==== */
-#hello {
-  background-color: #B0C4DE;
-  color: #fff;
-  padding: 60px 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    /* ==== HERO ==== */
+    #hello{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('images/image_2_1.png') center/cover no-repeat;
+      color:#fff;text-align:left;min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:60px;}
+    .hello-text h1{font-family:'Righteous',cursive;font-size:60px;text-transform:uppercase;text-shadow:3px 3px 0 #000;}
+    .hello-text p{font-family:'Anton',sans-serif;font-size:22px;color:#ffd700;margin-top:15px;letter-spacing:1px;}
+    .hello-logo{text-align:right;margin-top:30px;}
+    .hello-logo img{height:45px;}
+    .hello-logo a{color:#ffd700;margin:0 10px;font-size:22px;text-decoration:none;}
 
-.hello-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-}
-
-.hello-text {
-  flex: 1 1 400px;
-  min-width: 300px;
-  padding: 20px;
-}
-
-/* ==== Hello Section Cinematic Film Look ==== */
-.hello-text h1 {
-  font-family: 'Righteous', cursive; /* আর্টিস্টিক হেডলাইন */
-  font-size: 55px;
-  font-weight: 400;
-  line-height: 1.1;
-  margin-bottom: 25px;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  
-  /* থ্রিডি/ড্রামাটিক শেড ইফেক্ট */
-  text-shadow:
-    3px 3px 0 #000,   /* main shadow */
-    6px 6px 0 rgba(0,0,0,0.5), /* deeper shadow */
-    9px 9px 0 rgba(0,0,0,0.3);
-}
-
-.hello-text p {
-  font-family: 'Anton', sans-serif; /* সাবটাইটেল স্টাইল */
-  font-size: 20px;
-  font-weight: 400;
-  color: #ffd700; /* ক্রিয়েটিভ প্রোডাকশন লুক */
-  margin-top: 10px;
-  letter-spacing: 2px;
-  
-  /* হালকা থ্রিডি শেড */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hello-text h1 {
-    font-size: 40px;
-  }
-  .hello-text p {
-    font-size: 18px;
-  }
-}
-
-.hello-image {
-  flex: 1 1 400px;
-  min-width: 300px;
-  padding: 20px;
-  text-align: center;
-}
-
-.hello-image img {
-  width: 100%;
-  max-width: 500px;
-  border: 5px solid #fff;
-  border-radius: 4px;
-}
-
-.hello-logo {
-  text-align: right;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 20px;
-}
-
-.hello-logo img {
-  height: 45px;
-}
-
-.hello-logo p {
-  font-size: 14px;
-  color: #fff;
-  margin-top: 5px;
-  margin-right: 15px;
-}
-
-/* ==== Responsive Design ==== */
-@media (max-width: 768px) {
-  #hello {
-    padding: 40px 20px;
-  }
-
-  .hello-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hello-text h1 {
-    font-size: 32px;
-  }
-
-  .hello-image img {
-    max-width: 90%;
-  }
-
-  .hello-logo {
-    text-align: center;
-    margin-top: 30px;
-  }
-}
-
-
-    /* ==== MAIN SECTIONS ==== */
+    /* ==== SECTION ==== */
     section{padding:70px 20px;max-width:1200px;margin:auto;}
     h2{text-align:center;color:var(--primary);margin-bottom:40px;font-size:32px;}
-
     .grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:transform .3s;}
+    .card:hover{transform:translateY(-5px);}
+    .portfolio img{border-radius:10px;transition:transform .4s;}
+    .portfolio img:hover{transform:scale(1.05);}
     .clients{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center;}
-    .clients img {
-  height: 80px;
-  object-fit: contain;
-  filter: none; /* remove grayscale */
-  transition: transform 0.3s;
-}
-.clients img:hover {
-  transform: scale(1.1);
-}
-    footer{background:var(--dark);color:#ccc;text-align:center;padding:30px 20px;}
-    footer a{color:var(--primary);text-decoration:none;}
+    .clients img{height:80px;object-fit:contain;transition:transform .3s;}
+    .clients img:hover{transform:scale(1.1);}
 
-    /* ==== Responsive ==== */
-    @media (max-width:768px){
-      .hello-container{flex-direction:column;text-align:center;}
-      .hello-text h1{font-size:32px;}
-      .hello-logo{text-align:center;margin-top:30px;}
+    /* ==== TEAM ==== */
+    .team-grid img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin:auto;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+    .team-grid h3{color:#006400;margin-top:10px;font-size:17px;}
+    .team-grid p{font-size:14px;color:#555;}
+
+    /* ==== CONTACT ==== */
+    .contact-section{background:#fff;color:#006400;text-align:center;padding:80px 20px;}
+    .contact-section h2{font-size:40px;margin-bottom:10px;font-family:'Times New Roman',serif;}
+    .contact-section .subtitle{font-size:18px;color:#444;margin-bottom:40px;}
+    .contact-section .intro-text{max-width:700px;margin:auto;font-size:17px;color:#222;margin-bottom:30px;}
+    .contact-info{font-size:15px;color:#111;margin-bottom:40px;}
+    .contact-info a{color:#006400;text-decoration:none;}
+    .contact-info a:hover{text-decoration:underline;}
+    .thank-you{font-family:'Brush Script MT',cursive;font-size:32px;margin:20px 0 10px;color:#222;}
+    .contact-logo img{height:45px;}
+    .contact-section button{background:#006400;color:#fff;border:none;padding:12px 30px;border-radius:5px;cursor:pointer;font-weight:bold;transition:0.3s;}
+    .contact-section button:hover{background:#004d00;}
+
+    /* ==== FOOTER ==== */
+    footer{background:linear-gradient(90deg,#004d00,#006400);color:#ddd;text-align:center;padding:25px;font-size:14px;}
+    @media(max-width:768px){
+      #hello{text-align:center;padding:40px;}
+      .hello-text h1{font-size:40px;}
+      .hello-text p{font-size:18px;}
     }
-
-    /* ==== Contact Section ==== */
-.contact-section {
-  background: #fff;
-  color: #006400;
-  text-align: center;
-  padding: 80px 20px;
-  line-height: 1.8;
-}
-
-.contact-section h2 {
-  font-size: 40px;
-  color: #006400;
-  margin-bottom: 10px;
-  font-family: 'Times New Roman', serif;
-}
-
-.contact-section .keep-in-touch {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.contact-section .subtitle {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 40px;
-}
-
-.contact-section .intro-text {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 17px;
-  color: #222;
-}
-
-.contact-info {
-  max-width: 700px;
-  margin: 0 auto 50px;
-  text-align: center;
-  font-size: 16px;
-  color: #111;
-}
-
-.contact-info h3 {
-  margin-top: 25px;
-  font-size: 18px;
-  color: #006400;
-  font-weight: 700;
-}
-
-.contact-info a {
-  color: #006400;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.thank-you {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 32px;
-  margin: 30px 0 10px;
-  color: #222;
-}
-
-.contact-logo {
-  margin-top: 10px;
-}
-
-.contact-logo img {
-  height: 45px;
-  margin: 0 auto 5px;
-}
-
-.contact-logo p {
-  font-size: 14px;
-  color: #444;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 60px 15px;
-  }
-  .contact-section h2 {
-    font-size: 32px;
-  }
-  .contact-section .intro-text {
-    font-size: 15px;
-  }
-  .thank-you {
-    font-size: 26px;
-  }
-}
-
-/* ==== Team Image Style ==== */
-.team-grid img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.team-grid h3 {
-  color: #006400;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-.team-grid p {
-  color: #444;
-  font-size: 15px;
-}
-    
   </style>
 </head>
 <body>
@@ -293,7 +84,7 @@
   <nav>
     <div><img src="YOUniverse_B&W_logo.png" alt="YOUniverse Logo" style="height:50px;"></div>
     <div>
-      <a href="#about">About</a>
+      <a href="#about" class="active">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#clients">Clients</a>
@@ -304,104 +95,63 @@
   </nav>
 </header>
 
-<!-- ==== Hello Section ==== -->
+<!-- HERO -->
 <section id="hello">
-  <div class="hello-container">
-    <div class="hello-text">
-      <h1>
-        Let us built<br>
-        the bridge<br>
-        between you and<br>
-        your audience
-      </h1>
-      <p>Cause we play with creativity</p>
-    </div>
-    <div class="hello-image">
-      <img src="image_2_1.png" alt="YOUniverse Creative Work">
-    </div>
+  <div class="hello-text">
+    <h1>Let us build<br>the bridge<br>between you and<br>your audience</h1>
+    <p>Cause we play with creativity</p>
   </div>
   <div class="hello-logo">
-  <img src="YOUniverse_logo.png" alt="YOUniverse Logo">
-  <div class="social-icons" style="margin-top: 5px;">
-    <a href="https://www.youtube.com/@YOUniverseProductions" target="_blank" title="YouTube" style="color:#FF0000; font-size:24px; margin-right:15px;">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.facebook.com/YOUniverseBD" target="_blank" title="Facebook" style="color:#1877F2; font-size:24px;">
-      <i class="fab fa-facebook"></i>
-    </a>
+    <img src="YOUniverse_logo.png" alt="YOUniverse Logo"><br>
+    <a href="https://www.youtube.com/@YOUniverseProductions" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/YOUniverseBD" target="_blank"><i class="fab fa-facebook"></i></a>
   </div>
-</div>
 </section>
 
-<!-- ==== About Section ==== -->
+<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
-  <p>YOUniverse is a creative agency that offers a complete
-range of videography, photography, design, printing and
-media marketing services that enable the growth of your
-business. YOUniverse was established as a creative agency
-in Bangladesh in 2017. YOUniverse help and provide you
-trusted service for local as well as international partner.
-
-From the concept through production to delivery, we offer
-the optimum balance of value and experience. Our team of
-talented photographers, cinematographers, designers
-and writers serve all areas in Bangladesh.
-
-Our main strength is based on providing our customers
-with effective visual solutions with a valuable artistic
-depth.
-
-Our approach is one of collaboration. We like to hear your
-views and reactions to our work. You deal directly with the
-team, forming a close working relationship to deliver
-clear, strategic solutions.</p>
+  <p>YOUniverse is a creative agency established in Bangladesh in 2017. We provide videography, photography, design, printing and media marketing services. Our talented photographers, cinematographers, designers, and writers deliver effective visual solutions with artistic depth. From concept to delivery, we ensure creativity and impact through collaboration and innovation.</p>
 </section>
 
-<!-- ==== Vision, Mission, etc. ==== -->
+<!-- VISION -->
 <section id="vision">
-  <h2>Vision, Mission & Core Values</h2>
+  <h2>Vision, Mission & Values</h2>
   <div class="grid">
     <div class="card"><h3>VISION</h3><p>To be among the most recognized media communication domains in Bangladesh.</p></div>
     <div class="card"><h3>MISSION</h3><p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p></div>
-    <div class="card"><h3>OUR STRATEGY</h3><p>Through interpreting the vision of our clients, we deliver artwork that enables them to be pioneers in their respective fields.</p></div>
-    <div class="card"><h3>GOALS</h3><p>• Regional expansion in motion, design, and photography.<br>• Increase investment to support development and community.<br>• Ensure personal growth and development of the team.</p></div>
+    <div class="card"><h3>STRATEGY</h3><p>Through interpreting our clients' vision, we deliver artwork that enables them to be pioneers in their fields.</p></div>
+    <div class="card"><h3>GOALS</h3><p>Regional expansion, investment in growth, and team development.</p></div>
     <div class="card"><h3>CORE VALUES</h3><p>Integrity • Diligence • Creativity • Teamwork</p></div>
   </div>
 </section>
 
-<!-- ==== Services ==== -->
+<!-- SERVICES -->
 <section id="services">
   <h2>Our Services</h2>
   <div class="grid">
-    <div class="card"><h3>Photography</h3><p>Our in-house creative photography team made up of professional
-photographers can add value to your brand, product or
-event with Development photography, Event Photography, corporate
-photography, industrial photography and so on.</p></div>
-    <div class="card"><h3>Videography</h3><p>With in-house production capabilities, we offer creative video
-production services. Our video production includes, but is not
-limited to: Documentary, TVC, OVC, AV, Feature Film, Animation
-Film, TV Drama, Motion Graphics, Video Editing etc.</p></div>
-    <div class="card"><h3>Writing Services</h3><p>Business, Technical, Blog & Social Media Content Writing.</p></div>
+    <div class="card"><h3>Photography</h3><p>Development, event, corporate, industrial photography.</p></div>
+    <div class="card"><h3>Videography</h3><p>Documentary, TVC, OVC, Feature Film, Animation, Editing.</p></div>
+    <div class="card"><h3>Writing</h3><p>Business, Technical, Blog & Social Media Content Writing.</p></div>
     <div class="card"><h3>TV Production</h3><p>Drama, Telefilm, Talk Show, Reality Show, Awareness Program.</p></div>
-    <div class="card"><h3>Media Marketing</h3><p>Negotiation, Sponsorships, Vendor Relations, Incentives & Promotions.</p></div>
+    <div class="card"><h3>Media Marketing</h3><p>Negotiation, Sponsorships, Vendor Relations, Promotions.</p></div>
     <div class="card"><h3>Design & Printing</h3><p>Poster, Leaflet, Banner, Card & Creative Layout Design.</p></div>
   </div>
 </section>
 
-<!-- ==== Portfolio ==== -->
-<section id="portfolio">
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
   <h2>Our Works</h2>
   <div class="grid">
-    <div class="card"><img src="image_7_2.png" alt="Black Tiger Shrimp Documentary"><p>Black Tiger Shrimp Processing Documentary</p></div>
-    <div class="card"><img src="image_7_4.png" alt="Covid"><p>Covid-19 Emergency Response Documentary</p></div>
-    <div class="card"><img src="image_7_10.png" alt="Hijra"><p>Inclusive Employment of Hijra Community</p></div>
-    <div class="card"><img src="image_7_1.png" alt="Rickets"><p>Docu-drama on Rickets and Nutrition</p></div>
-    <div class="card"><img src="image_7_3.png" alt="Koheliya"><p>Documentary Film on Koheliya River (Save Koheliya)</p></div>
+    <div class="card"><img src="image_7_2.png" alt="Portfolio"><p>Black Tiger Shrimp Processing Documentary</p></div>
+    <div class="card"><img src="image_7_4.png" alt="Portfolio"><p>Covid-19 Emergency Response</p></div>
+    <div class="card"><img src="image_7_10.png" alt="Portfolio"><p>Inclusive Employment of Hijra Community</p></div>
+    <div class="card"><img src="image_7_1.png" alt="Portfolio"><p>Docu-drama on Rickets and Nutrition</p></div>
+    <div class="card"><img src="image_7_3.png" alt="Portfolio"><p>Documentary on Koheliya River (Save Koheliya)</p></div>
   </div>
 </section>
 
-<!-- ==== Clients ==== -->
+<!-- CLIENTS -->
 <section id="clients">
   <h2>Our Clients</h2>
   <div class="clients">
@@ -414,125 +164,35 @@ Film, TV Drama, Motion Graphics, Video Editing etc.</p></div>
   </div>
 </section>
 
-<!-- ==== Team Section ==== -->
+<!-- TEAM -->
 <section id="team">
   <h2>Creative Personnel</h2>
   <div class="grid team-grid">
-
-    <div class="card">
-      <img src="image_5_1.png" alt="Mahfuzur Rahman Sabuj">
-      <h3>Mahfuzur Rahman Sabuj</h3>
-      <p>Director / Proprietor</p>
-    </div>
-    
-    <div class="card">
-      <img src="image_5_3.png" alt="Naoshin Jannatul">
-      <h3>Naoshin Jannatul</h3>
-      <p>Business Development Manager</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_2.png" alt="Tasmina Akther">
-      <h3>Tasmina Akther</h3>
-      <p>Art Director</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_4.png" alt="Rakib Rabbani">
-      <h3>Rakib Rabbani</h3>
-      <p>Photographer</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_5.png" alt="Mahfuzur Rahman Jibon">
-      <h3>Mahfuzur Rahman Jibon</h3>
-      <p>Creative Editor</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_12.png" alt="Tabassum Tansi">
-      <h3>Tabassum Tansi</h3>
-      <p>Assistant Director</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_6.png" alt="Alamgir Hossain">
-      <h3>Alamgir Hossain</h3>
-      <p>Creative Designer</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_7.png" alt="Rocky Hasan">
-      <h3>Rocky Hasan</h3>
-      <p>Cinematographer</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_9.png" alt="Maksudur Rahman">
-      <h3>Maksudur Rahman</h3>
-      <p>Accounts Manager</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_10.png" alt="Mizanur Rahaman">
-      <h3>Mizanur Rahaman</h3>
-      <p>Marketing Manager</p>
-    </div>
-
-    <div class="card">
-      <img src="image_5_11.png" alt="Rokib Hasan">
-      <h3>Rokib Hasan</h3>
-      <p>Post Production Supervisor</p>
-    </div>
+    <div class="card"><img src="image_5_1.png"><h3>Mahfuzur Rahman Sabuj</h3><p>Director / Proprietor</p></div>
+    <div class="card"><img src="image_5_2.png"><h3>Tasmina Akther</h3><p>Art Director</p></div>
+    <div class="card"><img src="image_5_3.png"><h3>Naoshin Jannatul</h3><p>Business Development Manager</p></div>
+    <div class="card"><img src="image_5_4.png"><h3>Rakib Rabbani</h3><p>Photographer</p></div>
+    <div class="card"><img src="image_5_5.png"><h3>Mahfuzur Rahman Jibon</h3><p>Creative Editor</p></div>
   </div>
 </section>
 
-<!-- ==== Contact Section ==== -->
+<!-- CONTACT -->
 <section id="contact" class="contact-section">
-  <div class="contact-content">
-    <p class="keep-in-touch">Keep in Touch</p>
-    <h2>Contact Us</h2>
-    <p class="subtitle">Need more information<br>feel free to contact Us.</p>
-
-    <div class="intro-text">
-      <p>
-        We create fresh concept, creative idea & great execution.
-        We understand every client needs different concepts for their businesses,
-        dynamic & flexible ideas for best results and On-Time deliver!
-      </p>
-    </div>
-
-    <div class="contact-info">
-      <h3>Key Contact Person:</h3>
-      <p><strong>Mahfuzur Rahman Sabuj</strong><br>
-      Proprietor / Creative Director<br>
-      YOUniverse<br>
-      Contact: +8801912266271</p>
-
-      <h3>YOUniverse</h3>
-      <p>
-        Plot 8, Block B, Kolwalapara Main Road<br>
-        1 No. Chowdhury Mansion, Mirpur 1<br>
-        Dhaka 1216, Bangladesh
-      </p>
-
-      <p>
-        Phone: +8801674308110<br>
-        Whatsapp: +8801674308110<br>
-        E-mail: <a href="mailto:bdyouniverse@gmail.com">bdyouniverse@gmail.com</a><br>
-        Website: <a href="https://youniversebd.com">www.youniversebd.com</a>
-      </p>
-    </div>
-
-    <p class="thank-you">Thank you</p>
-
-    <div class="contact-logo">
-      <img src="image_logo.png" alt="YOUniverse Logo">
-      <p>a choice of your creation</p>
-    </div>
+  <h2>Contact Us</h2>
+  <p class="subtitle">Need more information? Feel free to contact us.</p>
+  <div class="intro-text">
+    We create fresh concepts, creative ideas & great execution. We understand every client needs unique concepts and on-time delivery.
+  </div>
+  <div class="contact-info">
+    <p><strong>Mahfuzur Rahman Sabuj</strong><br>Proprietor / Creative Director<br>YOUniverse<br>
+    Phone: +8801912266271<br>Email: <a href="mailto:bdyouniverse@gmail.com">bdyouniverse@gmail.com</a></p>
+  </div>
+  <button onclick="window.location.href='mailto:bdyouniverse@gmail.com'">📩 Send Us a Message</button>
+  <p class="thank-you">Thank you</p>
+  <div class="contact-logo">
+    <img src="YOUniverse_logo.png" alt="YOUniverse Logo">
   </div>
 </section>
-
 
 <footer>
   <p>© 2025 YOUniverse — Creative Agency in Bangladesh</p>
