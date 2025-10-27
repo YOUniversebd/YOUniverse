@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Behind the Lens — Shooting in Coastal Villages | YOUniverse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Behind the Lens: YOUniverse's journey shooting in coastal villages — capturing life, resilience and human stories by the rivers.">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#006400;--light:#f9f9f9;--dark:#111;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Merriweather', serif;background:var(--light);color:#222;line-height:1.8;}
+    header{background:var(--primary);color:#fff;padding:14px 20px;text-align:left;}
+    header a{color:#fff;text-decoration:none;font-weight:700;font-family:'Righteous',cursive;}
+    .hero{background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45)), url('images/story3.jpg') center/cover no-repeat; color:#fff; text-align:center; padding:110px 20px;}
+    .hero h1{font-family:'Righteous',cursive;font-size:40px; margin-bottom:8px;}
+    .hero p{font-size:16px; color:#f1f1f1; margin-top:6px;}
+    .container{max-width:900px;margin:40px auto;padding:0 18px;}
+    article{background:#fff;border-radius:10px;padding:26px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+    article h2{color:var(--primary);font-family:'Righteous',cursive;margin-bottom:14px;}
+    article p{margin-bottom:16px;font-size:17px;text-align:justify;}
+    blockquote{border-left:4px solid var(--primary);padding-left:14px;color:#444;font-style:italic;margin:18px 0;}
+    .credits{margin-top:24px;color:#444;text-align:center;}
+    footer{background:var(--dark);color:#ddd;text-align:center;padding:18px;margin-top:36px;}
+    @media(max-width:768px){ .hero{padding:80px 16px;} .hero h1{font-size:30px;} .container{margin:24px auto;padding:0 12px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="blog.html">← Back to Blog</a>
+</header>
+
+<section class="hero" role="img" aria-label="Shooting in Coastal Villages">
+  <h1>Behind the Lens</h1>
+  <p>Shooting in Coastal Villages — a glimpse into how our team captures life and stories by the rivers of Bangladesh.</p>
+</section>
+
+<div class="container">
+  <article>
+    <h2>The Journey</h2>
+
+    <p>
+      The coastal villages carry a rhythm that is different from towns and cities — a slow, weathered cadence shaped by tides, seasons and labour.
+      When we planned this documentary, we did not go merely to record; we went to listen. Our crew spent weeks among fishermen, farmers and craft workers,
+      learning their schedules, understanding local rituals and earning the small trust that opens doors to honest storytelling.
+    </p>
+
+    <p>
+      Shooting in remote locations challenges both equipment and patience. Waking before dawn for the perfect light on the water, waiting for the boat to line up against the horizon,
+      or negotiating sound during busy market hours — it all requires humility and flexibility. For us, every compromise was an opportunity to discover an unexpected frame.
+    </p>
+
+    <blockquote>
+      “Good documentary work is less about the camera and more about presence — being beside people long enough that they forget you are there.”
+    </blockquote>
+
+    <h2>Respect, Not Extraction</h2>
+    <p>
+      The ethical framework of our approach matters. We seek consent, explain our intent, and avoid sensationalism. The coastal communities are not subjects to be exploited.
+      They are partners whose dignity we must preserve. This philosophy shaped how we filmed: fewer staged shots, more observational sequences, and a willingness to let scenes breathe.
+    </p>
+
+    <p>
+      Visual language is critical — the lines of mangrove roots, the faded hands of an elder mending nets, the playful splashes of children — these details become the vocabulary of empathy.
+      We framed these moments with long takes and gentle camera moves so audience can feel the rhythm rather than be told about it.
+    </p>
+
+    <h2>Challenges & Learnings</h2>
+    <p>
+      Logistical constraints taught us resourcefulness: improvising light, protecting gear from salt air, and building relationships with local fixers and translators.
+      More importantly, the project taught us patience. Often an honest moment cannot be rushed. And sometimes the best footage arrives when you are quiet enough to see it.
+    </p>
+
+    <p class="credits">
+      <strong>Directed by:</strong> Mahfuzur Rahman Sabuj · <strong>Camera:</strong> Rocky Hasan · <strong>Produced by:</strong> YOUniverse
+    </p>
+  </article>
+</div>
+
+<footer>
+  <p>© 2025 YOUniverse — Creative Agency in Bangladesh</p>
+</footer>
+
+</body>
+</html>
