@@ -125,6 +125,11 @@
 .hello-logo img { height:45px; display:block; }
 .social-icons a { color:#fff; margin-left:10px; font-size:20px; display:inline-block; transition: transform .22s ease, text-shadow .22s ease;}
 .social-icons a:hover { transform: translateY(-4px); text-shadow:0 6px 18px rgba(255,215,0,0.25); }
+    .hello-logo img {
+  height: 45px;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+}
+
 
 /* ==== MAIN SECTIONS ==== */
 section{padding:70px 20px;max-width:1200px;margin:auto;}
@@ -533,6 +538,20 @@ section.visible { opacity: 1; transform: translateY(0); }
     height: 60px;
   }
 }
+    header img {
+  height: auto;
+  width: 160px; /* লোগোর প্রস্থ নির্দিষ্ট রাখো */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* মোবাইল ভার্সনের জন্য */
+@media (max-width: 768px) {
+  header img {
+    width: 120px; /* মোবাইলে একটু ছোট */
+  }
+}
+
 
   </style>
 </head>
