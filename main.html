@@ -477,7 +477,61 @@ section.visible { opacity: 1; transform: translateY(0); }
     font-size: 14px;
   }
 }
+/* ==== Clients Section ==== */
+.clients-section {
+  background: linear-gradient(to bottom right, #f8faf8, #eef5ee);
+  padding: 80px 20px;
+  text-align: center;
+}
 
+.clients-section h2 {
+  color: #006400;
+  font-family: 'Righteous', cursive;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.clients-grid img {
+  width: 130px;               /* সবার সাইজ এক রাখবে */
+  height: 70px;               /* ফিক্সড হাইটে ব্যালান্সড দেখাবে */
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%) brightness(0.9);
+}
+
+.clients-grid img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+  box-shadow: 0 8px 18px rgba(0, 100, 0, 0.2);
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 60px 16px;
+  }
+  .clients-grid {
+    gap: 20px;
+  }
+  .clients-grid img {
+    width: 100px;
+    height: 60px;
+  }
+}
 
   </style>
 </head>
@@ -716,11 +770,10 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
-
 <!-- ==== Clients ==== -->
-<section id="clients">
+<section id="clients" class="clients-section">
   <h2>Our Clients</h2>
-  <div class="clients">
+  <div class="clients-grid">
     <img src="image_8_1.png" alt="Christian Aid">
     <img src="image_8_12.png" alt="Muslim Aid">
     <img src="image_7_11.png" alt="Bandhu">
