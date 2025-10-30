@@ -305,6 +305,88 @@ section.visible { opacity: 1; transform: translateY(0); }
     font-size: 15px;
   }
 }
+/* ==== Services Section ==== */
+.services-section {
+  background: #f8faf8;
+  padding: 80px 20px;
+}
+
+.services-section .section-title {
+  font-family: 'Righteous', cursive;
+  color: #006400;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 24px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  font-size: 44px;
+  color: #006400;
+  margin-bottom: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #228B22;
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 22px;
+  color: #006400;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 16px;
+  }
+  .services-section .section-title {
+    font-size: 30px;
+  }
+  .service-card {
+    padding: 24px 18px;
+  }
+  .service-card h3 {
+    font-size: 20px;
+  }
+  .service-card p {
+    font-size: 15px;
+  }
+}
 
 
   </style>
@@ -421,37 +503,64 @@ section.visible { opacity: 1; transform: translateY(0); }
 </section>
 
 <!-- ==== Services ==== -->
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Photography</h3><p>Our in-house creative photography team made up of professional
-photographers can add value to your brand, product or
-event with Development photography, Event Photography, corporate
-photography, industrial photography and so on.</p></div>
-    <div class="card"><h3>Videography</h3><p>With in-house production capabilities, we offer creative video
-production services. Our video production includes, but is not
-limited to: Documentary, TVC, OVC, AV, Feature Film, Animation
-Film, TV Drama, Motion Graphics, Video Editing etc.</p></div>
-    <div class="card"><h3>Writing Services</h3><p>We are the one stop writing agency for you. Try us and see us
-become your partner in success.
-Writing services off ered include: business, technical, academic,
-blog, article, travel writing services plus social media management
-and web content writing among others.</p></div>
-    <div class="card"><h3>TV Production</h3><p>We produce any kind of TV Production like TV Drama, Telefilm,
-TVC, Talk Show, Reality Show, Social Awareness Program and so
-on. Our dedicated creative team of professionals are ready to
-play creatively.</p></div>
-    <div class="card"><h3>Media Marketing</h3><p>YOUniverse's experienced and trained media buyers know how
-to work with vendors to get the best media buys for our clients;
-this includes negotiating the best, added value/bonuses, production
-incentives, sponsorship opportunities, and more.</p></div>
-    <div class="card"><h3>Design & Printing</h3><p>Effective and creative graphic design will help you increase the
-return on your investment (creative and financial), whether that’s
-an investment in printed tools, online, exhibition or other printed
-items like business card, leaflet, poster, banner etc. We started our
-service in printing and design and still deliver results for companies
-large and small who recognize the value of creative design
-and lay-out.</p></div>
+<section id="services" class="services-section">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <i class="fas fa-camera-retro service-icon"></i>
+      <h3>Photography</h3>
+      <p>
+        Our in-house creative photography team, made up of professionals, can add value to your brand, 
+        product or event with Development, Event, Corporate and Industrial Photography.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-video service-icon"></i>
+      <h3>Videography</h3>
+      <p>
+        With in-house production capabilities, we offer creative video services including Documentary, TVC, 
+        OVC, AV, Feature Film, Animation, TV Drama, Motion Graphics, and Video Editing.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-pen-nib service-icon"></i>
+      <h3>Writing Services</h3>
+      <p>
+        We are your one-stop writing agency. Our writing services include business, technical, academic, 
+        blog, article, travel writing, social media management, and web content writing.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-tv service-icon"></i>
+      <h3>TV Production</h3>
+      <p>
+        We produce any kind of TV production — Drama, Telefilm, TVC, Talk Show, Reality Show, or 
+        Social Awareness Program. Our creative professionals are ready to play with imagination.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-bullhorn service-icon"></i>
+      <h3>Media Marketing</h3>
+      <p>
+        YOUniverse’s expert media team works with vendors to get the best deals, added value, 
+        sponsorships, and production incentives for our clients.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-paint-brush service-icon"></i>
+      <h3>Design & Printing</h3>
+      <p>
+        Effective and creative graphic design increases ROI — from printed materials to online tools, 
+        exhibitions, and business essentials like posters, cards, leaflets, and banners.
+      </p>
+    </div>
+
   </div>
 </section>
 
