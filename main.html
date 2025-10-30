@@ -178,6 +178,135 @@ footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:c
 section { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
 section.visible { opacity: 1; transform: translateY(0); }
 
+    /* ==== About Section ==== */
+.about-section {
+  background-color: #fff;
+  padding: 80px 20px;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.about-section .section-title {
+  font-family: 'Righteous', cursive;
+  color: #006400;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+}
+
+.about-section .about-text {
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.about-section strong {
+  color: #006400;
+}
+
+/* ==== Vision Section ==== */
+.vision-section {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+}
+
+.vision-section .section-title {
+  font-family: 'Righteous', cursive;
+  color: #006400;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* Vision Grid Layout */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.vision-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 22px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.vision-card h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  color: #006400;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.vision-card p,
+.vision-card ul {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.vision-card ul {
+  list-style-type: disc;
+  margin-left: 18px;
+  padding-left: 10px;
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 50px 16px;
+  }
+
+  .about-section .section-title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .about-section .about-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .vision-section {
+    padding: 50px 16px;
+  }
+
+  .vision-section .section-title {
+    font-size: 28px;
+  }
+
+  .vision-card {
+    padding: 20px;
+  }
+
+  .vision-card h3 {
+    font-size: 18px;
+  }
+
+  .vision-card p,
+  .vision-card ul {
+    font-size: 15px;
+  }
+}
+
+
   </style>
 </head>
 <body>
