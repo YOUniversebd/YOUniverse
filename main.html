@@ -404,96 +404,92 @@ section.visible { opacity: 1; transform: translateY(0); }
     font-size: 15px;
   }
 }
-/* ==== Portfolio Section ==== */
+     
+ /* ==== Portfolio Section ==== */
 .portfolio-section {
-  background: #f8faf8;
+  background: #f8f9fa;
   padding: 80px 20px;
   text-align: center;
 }
 
 .portfolio-section .section-title {
   font-family: 'Righteous', cursive;
-  color: #006400;
-  font-size: 38px;
-  margin-bottom: 50px;
+  font-size: 36px;
+  color: #0a5c2c;
+  margin-bottom: 10px;
+}
+
+.portfolio-section .section-subtitle {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1150px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  justify-items: center;
 }
 
-.portfolio-card {
+.portfolio-item {
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #000;
 }
 
-.portfolio-card img {
+.portfolio-item img {
   width: 100%;
-  height: 230px;
+  height: 260px;
   object-fit: cover;
   transition: transform 0.4s ease;
+  opacity: 0.9;
 }
 
-.portfolio-card:hover img {
-  transform: scale(1.05);
+.portfolio-item:hover img {
+  transform: scale(1.08);
+  opacity: 0.7;
 }
 
-.overlay {
+.portfolio-item .overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 100, 0, 0.8), rgba(0, 100, 0, 0));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  text-align: left;
   opacity: 0;
-  padding: 20px;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  text-align: center;
+  transition: opacity 0.4s ease;
 }
 
-.portfolio-card:hover .overlay {
+.portfolio-item:hover .overlay {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.overlay p {
-  font-family: 'Merriweather', serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 8px 14px;
-  border-radius: 6px;
+.portfolio-item .overlay h3 {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* Hover Animation */
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* ==== Responsive ==== */
+/* Responsive Design */
 @media (max-width: 768px) {
   .portfolio-section {
-    padding: 60px 16px;
+    padding: 60px 12px;
   }
-  .portfolio-section .section-title {
-    font-size: 30px;
-  }
-  .portfolio-card img {
+  .portfolio-item img {
     height: 200px;
   }
-  .overlay p {
-    font-size: 14px;
+  .portfolio-item .overlay h3 {
+    font-size: 13px;
   }
 }
+
 /* ==== Clients Section ==== */
 .clients-section {
   background: linear-gradient(to bottom right, #f8faf8, #eef5ee);
@@ -739,63 +735,65 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
-<!-- ==== Portfolio ==== -->
+<!-- ==== Portfolio Section ==== -->
 <section id="portfolio" class="portfolio-section">
   <h2 class="section-title">Our Works</h2>
+  <p class="section-subtitle">A glimpse of our creative visual storytelling across Bangladesh</p>
+
   <div class="portfolio-grid">
-    <div class="portfolio-card">
-      <img src="image_7_2.png" alt="Black Tiger Shrimp Documentary">
+    <div class="portfolio-item">
+      <img src="images/image_7_2.png" alt="Black Tiger Shrimp Documentary">
       <div class="overlay">
-        <p>Black Tiger Shrimp Processing Documentary</p>
+        <h3>Black Tiger Shrimp Documentary</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_4.png" alt="Covid">
+    <div class="portfolio-item">
+      <img src="images/image_7_4.png" alt="Covid">
       <div class="overlay">
-        <p>Covid-19 Emergency Response Documentary</p>
+        <h3>Covid-19 Emergency Response Documentary</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_10.png" alt="Hijra">
+    <div class="portfolio-item">
+      <img src="images/image_7_10.png" alt="Hijra">
       <div class="overlay">
-        <p>Inclusive Employment of Hijra Community</p>
+        <h3>Inclusive Employment of Hijra Community</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_1.png" alt="Rickets">
+    <div class="portfolio-item">
+      <img src="images/image_7_1.png" alt="Rickets">
       <div class="overlay">
-        <p>Docu-drama on Rickets and Nutrition</p>
+        <h3>Docu-drama on Rickets and Nutrition</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_6.png" alt="ELMC">
+    <div class="portfolio-item">
+      <img src="images/image_7_6.png" alt="ELMC">
       <div class="overlay">
-        <p>Video Documentary on ELMC Project</p>
+        <h3>Video Documentary on ELMC Project</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_8.png" alt="GRSCSI">
+    <div class="portfolio-item">
+      <img src="images/image_7_8.png" alt="GRSCSI">
       <div class="overlay">
-        <p>Video Documentary on GRSCSI Project</p>
+        <h3>Video Documentary on GRSCSI Project</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_5.png" alt="Silent Sorrow">
+    <div class="portfolio-item">
+      <img src="images/image_7_5.png" alt="Silent Sorrow">
       <div class="overlay">
-        <p>Silent Sorrow — Short Film on Environment Issue</p>
+        <h3>Silent Sorrow — short film on Environment Issue</h3>
       </div>
     </div>
 
-    <div class="portfolio-card">
-      <img src="image_7_3.png" alt="Koheliya">
+    <div class="portfolio-item">
+      <img src="images/image_7_3.png" alt="Koheliya">
       <div class="overlay">
-        <p>Documentary Film on Koheliya River (Save Koheliya)</p>
+        <h3>Documentary Film on Koheliya River (Save Koheliya)</h3>
       </div>
     </div>
   </div>
