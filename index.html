@@ -20,6 +20,41 @@
       text-align: right;
       padding-right: 10%;
     }
+    /* 📱 মোবাইল ভার্সনে আলাদা ব্যাকগ্রাউন্ড ইমেজ দেখাবে */
+@media (max-width: 768px) {
+  body {
+    background: url('images/landing_mobile.jpg') no-repeat center top;
+    background-size: contain; /* পুরো ছবি দেখাবে */
+    background-color: #f8f8f8; /* ফাঁকা জায়গায় হালকা ব্যাকগ্রাউন্ড */
+    padding: 0 5%; /* টেক্সট যেন ঠিকভাবে ফিট হয় */
+    justify-content: center; /* টেক্সট মাঝখানে আনবে */
+    text-align: center;
+  }
+
+  .content {
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.7); /* টেক্সট পড়া সহজ */
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  h1 .big {
+    font-size: 48px;
+  }
+
+  h1 .small {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .bird {
+    width: 60px;
+    top: 30%;
+  }
+}
     h1 {
       margin: 0;
       line-height: 1.1;
