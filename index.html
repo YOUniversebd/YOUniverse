@@ -1,78 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>YOUniverse</title>
+  <meta charset="utf-8">
+  <title>YOUniverse — Creative Agency in Bangladesh</title>
   <meta name="google-site-verification" content="Mo9UJqoYUT9UftpV57iAohtu7-qn0bwMY9FvQQoMPDA" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="canonical" href="https://youniversebd.com/">
+
   <style>
+    /* ======== Base Styles ======== */
     body {
       margin: 0;
-      min-height: 100vh; /* vh = viewport height */
+      min-height: 100vh;
       background: url('images/landing.jpg') no-repeat center center/cover;
       display: flex;
-      justify-content: flex-end; /* কন্টেন্ট ডানদিকে */
-      align-items: center;       /* উলম্বভাবে মাঝখানে */
+      justify-content: flex-end;
+      align-items: center;
       font-family: Arial, sans-serif;
       color: #004d26;
       text-align: right;
       padding-right: 10%;
+      overflow-x: hidden;
     }
-    /* 📱 মোবাইল ভার্সনে আলাদা ব্যাকগ্রাউন্ড ইমেজ দেখাবে */
-@media (max-width: 768px) {
-  body {
-    background: url('images/landing_mobile.jpg') no-repeat center top;
-    background-size: contain; /* পুরো ছবি দেখাবে */
-    background-color: #f8f8f8; /* ফাঁকা জায়গায় হালকা ব্যাকগ্রাউন্ড */
-    padding: 0 5%; /* টেক্সট যেন ঠিকভাবে ফিট হয় */
-    justify-content: center; /* টেক্সট মাঝখানে আনবে */
-    text-align: center;
-  }
 
-  .content {
-    max-width: 90%;
-    background: rgba(255, 255, 255, 0.7); /* টেক্সট পড়া সহজ */
-    border-radius: 10px;
-    padding: 15px;
-  }
-
-  h1 .big {
-    font-size: 48px;
-  }
-
-  h1 .small {
-    font-size: 22px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .bird {
-    width: 60px;
-    top: 30%;
-  }
-}
     h1 {
       margin: 0;
       line-height: 1.1;
     }
+
     h1 .small {
       display: block;
       font-size: 36px;
       font-weight: normal;
     }
+
     h1 .big {
       display: block;
       font-size: 96px;
       font-weight: bold;
     }
+
     p {
       font-size: 20px;
       margin: 20px 0 30px;
     }
+
     a {
       text-decoration: none;
       background: #004d26;
@@ -82,20 +55,25 @@
       font-size: 18px;
       transition: background 0.3s;
     }
+
     a:hover {
       background: #007f3f;
     }
+
     .content {
       max-width: 40%;
+      position: relative;
+      z-index: 2;
     }
-     /* 🐦 পাখির animation */
+
+    /* 🐦 পাখির animation */
     .bird {
       position: absolute;
       top: 20%;
-      left: -150px; /* স্ক্রিনের বাইরে থেকে শুরু করবে */
+      left: -150px;
       width: 100px;
       animation: fly 5s ease-in-out forwards;
-
+      z-index: 1;
     }
 
     @keyframes fly {
@@ -104,27 +82,56 @@
       80%  { top: 50%; left: 65%; transform: scale(1.1) rotate(-5deg); }
       100% { top: 65%; left: 70%; transform: scale(1) rotate(0deg); }
     }
-    /* মোবাইল স্ক্রিনের জন্য Responsive Styles */
-@media (max-width: 768px) {
-  h1 .big {
-    font-size: 48px; /* বড় টেক্সট ছোট হবে */
-  }
-  h1 .small {
-    font-size: 24px; /* ছোট টেক্সটও আরও ছোট হবে */
-  }
-  p {
-    font-size: 16px; /* Welcome টেক্সট ছোট হবে */
-  }
-  .bird {
-    width: 60px; /* মোবাইলে পাখি ছোট হবে */
-  }
-  .content {
-    max-width: 90%; /* টেক্সট বক্স বড় হয়ে গেলে স্ক্রিন ভরবে না */
-    padding-right: 5%; /* ডানদিক থেকে ফাঁকা রাখবে */
-  }
-}
+
+    /* ======== 📱 মোবাইল ভার্সনে আলাদা ব্যাকগ্রাউন্ড ======== */
+    @media screen and (max-width: 768px) {
+      body {
+        background-image: url('images/landing_mobile.jpg') !important;
+        background-position: center top !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+        padding: 5% !important;
+        text-align: center !important;
+      }
+
+      .content {
+        max-width: 95%;
+        background: rgba(255,255,255,0.7);
+        border-radius: 10px;
+        padding: 25px;
+      }
+
+      h1 .big {
+        font-size: 52px !important;
+      }
+
+      h1 .small {
+        font-size: 26px !important;
+      }
+
+      p {
+        font-size: 18px !important;
+      }
+
+      .bird {
+        width: 70px !important;
+        top: 15% !important;
+        left: -100px !important;
+        animation: flyMobile 6s ease-in-out forwards;
+      }
+
+      @keyframes flyMobile {
+        0%   { top: 15%; left: -100px; transform: scale(0.6); }
+        50%  { top: 40%; left: 40%; transform: scale(0.9); }
+        100% { top: 55%; left: 60%; transform: scale(0.8); }
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="content">
     <h1>
@@ -133,7 +140,11 @@
       <span class="small">Ends Here</span>
     </h1>
     <p>Welcome to YOUniverse</p>
+
+    <!-- 🐦 পাখির ইমেজ -->
     <img src="images/bird.png" alt="Flying Bird" class="bird">
+
+    <!-- 🚪 Enter Button -->
     <a href="main.html">Enter Site</a>
   </div>
 </body>
