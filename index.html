@@ -1,19 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>YOUniverse — Creative Agency in Bangladesh</title>
   <meta name="google-site-verification" content="Mo9UJqoYUT9UftpV57iAohtu7-qn0bwMY9FvQQoMPDA" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="canonical" href="https://youniversebd.com/">
-
   <style>
     /* ======== Base Styles ======== */
     body {
       margin: 0;
-      min-height: 100vh;
-      background: url('images/landing.jpg') no-repeat center center/cover;
+      height: 100vh;
+      width: 100vw;
+      background: url('images/landing.jpg') center center / cover no-repeat;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -21,7 +21,15 @@
       color: #004d26;
       text-align: right;
       padding-right: 10%;
-      overflow-x: hidden;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .content {
+      max-width: 40%;
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      z-index: 2;
     }
 
     h1 {
@@ -60,78 +68,66 @@
       background: #007f3f;
     }
 
-    .content {
-      max-width: 40%;
-      position: relative;
-      z-index: 2;
-    }
-
     /* 🐦 পাখির animation */
     .bird {
       position: absolute;
-      top: 20%;
-      left: -150px;
+      top: 30%;
+      left: -120px;
       width: 100px;
-      animation: fly 5s ease-in-out forwards;
+      animation: fly 6s ease-in-out infinite alternate;
       z-index: 1;
     }
 
     @keyframes fly {
-      0%   { top: 20%; left: -150px; transform: scale(0.8) rotate(0deg); }
-      50%  { top: 30%; left: 40%; transform: scale(1) rotate(10deg); }
-      80%  { top: 50%; left: 65%; transform: scale(1.1) rotate(-5deg); }
-      100% { top: 65%; left: 70%; transform: scale(1) rotate(0deg); }
+      0%   { top: 25%; left: -120px; transform: scale(0.8) rotate(0deg); }
+      50%  { top: 35%; left: 50%; transform: scale(1) rotate(8deg); }
+      100% { top: 45%; left: 75%; transform: scale(1) rotate(-6deg); }
     }
 
-    /* ======== 📱 মোবাইল ভার্সনে আলাদা ব্যাকগ্রাউন্ড ======== */
-    @media screen and (max-width: 768px) {
+    /* 🎬 Text fade animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== 📱 মোবাইল ভার্সন ======== */
+    @media (max-width: 768px) {
       body {
-        background-image: url('images/landing_mobile.jpg') !important;
-        background-position: center top !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-attachment: scroll !important;
-        justify-content: center !important;
-        align-items: flex-end !important;
-        padding: 5% !important;
-        text-align: center !important;
+        background: url('images/landing_mobile.jpg') center center / contain no-repeat;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: flex-end;
+        text-align: center;
+        padding: 20px;
       }
 
       .content {
-        max-width: 95%;
-        background: rgba(255,255,255,0.7);
-        border-radius: 10px;
+        max-width: 90%;
+        background: rgba(255,255,255,0.85);
+        border-radius: 12px;
         padding: 25px;
+        animation: fadeIn 3s ease forwards;
       }
 
-      h1 .big {
-        font-size: 52px !important;
-      }
-
-      h1 .small {
-        font-size: 26px !important;
-      }
-
-      p {
-        font-size: 18px !important;
-      }
+      h1 .big { font-size: 48px; }
+      h1 .small { font-size: 26px; }
+      p { font-size: 18px; }
 
       .bird {
-        width: 70px !important;
-        top: 15% !important;
-        left: -100px !important;
-        animation: flyMobile 6s ease-in-out forwards;
+        width: 70px;
+        top: 20%;
+        left: -90px;
+        animation: flyMobile 8s ease-in-out infinite alternate;
       }
 
       @keyframes flyMobile {
-        0%   { top: 15%; left: -100px; transform: scale(0.6); }
-        50%  { top: 40%; left: 40%; transform: scale(0.9); }
-        100% { top: 55%; left: 60%; transform: scale(0.8); }
+        0%   { top: 20%; left: -90px; transform: scale(0.8); }
+        50%  { top: 40%; left: 50%; transform: scale(1); }
+        100% { top: 60%; left: 70%; transform: scale(0.9); }
       }
     }
   </style>
 </head>
-
 <body>
   <div class="content">
     <h1>
@@ -140,11 +136,7 @@
       <span class="small">Ends Here</span>
     </h1>
     <p>Welcome to YOUniverse</p>
-
-    <!-- 🐦 পাখির ইমেজ -->
     <img src="images/bird.png" alt="Flying Bird" class="bird">
-
-    <!-- 🚪 Enter Button -->
     <a href="main.html">Enter Site</a>
   </div>
 </body>
