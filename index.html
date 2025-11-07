@@ -23,47 +23,30 @@
       position: relative;
     }
 
-    /* === Background image (desktop & mobile) === */
-    picture.bg-picture {
+    /* === Background === */
+    .bg {
       position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    picture.bg-picture img {
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: right center;
-      display: block;
+      object-position: center center;
+      z-index: 0;
       filter: brightness(0.95);
     }
 
-    /* === Content section === */
+    /* === Content === */
     .content {
       max-width: 40%;
       z-index: 2;
       position: relative;
     }
 
-    h1 {
-      line-height: 1.1;
-    }
-    h1 .small {
-      display: block;
-      font-size: 36px;
-      font-weight: normal;
-    }
-    h1 .big {
-      display: block;
-      font-size: 96px;
-      font-weight: bold;
-    }
-    p {
-      font-size: 20px;
-      margin: 20px 0 30px;
-    }
+    h1 {line-height: 1.1;}
+    h1 .small {display: block; font-size: 36px; font-weight: normal;}
+    h1 .big {display: block; font-size: 96px; font-weight: bold;}
+    p {font-size: 20px; margin: 20px 0 30px;}
     a {
       text-decoration: none;
       background: #004d26;
@@ -73,78 +56,56 @@
       font-size: 18px;
       transition: background 0.3s;
     }
-    a:hover {
-      background: #007f3f;
-    }
+    a:hover {background: #007f3f;}
 
     /* === Bird animation === */
     .bird {
       position: absolute;
-      top: 20%;
-      left: -150px;
+      top: 25%;
+      left: -120px;
       width: 100px;
       z-index: 3;
-      animation: fly 6s ease-in-out forwards;
+      animation: fly 6s ease-in-out infinite;
     }
 
     @keyframes fly {
-      0%   { top: 25%; left: -150px; transform: scale(0.8) rotate(0deg); }
-      50%  { top: 30%; left: 45%; transform: scale(1.05) rotate(10deg); }
-      80%  { top: 55%; left: 70%; transform: scale(1.1) rotate(-5deg); }
-      100% { top: 60%; left: 85%; transform: scale(1) rotate(0deg); }
+      0%   {top: 25%; left: -120px; transform: scale(0.9) rotate(0deg);}
+      50%  {top: 35%; left: 50%; transform: scale(1) rotate(5deg);}
+      100% {top: 25%; left: 100%; transform: scale(0.9) rotate(0deg);}
     }
 
-    /* === Responsive (mobile) === */
+    /* === Responsive === */
     @media (max-width: 768px) {
       body {
         justify-content: center;
         text-align: center;
         padding: 0 20px;
       }
-      picture.bg-picture img {
-        object-position: center top;
-        object-fit: cover;
-      }
-      .content {
-        max-width: 90%;
-      }
-      h1 .big {
-        font-size: 52px;
-      }
-      h1 .small {
-        font-size: 24px;
-      }
-      p {
-        font-size: 16px;
-      }
-      a {
-        font-size: 16px;
-        padding: 12px 25px;
-      }
+      .content {max-width: 90%;}
+      h1 .big {font-size: 52px;}
+      h1 .small {font-size: 24px;}
+      p {font-size: 16px;}
+      a {font-size: 16px; padding: 12px 25px;}
       .bird {
         width: 65px;
-        top: 10%;
-        left: -100px;
-        animation: flyMobile 6s ease-in-out forwards;
+        top: 15%;
+        animation: flyMobile 8s ease-in-out infinite;
       }
       @keyframes flyMobile {
-        0%   { top: 15%; left: -120px; transform: scale(0.7) rotate(0deg); }
-        50%  { top: 25%; left: 50%; transform: scale(0.9) rotate(8deg); }
-        80%  { top: 45%; left: 75%; transform: scale(1) rotate(-5deg); }
-        100% { top: 55%; left: 85%; transform: scale(1) rotate(0deg); }
+        0%   {top: 20%; left: -80px; transform: scale(0.8);}
+        50%  {top: 40%; left: 60%; transform: scale(1);}
+        100% {top: 20%; left: 100%; transform: scale(0.8);}
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- ✅ background image control -->
-  <picture class="bg-picture">
-    <source media="(max-width:768px)" srcset="images/landing_mobile.jpg">
-    <img src="images/landing.jpg" alt="YOUniverse Background">
-  </picture>
+  <!-- ✅ background for desktop and mobile -->
+  <img src="images/landing.jpg" alt="" class="bg" media="(min-width:769px)">
+  <img src="images/landing_mobile.jpg" alt="" class="bg" media="(max-width:768px)">
 
-  <!-- ✅ animated bird -->
+  <!-- ✅ bird animation -->
   <img src="images/bird.png" alt="Flying Bird" class="bird">
 
   <!-- ✅ main text -->
