@@ -11,39 +11,21 @@
     * {margin: 0; padding: 0; box-sizing: border-box;}
 
     body {
-      font-family: Arial, sans-serif;
-      color: #004d26;
+      margin: 0;
+      min-height: 100vh;
+      background: url('images/landing.jpg') no-repeat center center/cover;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: #004d26;
       text-align: right;
-      padding-right: 8%;
+      padding-right: 10%;
+      overflow: hidden;
       position: relative;
     }
 
-    /* === Background === */
-    .bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      z-index: 0;
-      filter: brightness(0.95);
-    }
-
-    /* === Content === */
-    .content {
-      max-width: 40%;
-      z-index: 2;
-      position: relative;
-    }
-
-    h1 {line-height: 1.1;}
+    h1 {margin: 0; line-height: 1.1;}
     h1 .small {display: block; font-size: 36px; font-weight: normal;}
     h1 .big {display: block; font-size: 96px; font-weight: bold;}
     p {font-size: 20px; margin: 20px 0 30px;}
@@ -55,60 +37,69 @@
       border-radius: 30px;
       font-size: 18px;
       transition: background 0.3s;
+      display: inline-block;
     }
     a:hover {background: #007f3f;}
 
-    /* === Bird animation === */
+    .content {
+      max-width: 40%;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* === Bird Animation (Desktop) === */
     .bird {
       position: absolute;
-      top: 25%;
+      top: 55%;
       left: -120px;
       width: 100px;
       z-index: 3;
-      animation: fly 6s ease-in-out infinite;
+      animation: fly 6s ease-in-out forwards;
     }
 
     @keyframes fly {
-      0%   {top: 25%; left: -120px; transform: scale(0.9) rotate(0deg);}
-      50%  {top: 35%; left: 50%; transform: scale(1) rotate(5deg);}
-      100% {top: 25%; left: 100%; transform: scale(0.9) rotate(0deg);}
+      0%   {top: 55%; left: -120px; transform: scale(0.9) rotate(0deg);}
+      40%  {top: 50%; left: 45%; transform: scale(1) rotate(5deg);}
+      80%  {top: 58%; left: 75%; transform: scale(1) rotate(-5deg);}
+      100% {top: 60%; left: 82%; transform: scale(1) rotate(0deg);}
     }
 
-    /* === Responsive === */
+    /* === Mobile Version === */
     @media (max-width: 768px) {
       body {
         justify-content: center;
         text-align: center;
         padding: 0 20px;
+        background: url('images/landing_mobile.jpg') no-repeat center center/cover;
       }
-      .content {max-width: 90%;}
+
+      .content {
+        max-width: 90%;
+        padding: 20px;
+      }
+
       h1 .big {font-size: 52px;}
       h1 .small {font-size: 24px;}
       p {font-size: 16px;}
       a {font-size: 16px; padding: 12px 25px;}
+
       .bird {
-        width: 65px;
-        top: 15%;
-        animation: flyMobile 8s ease-in-out infinite;
+        width: 60px;
+        top: 75%;
+        left: -80px;
+        animation: flyMobile 7s ease-in-out forwards;
       }
+
       @keyframes flyMobile {
-        0%   {top: 20%; left: -80px; transform: scale(0.8);}
-        50%  {top: 40%; left: 60%; transform: scale(1);}
-        100% {top: 20%; left: 100%; transform: scale(0.8);}
+        0%   {top: 75%; left: -80px; transform: scale(0.8);}
+        50%  {top: 73%; left: 50%; transform: scale(1);}
+        100% {top: 75%; left: 80%; transform: scale(0.9);}
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- ✅ background for desktop and mobile -->
-  <img src="images/landing.jpg" alt="" class="bg" media="(min-width:769px)">
-  <img src="images/landing_mobile.jpg" alt="" class="bg" media="(max-width:768px)">
-
-  <!-- ✅ bird animation -->
-  <img src="images/bird.png" alt="Flying Bird" class="bird">
-
-  <!-- ✅ main text -->
   <div class="content">
     <h1>
       <span class="small">Your</span>
@@ -118,5 +109,7 @@
     <p>Welcome to YOUniverse</p>
     <a href="main.html">Enter Site</a>
   </div>
+
+  <img src="images/bird.png" alt="Flying Bird" class="bird">
 </body>
 </html>
