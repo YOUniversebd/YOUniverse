@@ -63,39 +63,7 @@
       80%  {top: 58%; left: 75%; transform: scale(1) rotate(-5deg);}
       100% {top: 60%; left: 75%; transform: scale(1) rotate(0deg);}
     }
-
-    /* === Mobile Version === */
-    @media (max-width: 768px) {
-      body {
-        justify-content: center;
-        text-align: center;
-        padding: 0 20px;
-        background: url('images/landing_mobile.jpg') no-repeat center center/cover;
-      }
-
-      .content {
-        max-width: 90%;
-        padding: 20px;
-      }
-
-      h1 .big {font-size: 52px;}
-      h1 .small {font-size: 24px;}
-      p {font-size: 16px;}
-      a {font-size: 16px; padding: 12px 25px;}
-
-      .bird {
-        width: 60px;
-        top: 75%;
-        left: -80px;
-        animation: flyMobile 7s ease-in-out forwards;
-      }
-
-      @keyframes flyMobile {
-        0%   {top: 75%; left: -80px; transform: scale(0.8);}
-        50%  {top: 73%; left: 50%; transform: scale(1);}
-        100% {top: 60%; left: 65%; transform: scale(0.9);}
-      }
-      /* 🎆 New Year Light Particle Effect */
+  /* 🎆 New Year Light Particle Effect */
 .newyear {
   position: fixed;
   top: 0;
@@ -135,6 +103,38 @@
   50% { transform: translateY(10px) scale(1.2); opacity: 1; }
   100% { transform: translateY(0px) scale(1); opacity: 0.7; }
 }
+    /* === Mobile Version === */
+    @media (max-width: 768px) {
+      body {
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+        background: url('images/landing_mobile.jpg') no-repeat center center/cover;
+      }
+
+      .content {
+        max-width: 90%;
+        padding: 20px;
+      }
+
+      h1 .big {font-size: 52px;}
+      h1 .small {font-size: 24px;}
+      p {font-size: 16px;}
+      a {font-size: 16px; padding: 12px 25px;}
+
+      .bird {
+        width: 60px;
+        top: 75%;
+        left: -80px;
+        animation: flyMobile 7s ease-in-out forwards;
+      }
+
+      @keyframes flyMobile {
+        0%   {top: 75%; left: -80px; transform: scale(0.8);}
+        50%  {top: 73%; left: 50%; transform: scale(1);}
+        100% {top: 60%; left: 65%; transform: scale(0.9);}
+      }
+    
     }
     
   </style>
