@@ -167,14 +167,113 @@ p{margin-bottom:12px;}
 .team-grid .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.12);}
 .team-grid img{width:140px;height:140px;border-radius:50%;object-fit:cover;margin:0 auto 12px;box-shadow:0 8px 18px rgba(0,0,0,0.12);}
 
-/* contact */
-.contact-section{background:#fff;color:var(--primary);text-align:center;padding:64px 20px;}
-.contact-section h2{font-size:36px;margin-bottom:10px;font-family:'Times New Roman',serif;}
-.contact-section .subtitle{font-size:18px;color:#444;margin-bottom:30px;}
-.contact-section .intro-text{max-width:760px;margin:0 auto 20px;color:#222;font-size:16px;line-height:1.7;}
-.contact-section .contact-info{max-width:640px;margin:0 auto 18px;color:#111;font-size:15px;line-height:1.6;}
-.contact-section .cta{display:inline-block;background:var(--primary);color:#fff;padding:12px 22px;border-radius:6px;font-weight:700;margin-top:10px;text-decoration:none;transition:background .25s;}
-.contact-section .cta:hover{background:#004d00;box-shadow:0 8px 26px rgba(0,77,38,0.18);}
+/* ==== Contact Section ==== */
+.contact-section {
+  background: linear-gradient(180deg, #f8fff9 0%, #ffffff 100%);
+  color: #004d26;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.contact-section h2 {
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contact-section .subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.contact-section .intro-text {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: #333;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.contact-section .contact-info {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  background: #f2fff4;
+  border-left: 5px solid #004d26;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  color: #222;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.08);
+}
+
+.contact-section .contact-info h3 {
+  color: #004d26;
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.contact-section .contact-info p {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.contact-section a {
+  color: #004d26;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.contact-section .cta {
+  display: inline-block;
+  background: #004d26;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-top: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+}
+
+.contact-section .cta:hover {
+  background: #007a3d;
+  box-shadow: 0 8px 20px rgba(0, 77, 38, 0.4);
+  transform: translateY(-2px);
+}
+
+.contact-section .thank-you {
+  margin-top: 35px;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 36px;
+  color: #222;
+}
+
+.contact-section img {
+  height: 60px;
+  display: block;
+  margin: 15px auto 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* === Responsive for Mobile === */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 16px;
+  }
+  .contact-section .contact-info {
+    text-align: center;
+    border-left: none;
+  }
+}
 
 /* footer */
 footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:center;padding:22px;font-size:14px;}
@@ -924,33 +1023,38 @@ section.visible { opacity: 1; transform: translateY(0); }
 <!-- ==== Contact Section ==== -->
 <section id="contact" class="contact-section">
   <div class="contact-content">
-    <p class="keep-in-touch">Keep in Touch</p>
+    <p class="keep-in-touch">📞 Keep in Touch</p>
     <h2>Contact Us</h2>
-    <p class="subtitle">Need more information<br>feel free to contact Us.</p>
+    <p class="subtitle">Need more information?<br>Feel free to contact us anytime.</p>
 
     <div class="intro-text">
-      We create fresh concept, creative idea & great execution. We understand every client needs different concepts for the Businesses, dynamic & flexible ideas for best results and On-Time deliver.
+      We create fresh concepts, creative ideas & great execution.  
+      Every client needs unique solutions — we deliver flexible,  
+      dynamic ideas for the best results and on-time delivery.
     </div>
 
     <div class="contact-info">
       <h3>Key Contact Person:</h3>
-      <p><strong>Mahfuzur Rahman Sabuj</strong><br>Proprietor / Creative Director<br>YOUniverse<br>
+      <p><strong>Mahfuzur Rahman Sabuj</strong><br>
+      Proprietor / Creative Director<br>
+      YOUniverse<br>
       Contact: +8801912266271</p>
 
       <h3>Office</h3>
-      <p>Plot 8, Block B, Kolwalapara Main Road<br>1 No. Chowdhury Mansion, Mirpur 1<br>Dhaka 1216, Bangladesh</p>
+      <p>Plot 8, Block B, Kolwalapara Main Road<br>
+      1 No. Chowdhury Mansion, Mirpur 1<br>
+      Dhaka 1216, Bangladesh</p>
 
-      <p>Phone: +8801674308110 · Whatsapp: +610424592866<br>
-      E-mail: <a href="mailto:bdyouniverse@gmail.com">bdyouniverse@gmail.com</a><br>
-      Website: <a href="https://www.youniversebd.com">www.youniversebd.com</a></p>
+      <p>
+        Phone: +8801674308110 · Whatsapp: +61 0424592866<br>
+        E-mail: <a href="mailto:bdyouniverse@gmail.com">bdyouniverse@gmail.com</a><br>
+        Website: <a href="https://www.youniversebd.com">www.youniversebd.com</a>
+      </p>
     </div>
 
     <a class="cta" href="mailto:bdyouniverse@gmail.com">📩 Send Us a Message</a>
-    <p class="thank-you" style="margin-top:26px;font-family:'Brush Script MT',cursive;font-size:34px;color:#222;">Thank you</p>
-
-    <div style="margin-top:12px; text-align:center;">
-  <img src="YOUniverse_logo.png" alt="YOUniverse Logo" style="height:50px; display:block; margin:0 auto 5px;">
-</div>
+    <p class="thank-you">Thank You</p>
+    <img src="YOUniverse_logo.png" alt="YOUniverse Logo">
   </div>
 </section>
 
