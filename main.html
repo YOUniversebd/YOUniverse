@@ -161,11 +161,131 @@ p{margin-bottom:12px;}
 .clients img{height:80px;object-fit:contain;transition:transform .25s ease; }
 .clients img:hover{transform:scale(1.08);}
 
-/* team: circular + hover lift */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;}
-.team-grid .card{text-align:center;padding:18px;background:#fff;border-radius:10px;transition:transform .28s,box-shadow .28s;}
-.team-grid .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.12);}
-.team-grid img{width:140px;height:140px;border-radius:50%;object-fit:cover;margin:0 auto 12px;box-shadow:0 8px 18px rgba(0,0,0,0.12);}
+/* ==== TEAM SECTION (Stylish CSS-Only Version) ==== */
+#team {
+  background: #f8fff8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#team h2 {
+  font-size: 38px;
+  font-family: 'Righteous', cursive;
+  color: #004d26;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Individual Cards */
+.team-grid .card {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  padding: 24px 14px 30px;
+  background: #fff;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+/* Hover lift effect */
+.team-grid .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Image */
+.team-grid img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border: 4px solid #fff;
+}
+
+/* Name */
+.team-grid h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 17px;
+  color: #004d26;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Designation */
+.team-grid p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  padding: 6px 10px;
+  display: inline-block;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient Backgrounds per Role (no images) */
+.card[data-role="director"] {
+  background: linear-gradient(145deg, #ffecd2, #fcb69f);
+}
+.card[data-role="photographer"] {
+  background: linear-gradient(145deg, #d4fc79, #96e6a1);
+}
+.card[data-role="editor"] {
+  background: linear-gradient(145deg, #89f7fe, #66a6ff);
+}
+.card[data-role="designer"] {
+  background: linear-gradient(145deg, #f6d365, #fda085);
+}
+.card[data-role="producer"] {
+  background: linear-gradient(145deg, #fbc2eb, #a6c1ee);
+}
+.card[data-role="marketing"] {
+  background: linear-gradient(145deg, #ff9a9e, #fecfef);
+}
+.card[data-role="research"] {
+  background: linear-gradient(145deg, #a1c4fd, #c2e9fb);
+}
+.card[data-role="supervisor"] {
+  background: linear-gradient(145deg, #fdfbfb, #ebedee);
+}
+
+/* ✨ Floating Icon Effect */
+.card::after {
+  content: attr(data-icon);
+  position: absolute;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.25);
+  right: -10px;
+  bottom: -10px;
+  z-index: 1;
+  transform: rotate(-15deg);
+  transition: opacity 0.3s;
+}
+
+.card:hover::after {
+  opacity: 0.4;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #team h2 {font-size: 28px;}
+  .team-grid img {width: 110px; height: 110px;}
+  .team-grid .card {max-width: 200px;}
+}
 
 /* ==== Contact Section ==== */
 .contact-section {
@@ -658,7 +778,6 @@ section.visible { opacity: 1; transform: translateY(0); }
   }
 }
 
-
   </style>
 </head>
 <body>
@@ -919,61 +1038,62 @@ section.visible { opacity: 1; transform: translateY(0); }
 <section id="team">
   <h2>Creative Personnel</h2>
   <div class="team-grid">
-    <div class="card">
+    
+    <div class="card" data-role="director" data-icon="🎬">
       <img src="image_5_1.png" alt="Mahfuzur Rahman Sabuj">
       <h3>MAHFUZUR RAHMAN SABUJ</h3>
-      <p>Director/Proprietor</p>
+      <p>Director / Proprietor</p>
     </div>
 
-      <div class="card">
+    <div class="card" data-role="supervisor" data-icon="🧭">
       <img src="image_5_11.png" alt="Rokib Hasan">
       <h3>ROKIB HASAN</h3>
       <p>Post Production Supervisor</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-role="producer" data-icon="🎥">
       <img src="image_5_7.png" alt="Rocky Hasan">
       <h3>ROCKY HASAN</h3>
       <p>Production Supervisor</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-role="supervisor" data-icon="💡">
       <img src="image_5_2.png" alt="Tasmina Akther">
       <h3>TASMINA AKTHER</h3>
       <p>Creative Supervisor</p>
     </div>
-    
-     <div class="card">
+
+    <div class="card" data-role="producer" data-icon="📋">
       <img src="image_5_9.png" alt="Maksudur Rahman">
       <h3>MAKSUDUR RAHMAN</h3>
       <p>Line Producer</p>
     </div>
-      
-    <div class="card">
+
+    <div class="card" data-role="marketing" data-icon="📣">
       <img src="image_5_10.png" alt="Mizanur Rahaman">
       <h3>MIZANUR RAHAMAN</h3>
-      <p>Marketing Spervisor</p>
+      <p>Marketing Supervisor</p>
     </div>
-    
-    <div class="card">
+
+    <div class="card" data-role="photographer" data-icon="📸">
       <img src="image_5_4.png" alt="Rakib Rabbani">
       <h3>RAKIB RABBANI</h3>
       <p>Photographer</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-role="editor" data-icon="✂️">
       <img src="image_5_5.png" alt="Mahfuzur Rahman Jibon">
       <h3>MAHFUZUR RAHMAN JIBON</h3>
       <p>Creative Editor</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-role="designer" data-icon="🎨">
       <img src="image_5_6.png" alt="Alamgir Hossain">
       <h3>ALAMGIR HOSSAIN</h3>
       <p>Creative Designer</p>
     </div>
-    
-    <div class="card">
+
+    <div class="card" data-role="research" data-icon="📚">
       <img src="image_5_12.png" alt="Tabassum Tansi">
       <h3>TABASSUM TANSI</h3>
       <p>Research Coordinator</p>
