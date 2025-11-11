@@ -441,66 +441,108 @@ footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:c
 section { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
 section.visible { opacity: 1; transform: translateY(0); }
 
- /* ==== About Wrapper ==== */
-.about-wrapper {
+/* ==== About & Vision Combined Section ==== */
+.about-vision-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
   gap: 40px;
+  background: #f9f9f9;
   padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.about-left, .about-right {
+/* About Box */
+.about-left {
+  flex: 1 1 40%;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  padding: 28px;
-  flex: 1 1 45%;
+  padding: 30px;
+  text-align: justify;
+  line-height: 1.8;
   transition: all 0.3s ease;
 }
 
-.about-left:hover, .about-right:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+.about-left:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-.section-title {
+.about-left h2 {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 34px;
-  margin-bottom: 18px;
+  font-size: 38px;
   text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
 }
 
 .about-left p {
   font-family: 'Merriweather', serif;
-  font-size: 16.5px;
+  font-size: 17px;
   color: #333;
-  line-height: 1.7;
-  text-align: justify;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.about-left strong {
+  color: #006400;
+}
+
+/* Vision / Mission Box */
+.about-right {
+  flex: 1 1 55%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.about-right:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.about-right h2 {
+  font-family: 'Righteous', cursive;
+  color: #006400;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+/* Vision Cards */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .vision-card {
-  background: #f9f9f9;
+  background: linear-gradient(145deg, #f9fff9, #e6ffe6);
   border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 .vision-card h3 {
   font-family: 'Righteous', cursive;
+  font-size: 18px;
   color: #006400;
-  font-size: 17px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
-.vision-card p, .vision-card ul {
+.vision-card p,
+.vision-card ul {
   font-family: 'Merriweather', serif;
   font-size: 15px;
   color: #333;
@@ -509,27 +551,38 @@ section.visible { opacity: 1; transform: translateY(0); }
 }
 
 .vision-card ul {
-  list-style: disc;
-  margin-left: 18px;
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 10px;
 }
 
-/* Equal Height Fix */
-.about-left, .about-right {
-  min-height: 600px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .about-wrapper {
+/* ==== Responsive Design ==== */
+@media (max-width: 900px) {
+  .about-vision-section {
     flex-direction: column;
     padding: 50px 16px;
   }
+
   .about-left, .about-right {
     flex: 1 1 100%;
-    min-height: auto;
   }
-  .section-title {
-    font-size: 26px;
+
+  .about-left h2,
+  .about-right h2 {
+    font-size: 30px;
+  }
+
+  .about-left p {
+    font-size: 16px;
+  }
+
+  .vision-card h3 {
+    font-size: 17px;
+  }
+
+  .vision-card p,
+  .vision-card ul {
+    font-size: 15px;
   }
 }
 
@@ -782,7 +835,7 @@ section.visible { opacity: 1; transform: translateY(0); }
 
     <nav aria-label="Main navigation">
       <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="#about-section" class="active">About</a>
+      <a href="#about" class="active">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#clients">Clients</a>
