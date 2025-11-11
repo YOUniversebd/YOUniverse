@@ -441,108 +441,98 @@ footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:c
 section { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
 section.visible { opacity: 1; transform: translateY(0); }
 
-   /* ==== About + Vision (Split Layout) ==== */
-.about-vision-section {
+  /* === About + Vision Combined Layout === */
+.about-vision-wrapper {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   justify-content: center;
-  align-items: flex-start;
   gap: 40px;
-  padding: 80px 40px;
-  background: linear-gradient(135deg, #f8fff9 0%, #eafbea 100%);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
 
 .about-column, .vision-column {
-  flex: 1 1 420px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  padding: 40px 28px;
-  line-height: 1.7;
+  flex: 1 1 45%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-column:hover, .vision-column:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* Section Titles */
 .section-title {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 34px;
+  font-size: 36px;
+  margin-bottom: 24px;
   text-align: center;
-  margin-bottom: 26px;
   letter-spacing: 1px;
 }
 
 .about-column p {
   font-family: 'Merriweather', serif;
-  font-size: 16px;
   color: #333;
-  margin-bottom: 16px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  margin-bottom: 18px;
   text-align: justify;
 }
 
-.about-column strong {
-  color: #006400;
+.vision-column .vcard {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 18px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
-/* Vision part */
-.vision-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-.vcard {
-  background: linear-gradient(145deg, #ffffff, #f1f8f1);
-  border-left: 4px solid #006400;
-  border-radius: 8px;
-  padding: 18px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.vcard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,100,0,0.08);
-}
-
-.vcard h3 {
+.vision-column .vcard h3 {
   font-family: 'Righteous', cursive;
-  font-size: 18px;
   color: #006400;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 6px;
+  text-align: center;
 }
 
-.vcard p, .vcard ul {
-  font-size: 15px;
+.vision-column .vcard p,
+.vision-column .vcard ul {
+  font-family: 'Merriweather', serif;
+  font-size: 15.5px;
   color: #333;
+  line-height: 1.7;
   margin: 0;
 }
 
-.vcard ul {
-  list-style-type: disc;
-  margin-left: 16px;
-  padding-left: 10px;
+.vision-column .vcard ul {
+  list-style: disc;
+  margin-left: 18px;
 }
 
-/* === Responsive === */
-@media (max-width: 900px) {
-  .about-vision-section {
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .about-vision-wrapper {
     flex-direction: column;
-    padding: 60px 20px;
+    padding: 50px 16px;
   }
-
   .about-column, .vision-column {
-    padding: 30px 20px;
+    flex: 1 1 100%;
   }
-
   .section-title {
     font-size: 28px;
   }
 }
+
 /* ==== Services Section ==== */
 .services-section {
   background: #f8faf8;
@@ -792,7 +782,7 @@ section.visible { opacity: 1; transform: translateY(0); }
 
     <nav aria-label="Main navigation">
       <a href="index.html"><i class="fas fa-home"></i> Home</a>
-      <a href="#about" class="active">About</a>
+      <a href="#about-section" class="active">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#clients">Clients</a>
@@ -834,24 +824,22 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
-<!-- ==== About & Vision Section ==== -->
-<section id="about-vision" class="about-vision-section">
+<!-- ==== About + Vision Section ==== -->
+<section id="about-section" class="about-vision-wrapper">
+
   <div class="about-column">
     <h2 class="section-title">About</h2>
-    <p>
-      <strong>YOUniverse</strong> is a creative agency that offers a complete range of 
+    <p><strong>YOUniverse</strong> is a creative agency that offers a complete range of 
       <strong>videography, photography, design, printing,</strong> and 
       <strong>media marketing</strong> services that enable the growth of your business. 
       Established in Bangladesh in <strong>2017</strong>, YOUniverse provides trusted service 
       for both local and international partners.
     </p>
-    <p>
-      From concept through production to delivery, we offer the optimum balance of 
+    <p>From concept through production to delivery, we offer the optimum balance of 
       <strong>value</strong> and <strong>experience</strong>. Our team of talented photographers, 
       cinematographers, designers, and writers serve clients across Bangladesh.
     </p>
-    <p>
-      Our main strength lies in providing our customers with effective 
+    <p>Our main strength lies in providing our customers with effective 
       <strong>visual solutions</strong> that carry valuable artistic depth. 
       Collaboration is at the heart of what we do—you deal directly with our team, 
       forming a close working relationship to deliver clear, strategic solutions.
@@ -860,27 +848,42 @@ section.visible { opacity: 1; transform: translateY(0); }
 
   <div class="vision-column">
     <h2 class="section-title">Vision, Mission & Core Values</h2>
-    <div class="vision-cards">
-      <div class="vcard"><h3>VISION</h3><p>To be among the most recognized media communication domains in Bangladesh.</p></div>
-      <div class="vcard"><h3>MISSION</h3><p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p></div>
-      <div class="vcard"><h3>OUR STRATEGY</h3><p>Through interpreting the vision of our clients, we deliver artwork that will enable them to be pioneers in their respective fields, increasing their scope of influence and effectiveness.</p></div>
-      <div class="vcard"><h3>GOALS</h3>
-        <ul>
-          <li>Regional expansion in motion, design, and photography.</li>
-          <li>Increase company investment to support development and community.</li>
-          <li>Ensure personal growth and development of the team.</li>
-        </ul>
-      </div>
-      <div class="vcard"><h3>CORE VALUES</h3>
-        <ul>
-          <li>Integrity</li>
-          <li>Diligence</li>
-          <li>Creativity</li>
-          <li>Teamwork</li>
-        </ul>
-      </div>
+
+    <div class="vcard">
+      <h3>VISION</h3>
+      <p>To be among the most recognized media communication domains in Bangladesh.</p>
+    </div>
+
+    <div class="vcard">
+      <h3>MISSION</h3>
+      <p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p>
+    </div>
+
+    <div class="vcard">
+      <h3>OUR STRATEGY</h3>
+      <p>Through interpreting the vision of our clients, we deliver artwork that enables them to be pioneers in their respective fields.</p>
+    </div>
+
+    <div class="vcard">
+      <h3>GOALS</h3>
+      <ul>
+        <li>Regional expansion in motion, design, and photography.</li>
+        <li>Increase company investment to support development and community.</li>
+        <li>Ensure personal growth and development of the team.</li>
+      </ul>
+    </div>
+
+    <div class="vcard">
+      <h3>CORE VALUES</h3>
+      <ul>
+        <li>Integrity</li>
+        <li>Diligence</li>
+        <li>Creativity</li>
+        <li>Teamwork</li>
+      </ul>
     </div>
   </div>
+
 </section>
 
 <!-- ==== Services ==== -->
