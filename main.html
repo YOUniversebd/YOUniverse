@@ -544,6 +544,43 @@ section.visible { opacity: 1; transform: translateY(0); }
   list-style: disc;
   margin-left: 20px;
 }
+    /* === Symbolic Animated Orb (YOUniverse style) === */
+.vision-symbol {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00ff88 0%, #006400 60%, transparent 100%);
+  box-shadow:
+    0 0 15px rgba(0,255,136,0.6),
+    0 0 30px rgba(0,255,136,0.4),
+    0 0 60px rgba(0,255,136,0.2);
+  animation: spinOrb 10s linear infinite;
+  margin: 30px auto 0;
+  position: relative;
+}
+
+/* soft ring glow */
+.vision-symbol::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,136,0.4);
+  animation: pulseRing 3s ease-in-out infinite;
+}
+
+@keyframes spinOrb {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseRing {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
 
 /* ==== Responsive ==== */
 @media (max-width: 900px) {
@@ -911,6 +948,7 @@ section.visible { opacity: 1; transform: translateY(0); }
           <li>Teamwork</li>
         </ul>
       </div>
+      <div class="vision-symbol"></div>
     </div>
   </div>
 </section>
