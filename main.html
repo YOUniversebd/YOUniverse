@@ -441,83 +441,73 @@ footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:c
 section { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
 section.visible { opacity: 1; transform: translateY(0); }
 
-/* ==== About & Vision Combined Section ==== */
+/* ==== About & Vision Section (Balanced Columns) ==== */
 .about-vision-section {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  flex-wrap: wrap;
   gap: 40px;
   background: #f9f9f9;
   padding: 80px 20px;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* About Box */
+/* About Box (Narrow Left Column) */
 .about-left {
-  flex: 1 1 40%;
+  flex: 0 0 38%;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: justify;
   line-height: 1.8;
-  transition: all 0.3s ease;
-}
-
-.about-left:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .about-left h2 {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 38px;
+  font-size: 34px;
   text-align: center;
   margin-bottom: 24px;
-  letter-spacing: 1px;
 }
 
 .about-left p {
   font-family: 'Merriweather', serif;
-  font-size: 17px;
+  font-size: 16px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.about-left strong {
-  color: #006400;
-}
-
-/* Vision / Mission Box */
+/* Vision / Mission Box (Wider Right Column) */
 .about-right {
-  flex: 1 1 55%;
+  flex: 0 0 58%;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   padding: 30px;
-  transition: all 0.3s ease;
-}
-
-.about-right:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .about-right h2 {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 36px;
+  font-size: 34px;
   text-align: center;
   margin-bottom: 28px;
-  letter-spacing: 1px;
 }
 
 /* Vision Cards */
 .vision-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
 }
 
 .vision-card {
@@ -529,16 +519,16 @@ section.visible { opacity: 1; transform: translateY(0); }
 }
 
 .vision-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
 }
 
 .vision-card h3 {
   font-family: 'Righteous', cursive;
   font-size: 18px;
   color: #006400;
-  margin-bottom: 10px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .vision-card p,
@@ -551,12 +541,11 @@ section.visible { opacity: 1; transform: translateY(0); }
 }
 
 .vision-card ul {
-  list-style-type: disc;
+  list-style: disc;
   margin-left: 20px;
-  padding-left: 10px;
 }
 
-/* ==== Responsive Design ==== */
+/* ==== Responsive ==== */
 @media (max-width: 900px) {
   .about-vision-section {
     flex-direction: column;
@@ -569,19 +558,10 @@ section.visible { opacity: 1; transform: translateY(0); }
 
   .about-left h2,
   .about-right h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .about-left p {
-    font-size: 16px;
-  }
-
-  .vision-card h3 {
-    font-size: 17px;
-  }
-
-  .vision-card p,
-  .vision-card ul {
     font-size: 15px;
   }
 }
@@ -877,21 +857,22 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
-<!-- ==== About Section ==== -->
-<section id="about" class="about-wrapper">
+<section id="about" class="about-vision-section">
   <div class="about-left">
-    <h2 class="section-title">About</h2>
+    <h2>About</h2>
     <p><strong>YOUniverse</strong> is a creative agency that offers a complete range of 
       <strong>videography, photography, design, printing,</strong> and 
       <strong>media marketing</strong> services that enable the growth of your business. 
       Established in Bangladesh in <strong>2017</strong>, YOUniverse provides trusted service 
       for both local and international partners.
     </p>
-    <p>From concept through production to delivery, we offer the optimum balance of 
+    <p>
+      From concept through production to delivery, we offer the optimum balance of 
       <strong>value</strong> and <strong>experience</strong>. Our team of talented photographers, 
       cinematographers, designers, and writers serve clients across Bangladesh.
     </p>
-    <p>Our main strength lies in providing our customers with effective 
+    <p>
+      Our main strength lies in providing our customers with effective 
       <strong>visual solutions</strong> that carry valuable artistic depth. 
       Collaboration is at the heart of what we do—you deal directly with our team, 
       forming a close working relationship to deliver clear, strategic solutions.
@@ -899,35 +880,37 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 
   <div class="about-right">
-    <h2 class="section-title">Vision, Mission & Core Values</h2>
-    <div class="vision-card">
-      <h3>VISION</h3>
-      <p>To be among the most recognized media communication domains in Bangladesh.</p>
-    </div>
-    <div class="vision-card">
-      <h3>MISSION</h3>
-      <p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p>
-    </div>
-    <div class="vision-card">
-      <h3>OUR STRATEGY</h3>
-      <p>Through interpreting the vision of our clients, we deliver artwork that enables them to be pioneers in their respective fields.</p>
-    </div>
-    <div class="vision-card">
-      <h3>GOALS</h3>
-      <ul>
-        <li>Regional expansion in motion, design, and photography.</li>
-        <li>Increase company investment to support development and community.</li>
-        <li>Ensure personal growth and development of the team.</li>
-      </ul>
-    </div>
-    <div class="vision-card">
-      <h3>CORE VALUES</h3>
-      <ul>
-        <li>Integrity</li>
-        <li>Diligence</li>
-        <li>Creativity</li>
-        <li>Teamwork</li>
-      </ul>
+    <h2>Vision, Mission & Core Values</h2>
+    <div class="vision-grid">
+      <div class="vision-card">
+        <h3>VISION</h3>
+        <p>To be among the most recognized media communication domains in Bangladesh.</p>
+      </div>
+      <div class="vision-card">
+        <h3>MISSION</h3>
+        <p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p>
+      </div>
+      <div class="vision-card">
+        <h3>STRATEGY</h3>
+        <p>Through interpreting the vision of our clients, we deliver artwork that will enable them to be pioneers in their respective fields.</p>
+      </div>
+      <div class="vision-card">
+        <h3>GOALS</h3>
+        <ul>
+          <li>Regional expansion in motion, design, and photography.</li>
+          <li>Increase investment to support development and community.</li>
+          <li>Ensure personal growth of the team.</li>
+        </ul>
+      </div>
+      <div class="vision-card">
+        <h3>CORE VALUES</h3>
+        <ul>
+          <li>Integrity</li>
+          <li>Diligence</li>
+          <li>Creativity</li>
+          <li>Teamwork</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
