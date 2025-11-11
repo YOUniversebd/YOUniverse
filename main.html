@@ -441,95 +441,95 @@ footer{background:linear-gradient(90deg,#004d00,#006400);color:#eee;text-align:c
 section { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
 section.visible { opacity: 1; transform: translateY(0); }
 
-  /* === About + Vision Combined Layout === */
-.about-vision-wrapper {
+ /* ==== About Wrapper ==== */
+.about-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
   justify-content: center;
+  align-items: flex-start;
   gap: 40px;
+  padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
 }
 
-.about-column, .vision-column {
+.about-left, .about-right {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 28px;
   flex: 1 1 45%;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 32px 28px;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.about-column:hover, .vision-column:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.about-left:hover, .about-right:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
 }
 
-/* Section Titles */
 .section-title {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 36px;
-  margin-bottom: 24px;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.about-column p {
-  font-family: 'Merriweather', serif;
-  color: #333;
-  font-size: 16.5px;
-  line-height: 1.8;
+  font-size: 34px;
   margin-bottom: 18px;
-  text-align: justify;
+  text-align: center;
 }
 
-.vision-column .vcard {
+.about-left p {
+  font-family: 'Merriweather', serif;
+  font-size: 16.5px;
+  color: #333;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 16px;
+}
+
+.vision-card {
   background: #f9f9f9;
   border-radius: 10px;
-  padding: 18px 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.vision-column .vcard h3 {
+.vision-card h3 {
   font-family: 'Righteous', cursive;
   color: #006400;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 6px;
   text-align: center;
 }
 
-.vision-column .vcard p,
-.vision-column .vcard ul {
+.vision-card p, .vision-card ul {
   font-family: 'Merriweather', serif;
-  font-size: 15.5px;
+  font-size: 15px;
   color: #333;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
 }
 
-.vision-column .vcard ul {
+.vision-card ul {
   list-style: disc;
   margin-left: 18px;
 }
 
-/* Responsive Fix */
+/* Equal Height Fix */
+.about-left, .about-right {
+  min-height: 600px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .about-vision-wrapper {
+  .about-wrapper {
     flex-direction: column;
     padding: 50px 16px;
   }
-  .about-column, .vision-column {
+  .about-left, .about-right {
     flex: 1 1 100%;
+    min-height: auto;
   }
   .section-title {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
@@ -824,10 +824,9 @@ section.visible { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
-<!-- ==== About + Vision Section ==== -->
-<section id="about-section" class="about-vision-wrapper">
-
-  <div class="about-column">
+<!-- ==== About Section ==== -->
+<section id="about" class="about-wrapper">
+  <div class="about-left">
     <h2 class="section-title">About</h2>
     <p><strong>YOUniverse</strong> is a creative agency that offers a complete range of 
       <strong>videography, photography, design, printing,</strong> and 
@@ -846,25 +845,21 @@ section.visible { opacity: 1; transform: translateY(0); }
     </p>
   </div>
 
-  <div class="vision-column">
+  <div class="about-right">
     <h2 class="section-title">Vision, Mission & Core Values</h2>
-
-    <div class="vcard">
+    <div class="vision-card">
       <h3>VISION</h3>
       <p>To be among the most recognized media communication domains in Bangladesh.</p>
     </div>
-
-    <div class="vcard">
+    <div class="vision-card">
       <h3>MISSION</h3>
       <p>To build long-term relationships with our clients and provide exceptional media-related services through innovation.</p>
     </div>
-
-    <div class="vcard">
+    <div class="vision-card">
       <h3>OUR STRATEGY</h3>
       <p>Through interpreting the vision of our clients, we deliver artwork that enables them to be pioneers in their respective fields.</p>
     </div>
-
-    <div class="vcard">
+    <div class="vision-card">
       <h3>GOALS</h3>
       <ul>
         <li>Regional expansion in motion, design, and photography.</li>
@@ -872,8 +867,7 @@ section.visible { opacity: 1; transform: translateY(0); }
         <li>Ensure personal growth and development of the team.</li>
       </ul>
     </div>
-
-    <div class="vcard">
+    <div class="vision-card">
       <h3>CORE VALUES</h3>
       <ul>
         <li>Integrity</li>
@@ -883,7 +877,6 @@ section.visible { opacity: 1; transform: translateY(0); }
       </ul>
     </div>
   </div>
-
 </section>
 
 <!-- ==== Services ==== -->
