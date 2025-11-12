@@ -2,144 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Social & Environmental Responsibility — YOUniverse / YOUbiquity</title>
+  <title>Social & Environmental Responsibility | YOUniverse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Merriweather', serif;
-      background: #f8fdf9;
-      color: #222;
-      line-height: 1.7;
+    /* === Base Style === */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Merriweather',serif;
+      color:#0b3d1d;
+      background:#f6fff8;
+      line-height:1.8;
+      overflow-x:hidden;
+      position:relative;
+      min-height:100vh;
     }
 
-    header {
-      text-align: center;
-      background: linear-gradient(135deg, #006400, #00a86b);
-      color: white;
-      padding: 60px 20px 40px;
+    /* === Particle (eco spark) animation === */
+    .eco-particles{
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      overflow:hidden;pointer-events:none;
+      z-index:0;
     }
-    header h1 {
-      font-family: 'Righteous', cursive;
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+    .eco-particles span{
+      position:absolute;
+      display:block;
+      width:8px;height:8px;
+      background:radial-gradient(circle,#9be15d 30%,transparent 70%);
+      border-radius:50%;
+      animation:float 8s linear infinite;
+      opacity:0.6;
     }
-    header p {
-      font-size: 18px;
-      color: #e0ffe7;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      font-family: 'Righteous', cursive;
-      color: #006400;
-      font-size: 30px;
-      margin-bottom: 15px;
+    @keyframes float{
+      0%{transform:translateY(0) scale(1);opacity:.8;}
+      50%{transform:translateY(-40px) scale(1.2);opacity:1;}
+      100%{transform:translateY(0) scale(1);opacity:.8;}
     }
 
-    .content {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      padding: 30px;
-      margin-bottom: 40px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* === Header Section === */
+    header{
+      background:linear-gradient(120deg,#2d6a4f,#40916c);
+      color:#fff;
+      text-align:center;
+      padding:60px 20px 80px;
+      position:relative;
+      z-index:2;
     }
-    .content:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    header h1{
+      font-family:'Righteous',cursive;
+      font-size:42px;
+      letter-spacing:1px;
+      margin-bottom:12px;
     }
-
-    .content i {
-      color: #00a86b;
-      margin-right: 8px;
-    }
-
-    .youbiquity {
-      background: linear-gradient(135deg, #e8f5e9, #f1fff4);
-      border-left: 6px solid #00a86b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
+    header p{
+      font-size:18px;
+      color:#e6ffe9;
+      max-width:700px;
+      margin:0 auto;
     }
 
-    .youbiquity strong {
-      color: #006400;
+    /* === Content Section === */
+    .container{
+      max-width:950px;
+      margin:-40px auto 60px;
+      background:#fff;
+      border-radius:14px;
+      padding:40px 28px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      position:relative;
+      z-index:2;
+    }
+    h2{
+      font-family:'Righteous',cursive;
+      color:#1b4332;
+      text-align:center;
+      margin-bottom:30px;
+      font-size:28px;
+    }
+    p{margin-bottom:16px;font-size:16.5px;color:#222;text-align:justify;}
+
+    .highlight{
+      background:linear-gradient(90deg,#b7efc5 0%,#e9f5db 100%);
+      padding:14px 20px;
+      border-radius:8px;
+      margin:22px 0;
+      font-style:italic;
+      border-left:4px solid #52b788;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #004d26;
-      color: white;
-      font-size: 14px;
-      margin-top: 60px;
+    ul{
+      list-style:disc;
+      margin-left:24px;
+      color:#333;
+      font-size:16px;
     }
 
-    @media (max-width: 768px) {
-      header h1 {font-size: 32px;}
-      section {margin: 30px auto;}
-      .content {padding: 20px;}
+    /* === Back Button === */
+    .back-btn{
+      display:inline-block;
+      background:#1b4332;
+      color:#fff;
+      text-decoration:none;
+      padding:12px 24px;
+      border-radius:30px;
+      margin-top:30px;
+      transition:all .3s ease;
+      font-weight:600;
+    }
+    .back-btn:hover{
+      background:#2d6a4f;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+    .btn-container{text-align:center;margin-top:40px;}
+
+    /* === Responsive === */
+    @media(max-width:768px){
+      header h1{font-size:32px;}
+      header p{font-size:15px;}
+      .container{margin:-30px 12px 50px;padding:26px;}
+      p{font-size:15px;}
     }
   </style>
 </head>
-
 <body>
+
+  <!-- 🌿 Eco Particle Animation -->
+  <div class="eco-particles">
+    <span style="top:10%;left:20%;animation-delay:0s;"></span>
+    <span style="top:40%;left:50%;animation-delay:2s;"></span>
+    <span style="top:70%;left:80%;animation-delay:1s;"></span>
+    <span style="top:85%;left:30%;animation-delay:3s;"></span>
+    <span style="top:25%;left:70%;animation-delay:1.5s;"></span>
+    <span style="top:55%;left:10%;animation-delay:2.5s;"></span>
+  </div>
+
+  <!-- 🌍 Header -->
   <header>
     <h1>Social & Environmental Responsibility</h1>
-    <p>Driven by YOUniverse & YOUbiquity — towards a sustainable and inclusive future.</p>
+    <p>
+      YOUniverse & its sister wing <strong>YOUbiquity</strong> believe that creativity should serve humanity and nature.  
+      Our initiatives empower communities, protect the environment, and promote ethical storytelling.
+    </p>
   </header>
 
-  <section>
-    <div class="content">
-      <h2><i class="fas fa-seedling"></i> Our Commitment</h2>
-      <p>
-        YOUniverse believes that creativity and responsibility go hand in hand.  
-        We use our platform to raise awareness about environmental sustainability, equality, and social inclusion.  
-        Our media works often highlight the voices of underrepresented communities, promote eco-friendly practices,  
-        and inspire collective action for a better tomorrow.
-      </p>
+  <!-- 💚 Content -->
+  <div class="container">
+    <h2>Our Commitment</h2>
+    <p>
+      As part of our <strong>social and environmental responsibility</strong>, YOUniverse focuses on meaningful collaborations 
+      that go beyond business. We aim to strengthen communities through awareness, storytelling, and sustainable visual media.
+    </p>
+
+    <div class="highlight">
+      “We don’t just create visuals — we create voices for change.”
     </div>
 
-    <div class="content">
-      <h2><i class="fas fa-people-group"></i> Community Empowerment</h2>
-      <p>
-        Through various visual campaigns and documentaries, YOUniverse has collaborated with local organizations  
-        to promote social causes — from education and gender equality to inclusive employment and child welfare.  
-        Every project is an opportunity to make an impact that goes beyond the screen.
-      </p>
-    </div>
+    <h2>Key Initiatives</h2>
+    <ul>
+      <li><strong>Environmental Campaigns:</strong> Producing documentaries and short films on climate change, river conservation, and safe fish production.</li>
+      <li><strong>Gender Equality:</strong> Promoting women’s empowerment through media, highlighting rural women leaders and entrepreneurs.</li>
+      <li><strong>Community Awareness:</strong> Collaborating with NGOs for campaigns on education, health, and inclusivity.</li>
+      <li><strong>Youth Empowerment:</strong> Conducting creative workshops under YOUbiquity to nurture young storytellers and change-makers.</li>
+    </ul>
 
-    <div class="content">
-      <h2><i class="fas fa-globe-asia"></i> Environmental Actions</h2>
-      <p>
-        Under our <strong>YOUbiquity</strong> wing, we have initiated creative campaigns to support environmental conservation.  
-        These include awareness films, photography exhibitions, and green production practices that reduce waste and promote sustainability.  
-        We believe creativity should never come at the cost of nature.
-      </p>
-    </div>
+    <h2>Future Goals</h2>
+    <p>
+      Our goal is to establish a <strong>Community Media Hub</strong> where creativity meets social innovation — 
+      connecting filmmakers, activists, and educators to produce positive impact stories that inspire the next generation.
+    </p>
 
-    <div class="youbiquity">
-      <h2><i class="fas fa-infinity"></i> YOUbiquity — The Impact Wing</h2>
-      <p>
-        <strong>YOUbiquity</strong> is the social innovation and responsibility wing of YOUniverse,  
-        designed to connect creativity with community. It’s where visual storytelling meets activism —  
-        amplifying social, environmental, and humanitarian messages for greater reach and engagement.
-      </p>
+    <div class="btn-container">
+      <a href="main.html" class="back-btn">← Back to Main Site</a>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    © YOUniverse / YOUbiquity — For a Responsible Tomorrow
-  </footer>
 </body>
 </html>
