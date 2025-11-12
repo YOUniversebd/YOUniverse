@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Social & Environmental Responsibility | YOUniverse</title>
+  <title>YOUbiquity | Social & Environmental Responsibility</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
-    /* === Base Style === */
     *{margin:0;padding:0;box-sizing:border-box;}
     body{
       font-family:'Merriweather',serif;
@@ -18,7 +18,7 @@
       min-height:100vh;
     }
 
-    /* === Particle (eco spark) animation === */
+    /* 🌿 Floating eco particles */
     .eco-particles{
       position:fixed;
       top:0;left:0;width:100%;height:100%;
@@ -27,150 +27,188 @@
     }
     .eco-particles span{
       position:absolute;
-      display:block;
-      width:8px;height:8px;
-      background:radial-gradient(circle,#9be15d 30%,transparent 70%);
+      width:10px;height:10px;
+      background:radial-gradient(circle,#8be18b 30%,transparent 70%);
       border-radius:50%;
-      animation:float 8s linear infinite;
-      opacity:0.6;
+      animation:float 9s ease-in-out infinite;
+      opacity:0.5;
     }
     @keyframes float{
-      0%{transform:translateY(0) scale(1);opacity:.8;}
-      50%{transform:translateY(-40px) scale(1.2);opacity:1;}
-      100%{transform:translateY(0) scale(1);opacity:.8;}
+      0%{transform:translateY(0) scale(1);}
+      50%{transform:translateY(-50px) scale(1.2);}
+      100%{transform:translateY(0) scale(1);}
     }
 
-    /* === Header Section === */
     header{
-      background:linear-gradient(120deg,#2d6a4f,#40916c);
+      background:linear-gradient(135deg,#2d6a4f,#52b788);
       color:#fff;
       text-align:center;
-      padding:60px 20px 80px;
-      position:relative;
+      padding:70px 20px 100px;
       z-index:2;
+      position:relative;
     }
     header h1{
       font-family:'Righteous',cursive;
       font-size:42px;
       letter-spacing:1px;
-      margin-bottom:12px;
+      margin-bottom:10px;
     }
     header p{
       font-size:18px;
       color:#e6ffe9;
-      max-width:700px;
+      max-width:720px;
       margin:0 auto;
     }
 
-    /* === Content Section === */
     .container{
-      max-width:950px;
-      margin:-40px auto 60px;
+      max-width:1000px;
+      margin:-60px auto 60px;
       background:#fff;
       border-radius:14px;
-      padding:40px 28px;
+      padding:50px 32px;
       box-shadow:0 8px 30px rgba(0,0,0,0.08);
       position:relative;
       z-index:2;
     }
+
     h2{
       font-family:'Righteous',cursive;
       color:#1b4332;
+      margin:40px 0 20px;
       text-align:center;
-      margin-bottom:30px;
       font-size:28px;
+      letter-spacing:.5px;
     }
     p{margin-bottom:16px;font-size:16.5px;color:#222;text-align:justify;}
+    ul{list-style:disc;margin-left:24px;font-size:16px;color:#333;}
+    strong{color:#2d6a4f;}
 
     .highlight{
-      background:linear-gradient(90deg,#b7efc5 0%,#e9f5db 100%);
-      padding:14px 20px;
-      border-radius:8px;
+      background:linear-gradient(90deg,#b7efc5,#e9f5db);
+      padding:16px 20px;
+      border-radius:10px;
       margin:22px 0;
+      border-left:5px solid #52b788;
       font-style:italic;
-      border-left:4px solid #52b788;
     }
 
-    ul{
-      list-style:disc;
-      margin-left:24px;
-      color:#333;
-      font-size:16px;
+    /* 💚 section layout */
+    .grid-two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:start;
+    }
+    .card{
+      background:#f9fff9;
+      padding:26px 22px;
+      border-radius:10px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.05);
+      transition:transform .3s ease,box-shadow .3s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+    .card h3{
+      font-family:'Righteous',cursive;
+      color:#2d6a4f;
+      margin-bottom:10px;
+      font-size:20px;
     }
 
-    /* === Back Button === */
+    /* Back button */
     .back-btn{
       display:inline-block;
       background:#1b4332;
       color:#fff;
       text-decoration:none;
-      padding:12px 24px;
+      padding:12px 26px;
       border-radius:30px;
-      margin-top:30px;
+      margin-top:40px;
       transition:all .3s ease;
       font-weight:600;
     }
     .back-btn:hover{
       background:#2d6a4f;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
     }
-    .btn-container{text-align:center;margin-top:40px;}
+    .btn-container{text-align:center;}
 
-    /* === Responsive === */
     @media(max-width:768px){
       header h1{font-size:32px;}
       header p{font-size:15px;}
-      .container{margin:-30px 12px 50px;padding:26px;}
+      .container{margin:-40px 12px 50px;padding:30px;}
+      .grid-two{grid-template-columns:1fr;}
       p{font-size:15px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- 🌿 Eco Particle Animation -->
+  <!-- 🍃 Floating particles -->
   <div class="eco-particles">
-    <span style="top:10%;left:20%;animation-delay:0s;"></span>
-    <span style="top:40%;left:50%;animation-delay:2s;"></span>
-    <span style="top:70%;left:80%;animation-delay:1s;"></span>
-    <span style="top:85%;left:30%;animation-delay:3s;"></span>
-    <span style="top:25%;left:70%;animation-delay:1.5s;"></span>
-    <span style="top:55%;left:10%;animation-delay:2.5s;"></span>
+    <span style="top:10%;left:25%;animation-delay:0s;"></span>
+    <span style="top:35%;left:65%;animation-delay:2s;"></span>
+    <span style="top:70%;left:15%;animation-delay:1.5s;"></span>
+    <span style="top:85%;left:75%;animation-delay:3s;"></span>
+    <span style="top:50%;left:45%;animation-delay:2.8s;"></span>
   </div>
 
-  <!-- 🌍 Header -->
+  <!-- Header -->
   <header>
-    <h1>Social & Environmental Responsibility</h1>
-    <p>
-      YOUniverse & its sister wing <strong>YOUbiquity</strong> believe that creativity should serve humanity and nature.  
-      Our initiatives empower communities, protect the environment, and promote ethical storytelling.
-    </p>
+    <h1>YOUbiquity Foundation</h1>
+    <p>— a social & environmental initiative by <strong>YOUniverse</strong> —<br>
+    Using creative communication and community action to drive sustainable change across Bangladesh.</p>
   </header>
 
-  <!-- 💚 Content -->
   <div class="container">
-    <h2>Our Commitment</h2>
-    <p>
-      As part of our <strong>social and environmental responsibility</strong>, YOUniverse focuses on meaningful collaborations 
-      that go beyond business. We aim to strengthen communities through awareness, storytelling, and sustainable visual media.
-    </p>
+    <h2>Who We Are</h2>
+    <p><strong>YOUbiquity</strong> works at the intersection of media, environment, and social development. Founded as the
+    community wing of <strong>YOUniverse</strong>, our mission is to empower marginalized voices and drive social transformation
+    through awareness, education, and sustainable innovation.</p>
+    <p>We believe in participatory storytelling — where every image, video, or campaign can create real impact for people and the planet.</p>
 
     <div class="highlight">
-      “We don’t just create visuals — we create voices for change.”
+      “Creativity is not only an art — it’s a responsibility towards our community and environment.”
     </div>
 
-    <h2>Key Initiatives</h2>
+    <h2>Our Focus Areas</h2>
+    <div class="grid-two">
+      <div class="card">
+        <h3>🌾 Livelihood & Environment</h3>
+        <p>Supporting communities affected by climate change through environmental documentaries, awareness campaigns, and eco-friendly livelihood training.</p>
+      </div>
+      <div class="card">
+        <h3>👩‍🎓 Gender & Youth Empowerment</h3>
+        <p>Engaging girls and youth in leadership, life-skills, and creative storytelling to amplify their voice in society.</p>
+      </div>
+      <div class="card">
+        <h3>🏥 Health & Nutrition Awareness</h3>
+        <p>Partnering with NGOs and local groups to produce audio-visual campaigns on public health, nutrition, and disability inclusion.</p>
+      </div>
+      <div class="card">
+        <h3>🌊 Climate & River Conservation</h3>
+        <p>Producing visual advocacy content on climate resilience, river pollution, and biodiversity protection in coastal Bangladesh.</p>
+      </div>
+    </div>
+
+    <h2>Our Activities</h2>
     <ul>
-      <li><strong>Environmental Campaigns:</strong> Producing documentaries and short films on climate change, river conservation, and safe fish production.</li>
-      <li><strong>Gender Equality:</strong> Promoting women’s empowerment through media, highlighting rural women leaders and entrepreneurs.</li>
-      <li><strong>Community Awareness:</strong> Collaborating with NGOs for campaigns on education, health, and inclusivity.</li>
-      <li><strong>Youth Empowerment:</strong> Conducting creative workshops under YOUbiquity to nurture young storytellers and change-makers.</li>
+      <li>Community film screenings & interactive discussions in rural schools.</li>
+      <li>Workshops for youth filmmakers and social media storytellers.</li>
+      <li>Tree plantation & plastic-free campaign in collaboration with local councils.</li>
+      <li>Partnership projects with NGOs on gender, health, and education.</li>
     </ul>
 
-    <h2>Future Goals</h2>
-    <p>
-      Our goal is to establish a <strong>Community Media Hub</strong> where creativity meets social innovation — 
-      connecting filmmakers, activists, and educators to produce positive impact stories that inspire the next generation.
-    </p>
+    <h2>Partners & Collaboration</h2>
+    <p>We collaborate with both national and international organizations including grassroots NGOs, development partners, and universities. 
+    YOUbiquity serves as a bridge between creative media and development action — bringing awareness to projects supported by
+    <strong>PKSF, IFAD, DANIDA, UNDP, and local CSOs.</strong></p>
+
+    <h2>Future Vision</h2>
+    <p>By 2030, YOUbiquity aims to establish a <strong>“Creative Development Lab”</strong> — a community-based center that trains
+    youth on environmental storytelling, film production, and social campaign design, blending creativity with civic engagement.</p>
 
     <div class="btn-container">
       <a href="main.html" class="back-btn">← Back to Main Site</a>
