@@ -1,235 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>YOUbiquity — Social & Environmental Responsibility</title>
+  <meta charset="UTF-8">
+  <title>YOUbiquity — Social & Environmental Responsibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Merriweather', serif;
+      color: #113a2d;
+      background: linear-gradient(180deg, #e8f5e9, #f1fff4);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Merriweather',serif;
-  background:linear-gradient(160deg,#ecfff3 0%,#f7fff9 100%);
-  color:#1a3a2b;
-  overflow-x:hidden;
-  scroll-behavior:smooth;
-}
+    /* === Eco particle animation === */
+    .eco-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      overflow: hidden; z-index: 0; pointer-events: none;
+    }
+    .eco-bg span {
+      position: absolute;
+      background: rgba(0,128,0,0.15);
+      border-radius: 50%;
+      animation: float 12s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% {transform: translateY(0) scale(1);}
+      50% {transform: translateY(-40px) scale(1.2);}
+      100% {transform: translateY(0) scale(1);}
+    }
 
-/* 🌿 Floating light glows */
-.eco-bg span{
-  position:fixed;border-radius:50%;
-  background:radial-gradient(circle,#6cc24a 0%,transparent 70%);
-  opacity:0.1;
-  animation:float 12s ease-in-out infinite;
-  z-index:0;
-}
-.eco-bg span:nth-child(1){width:250px;height:250px;top:10%;left:15%;animation-delay:0s;}
-.eco-bg span:nth-child(2){width:160px;height:160px;top:60%;left:70%;animation-delay:4s;}
-.eco-bg span:nth-child(3){width:280px;height:280px;top:50%;left:-10%;animation-delay:8s;}
-.eco-bg span:nth-child(4){width:180px;height:180px;top:20%;left:80%;animation-delay:10s;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-25px);}}
+    /* === Page Layout === */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      z-index: 2;
+      position: relative;
+    }
+    header img {
+      height: 80px;
+      display: block;
+      margin: 0 auto 12px;
+    }
+    header h1 {
+      font-family: 'Righteous', cursive;
+      color: #145a32;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      color: #2e7d32;
+      max-width: 650px;
+      margin: 0 auto;
+    }
 
-/* 🍃 Falling Leaves */
-@keyframes leafFall{
-  0%{transform:translateY(-10%) rotate(0deg);opacity:0;}
-  20%{opacity:1;}
-  100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
-}
-.leaf{
-  position:fixed;
-  width:28px;height:28px;
-  background:radial-gradient(circle at 40% 40%,#6cc24a 0%,#3b8f3b 90%);
-  clip-path:ellipse(50% 60% at 50% 50%);
-  opacity:0.7;
-  animation:leafFall 12s linear infinite;
-  z-index:1;
-}
-.leaf:nth-child(5){left:10%;animation-delay:1s;}
-.leaf:nth-child(6){left:25%;animation-delay:3s;}
-.leaf:nth-child(7){left:50%;animation-delay:5s;}
-.leaf:nth-child(8){left:70%;animation-delay:7s;}
-.leaf:nth-child(9){left:90%;animation-delay:9s;}
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      position: relative;
+      z-index: 2;
+    }
+    section h2 {
+      font-family: 'Righteous', cursive;
+      color: #1b5e20;
+      font-size: 28px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    section p, section ul {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      text-align: justify;
+    }
+    section ul {margin-left: 20px;}
+    section li {margin-bottom: 6px;}
 
-/* === Header === */
-header{
-  text-align:center;
-  padding:100px 20px 60px;
-  position:relative;
-  z-index:2;
-}
-header h1{
-  font-family:'Righteous',cursive;
-  font-size:52px;
-  color:#3b8f3b;
-  text-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-header p{
-  font-size:18px;
-  max-width:720px;
-  margin:16px auto 0;
-  color:#2a512f;
-  line-height:1.7;
-}
+    /* === Back button === */
+    .back-btn {
+      display: inline-block;
+      margin: 30px auto 10px;
+      background: #1b5e20;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #2e7d32;
+      box-shadow: 0 6px 18px rgba(0,100,0,0.3);
+    }
 
-/* === Sections === */
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:50px 20px 100px;
-  position:relative;
-  z-index:2;
-}
-.section{
-  background:rgba(255,255,255,0.9);
-  border-radius:16px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.05);
-  padding:40px 30px;
-  margin-bottom:60px;
-  transition:transform .3s ease, box-shadow .3s ease;
-  opacity:0;transform:translateY(40px);
-}
-.section.visible{opacity:1;transform:translateY(0);}
-.section:hover{transform:translateY(-5px);}
-.section h2{
-  font-family:'Righteous',cursive;
-  text-align:center;
-  color:#3b8f3b;
-  margin-bottom:20px;
-}
-.section h2::after{
-  content:'';display:block;width:70px;height:3px;background:#6cc24a;margin:10px auto;border-radius:2px;
-}
-.section p,.section ul{
-  font-size:16.5px;
-  color:#333;
-  line-height:1.8;
-  text-align:justify;
-}
-.section ul{list-style-type:disc;margin-left:24px;padding-left:10px;}
+    /* ===== Side thematic ribbons ===== */
+    .side-ribbon {
+      position: fixed;
+      top: 18vh;
+      width: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 5;
+    }
+    .side-ribbon.left { left: 12px; align-items: center; }
+    .side-ribbon.right { right: 12px; align-items: center; }
 
-/* === Focus Grid === */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:24px;
-}
-.card{
-  background:linear-gradient(145deg,#f3fff3,#e8ffe8);
-  border-radius:12px;
-  padding:24px;
-  text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,0.06);
-  transition:all .3s ease;
-}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 20px rgba(108,194,74,0.15);
-}
-.card h3{
-  color:#2e7d32;
-  font-family:'Righteous',cursive;
-  font-size:20px;
-  margin-bottom:10px;
-}
-.card p{font-size:15px;color:#333;line-height:1.7;}
+    .ribbon-item {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      font-size:11px; color:#1b4332; padding:6px;
+      transition: transform .3s, box-shadow .3s, opacity .3s;
+    }
+    .ribbon-item:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .ribbon-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      display:flex; justify-content:center; align-items:center;
+      font-size:16px; color:#fff; margin-bottom:4px;
+    }
+    .ribbon-label {
+      font-size:10px; text-align:center; font-weight:700;
+      color:#0f3b27;
+    }
+    .ribbon-theatre .ribbon-icon { background: linear-gradient(135deg,#ffd7a6,#ffb27a); }
+    .ribbon-campaign .ribbon-icon { background: linear-gradient(135deg,#ffd3e0,#ff9ab3); }
+    .ribbon-women .ribbon-icon { background: linear-gradient(135deg,#fff2b0,#ffd07a); }
+    .ribbon-tree .ribbon-icon { background: linear-gradient(135deg,#b9f6b1,#6cc24a); }
+    .ribbon-reading .ribbon-icon { background: linear-gradient(135deg,#cfe7ff,#87b7ff); }
+    .ribbon-clean .ribbon-icon { background: linear-gradient(135deg,#f0f7ff,#d0ecff); }
 
-/* === Back Button === */
-.back-btn{
-  display:inline-block;
-  background:#3b8f3b;
-  color:#fff;
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  transition:all .3s ease;
-}
-.back-btn:hover{background:#2f6d2e;box-shadow:0 8px 18px rgba(0,0,0,0.15);}
+    .icon-stage::before { content: "🎭"; }
+    .icon-megaphone::before { content: "📣"; }
+    .icon-woman::before { content: "♀"; }
+    .icon-tree::before { content: "🌳"; }
+    .icon-book::before { content: "📚"; }
+    .icon-broom::before { content: "🧹"; }
 
-/* === Footer === */
-footer{text-align:center;color:#1a3a2b;font-size:14px;margin-top:60px;padding-bottom:40px;}
+    .pulse { animation: pulseGlow 2.6s infinite ease-in-out; }
+    @keyframes pulseGlow {
+      0%{ box-shadow: 0 6px 18px rgba(108,194,74,0.12); transform:translateY(0);}
+      50%{ box-shadow: 0 12px 32px rgba(108,194,74,0.25); transform:translateY(-4px);}
+      100%{ box-shadow: 0 6px 18px rgba(108,194,74,0.12); transform:translateY(0);}
+    }
 
-/* === Responsive === */
-@media(max-width:768px){
-  header h1{font-size:34px;}
-  header p{font-size:15px;}
-  .section{padding:28px 20px;}
-  .card h3{font-size:18px;}
-}
-</style>
+    .ribbon-item[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      left: 70px; top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.75);
+      color:#fff;
+      padding:6px 8px;
+      border-radius:6px;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    @media(max-width:768px){
+      .side-ribbon{display:none;}
+      section{margin:30px 10px;}
+    }
+
+  </style>
 </head>
-
 <body>
 
-<!-- 🌿 Animated background -->
-<div class="eco-bg">
-  <span></span><span></span><span></span><span></span>
-  <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
-</div>
+  <!-- Eco floating bubbles -->
+  <div class="eco-bg">
+    <span style="top:10%;left:20%;width:30px;height:30px;"></span>
+    <span style="top:40%;left:70%;width:20px;height:20px;"></span>
+    <span style="top:80%;left:50%;width:25px;height:25px;"></span>
+    <span style="top:60%;left:10%;width:18px;height:18px;"></span>
+    <span style="top:25%;left:85%;width:22px;height:22px;"></span>
+  </div>
 
-<header>
-  <h1>YOUbiquity Foundation</h1>
-  <p>A social and environmental initiative of <strong>YOUniverse</strong>,  
-  inspiring creative activism and community transformation across Bangladesh.</p>
-</header>
-
-<div class="container">
-
-  <section class="section">
-    <h2>Who We Are</h2>
-    <p><strong>YOUbiquity</strong> is the social and environmental responsibility wing of <strong>YOUniverse</strong>, blending creativity with activism.  
-    We believe in art, awareness, and action — using visual storytelling, theatre, education, and community engagement to inspire real social change.</p>
-  </section>
-
-  <section class="section">
-    <h2>Our Focus Areas</h2>
-    <div class="grid">
-      <div class="card"><h3>🎭 Theatre for Change</h3><p>Using stage and street theatre to raise awareness about social justice and rights.</p></div>
-      <div class="card"><h3>📢 Campaign-Based Activism</h3><p>Designing creative public campaigns on gender equality, health, and sustainability.</p></div>
-      <div class="card"><h3>🌸 Women Empowerment</h3><p>Preventing child marriage and promoting leadership among women.</p></div>
-      <div class="card"><h3>🌳 Eco Awareness</h3><p>Tree plantation, recycling, and climate-friendly community programs.</p></div>
-      <div class="card"><h3>📚 Reading Movement</h3><p>Encouraging reading through “One Book One Child” initiatives.</p></div>
-      <div class="card"><h3>🧹 Clean Environment Drives</h3><p>Organizing cleanliness and civic awareness campaigns nationwide.</p></div>
-      <div class="card"><h3>🎥 Visual Activism</h3><p>Producing short documentaries that highlight untold social and environmental stories.</p></div>
-      <div class="card"><h3>🤝 Partnerships for SDGs</h3><p>Working with networks to achieve UN Sustainable Development Goals.</p></div>
+  <!-- Side ribbons -->
+  <div class="side-ribbon left">
+    <div class="ribbon-item ribbon-theatre" title="Theatre for Change">
+      <div class="ribbon-icon icon-stage"></div><div class="ribbon-label">Theatre</div>
     </div>
+    <div class="ribbon-item ribbon-campaign" title="Campaign Activism">
+      <div class="ribbon-icon icon-megaphone"></div><div class="ribbon-label">Campaign</div>
+    </div>
+    <div class="ribbon-item ribbon-women" title="Women Empowerment">
+      <div class="ribbon-icon icon-woman"></div><div class="ribbon-label">Women</div>
+    </div>
+  </div>
+
+  <div class="side-ribbon right">
+    <div class="ribbon-item ribbon-tree pulse" title="Tree Plantation">
+      <div class="ribbon-icon icon-tree"></div><div class="ribbon-label">Tree</div>
+    </div>
+    <div class="ribbon-item ribbon-reading" title="Reading Movement">
+      <div class="ribbon-icon icon-book"></div><div class="ribbon-label">Reading</div>
+    </div>
+    <div class="ribbon-item ribbon-clean" title="Clean Environment">
+      <div class="ribbon-icon icon-broom"></div><div class="ribbon-label">Clean</div>
+    </div>
+  </div>
+
+  <header>
+    <img src="youbiquity_logo.png" alt="YOUbiquity Logo">
+    <h1>YOUbiquity</h1>
+    <p>Social & Environmental Responsibility Initiative by YOUniverse</p>
+  </header>
+
+  <section>
+    <h2>About YOUbiquity</h2>
+    <p><strong>YOUbiquity</strong> is the social and environmental responsibility wing of <strong>YOUniverse</strong> — dedicated to empowering communities through creative activism, education, and sustainable development. We believe that awareness and action must coexist — and stories, art, and human connection can bring lasting change.</p>
   </section>
 
-  <section class="section">
-    <h2>Our Impact</h2>
+  <section>
+    <h2>Our Focus Areas</h2>
     <ul>
-      <li>Reached over <strong>30 districts</strong> with creative social campaigns.</li>
-      <li>Trained <strong>500+ youth volunteers</strong> on environmental storytelling.</li>
-      <li>Planted <strong>10,000+ trees</strong> with community partners.</li>
-      <li>Partnered with <strong>10+ NGOs</strong> for sustainability projects.</li>
+      <li><strong>Theatre for Change:</strong> Using performance arts to inspire awareness and dialogue in rural and urban communities.</li>
+      <li><strong>Campaign-based Activism:</strong> Running creative campaigns for gender equality, health, and education awareness.</li>
+      <li><strong>Women Empowerment:</strong> Engaging women and girls in leadership, livelihood, and self-expression projects.</li>
+      <li><strong>Tree Plantation Drives:</strong> Promoting greener cities and climate-resilient communities through plantation programs.</li>
+      <li><strong>Reading Movement:</strong> Inspiring literacy and book-sharing initiatives to build a culture of learning.</li>
+      <li><strong>Clean Environment Drives:</strong> Community-led cleanliness and waste management campaigns for a better tomorrow.</li>
     </ul>
   </section>
 
-  <section class="section">
-    <h2>Future Vision</h2>
-    <p>We envision a Bangladesh where art and awareness unite —  
-    where every voice matters, every child learns, every woman leads,  
-    and every community breathes cleaner air and compassion.</p>
+  <section>
+    <h2>Our Mission</h2>
+    <p>To connect people, purpose, and the planet through empathy-driven actions. YOUbiquity blends art, environment, and advocacy to drive meaningful change — transforming communities into catalysts for progress.</p>
   </section>
 
-  <div style="text-align:center;margin-top:40px;">
-    <a href="main.html" class="back-btn">← Back to Main Site</a>
+  <div style="text-align:center;">
+    <a href="main.html" class="back-btn">← Back to Home</a>
   </div>
-
-</div>
-
-<footer>© 2025 YOUbiquity Foundation — A Social & Environmental Initiative of YOUniverse</footer>
-
-<script>
-// 🌿 Fade-in scroll animation
-const sections=document.querySelectorAll('.section');
-const showOnScroll=()=>{sections.forEach(s=>{
- const rect=s.getBoundingClientRect();
- if(rect.top<window.innerHeight-100){s.classList.add('visible');}
-});};
-window.addEventListener('scroll',showOnScroll);
-showOnScroll();
-</script>
 
 </body>
 </html>
