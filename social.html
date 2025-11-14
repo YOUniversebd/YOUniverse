@@ -6,155 +6,211 @@
 <title>YOUbiquity — Social & Environmental Responsibility</title>
 
 <style>
-/* ------------------------------
-   GLOBAL STYLE
---------------------------------*/
+/* RESET */
 *{margin:0; padding:0; box-sizing:border-box;}
 
 body{
-    font-family: "Segoe UI", sans-serif;
-    background:#f2faf4;
-    color:#0a4126;
-    line-height:1.7;
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(to bottom, #e6f4ed, #dff3e3, #f5fff7);
+    color:#06482b;
+    overflow-x:hidden;
+    padding-bottom:60px;
 }
 
-/* CONTAINER */
-.wrapper{
-    max-width:1100px;
-    margin:0 auto;
-    padding:20px;
-}
-
-/* BUTTON */
+/* -------------------------------------------
+   IMPROVED BACK BUTTON
+-------------------------------------------- */
 .back-btn{
     position:fixed;
-    top:20px;
-    left:20px;
+    top:18px;
+    left:18px;
     background:#0a6f3c;
-    padding:10px 20px;
-    border-radius:30px;
     color:white;
+    padding:10px 22px;
+    border-radius:28px;
     text-decoration:none;
-    font-weight:bold;
-    font-size:14px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-    transition:0.3s;
-    z-index:100;
+    font-size:15px;
+    font-weight:600;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.25s;
+    z-index:999;
 }
-.back-btn:hover{background:#088f4f;}
+.back-btn:hover{
+    background:#0b8e4e;
+}
 
-/* HEADER */
-.header{
+/* -------------------------------------------
+   CENTER WRAPPER
+-------------------------------------------- */
+.wrapper{
+    max-width:1100px;
+    margin:100px auto 0;
+    padding:20px;
     text-align:center;
-    margin-top:90px;
 }
-.header img{
-    width:150px;
+
+/* LOGO + TAGLINE */
+.logo{
+    width:160px;
+    margin-bottom:12px;
 }
 .tagline{
     font-size:18px;
-    margin-top:10px;
+    margin-bottom:35px;
     color:#066333;
 }
 
-/* SECTION CARD */
-.section{
-    background:#fff;
-    margin-top:35px;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0px 4px 18px rgba(0,0,0,0.05);
+/* -------------------------------------------
+   CONTENT CARD (more modern)
+-------------------------------------------- */
+.content-box{
+    background:#ffffffdd;
+    padding:28px;
+    margin:40px 0;
+    border-radius:16px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.05);
+    backdrop-filter:blur(6px);
+    text-align:left;
     position:relative;
 }
-.section h2{
-    font-size:26px;
-    margin-bottom:18px;
-    color:#0a5c34;
+
+.section-icon{
+    position:absolute;
+    top:-20px;
+    left:-18px;
+    background:white;
+    padding:10px 14px;
+    border-radius:12px;
+    font-size:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:15px;
+    color:#0b6036;
     font-weight:800;
 }
-.section-icon{
-    font-size:34px;
-    position:absolute;
-    top:-18px;
-    left:-12px;
-    background:white;
-    padding:8px 12px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
+p{margin-bottom:14px; line-height:1.8;}
+ul{padding-left:22px; line-height:1.8;}
 
-/* LIST */
-.section ul{
-    padding-left:20px;
-    margin-top:10px;
-}
-.section ul li{
-    margin-bottom:10px;
-}
-
-/* ICON GRID (REPLACES SIDE BARS) */
-.icon-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap:20px;
-    margin-top:25px;
-}
-.icon-box{
-    background:white;
-    padding:22px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 4px 16px rgba(0,0,0,0.06);
-}
-.icon{
-    font-size:38px;
-}
-.icon-title{
-    margin-top:10px;
-    font-size:18px;
-    font-weight:700;
-}
-.icon-text{
-    margin-top:8px;
-    font-size:14px;
-    color:#0a4126cc;
-    line-height:1.5;
-}
-
-/* COORDINATOR BOX */
-.coord-box{
+/* -------------------------------------------
+   SIDE ICON CARDS (Improved UI)
+-------------------------------------------- */
+.side-icons-left,
+.side-icons-right{
+    position:fixed;
+    top:140px;
+    width:220px;
     display:flex;
-    background:white;
-    padding:30px;
-    margin-top:40px;
+    flex-direction:column;
+    gap:32px;
+    z-index:10;
+}
+
+.side-icons-left{left:20px;}
+.side-icons-right{right:20px;}
+
+.icon-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:#ffffffd9;
+    padding:20px 16px;
     border-radius:18px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    box-shadow:0 3px 14px rgba(0,0,0,0.08);
+    backdrop-filter:blur(5px);
+    width:200px;
+    transition:0.25s;
+}
+.icon-box:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:6px;
+}
+
+.icon-title{
+    font-weight:700;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:6px;
+}
+
+.icon-text{
+    font-size:14px;
+    line-height:1.45;
+    text-align:left;
+    opacity:0.95;
+}
+
+/* -------------------------------------------
+   MOBILE VIEW IMPROVEMENTS
+-------------------------------------------- */
+@media(max-width:1050px){
+    .side-icons-left,
+    .side-icons-right{
+        display:none;
+    }
+
+    .mobile-activism{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+        gap:20px;
+        margin-top:35px;
+    }
+}
+
+/* -------------------------------------------
+   COORDINATOR BOX — refined
+-------------------------------------------- */
+.coord-box{
+    margin:40px 0;
+    padding:28px;
+    background:#ffffffdd;
+    border-radius:18px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+    display:flex;
+    align-items:center;
     gap:25px;
 }
+
 .coord-box img{
-    width:120px;
-    height:120px;
+    width:110px;
+    height:110px;
     border-radius:50%;
     object-fit:cover;
-}
-.coord-text h3{
-    font-size:24px;
-    margin-bottom:14px;
-    font-weight:800;
-}
-.coord-name{
-    margin-top:12px;
-    font-weight:bold;
-    color:#044f2a;
+    box-shadow:0 4px 12px rgba(0,0,0,0.14);
 }
 
-/* RESPONSIVE */
-@media(max-width:700px){
-    .coord-box{
-        flex-direction:column;
-        text-align:center;
-        align-items:center;
-    }
+.coord-text h3{
+    font-size:26px;
+    margin-bottom:12px;
+    font-weight:800;
+    color:#065c32;
+}
+
+/* -------------------------------------------
+   FALLING LEAVES — subtle, improved
+-------------------------------------------- */
+.leaf{
+    position:fixed;
+    top:-20px;
+    width:20px;
+    height:20px;
+    background: radial-gradient(circle, #a8e063, #56ab2f);
+    border-radius:50%;
+    opacity:0.12;
+    animation:fall linear infinite;
+    z-index:0;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-20px) rotate(0deg);}
+    100%{transform:translateY(110vh) rotate(360deg);}
 }
 </style>
 </head>
@@ -163,130 +219,121 @@ body{
 
 <a href="index.html" class="back-btn">← Back</a>
 
+<!-- LEFT ICONS -->
+<div class="side-icons-left">
+    <div class="icon-box">
+        <div class="icon">🎭</div>
+        <div class="icon-title">Theatre Activism</div>
+        <div class="icon-text">আমরা থিয়েটারের মাধ্যমে সামাজিক ইস্যুতে সচেতনতা ছড়াই—গ্রাম, পাহাড়, চরসহ বিভিন্ন অঞ্চলে স্থানীয় গল্প দিয়ে মানুষের মন ছুঁয়ে যাই।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">📚</div>
+        <div class="icon-title">Reading Movement</div>
+        <div class="icon-text">মোবাইল লাইব্রেরি, ক্লাব ও Safe Reading Spaces—জ্ঞান যেন সবার কাছে পৌঁছায়।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">🌱</div>
+        <div class="icon-title">Tree Plantation</div>
+        <div class="icon-text">Tree Care Program · Climate Youth Leaders · পরিবেশ শিক্ষামূলক কার্যক্রম।</div>
+    </div>
+</div>
+
+<!-- RIGHT ICONS -->
+<div class="side-icons-right">
+    <div class="icon-box">
+        <div class="icon">🚺</div>
+        <div class="icon-title">Women Empowerment</div>
+        <div class="icon-text">Leadership Circles, Digital Literacy, Self-defence, Menstrual Health—নারীর নিজের শক্তি খুঁজে পাওয়ার যাত্রা।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">🧹</div>
+        <div class="icon-title">Cleanliness Drives</div>
+        <div class="icon-text">Waste Segregation · Clean School Challenge · প্লাস্টিকবিরোধী প্রচারণা।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">📢</div>
+        <div class="icon-title">Campaign Activism</div>
+        <div class="icon-text">Human Rights · Mental Health · Child Rights · Climate Justice—জনসচেতনতা বাড়াই।</div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
 <div class="wrapper">
 
-    <!-- HEADER -->
-    <div class="header">
-        <img src="images/YOUbiquity_logo.png">
-        <p class="tagline">“Together for Social & Environmental Change”</p>
-    </div>
+    <img src="images/YOUbiquity_logo.png" class="logo">
+    <div class="tagline">“Together for Social & Environmental Change”</div>
 
-    <!-- About -->
-    <div class="section">
+    <!-- ABOUT -->
+    <div class="content-box">
         <div class="section-icon">🌍</div>
         <h2>About YOUbiquity</h2>
-        <p>
-            YOUbiquity হলো YOUniverse-এর সামাজিক ও পরিবেশগত দায়িত্ববোধের প্ল্যাটফর্ম—
-            যেখানে সৃজনশীলতা, মানবিকতা এবং সচেতনতা মিলে সামাজিক পরিবর্তনের পথ তৈরি হয়।
-        </p>
-        <p>
-            আমাদের লক্ষ্য একটি অন্তর্ভুক্তিমূলক বাংলাদেশ গড়া—
-            যেখানে শিল্প, গল্প, থিয়েটার, পরিবেশ রক্ষা, নারী ক্ষমতায়ন এবং শিক্ষা
-            সবার জন্য উন্মুক্ত।
-        </p>
+        <p>YOUbiquity হলো YOUniverse-এর সামাজিক ও পরিবেশগত দায়িত্ববোধের প্ল্যাটফর্ম।</p>
+        <p>আমরা বিশ্বাস করি—পরিবর্তন শুরু হয় মানুষের ভাবনা ও কর্মের মাধ্যমে।</p>
     </div>
 
-    <!-- Focus Area -->
-    <div class="section">
+    <!-- FOCUS AREA -->
+    <div class="content-box">
         <div class="section-icon">🎯</div>
-        <h2>Our Focus Areas</h2>
+        <h2>Our Focus Area</h2>
         <ul>
             <li>🎭 কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
             <li>🌱 পরিবেশ সুরক্ষা ও জলবায়ু সচেতনতা</li>
-            <li>📢 সামাজিক ইস্যু নিয়ে জনসচেতনতা</li>
+            <li>📢 সোশ্যাল ইস্যুতে জনসচেতনতা বৃদ্ধি</li>
             <li>🚺 নারী ও তরুণ নেতৃত্ব বিকাশ</li>
         </ul>
     </div>
 
-    <!-- RICH ICON GRID -->
-    <div class="section">
-        <h2>Our Major Activities</h2>
-
-        <div class="icon-grid">
-            <div class="icon-box">
-                <div class="icon">🎭</div>
-                <div class="icon-title">Theatre Activism</div>
-                <p class="icon-text">
-                    স্থানীয় গল্প, ভাষা ও সংস্কৃতিকে কেন্দ্র করে কমিউনিটি থিয়েটারের মাধ্যমে
-                    বাল্যবিবাহ, নারী অধিকার, পরিবেশ ও মানবাধিকার বিষয়ে সচেতনতা।
-                </p>
-            </div>
-
-            <div class="icon-box">
-                <div class="icon">📚</div>
-                <div class="icon-title">Reading Movement</div>
-                <p class="icon-text">
-                    Mobile Library · Reading Clubs · Safe Reading Spaces —
-                    শিশু ও তরুণদের মধ্যে বই পড়ার অভ্যাস গড়ে তোলা।
-                </p>
-            </div>
-
-            <div class="icon-box">
-                <div class="icon">🌱</div>
-                <div class="icon-title">Tree Plantation</div>
-                <p class="icon-text">
-                    ৩ বছরের Tree Care Program · Climate Youth Leaders ·
-                    পরিবেশ শিক্ষাভিত্তিক কার্যক্রম।
-                </p>
-            </div>
-
-            <div class="icon-box">
-                <div class="icon">🚺</div>
-                <div class="icon-title">Women Empowerment</div>
-                <p class="icon-text">
-                    Leadership Circles · Menstrual Health · Digital Literacy ·
-                    Self-defense Training.
-                </p>
-            </div>
-
-            <div class="icon-box">
-                <div class="icon">🧹</div>
-                <div class="icon-title">Cleanliness Drives</div>
-                <p class="icon-text">
-                    Waste Segregation · Clean School Challenge · Anti-plastic Campaigns.
-                </p>
-            </div>
-
-            <div class="icon-box">
-                <div class="icon">📢</div>
-                <div class="icon-title">Campaign Activism</div>
-                <p class="icon-text">
-                    Human Rights · Mental Health · Gender Violence · Climate Justice Awareness.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Running Activities -->
-    <div class="section">
-        <div class="section-icon">🔥</div>
-        <h2>Running Activities</h2>
+    <!-- GOALS -->
+    <div class="content-box">
+        <div class="section-icon">🚀</div>
+        <h2>Our Goals</h2>
         <ul>
-            <li>কমিউনিটি থিয়েটার সচেতনতা ক্যাম্পেইন</li>
-            <li>গ্রামে-শহরে বই পড়া উৎসাহমূলক কার্যক্রম</li>
-            <li>স্কুলে পরিচ্ছন্নতা ও স্বাস্থ্যবিধি প্রোগ্রাম</li>
-            <li>বিভিন্ন অঞ্চলে বৃক্ষরোপণ ইভেন্ট</li>
+            <li>শিল্পের মাধ্যমে ইতিবাচক সামাজিক পরিবর্তন আনা।</li>
+            <li>জলবায়ু সংকট সম্পর্কে সচেতনতা তৈরি।</li>
+            <li>শিশু ও তরুণদের জন্য শিক্ষা–উদ্যোগ।</li>
+            <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিত করা।</li>
         </ul>
     </div>
 
-    <!-- Coordinator -->
+    <!-- RUNNING ACTIVITIES -->
+    <div class="content-box">
+        <div class="section-icon">🔥</div>
+        <h2>Running Activities</h2>
+        <ul>
+            <li>কমিউনিটি থিয়েটারের মাধ্যমে সচেতনতা বৃদ্ধি</li>
+            <li>গ্রামে-শহরে রিডিং ক্যাম্পেইন</li>
+            <li>স্কুলে পরিচ্ছন্নতা ও স্বাস্থ্যবিধি প্রোগ্রাম</li>
+            <li>বিভিন্ন অঞ্চলে বৃক্ষরোপণ</li>
+        </ul>
+    </div>
+
+    <!-- COORDINATOR -->
     <div class="coord-box">
-        <img src="image_5_12.png" alt="Coordinator">
+        <img src="image_5_12.png">
         <div class="coord-text">
             <h3>Message from the Coordinator</h3>
-            <p>
-                YOUbiquity একটি আন্দোলন—মানুষের সাথে, মানুষের গল্প দিয়ে,
-                মানুষের পরিবর্তনের জন্য।
-            </p>
-            <p>
-                আমরা চাই প্রতিটি মানুষ তার নিজের পরিবর্তনকে সমাজের পরিবর্তনের অংশ হিসেবে দেখুক—
-                এবং সেখান থেকেই শুরু হোক এক নতুন ভবিষ্যৎ।
-            </p>
+            <p>YOUbiquity একটি চলমান আন্দোলন—মানুষের গল্প, ভাষা ও বাস্তবতার উপর দাঁড়ানো।</p>
+            <p>আমরা চাই মানুষ নিজের পরিবর্তনকে সমাজের পরিবর্তনের অংশ হিসেবে দেখুক।</p>
             <div class="coord-name">— Tabassum Binte Shahid</div>
         </div>
     </div>
 
 </div>
+
+<!-- Falling Leaves -->
+<script>
+for(let i=0; i<18; i++){
+    let leaf=document.createElement("div");
+    leaf.classList.add("leaf");
+    leaf.style.left=Math.random()*100+"vw";
+    leaf.style.animationDuration=(14+Math.random()*8)+"s";
+    document.body.appendChild(leaf);
+}
+</script>
 
 </body>
 </html>
