@@ -1,293 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>YOUbiquity — Social & Environmental Responsibility</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="YOUbiquity_logo.png">
 
 <style>
-    *{margin:0; padding:0; box-sizing:border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body{
-        font-family:"Merriweather", serif;
-        background:#f4fff6;
-        color:#053b18;
-        position:relative;
-        overflow-x:hidden;
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to bottom, #e9f5ee, #dff3e3, #f1fdf4);
+        color: #044f2a;
+        overflow-x: hidden;
+        position: relative;
+        padding-bottom: 60px;
     }
 
-    /* ===========================
-       SLOW FALLING LEAF ANIMATION
-    ============================*/
-    .leaf{
-        position:absolute;
-        top:-10vh;
-        width:30px;
-        opacity:0.55;
-        animation: fall 10s linear infinite;
-        z-index:0;
+    /* Back Button */
+    .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #0a6f3c;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        z-index: 99;
+        transition: 0.3s;
     }
+    .back-btn:hover { background: #088f4f; }
+
+    /* Center Wrapper */
+    .wrapper {
+        max-width: 1100px;
+        margin: 100px auto 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+        width: 160px;
+        margin: 0 auto 10px;
+    }
+    .tagline {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: #066333;
+    }
+
+    /* Section Titles */
+    h2 {
+        font-size: 32px;
+        margin: 20px 0 10px;
+        color: #0c5f35;
+        font-weight: 800;
+    }
+
+    p { line-height: 1.7; margin-bottom: 18px; }
+
+    .content-box {
+        background: #ffffffd9;
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: 14px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        backdrop-filter: blur(4px);
+        text-align: left;
+    }
+
+    /* Side Icons Layout */
+    .side-icons-left,
+    .side-icons-right {
+        position: fixed;
+        top: 140px;
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        z-index: 1;
+    }
+
+    .side-icons-left { left: 20px; }
+    .side-icons-right { right: 20px; }
+
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #ffffffcf;
+        padding: 18px 12px;
+        border-radius: 16px;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+        backdrop-filter: blur(4px);
+        width: 180px;
+    }
+
+    .icon {
+        font-size: 42px;
+        margin-bottom: 6px;
+    }
+
+    .icon-title {
+        font-weight: 700;
+        font-size: 17px;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    .icon-text {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    /* Falling Leaves */
+    .leaf {
+        position: fixed;
+        top: -20px;
+        width: 28px;
+        height: 28px;
+        background: radial-gradient(circle, #9acd32, #4caf50);
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: fall linear infinite;
+        z-index: 0;
+    }
+
     @keyframes fall {
-        0%{transform:translateY(-10vh) rotate(0deg);}
-        100%{transform:translateY(110vh) rotate(160deg);}
-    }
-    .leaf:nth-child(1){left:10%; animation-delay:0s;}
-    .leaf:nth-child(2){left:25%; animation-delay:2s;}
-    .leaf:nth-child(3){left:40%; animation-delay:1s;}
-    .leaf:nth-child(4){left:60%; animation-delay:3s;}
-    .leaf:nth-child(5){left:75%; animation-delay:0.8s;}
-    .leaf:nth-child(6){left:90%; animation-delay:1.5s;}
-
-    /* ===========================
-       BACK BUTTON
-    ============================*/
-    .back-btn{
-        position:absolute;
-        top:20px;
-        left:20px;
-        background:#046c34;
-        padding:10px 18px;
-        color:#fff;
-        text-decoration:none;
-        border-radius:6px;
-        font-weight:bold;
-        z-index:10;
-        transition:0.3s;
-    }
-    .back-btn:hover{background:#00984a;}
-
-    /* ===========================
-       HEADER SECTION
-    ============================*/
-    .header{
-        text-align:center;
-        padding:60px 20px 20px;
-        position:relative;
-        z-index:2;
-    }
-    .header img{
-        width:150px;
-        margin-bottom:10px;
-    }
-    .header h1{
-        font-family:"Righteous", cursive;
-        font-size:42px;
-        margin-bottom:6px;
-        color:#046c34;
-    }
-    .tagline{
-        font-size:15px;
-        margin-bottom:16px;
-        opacity:0.8;
-        font-style:italic;
+        0% { transform: translateY(-20px) rotate(0deg); }
+        100% { transform: translateY(120vh) rotate(360deg); }
     }
 
-    /* ===========================
-       MAIN LAYOUT GRID
-    ============================*/
-    .main-layout{
-        max-width:1300px;
-        margin:40px auto;
-        display:grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        gap:30px;
-        padding:0 20px;
-        position:relative;
-        z-index:2;
-    }
-
-    /* ===========================
-       SIDE ICON BLOCKS
-    ============================*/
-    .side-box{
-        display:flex;
-        flex-direction:column;
-        gap:26px;
-    }
-    .icon-card{
-        background:#fff;
-        padding:20px;
-        border-radius:14px;
-        text-align:center;
-        box-shadow:0 8px 20px rgba(0,0,0,0.08);
-        transition:0.3s;
-    }
-    .icon-card:hover{
-        transform:translateY(-6px);
-        box-shadow:0 14px 30px rgba(0,0,0,0.14);
-    }
-    .icon{
-        font-size:48px;
-        margin-bottom:8px;
-    }
-    .icon-card p{
-        font-size:14px;
-        color:#074020;
-    }
-
-    /* ===========================
-       CENTER CONTENT
-    ============================*/
-    .content-block{
-        background:#ffffff;
-        padding:30px;
-        border-radius:16px;
-        box-shadow:0 10px 28px rgba(0,0,0,0.1);
-    }
-    .content-block h2{
-        font-family:"Righteous", cursive;
-        font-size:28px;
-        color:#046c34;
-        margin-bottom:12px;
-        border-left:5px solid #046c34;
-        padding-left:10px;
-    }
-    .content-block p{
-        font-size:16px;
-        line-height:1.8;
-        margin-bottom:20px;
-        text-align:justify;
-    }
-
-    .sub-block{
-        margin-top:30px;
-    }
-
-    /* ===========================
-       MOBILE RESPONSIVE
-    ============================*/
-    @media(max-width:900px){
-        .main-layout{
-            grid-template-columns:1fr;
-        }
-        .side-box{
-            flex-direction:row;
-            overflow-x:auto;
-            padding-bottom:10px;
-        }
-        .icon-card{
-            min-width:180px;
-        }
+    /* Responsive */
+    @media (max-width: 900px) {
+        .side-icons-left,
+        .side-icons-right { display: none; }
+        
+        .wrapper { margin-top: 40px; }
     }
 </style>
 </head>
 
 <body>
 
-<!-- Falling leaves -->
-<img src="images/leaf.png" class="leaf">
-<img src="images/leaf.png" class="leaf">
-<img src="images/leaf.png" class="leaf">
-<img src="images/leaf.png" class="leaf">
-<img src="images/leaf.png" class="leaf">
-<img src="images/leaf.png" class="leaf">
+<!-- Back Button -->
+<a href="index.html" class="back-btn">← Back</a>
 
-<a href="main.html" class="back-btn">← Back</a>
-
-<!-- HEADER -->
-<div class="header">
-    <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo">
-    <h1>YOUbiquity</h1>
-    <div class="tagline">Social • Environmental • Community Empowerment</div>
-</div>
-
-<!-- MAIN GRID -->
-<div class="main-layout">
-
-    <!-- LEFT SIDE ICONS -->
-    <div class="side-box">
-
-        <div class="icon-card">
-            <div class="icon">🎭</div>
-            <h4>Theatre Activism</h4>
-            <p>Street drama & storytelling to raise awareness.</p>
-        </div>
-
-        <div class="icon-card">
-            <div class="icon">🚫</div>
-            <h4>Child Marriage</h4>
-            <p>Community outreach to prevent early marriages.</p>
-        </div>
-
-        <div class="icon-card">
-            <div class="icon">📚</div>
-            <h4>Reading Movement</h4>
-            <p>Village-based book clubs & mobile libraries.</p>
-        </div>
-
+<!-- LEFT ICONS -->
+<div class="side-icons-left">
+    <div class="icon-box">
+        <div class="icon">🎭</div>
+        <div class="icon-title">Theatre Activism</div>
+        <div class="icon-text">কমিউনিটি থিয়েটারের মাধ্যমে সচেতনতা ছড়িয়ে দেওয়া।</div>
     </div>
 
-    <!-- CENTER MAIN CONTENT -->
-    <div class="content-block">
+    <div class="icon-box">
+        <div class="icon">📚</div>
+        <div class="icon-title">Reading Movement</div>
+        <div class="icon-text">বই পড়া আন্দোলনের মাধ্যমে জ্ঞান চর্চা বৃদ্ধি।</div>
+    </div>
 
+    <div class="icon-box">
+        <div class="icon">🌱</div>
+        <div class="icon-title">Tree Plantation</div>
+        <div class="icon-text">সবুজ বাংলাদেশ গড়তে বৃক্ষরোপণ কার্যক্রম।</div>
+    </div>
+</div>
+
+<!-- RIGHT ICONS -->
+<div class="side-icons-right">
+    <div class="icon-box">
+        <div class="icon">🚺</div>
+        <div class="icon-title">Women Empowerment</div>
+        <div class="icon-text">নারীর উন্নয়ন, নিরাপত্তা ও সমঅধিকার নিয়ে কাজ।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">🧹</div>
+        <div class="icon-title">Cleanliness Drive</div>
+        <div class="icon-text">পরিবেশ পরিচ্ছন্ন রাখতে সচেতনতা বৃদ্ধি।</div>
+    </div>
+
+    <div class="icon-box">
+        <div class="icon">📢</div>
+        <div class="icon-title">Campaign Activism</div>
+        <div class="icon-text">সামাজিক পরিবর্তনে বিভিন্ন ক্যাম্পেইন।</div>
+    </div>
+</div>
+
+
+<!-- MAIN CENTER CONTENT -->
+<div class="wrapper">
+
+    <img src="YOUBIQUITY_logo.png" class="logo" alt="YOUbiquity Logo">
+
+    <div class="tagline">“Together for Social & Environmental Change”</div>
+
+    <!-- ABOUT -->
+    <div class="content-box">
         <h2>About YOUbiquity</h2>
         <p>
-            YOUbiquity is the Social & Environmental Responsibility wing of YOUniverse —  
-            working across Bangladesh through artistic activism, education, climate action,  
-            and community development.  
-            Our philosophy is simple: **change grows when awareness, creativity, and community stand together**.
+            <strong>YOUbiquity</strong> হলো YOUniverse-এর সামাজিক ও পরিবেশবান্ধব কার্যক্রমের
+            একটি নিবেদিত প্ল্যাটফর্ম। আমরা বিশ্বাস করি—সচেতনতা, শিক্ষা, শিল্প, এক্টিভিজম
+            এবং পরিবেশ সুরক্ষা মিলেই তৈরি হয় একটি উন্নত সমাজ।  
         </p>
-
-        <div class="sub-block">
-            <h2>Focus Areas</h2>
-            <p>
-                We work across multiple humanitarian and environmental domains including  
-                **art-based activism, youth empowerment, environmental conservation,  
-                public health awareness, and gender equality initiatives**.
-            </p>
-        </div>
-
-        <div class="sub-block">
-            <h2>Our Goals</h2>
-            <p>
-                • Build a national youth network for social justice  
-                • Promote sustainable environment practices  
-                • Reduce harmful social norms through campaigns  
-                • Support rights-based awareness in rural communities  
-                • Encourage reading & creative learning across Bangladesh  
-            </p>
-        </div>
-
-        <div class="sub-block">
-            <h2>Running Activities</h2>
-            <p>
-                • Street theatre on women’s rights & climate change  
-                • Tree plantation & river-cleaning activities  
-                • Book-sharing gatherings & storytelling circles  
-                • Schools-based awareness on child marriage  
-                • Cleanliness drives in rural and urban communities  
-                • Social documentary production for awareness  
-            </p>
-        </div>
-
+        <p>
+            আমাদের কাজ শুধুমাত্র ভিজ্যুয়াল অ্যাক্টিভিজম নয়—বরং মাঠ পর্যায়ের মানুষের
+            কাছে পৌঁছানো, পরিবর্তনের পথে কাজ করা এবং টেকসই ভবিষ্যৎ গড়ে তোলা।
+        </p>
     </div>
 
-    <!-- RIGHT SIDE ICONS -->
-    <div class="side-box">
+    <!-- FOCUS AREA -->
+    <div class="content-box">
+        <h2>Our Focus Area</h2>
+        <p>YOUbiquity মূলত চার ধরনের কাজকে অগ্রাধিকার দেয়:</p>
+        <ul>
+            <li>🎭 **Art-Based Activism** — থিয়েটার, ফিল্ম ও ভিজ্যুয়াল মিডিয়ার মাধ্যমে সচেতনতা।</li>
+            <li>👥 **Community Action** — কমিউনিটি ভিত্তিক উদ্যোগ, ক্যাম্পেইন ও মুভমেন্ট।</li>
+            <li>🌱 **Environmental Action** — প্রকৃতি রক্ষা, বৃক্ষরোপণ ও পরিচ্ছন্নতা।</li>
+            <li>📚 **Knowledge Empowerment** — বই পড়া আন্দোলন ও শিক্ষাবিষয়ক কার্যক্রম।</li>
+        </ul>
+    </div>
 
-        <div class="icon-card">
-            <div class="icon">🌱</div>
-            <h4>Tree Plantation</h4>
-            <p>Green Bangladesh through active plantation drives.</p>
-        </div>
+    <!-- GOALS -->
+    <div class="content-box">
+        <h2>Our Goals</h2>
+        <ul>
+            <li>যুব সমাজকে এক্টিভিজমে যুক্ত করে সমাজ পরিবর্তনে ভূমিকা রাখা।</li>
+            <li>বাংলাদেশের প্রত্যন্ত অঞ্চলে শিক্ষা ও সচেতনতা উদ্যোগ ছড়িয়ে দেওয়া।</li>
+            <li>পরিবেশগত ইস্যুতে দীর্ঘমেয়াদী টেকসই প্রকল্প বাস্তবায়ন।</li>
+            <li>নারী ও কিশোরীদের নিরাপত্তা, অধিকার ও ক্ষমতায়ন বৃদ্ধি।</li>
+        </ul>
+    </div>
 
-        <div class="icon-card">
-            <div class="icon">🧹</div>
-            <h4>Cleanliness Drive</h4>
-            <p>Public space & school-based cleaning movements.</p>
-        </div>
-
-        <div class="icon-card">
-            <div class="icon">🎥</div>
-            <h4>Visual Activism</h4>
-            <p>Documentaries & awareness media content.</p>
-        </div>
-
+    <!-- RUNNING ACTIVITIES -->
+    <div class="content-box">
+        <h2>Running Activities</h2>
+        <ul>
+            <li>কমিউনিটি থিয়েটার ও স্ট্রিট ড্রামা।</li>
+            <li>স্কুল–কলেজে বই পড়া প্রচার কার্যক্রম।</li>
+            <li>মাসিক পরিচ্ছন্নতা ক্যাম্পেইন (Clean Bangladesh)।</li>
+            <li>নিরাপদ যাতায়াত ও নারী অধিকার বিষয়ে ক্যাম্পেইন।</li>
+            <li>মাসব্যাপী বৃক্ষরোপণ ও পরিবেশ সচেতনতা কার্যক্রম।</li>
+        </ul>
     </div>
 
 </div>
 
+<!-- Falling Leaves (Generated Automatically) -->
+<script>
+for(let i=0; i<20; i++){
+    let leaf = document.createElement("div");
+    leaf.classList.add("leaf");
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = (6 + Math.random()*6) + "s";
+    leaf.style.opacity = (0.5 + Math.random()*0.5);
+    document.body.appendChild(leaf);
+}
+</script>
 
 </body>
 </html>
