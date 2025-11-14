@@ -6,199 +6,156 @@
 <title>YOUbiquity — Social & Environmental Responsibility</title>
 
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+/* ------------------------------
+   GLOBAL STYLE
+--------------------------------*/
+*{margin:0; padding:0; box-sizing:border-box;}
 
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to bottom, #e9f5ee, #dff3e3, #f1fdf4);
-        color: #044f2a;
-        overflow-x: hidden;
-        position: relative;
-        padding-bottom: 60px;
-    }
+body{
+    font-family: "Segoe UI", sans-serif;
+    background:#f2faf4;
+    color:#0a4126;
+    line-height:1.7;
+}
 
-    /* Back Button */
-    .back-btn {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: #0a6f3c;
-        color: #fff;
-        padding: 10px 22px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        z-index: 99;
-        transition: 0.3s;
-    }
-    .back-btn:hover { background: #088f4f; }
+/* CONTAINER */
+.wrapper{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px;
+}
 
-    .wrapper {
-        max-width: 1100px;
-        margin: 100px auto 0;
-        padding: 20px;
-        text-align: center;
-    }
+/* BUTTON */
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:#0a6f3c;
+    padding:10px 20px;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    transition:0.3s;
+    z-index:100;
+}
+.back-btn:hover{background:#088f4f;}
 
-    .logo {
-        width: 160px;
-        margin: 0 auto 10px;
-    }
-    .tagline {
-        font-size: 18px;
-        margin-bottom: 40px;
-        color: #066333;
-    }
+/* HEADER */
+.header{
+    text-align:center;
+    margin-top:90px;
+}
+.header img{
+    width:150px;
+}
+.tagline{
+    font-size:18px;
+    margin-top:10px;
+    color:#066333;
+}
 
-    h2 {
-        font-size: 32px;
-        margin: 20px 0 10px;
-        color: #0c5f35;
-        font-weight: 800;
-    }
+/* SECTION CARD */
+.section{
+    background:#fff;
+    margin-top:35px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0px 4px 18px rgba(0,0,0,0.05);
+    position:relative;
+}
+.section h2{
+    font-size:26px;
+    margin-bottom:18px;
+    color:#0a5c34;
+    font-weight:800;
+}
+.section-icon{
+    font-size:34px;
+    position:absolute;
+    top:-18px;
+    left:-12px;
+    background:white;
+    padding:8px 12px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
 
-    p { line-height: 1.7; margin-bottom: 18px; }
+/* LIST */
+.section ul{
+    padding-left:20px;
+    margin-top:10px;
+}
+.section ul li{
+    margin-bottom:10px;
+}
 
-    /* Content Boxes */
-    .content-box {
-        background: #ffffffd0;
-        padding: 25px;
-        margin: 30px 0;
-        border-radius: 14px;
-        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-        backdrop-filter: blur(4px);
-        text-align: left;
-        position: relative;
-    }
+/* ICON GRID (REPLACES SIDE BARS) */
+.icon-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+    margin-top:25px;
+}
+.icon-box{
+    background:white;
+    padding:22px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 4px 16px rgba(0,0,0,0.06);
+}
+.icon{
+    font-size:38px;
+}
+.icon-title{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:700;
+}
+.icon-text{
+    margin-top:8px;
+    font-size:14px;
+    color:#0a4126cc;
+    line-height:1.5;
+}
 
-    .section-icon {
-        position: absolute;
-        top: -18px;
-        left: -18px;
-        background: #ffffffdd;
-        padding: 10px 14px;
-        border-radius: 12px;
-        font-size: 26px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+/* COORDINATOR BOX */
+.coord-box{
+    display:flex;
+    background:white;
+    padding:30px;
+    margin-top:40px;
+    border-radius:18px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    gap:25px;
+}
+.coord-box img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.coord-text h3{
+    font-size:24px;
+    margin-bottom:14px;
+    font-weight:800;
+}
+.coord-name{
+    margin-top:12px;
+    font-weight:bold;
+    color:#044f2a;
+}
 
-    /* Side Icons */
-    .side-icons-left,
-    .side-icons-right {
-        position: fixed;
-        top: 140px;
-        width: 220px;
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        z-index: 1;
-    }
-
-    .side-icons-left { left: 20px; }
-    .side-icons-right { right: 20px; }
-
-    .icon-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #ffffffcf;
-        padding: 18px 12px;
-        border-radius: 16px;
-        box-shadow: 0 3px 14px rgba(0,0,0,0.1);
-        backdrop-filter: blur(4px);
-        width: 180px;
-    }
-
-    .icon {
-        font-size: 46px;
-        margin-bottom: 6px;
-    }
-
-    .icon-title {
-        font-weight: 700;
-        font-size: 17px;
-        margin-bottom: 4px;
-        text-align: center;
-    }
-
-    .icon-text {
-        font-size: 14px;
-        text-align: center;
-        line-height: 1.4;
-    }
-
-    /* Mobile version – show icons (grid below) */
-    @media(max-width: 900px){
-        .side-icons-left,
-        .side-icons-right{ display:none; }
-
-        .mobile-activism {
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-            gap:18px;
-            margin-top:25px;
-        }
-
-        .icon-box { width:100%; }
-    }
-
-    /* Falling Leaves */
-    .leaf {
-        position: fixed;
-        top: -20px;
-        width: 24px;
-        height: 24px;
-        background: radial-gradient(circle, #a8e063, #56ab2f);
-        border-radius: 50%;
-        opacity: 0.05;
-        animation: fall linear infinite;
-        z-index: 0;
-    }
-
-    @keyframes fall {
-        0% { transform: translateY(-20px) rotate(0deg); }
-        100% { transform: translateY(120vh) rotate(360deg); }
-    }
-
-    /* Coordinator Box */
-    .coord-box {
-        margin: 40px 0;
-        padding: 30px;
-        background:#ffffffd0;
-        border-radius:16px;
-        box-shadow:0 4px 20px rgba(0,0,0,0.08);
-        display:flex;
+/* RESPONSIVE */
+@media(max-width:700px){
+    .coord-box{
+        flex-direction:column;
+        text-align:center;
         align-items:center;
-        gap:25px;
-        text-align:left;
     }
-
-    .coord-box img {
-        width:100px;
-        height:100px;
-        border-radius:50%;
-        object-fit:cover;
-        box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .coord-text h3{
-        font-size:26px;
-        margin-bottom:12px;
-        color:#065c32;
-    }
-
-    .coord-text p{
-        font-size:17px;
-        line-height:1.8;
-    }
-
-    .coord-name {
-        margin-top:12px;
-        font-weight:bold;
-        color:#044f2a;
-    }
-
+}
 </style>
 </head>
 
@@ -206,173 +163,130 @@
 
 <a href="index.html" class="back-btn">← Back</a>
 
-<!-- SIDE ICONS LEFT -->
-<div class="side-icons-left">
-    <div class="icon-box">
-        <div class="icon">🎭</div>
-        <div class="icon-title">Theatre Activism</div>
-        <div class="icon-text">আমরা বিশ্বাস করি—থিয়েটারের শক্তি শব্দের থেকেও বেশি। YOUbiquity কমিউনিটি থিয়েটারের মাধ্যমে মানুষের ভাবনা, অনুভূতি এবং সামাজিক বাস্তবতাকে তাদের সামনে তুলে ধরে। গ্রাম, পাহাড়, চরের মতো অঞ্চলে স্থানীয় ভাষা, সংস্কৃতি এবং বাস্তব জীবনের গল্প নিয়ে আমাদের থিয়েটার দল সচেতনতা ছড়িয়ে দেয় বাল্যবিবাহ, নারী অধিকার, স্বাস্থ্য সচেতনতা, মানবাধিকার, পরিবেশ রক্ষা সহ বিভিন্ন ইস্যুতে। থিয়েটার আমাদের জন্য শুধু একটি শিল্প না—এটি হলো সামাজিক পরিবর্তনের ভাষা।</div>
-    </div>
-
-    <div class="icon-box">
-        <div class="icon">📚</div>
-        <div class="icon-title">Reading Movement</div>
-        <div class="icon-text">একটি সমাজ তখনই এগিয়ে যায় যখন মানুষ চিন্তা করে, প্রশ্ন করে এবং শেখে। YOUbiquity “Reading for Freedom” ধারণা নিয়ে গ্রাম-শহরের শিশু, কিশোর ও তরুণদের মধ্যে বই পড়ার অভ্যাস ছড়িয়ে দিতে কাজ করছে।
-👉 মোবাইল লাইব্রেরি
-👉 কমিউনিটি রিডিং সেশন
-👉 স্কুল-বেইজড রিডিং ক্লাব
-👉 মেয়েদের জন্য ‘Safe Reading Spaces’
-
-আমাদের লক্ষ্য—জ্ঞান যেন সবার কাছে যায়, সবার জন্য হয়।</div>
-    </div>
-
-    <div class="icon-box">
-        <div class="icon">🌱</div>
-        <div class="icon-title">Tree Plantation</div>
-        <div class="icon-text">পরিবেশ শুধু প্রকৃতির বিষয় না—এটি আমাদের ভবিষ্যৎ প্রজন্মের বেঁচে থাকার বিষয়। YOUbiquity স্থানীয় জনগণকে সম্পৃক্ত করে বৃক্ষরোপণ অভিযান পরিচালনা করে; স্কুল, নদীপাড়, মসজিদ, মাঠ, খোলা জায়গায় বিভিন্ন ফলজ, বনজ ও ঔষধি গাছ লাগাই। শুধু রোপণ নয়—
-✔ ৩ বছরের Tree Care Program
-✔ Climate Youth Leaders তৈরির উদ্যোগ
-✔ কমিউনিটি-ভিত্তিক পরিবেশ শিক্ষা
-আমরা চাই পরিবেশ রক্ষার যুদ্ধে নাগরিকেরাই হোক প্রধান শক্তি।</div>
-    </div>
-</div>
-
-<!-- SIDE ICONS RIGHT -->
-<div class="side-icons-right">
-    <div class="icon-box">
-        <div class="icon">🚺</div>
-        <div class="icon-title">Women Empowerment</div>
-        <div class="icon-text">নারীর স্বাধীনতা সমাজের অগ্রগতির শর্ত। YOUbiquity নারী নেতৃত্ব, সম্পদে প্রবেশাধিকার, নিরাপত্তা, স্বাস্থ্য সচেতনতা এবং মানসিক সুস্থতা—এই পাঁচটি খাতে কাজ করে।
-আমরা আয়োজন করি:
-✔ Women Leadership Circles
-✔ Life Skills & Self-Defence Training
-✔ Menstrual Hygiene Awareness
-✔ Digital Literacy for Rural Girls
-
-আমাদের লক্ষ্য—একটি সমাজ যেখানে প্রতিটি মেয়ের নিজস্ব স্বপ্ন পূরণের অধিকার নিশ্চিত।</div>
-    </div>
-
-    <div class="icon-box">
-        <div class="icon">🧹</div>
-        <div class="icon-title">Cleanliness Drives</div>
-        <div class="icon-text">একটি পরিচ্ছন্ন সমাজ মানে একটি সুস্থ সমাজ। YOUbiquity স্কুল, কলেজ, বাজার, কমিউনিটি সেন্টার ও গ্রামের চত্বরে পরিচ্ছন্নতা অভিযান পরিচালনা করে।
-✔ Waste Segregation Training
-✔ শিশুদের জন্য "Clean School Challenge"
-✔ প্লাস্টিক বর্জন প্রচারাভিযান
-
-আমরা পরিবেশ সচেতন অভ্যাসকে দৈনন্দিন জীবনের অংশ করে তুলতে কাজ করি।</div>
-    </div>
-
-    <div class="icon-box">
-        <div class="icon">📢</div>
-        <div class="icon-title">Campaign Activism</div>
-        <div class="icon-text">সামাজিক পরিবর্তন তখনই সম্ভব যখন সব বয়সের মানুষ একসাথে কথা বলে। YOUbiquity ডিজিটাল ক্যাম্পেইন, কমিউনিটি র‍্যালি, পোস্টার ক্যাম্পেইন, সংলাপ ও ইন্টার‌্যাক্টিভ সেশন পরিচালনা করে:
-— Child Rights
-— Gender-Based Violence
-— Human Rights
-— Mental Health
-— Climate Justice
-
-প্রতিটি ক্যাম্পেইনের লক্ষ্য: মানুষের মধ্যে সংলাপ, সচেতনতা এবং সক্রিয় অংশগ্রহণ সৃষ্টি করা।</div>
-    </div>
-</div>
-
-
 <div class="wrapper">
 
-    <img src="images/YOUbiquity_logo.png" class="logo">
-    <div class="tagline">“Together for Social & Environmental Change”</div>
+    <!-- HEADER -->
+    <div class="header">
+        <img src="images/YOUbiquity_logo.png">
+        <p class="tagline">“Together for Social & Environmental Change”</p>
+    </div>
 
-    <!-- ABOUT -->
-    <div class="content-box">
+    <!-- About -->
+    <div class="section">
         <div class="section-icon">🌍</div>
         <h2>About YOUbiquity</h2>
         <p>
-            YOUbiquity হলো YOUniverse-এর সামাজিক ও পরিবেশগত দায়িত্ববোধের প্ল্যাটফর্ম—একটি এমন জায়গা, যেখানে সৃজনশীলতা, মানবিকতা এবং সামাজিক পরিবর্তন একত্র হয়ে প্রকৃত মূল্য তৈরি করে।
+            YOUbiquity হলো YOUniverse-এর সামাজিক ও পরিবেশগত দায়িত্ববোধের প্ল্যাটফর্ম—
+            যেখানে সৃজনশীলতা, মানবিকতা এবং সচেতনতা মিলে সামাজিক পরিবর্তনের পথ তৈরি হয়।
         </p>
         <p>
-            আমরা কাজ করি এমন একটি বাংলাদেশ গড়ার জন্য:
-✔ যেখানে মানুষকে তার পরিচয়, আঞ্চলিকতা বা লিঙ্গ দিয়ে নয়—তার ক্ষমতা দিয়ে মূল্যায়ন করা হয়।
-✔ যেখানে শিল্প, থিয়েটার, গল্প, ফটোগ্রাফি এবং ভিজ্যুয়াল কমিউনিকেশন সমাজ পরিবর্তনের হাতিয়ার হিসেবে ব্যবহার হয়।
-✔ যেখানে পরিবেশ রক্ষা, নারীর ক্ষমতায়ন এবং শিক্ষা—একটি শেয়ার্ড রেসপনসিবিলিটি।
-        </p>
-       <p>
-YOUbiquity বিশ্বাস করে—change begins when awareness meets action.
+            আমাদের লক্ষ্য একটি অন্তর্ভুক্তিমূলক বাংলাদেশ গড়া—
+            যেখানে শিল্প, গল্প, থিয়েটার, পরিবেশ রক্ষা, নারী ক্ষমতায়ন এবং শিক্ষা
+            সবার জন্য উন্মুক্ত।
         </p>
     </div>
 
-    <!-- FOCUS AREA -->
-    <div class="content-box">
+    <!-- Focus Area -->
+    <div class="section">
         <div class="section-icon">🎯</div>
-        <h2>Our Focus Area</h2>
-        <p>
-            YOUbiquity সামাজিক উন্নয়ন ও পরিবেশ সংরক্ষণের জন্য কয়েকটি ইম্পেক্ট এরিয়াতে
-            বিশেষ গুরুত্ব দিয়ে কাজ করে:
-        </p>
+        <h2>Our Focus Areas</h2>
         <ul>
             <li>🎭 কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
-            <li>🌱 পরিবেশ সুরক্ষা ও জলবায়ু সচেতনতা প্রচারণা</li>
-            <li>📢 সোশ্যাল ইস্যু নিয়ে জনসচেতনতা বৃদ্ধি</li>
-            <li>🚺 নারী ও তরুণদের নেতৃত্ব বিকাশ</li>
+            <li>🌱 পরিবেশ সুরক্ষা ও জলবায়ু সচেতনতা</li>
+            <li>📢 সামাজিক ইস্যু নিয়ে জনসচেতনতা</li>
+            <li>🚺 নারী ও তরুণ নেতৃত্ব বিকাশ</li>
         </ul>
     </div>
 
-    <!-- GOALS -->
-    <div class="content-box">
-        <div class="section-icon">🚀</div>
-        <h2>Our Goals</h2>
-        <ul>
-            <li>সৃজনশীলতা ও শিল্পের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনা।</li>
-            <li>পরিবেশবান্ধব জীবনযাপন প্রচার ও জলবায়ু সংকট সচেতনতা বৃদ্ধি।</li>
-            <li>শিশু, কিশোর ও তরুণদের জন্য দীর্ঘমেয়াদী শিক্ষা–উদ্যোগ তৈরি।</li>
-            <li>নারীর নিরাপত্তা, অধিকার ও ক্ষমতায়নকে অগ্রাধিকার দেওয়া।</li>
-        </ul>
+    <!-- RICH ICON GRID -->
+    <div class="section">
+        <h2>Our Major Activities</h2>
+
+        <div class="icon-grid">
+            <div class="icon-box">
+                <div class="icon">🎭</div>
+                <div class="icon-title">Theatre Activism</div>
+                <p class="icon-text">
+                    স্থানীয় গল্প, ভাষা ও সংস্কৃতিকে কেন্দ্র করে কমিউনিটি থিয়েটারের মাধ্যমে
+                    বাল্যবিবাহ, নারী অধিকার, পরিবেশ ও মানবাধিকার বিষয়ে সচেতনতা।
+                </p>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon">📚</div>
+                <div class="icon-title">Reading Movement</div>
+                <p class="icon-text">
+                    Mobile Library · Reading Clubs · Safe Reading Spaces —
+                    শিশু ও তরুণদের মধ্যে বই পড়ার অভ্যাস গড়ে তোলা।
+                </p>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon">🌱</div>
+                <div class="icon-title">Tree Plantation</div>
+                <p class="icon-text">
+                    ৩ বছরের Tree Care Program · Climate Youth Leaders ·
+                    পরিবেশ শিক্ষাভিত্তিক কার্যক্রম।
+                </p>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon">🚺</div>
+                <div class="icon-title">Women Empowerment</div>
+                <p class="icon-text">
+                    Leadership Circles · Menstrual Health · Digital Literacy ·
+                    Self-defense Training.
+                </p>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon">🧹</div>
+                <div class="icon-title">Cleanliness Drives</div>
+                <p class="icon-text">
+                    Waste Segregation · Clean School Challenge · Anti-plastic Campaigns.
+                </p>
+            </div>
+
+            <div class="icon-box">
+                <div class="icon">📢</div>
+                <div class="icon-title">Campaign Activism</div>
+                <p class="icon-text">
+                    Human Rights · Mental Health · Gender Violence · Climate Justice Awareness.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <!-- RUNNING ACTIVITIES -->
-    <div class="content-box">
+    <!-- Running Activities -->
+    <div class="section">
         <div class="section-icon">🔥</div>
         <h2>Running Activities</h2>
         <ul>
-            <li>কমিউনিটি থিয়েটারের মাধ্যমে সামাজিক ইস্যুতে সচেতনতা বৃদ্ধি।</li>
-            <li>গ্রামীণ ও শহুরে প্রতিষ্ঠানে বই পড়া উৎসাহ বাড়ানোর কার্যক্রম।</li>
-            <li>স্কুলে পরিচ্ছন্নতা ও স্বাস্থ্যবিধি বিষয়ক কর্মসূচি।</li>
-            <li>বিভিন্ন অঞ্চলে বৃক্ষরোপণ ও পরিবেশ সচেতনতার ইভেন্ট।</li>
+            <li>কমিউনিটি থিয়েটার সচেতনতা ক্যাম্পেইন</li>
+            <li>গ্রামে-শহরে বই পড়া উৎসাহমূলক কার্যক্রম</li>
+            <li>স্কুলে পরিচ্ছন্নতা ও স্বাস্থ্যবিধি প্রোগ্রাম</li>
+            <li>বিভিন্ন অঞ্চলে বৃক্ষরোপণ ইভেন্ট</li>
         </ul>
     </div>
 
-    <!-- COORDINATOR MESSAGE -->
+    <!-- Coordinator -->
     <div class="coord-box">
         <img src="image_5_12.png" alt="Coordinator">
         <div class="coord-text">
             <h3>Message from the Coordinator</h3>
             <p>
-                YOUbiquity কেবল একটি সংগঠন নয়—এটি একটি চলমান আন্দোলন।
-আমরা বিশ্বাস করি সমাজ পরিবর্তনের সবচেয়ে বড় শক্তি হলো মানুষ নিজেই।
-এই মানুষদের সঙ্গে, তাদেরই ভাষায়, তাদের গল্প দিয়ে—আমরা চেষ্টা করি
-পরিবর্তনের আলোকে আরও কাছাকাছি নিয়ে আসতে।
-
-আমাদের লক্ষ্য শুধু একটি ভালো সমাজ গঠন নয়—
-বরং এমন একটি ভবিষ্যৎ তৈরি করা যেখানে প্রতিটি মানুষ নিজেকে গুরুত্বপূর্ণ ভাবতে পারে,
-নিজস্ব জায়গা খুঁজে পায়, এবং নিজের পরিবর্তনকে সমাজের পরিবর্তনের অংশ হিসেবে দেখে।
+                YOUbiquity একটি আন্দোলন—মানুষের সাথে, মানুষের গল্প দিয়ে,
+                মানুষের পরিবর্তনের জন্য।
+            </p>
+            <p>
+                আমরা চাই প্রতিটি মানুষ তার নিজের পরিবর্তনকে সমাজের পরিবর্তনের অংশ হিসেবে দেখুক—
+                এবং সেখান থেকেই শুরু হোক এক নতুন ভবিষ্যৎ।
             </p>
             <div class="coord-name">— Tabassum Binte Shahid</div>
         </div>
     </div>
 
 </div>
-
-<!-- Falling Leaves -->
-<script>
-for(let i=0; i<20; i++){
-    let leaf = document.createElement("div");
-    leaf.classList.add("leaf");
-    leaf.style.left = Math.random()*100 + "vw";
-    leaf.style.animationDuration = (12 + Math.random()*8) + "s"; 
-    leaf.style.opacity = 0.20 + Math.random()*0.20;
-    document.body.appendChild(leaf);
-}
-</script>
 
 </body>
 </html>
