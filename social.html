@@ -4,276 +4,290 @@
 <meta charset="UTF-8">
 <title>YOUbiquity — Social & Environmental Responsibility</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="images/YOUniverse_logo.png">
+<link rel="icon" type="image/png" href="YOUbiquity_logo.png">
 
 <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
+    *{margin:0; padding:0; box-sizing:border-box;}
 
     body{
-        font-family: "Merriweather", serif;
+        font-family:"Merriweather", serif;
         background:#f4fff6;
         color:#053b18;
         position:relative;
         overflow-x:hidden;
     }
 
-    /* ==== Falling Leaf Animation (soft & slow) ==== */
+    /* ===========================
+       SLOW FALLING LEAF ANIMATION
+    ============================*/
     .leaf{
         position:absolute;
         top:-10vh;
-        width:28px;
-        opacity:0.65;
-        animation: fall 9s linear infinite;
+        width:30px;
+        opacity:0.55;
+        animation: fall 10s linear infinite;
+        z-index:0;
     }
-    @keyframes fall{
-        0%{transform:translateY(0) rotate(0);}
-        100%{transform:translateY(120vh) rotate(180deg);}
+    @keyframes fall {
+        0%{transform:translateY(-10vh) rotate(0deg);}
+        100%{transform:translateY(110vh) rotate(160deg);}
     }
+    .leaf:nth-child(1){left:10%; animation-delay:0s;}
+    .leaf:nth-child(2){left:25%; animation-delay:2s;}
+    .leaf:nth-child(3){left:40%; animation-delay:1s;}
+    .leaf:nth-child(4){left:60%; animation-delay:3s;}
+    .leaf:nth-child(5){left:75%; animation-delay:0.8s;}
+    .leaf:nth-child(6){left:90%; animation-delay:1.5s;}
 
-    /* Random leaf positions */
-    .leaf:nth-child(1){left:5%; animation-delay:0s;}
-    .leaf:nth-child(2){left:18%; animation-delay:2s;}
-    .leaf:nth-child(3){left:32%; animation-delay:4s;}
-    .leaf:nth-child(4){left:55%; animation-delay:1s;}
-    .leaf:nth-child(5){left:70%; animation-delay:3s;}
-    .leaf:nth-child(6){left:85%; animation-delay:0.5s;}
-
-    /* ==== Back Button ==== */
+    /* ===========================
+       BACK BUTTON
+    ============================*/
     .back-btn{
-        margin:20px;
-        display:inline-block;
-        padding:10px 18px;
+        position:absolute;
+        top:20px;
+        left:20px;
         background:#046c34;
+        padding:10px 18px;
         color:#fff;
         text-decoration:none;
         border-radius:6px;
         font-weight:bold;
+        z-index:10;
         transition:0.3s;
     }
-    .back-btn:hover{background:#009a4f;}
+    .back-btn:hover{background:#00984a;}
 
-    /* ==== Header ==== */
+    /* ===========================
+       HEADER SECTION
+    ============================*/
     .header{
         text-align:center;
-        padding:40px 20px;
+        padding:60px 20px 20px;
         position:relative;
         z-index:2;
     }
     .header img{
-        width:140px;
-        margin-bottom:16px;
+        width:150px;
+        margin-bottom:10px;
     }
     .header h1{
         font-family:"Righteous", cursive;
         font-size:42px;
+        margin-bottom:6px;
         color:#046c34;
-        margin-bottom:10px;
     }
-    .header p{
-        font-size:18px;
-        max-width:720px;
-        margin:auto;
-        line-height:1.7;
+    .tagline{
+        font-size:15px;
+        margin-bottom:16px;
+        opacity:0.8;
+        font-style:italic;
     }
 
-    /* ==== Section Shared ==== */
-    .section{
-        max-width:1000px;
-        margin:60px auto;
+    /* ===========================
+       MAIN LAYOUT GRID
+    ============================*/
+    .main-layout{
+        max-width:1300px;
+        margin:40px auto;
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap:30px;
         padding:0 20px;
         position:relative;
         z-index:2;
     }
-    .section h2{
+
+    /* ===========================
+       SIDE ICON BLOCKS
+    ============================*/
+    .side-box{
+        display:flex;
+        flex-direction:column;
+        gap:26px;
+    }
+    .icon-card{
+        background:#fff;
+        padding:20px;
+        border-radius:14px;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+        transition:0.3s;
+    }
+    .icon-card:hover{
+        transform:translateY(-6px);
+        box-shadow:0 14px 30px rgba(0,0,0,0.14);
+    }
+    .icon{
+        font-size:48px;
+        margin-bottom:8px;
+    }
+    .icon-card p{
+        font-size:14px;
+        color:#074020;
+    }
+
+    /* ===========================
+       CENTER CONTENT
+    ============================*/
+    .content-block{
+        background:#ffffff;
+        padding:30px;
+        border-radius:16px;
+        box-shadow:0 10px 28px rgba(0,0,0,0.1);
+    }
+    .content-block h2{
         font-family:"Righteous", cursive;
-        font-size:32px;
+        font-size:28px;
         color:#046c34;
-        margin-bottom:16px;
+        margin-bottom:12px;
         border-left:5px solid #046c34;
         padding-left:10px;
     }
-    .section p{
-        font-size:17px;
+    .content-block p{
+        font-size:16px;
         line-height:1.8;
-        color:#06401c;
+        margin-bottom:20px;
         text-align:justify;
     }
 
-    /* ==== Focus Area Grid ==== */
-    .focus-grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:28px;
+    .sub-block{
         margin-top:30px;
     }
-    .focus-card{
-        background:#ffffff;
-        border-radius:14px;
-        padding:25px;
-        box-shadow:0 6px 20px rgba(0,0,0,0.08);
-        text-align:center;
-        transition:0.3s;
-    }
-    .focus-card:hover{
-        transform:translateY(-6px);
-        box-shadow:0 12px 30px rgba(0,0,0,0.12);
-    }
-    .focus-icon{
-        font-size:42px;
-        margin-bottom:12px;
-        color:#0c873a;
-    }
-    .focus-card h3{
-        font-family:"Righteous", cursive;
-        color:#046c34;
-        margin-bottom:10px;
-    }
-    .focus-card p{
-        font-size:15px;
-        color:#06401c;
-    }
 
-    /* ==== Footer ==== */
-    footer{
-        text-align:center;
-        padding:30px;
-        color:#06401c;
-        font-size:14px;
-    }
-
-    @media(max-width:768px){
-        .header img{width:110px;}
-        .header h1{font-size:32px;}
-        .section h2{font-size:26px;}
+    /* ===========================
+       MOBILE RESPONSIVE
+    ============================*/
+    @media(max-width:900px){
+        .main-layout{
+            grid-template-columns:1fr;
+        }
+        .side-box{
+            flex-direction:row;
+            overflow-x:auto;
+            padding-bottom:10px;
+        }
+        .icon-card{
+            min-width:180px;
+        }
     }
 </style>
 </head>
 
 <body>
 
-<!-- Falling Leaves -->
-<img src="leaf.png" class="leaf">
-<img src="leaf.png" class="leaf">
-<img src="leaf.png" class="leaf">
-<img src="leaf.png" class="leaf">
-<img src="leaf.png" class="leaf">
-<img src="leaf.png" class="leaf">
+<!-- Falling leaves -->
+<img src="images/leaf.png" class="leaf">
+<img src="images/leaf.png" class="leaf">
+<img src="images/leaf.png" class="leaf">
+<img src="images/leaf.png" class="leaf">
+<img src="images/leaf.png" class="leaf">
+<img src="images/leaf.png" class="leaf">
 
-<a href="main.html" class="back-btn">← Back to Main Site</a>
+<a href="main.html" class="back-btn">← Back</a>
 
-<!-- ==== HEADER ==== -->
+<!-- HEADER -->
 <div class="header">
     <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo">
     <h1>YOUbiquity</h1>
-    <p>
-        YOUbiquity is the social & environmental responsibility wing of YOUniverse.  
-        We work across Bangladesh to promote awareness, empowerment, sustainability  
-        and active citizenship through multimedia activism, physical campaigns, and  
-        community-based development programs.
-    </p>
+    <div class="tagline">Social • Environmental • Community Empowerment</div>
 </div>
 
-<!-- ==== ABOUT ==== -->
-<div class="section">
-    <h2>About Us</h2>
-    <p>
-        YOUbiquity drives social and environmental change with a unique blend of  
-        **visual storytelling**, **community engagement**, and **grassroots activism**.  
-        Our philosophy is simple: *real change begins when ordinary people  
-        become aware, empowered, and connected to purpose*.
-        <br><br>
-        We operate through field activities, educational campaigns, art-based activism,  
-        documentary-driven awareness, and youth engagement programs.  
-        Our aim is to build a Bangladesh where informed, empowered communities  
-        take the lead in positive transformation.
-    </p>
-</div>
+<!-- MAIN GRID -->
+<div class="main-layout">
 
-<!-- ==== FOCUS AREAS ==== -->
-<div class="section">
-    <h2>Our Focus Areas</h2>
+    <!-- LEFT SIDE ICONS -->
+    <div class="side-box">
 
-    <div class="focus-grid">
+        <div class="icon-card">
+            <div class="icon">🎭</div>
+            <h4>Theatre Activism</h4>
+            <p>Street drama & storytelling to raise awareness.</p>
+        </div>
 
-        <div class="focus-card">
-            <div class="focus-icon">🎭</div>
-            <h3>Theatre for Activism</h3>
+        <div class="icon-card">
+            <div class="icon">🚫</div>
+            <h4>Child Marriage</h4>
+            <p>Community outreach to prevent early marriages.</p>
+        </div>
+
+        <div class="icon-card">
+            <div class="icon">📚</div>
+            <h4>Reading Movement</h4>
+            <p>Village-based book clubs & mobile libraries.</p>
+        </div>
+
+    </div>
+
+    <!-- CENTER MAIN CONTENT -->
+    <div class="content-block">
+
+        <h2>About YOUbiquity</h2>
+        <p>
+            YOUbiquity is the Social & Environmental Responsibility wing of YOUniverse —  
+            working across Bangladesh through artistic activism, education, climate action,  
+            and community development.  
+            Our philosophy is simple: **change grows when awareness, creativity, and community stand together**.
+        </p>
+
+        <div class="sub-block">
+            <h2>Focus Areas</h2>
             <p>
-                Using street theatre, community drama and storytelling  
-                to raise awareness on social justice, equality and human rights.
+                We work across multiple humanitarian and environmental domains including  
+                **art-based activism, youth empowerment, environmental conservation,  
+                public health awareness, and gender equality initiatives**.
             </p>
         </div>
 
-        <div class="focus-card">
-            <div class="focus-icon">📢</div>
-            <h3>Campaign-Based Activism</h3>
+        <div class="sub-block">
+            <h2>Our Goals</h2>
             <p>
-                Organizing youth-led campaigns across districts to spark  
-                conversations on gender, education, climate change, and public health.
+                • Build a national youth network for social justice  
+                • Promote sustainable environment practices  
+                • Reduce harmful social norms through campaigns  
+                • Support rights-based awareness in rural communities  
+                • Encourage reading & creative learning across Bangladesh  
             </p>
         </div>
 
-        <div class="focus-card">
-            <div class="focus-icon">🚫</div>
-            <h3>Preventing Child Marriage</h3>
+        <div class="sub-block">
+            <h2>Running Activities</h2>
             <p>
-                Community mobilization, school-based awareness,  
-                and parents’ counseling to reduce early marriages.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <div class="focus-icon">🌱</div>
-            <h3>Tree Plantation & Climate Action</h3>
-            <p>
-                Environmental restoration through tree plantation,  
-                river conservation awareness and green activism.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <div class="focus-icon">📚</div>
-            <h3>Reading Movement</h3>
-            <p>
-                Encouraging young people to read more books through  
-                book-sharing events, mobile libraries and reading circles.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <div class="focus-icon">🧹</div>
-            <h3>Cleanliness Drives</h3>
-            <p>
-                Community-led effort to keep villages, towns  
-                and public spaces clean and hygienic.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <div class="focus-icon">🤝</div>
-            <h3>Youth Leadership & Volunteering</h3>
-            <p>
-                Training youth activists to lead campaigns,  
-                conduct fieldwork and support community development.
-            </p>
-        </div>
-
-        <div class="focus-card">
-            <div class="focus-icon">🎥</div>
-            <h3>Visual Activism</h3>
-            <p>
-                Creating documentaries, awareness films, and social media content  
-                to support activism and community education.
+                • Street theatre on women’s rights & climate change  
+                • Tree plantation & river-cleaning activities  
+                • Book-sharing gatherings & storytelling circles  
+                • Schools-based awareness on child marriage  
+                • Cleanliness drives in rural and urban communities  
+                • Social documentary production for awareness  
             </p>
         </div>
 
     </div>
+
+    <!-- RIGHT SIDE ICONS -->
+    <div class="side-box">
+
+        <div class="icon-card">
+            <div class="icon">🌱</div>
+            <h4>Tree Plantation</h4>
+            <p>Green Bangladesh through active plantation drives.</p>
+        </div>
+
+        <div class="icon-card">
+            <div class="icon">🧹</div>
+            <h4>Cleanliness Drive</h4>
+            <p>Public space & school-based cleaning movements.</p>
+        </div>
+
+        <div class="icon-card">
+            <div class="icon">🎥</div>
+            <h4>Visual Activism</h4>
+            <p>Documentaries & awareness media content.</p>
+        </div>
+
+    </div>
+
 </div>
 
-<!-- ==== FOOTER ==== -->
-<footer>
-    © 2025 YOUbiquity — Social & Environmental Responsibility Initiative by YOUniverse
-</footer>
 
 </body>
 </html>
