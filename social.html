@@ -1,259 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>YOUbiquity — Social & Environmental Responsibility</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>YOUbiquity — Social Responsibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Merriweather',serif;
-      background:#e9f7ef;
-      color:#0f2f20;
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Merriweather', serif;
+      background: linear-gradient(#e6f4ed, #f3faf6);
       overflow-x:hidden;
       position:relative;
+      color:#0e3827;
     }
 
-    /* ===== LEAF RAIN ANIMATION ===== */
-    .leaf{
-      position:fixed;
-      top:-10%;
-      width:22px;
-      height:22px;
-      background:rgba(34,139,34,0.55);
-      border-radius:4px;
-      filter:blur(0.4px);
-      animation:fall linear infinite;
-      z-index:0;
-    }
-    @keyframes fall{
-      0%{transform:translateY(0) rotate(0deg);}
-      100%{transform:translateY(140vh) rotate(120deg);}
+    /* ===========================================
+       SLOW FALLING LEAF ANIMATION (CENTURY LEAF)
+       =========================================== */
+    .leaf {
+      position: fixed;
+      top: -10vh;
+      width: 26px;
+      height: 26px;
+      background: rgba(72, 135, 80, 0.55);
+      border-radius: 4px;
+      filter: blur(0.4px);
+      animation: leafFall linear infinite;
+      z-index: 0;
+      transform-origin: center;
+      opacity: 0.8;
     }
 
-    /* ===== HEADER ===== */
-    header{
+    @keyframes leafFall {
+      0% {transform: translateY(0) rotate(0deg);}
+      50% {transform: translateY(50vh) rotate(25deg);}
+      100% {transform: translateY(100vh) rotate(-20deg);}
+    }
+
+    /* Generate multiple leaves */
+    @media (min-width:300px){
+      :root { --leaf-count: 22; }
+    }
+
+    /* ===========================================
+                  HEADER SECTION
+       =========================================== */
+    header {
       text-align:center;
       padding:40px 20px 10px;
       position:relative;
       z-index:10;
     }
-    header img{
-      height:80px;
-      margin-bottom:10px;
+    header img {
+      height:85px;
+      margin-bottom:8px;
     }
-    header h1{
-      font-family:'Righteous',cursive;
-      color:#145a32;
-      font-size:38px;
+    header h1 {
+      font-family: 'Righteous', cursive;
+      font-size:40px;
+      color:#1d5c3a;
+      letter-spacing:1px;
     }
-    header p{
+    header p {
       font-size:18px;
-      color:#226644;
+      color:#2d6a47;
     }
 
-    /* ===== MAIN LAYOUT (Three column) ===== */
-    .container{
+    /* ===========================================
+              3-COLUMN MAIN LAYOUT
+       =========================================== */
+    .container {
       max-width:1150px;
       margin:0 auto;
       display:flex;
-      gap:26px;
-      padding:20px;
+      gap:28px;
+      padding:25px;
       position:relative;
       z-index:5;
     }
 
-    .side-panel{
+    .side-panel {
       width:25%;
       display:flex;
       flex-direction:column;
       gap:26px;
     }
 
-    .side-card{
-      padding:18px;
-      border-radius:14px;
+    /* ===========================================
+                  THEME CARDS
+       =========================================== */
+    .side-card {
+      padding:24px;
+      border-radius:18px;
       color:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,0.1);
-      transition:transform .3s;
+      backdrop-filter: blur(8px);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      box-shadow:0 14px 28px rgba(0,0,0,0.15);
+      transition:transform .28s, box-shadow .28s;
+    }
+    .side-card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 20px 36px rgba(0,0,0,0.20);
+    }
+    .side-card h3 {
+      font-family:'Righteous', cursive;
+      margin-bottom:6px;
+      font-size:20px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .side-card p {
       line-height:1.6;
-    }
-    .side-card:hover{
-      transform:translateY(-6px);
-    }
-    .side-card h3{
-      font-family:'Righteous',cursive;
-      margin-bottom:10px;
-      font-size:18px;
+      font-size:15px;
     }
 
-    /* THEMATIC COLORS */
-    .theatre{background:linear-gradient(135deg,#ffce9e,#ff9e57);}
-    .campaign{background:linear-gradient(135deg,#ffb3c6,#ff5f7e);}
-    .women{background:linear-gradient(135deg,#ffe8a3,#f5c359);}
-    .tree{background:linear-gradient(135deg,#7dd67d,#3c8c3c);}
-    .reading{background:linear-gradient(135deg,#b7daff,#6aa8ff);}
-    .clean{background:linear-gradient(135deg,#d3efff,#8acbff);}
+    /* BIG-icons */
+    .side-card i {
+      font-size:34px;
+    }
 
-    /* ===== MIDDLE CONTENT ===== */
-    .main-content{
+    /* Color themes */
+    .theatre {background:linear-gradient(145deg,#ffb17a,#ff8a4c);}
+    .campaign {background:linear-gradient(145deg,#ff89a5,#ff5270);}
+    .women {background:linear-gradient(145deg,#ffd87a,#f7b342);}
+    .tree {background:linear-gradient(145deg,#67cb74,#2f7f3c);}
+    .reading {background:linear-gradient(145deg,#8fc7ff,#4a9aff);}
+    .clean {background:linear-gradient(145deg,#b7e9ff,#79c6ff);}
+
+    /* ===========================================
+                  MIDDLE MAIN CONTENT
+       =========================================== */
+    .main-content {
       width:50%;
-      padding:26px;
-      background:#ffffffcc;
-      border-radius:14px;
-      backdrop-filter:blur(6px);
-      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+      padding:32px;
+      background:#ffffffd9;
+      border-radius:16px;
+      backdrop-filter: blur(8px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
     }
-    .main-content h2{
+    .main-content h2 {
+      font-family:'Righteous', cursive;
+      color:#125a38;
       text-align:center;
-      font-family:'Righteous',cursive;
-      color:#145a32;
       margin-bottom:20px;
+      font-size:28px;
     }
-    .main-content p{
-      line-height:1.8;
-      margin-bottom:16px;
-      color:#333;
+    .main-content p {
+      margin-bottom:18px;
+      line-height:1.75;
+      font-size:16px;
     }
-    .main-content ul{
-      margin-left:18px;
+    .main-content ul {
+      margin-left:20px;
       line-height:1.7;
     }
 
-    /* ===== BACK BUTTON ===== */
-    .back-btn{
+    /* ===========================================
+                    BACK BUTTON
+       =========================================== */
+    .back-btn {
       display:block;
       text-align:center;
-      margin:40px auto 20px;
+      margin:45px auto 20px;
       background:#145a32;
       color:#fff;
-      padding:12px 26px;
-      text-decoration:none;
+      padding:12px 28px;
       border-radius:30px;
-      transition:.3s;
+      text-decoration:none;
+      transition:background .3s;
       width:max-content;
-      z-index:10;
-      position:relative;
+      font-weight:600;
     }
-    .back-btn:hover{
-      background:#1f7a42;
+    .back-btn:hover {
+      background:#1e7a45;
     }
 
-    /* ===== MOBILE RESPONSIVE ===== */
+    /* ===========================================
+                    RESPONSIVE
+       =========================================== */
     @media(max-width:980px){
-      .container{
-        flex-direction:column;
-        padding:16px;
-      }
-      .side-panel,
-      .main-content{
-        width:100%;
-      }
+      .container{flex-direction:column;}
+      .side-panel, .main-content {width:100%;}
+      header img {height:70px;}
     }
   </style>
 </head>
 <body>
 
-<!-- ===== LEAF RAIN GENERATOR ===== -->
+<!-- GENERATE LEAVES -->
 <script>
-function createLeaf(){
-  const leaf = document.createElement("div");
+for(let i=0;i<22;i++){
+  let leaf=document.createElement("div");
   leaf.classList.add("leaf");
-
-  leaf.style.left = Math.random()*100 + "vw";
-  leaf.style.opacity = Math.random();
-  leaf.style.transform = `rotate(${Math.random()*360}deg)`;
-
-  leaf.style.animationDuration = (6 + Math.random()*7) + "s";
-
+  leaf.style.left=Math.random()*100+"vw";
+  leaf.style.animationDuration=(10+Math.random()*10)+"s";
+  leaf.style.opacity=Math.random()*0.7+0.3;
+  leaf.style.transform=`rotate(${Math.random()*40}deg)`;
   document.body.appendChild(leaf);
-
-  setTimeout(()=>leaf.remove(),12000);
 }
-
-setInterval(createLeaf, 300);
 </script>
 
-
 <header>
-  <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo">
+  <img src="youbiquity_logo.png" alt="YOUbiquity Logo" />
   <h1>YOUbiquity</h1>
-  <p>Social & Environmental Responsibility Initiative by YOUniverse</p>
+  <p>Social • Environmental • Community Development</p>
 </header>
 
-
-<!-- ===== MAIN 3-COLUMN SECTIONS ===== -->
 <div class="container">
 
-  <!-- LEFT PANEL -->
+  <!-- LEFT SIDE PANEL -->
   <div class="side-panel">
 
     <div class="side-card theatre">
-      <h3>🎭 Theatre for Change</h3>
-      <p>Nationwide theatre activism on rights, environment, freedom & equality. Theatre is our strongest communication tool.</p>
+      <h3><i>🎭</i> Theatre for Change</h3>
+      <p>Nationwide stage activism focusing on rights, gender, identity, and social justice.</p>
     </div>
 
     <div class="side-card campaign">
-      <h3>📣 Creative Campaigns</h3>
-      <p>Field & digital campaigns on women’s safety, environment, education and public awareness.</p>
+      <h3><i>📣</i> Creative Campaigns</h3>
+      <p>Mass awareness through visual storytelling, public events, research and outreach.</p>
     </div>
 
     <div class="side-card women">
-      <h3>♀ Women Empowerment</h3>
-      <p>Training, leadership development, confidence-building and community awareness on women’s rights.</p>
+      <h3><i>♀</i> Women Empowerment</h3>
+      <p>Skills, leadership, workshops & support system for adolescent and adult women.</p>
     </div>
 
   </div>
 
-
-  <!-- MIDDLE PANEL -->
+  <!-- MIDDLE SECTION -->
   <div class="main-content">
     <h2>About YOUbiquity</h2>
+    <p><strong>YOUbiquity</strong> is the Social Impact Wing of <strong>YOUniverse</strong>.  
+    We work to create meaningful change through activism, creativity and community-driven development.</p>
 
-    <p><strong>YOUbiquity</strong> is the social & environmental wing of <strong>YOUniverse</strong>.  
-    We empower communities through activism, creativity, education and sustainable development.</p>
+    <p>Our multi-disciplinary team collaborates with youth, communities and institutions to make sustainable social impact.</p>
 
-    <p>Our purpose is simple:  
-    <strong>Create awareness → Inspire action → Build better communities.</strong></p>
-
-    <h2>Our Focus Areas</h2>
-
+    <h2>Focus Areas</h2>
     <ul>
-      <li>Theatre for Social Change</li>
-      <li>Child Marriage Prevention</li>
-      <li>Women Leadership & Safety</li>
-      <li>Environmental Awareness</li>
-      <li>Tree Plantation & Climate Action</li>
-      <li>Reading Movement & Youth Development</li>
-      <li>Clean Environment & Waste Management</li>
+      <li>Theatre-based social activism</li>
+      <li>Child marriage prevention</li>
+      <li>Women leadership development</li>
+      <li>Tree plantation & climate awareness</li>
+      <li>Clean environment programs</li>
+      <li>Reading movement for youth</li>
+      <li>Human rights education</li>
     </ul>
-
-    <p>We believe activism becomes stronger when combined with creativity and community participation.</p>
   </div>
-
 
   <!-- RIGHT PANEL -->
   <div class="side-panel">
 
     <div class="side-card tree">
-      <h3>🌳 Tree Plantation</h3>
-      <p>Plantation drives, youth eco-volunteer network & climate resilience programs nationwide.</p>
+      <h3><i>🌳</i> Tree Plantation</h3>
+      <p>Eco initiatives, youth green clubs & community-based earth stewardship drives.</p>
     </div>
 
     <div class="side-card reading">
-      <h3>📚 Reading Movement</h3>
-      <p>Travelling libraries, reading camps and youth-led literacy motivation.</p>
+      <h3><i>📚</i> Reading Movement</h3>
+      <p>Mobile libraries, community reading circles, book donation programs.</p>
     </div>
 
     <div class="side-card clean">
-      <h3>🧹 Clean Environment</h3>
-      <p>Clean-up actions, anti-plastic awareness and waste segregation campaigns.</p>
+      <h3><i>🧹</i> Clean Environment</h3>
+      <p>Plastic-free campaigns, waste management & urban cleanliness activation.</p>
     </div>
 
   </div>
-
 </div>
-
 
 <a href="main.html" class="back-btn">← Back to Home</a>
 
