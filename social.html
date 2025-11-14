@@ -34,7 +34,6 @@
     }
     .back-btn:hover { background: #088f4f; }
 
-    /* Center Wrapper */
     .wrapper {
         max-width: 1100px;
         margin: 100px auto 0;
@@ -42,7 +41,6 @@
         text-align: center;
     }
 
-    /* Logo */
     .logo {
         width: 160px;
         margin: 0 auto 10px;
@@ -53,7 +51,6 @@
         color: #066333;
     }
 
-    /* Section Titles */
     h2 {
         font-size: 32px;
         margin: 20px 0 10px;
@@ -63,17 +60,30 @@
 
     p { line-height: 1.7; margin-bottom: 18px; }
 
+    /* Content Boxes */
     .content-box {
-        background: #ffffffd9;
+        background: #ffffffd0;
         padding: 25px;
         margin: 30px 0;
         border-radius: 14px;
         box-shadow: 0 4px 18px rgba(0,0,0,0.08);
         backdrop-filter: blur(4px);
         text-align: left;
+        position: relative;
     }
 
-    /* Side Icons Layout */
+    .section-icon {
+        position: absolute;
+        top: -18px;
+        left: -18px;
+        background: #ffffffdd;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 26px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Side Icons */
     .side-icons-left,
     .side-icons-right {
         position: fixed;
@@ -101,7 +111,7 @@
     }
 
     .icon {
-        font-size: 42px;
+        font-size: 46px;
         margin-bottom: 6px;
     }
 
@@ -118,15 +128,32 @@
         line-height: 1.4;
     }
 
+    /* Mobile version – show icons (grid below) */
+    @media(max-width: 900px){
+        .side-icons-left,
+        .side-icons-right{ display:none; }
+
+        .mobile-activism {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+            gap:18px;
+            margin-top:25px;
+        }
+
+        .icon-box{
+            width:100%;
+        }
+    }
+
     /* Falling Leaves */
     .leaf {
         position: fixed;
         top: -20px;
-        width: 28px;
-        height: 28px;
-        background: radial-gradient(circle, #9acd32, #4caf50);
+        width: 24px;
+        height: 24px;
+        background: radial-gradient(circle, #a8e063, #56ab2f);
         border-radius: 50%;
-        opacity: 0.8;
+        opacity: 0.35;
         animation: fall linear infinite;
         z-index: 0;
     }
@@ -136,86 +163,98 @@
         100% { transform: translateY(120vh) rotate(360deg); }
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-        .side-icons-left,
-        .side-icons-right { display: none; }
-        
-        .wrapper { margin-top: 40px; }
+    /* Coordinator Section */
+    .coord-box {
+        margin: 40px 0;
+        padding: 30px;
+        background:#ffffffd0;
+        border-radius:16px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.08);
     }
+
+    .coord-box h3{
+        text-align:center;
+        font-size:26px;
+        margin-bottom:12px;
+        color:#065c32;
+    }
+
+    .coord-box p{
+        font-size:17px;
+        text-align:center;
+        line-height:1.8;
+        max-width:800px;
+        margin:0 auto;
+    }
+
 </style>
 </head>
 
 <body>
 
-<!-- Back Button -->
 <a href="index.html" class="back-btn">← Back</a>
 
-<!-- LEFT ICONS -->
+
+<!-- SIDE ICONS (DESKTOP) -->
 <div class="side-icons-left">
     <div class="icon-box">
         <div class="icon">🎭</div>
         <div class="icon-title">Theatre Activism</div>
-        <div class="icon-text">কমিউনিটি থিয়েটারের মাধ্যমে সচেতনতা ছড়িয়ে দেওয়া।</div>
+        <div class="icon-text">কমিউনিটি থিয়েটারের মাধ্যমে সচেতনতা।</div>
     </div>
 
     <div class="icon-box">
         <div class="icon">📚</div>
         <div class="icon-title">Reading Movement</div>
-        <div class="icon-text">বই পড়া আন্দোলনের মাধ্যমে জ্ঞান চর্চা বৃদ্ধি।</div>
+        <div class="icon-text">বই পড়া আন্দোলন সম্প্রসারণ।</div>
     </div>
 
     <div class="icon-box">
         <div class="icon">🌱</div>
         <div class="icon-title">Tree Plantation</div>
-        <div class="icon-text">সবুজ বাংলাদেশ গড়তে বৃক্ষরোপণ কার্যক্রম।</div>
+        <div class="icon-text">পরিবেশ সুরক্ষায় বৃক্ষরোপণ।</div>
     </div>
 </div>
 
-<!-- RIGHT ICONS -->
 <div class="side-icons-right">
     <div class="icon-box">
         <div class="icon">🚺</div>
         <div class="icon-title">Women Empowerment</div>
-        <div class="icon-text">নারীর উন্নয়ন, নিরাপত্তা ও সমঅধিকার নিয়ে কাজ।</div>
+        <div class="icon-text">নারী অধিকার ও নিরাপত্তা।</div>
     </div>
 
     <div class="icon-box">
         <div class="icon">🧹</div>
-        <div class="icon-title">Cleanliness Drive</div>
-        <div class="icon-text">পরিবেশ পরিচ্ছন্ন রাখতে সচেতনতা বৃদ্ধি।</div>
+        <div class="icon-title">Cleanliness Drives</div>
+        <div class="icon-text">পরিচ্ছন্নতা সচেতনতা বৃদ্ধি।</div>
     </div>
 
     <div class="icon-box">
         <div class="icon">📢</div>
         <div class="icon-title">Campaign Activism</div>
-        <div class="icon-text">সামাজিক পরিবর্তনে বিভিন্ন ক্যাম্পেইন।</div>
+        <div class="icon-text">সামাজিক পরিবর্তনে ক্যাম্পেইন।</div>
     </div>
 </div>
 
 
-<!-- MAIN CENTER CONTENT -->
+<!-- MAIN CONTENT -->
 <div class="wrapper">
 
-    <img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo">
-
+    <img src="images/YOUbiquity_logo.png" class="logo">
     <div class="tagline">“Together for Social & Environmental Change”</div>
 
-    <!-- ABOUT -->
+    <!-- About -->
     <div class="content-box">
+        <div class="section-icon">🌍</div>
         <h2>About YOUbiquity</h2>
         <p>
-            <strong>YOUbiquity</strong> হলো YOUniverse-এর সামাজিক ও পরিবেশবান্ধব কার্যক্রমের
-            একটি নিবেদিত প্ল্যাটফর্ম। আমরা বিশ্বাস করি—সচেতনতা, শিক্ষা, শিল্প, এক্টিভিজম
-            এবং পরিবেশ সুরক্ষা মিলেই তৈরি হয় একটি উন্নত সমাজ।  
-        </p>
-        <p>
-            আমাদের কাজ শুধুমাত্র ভিজ্যুয়াল অ্যাক্টিভিজম নয়—বরং মাঠ পর্যায়ের মানুষের
-            কাছে পৌঁছানো, পরিবর্তনের পথে কাজ করা এবং টেকসই ভবিষ্যৎ গড়ে তোলা।
+            YOUbiquity হলো YOUniverse-এর সামাজিক ও পরিবেশ বিষয়ক কার্যক্রমের
+            একটি নিবেদিত শাখা। আমাদের লক্ষ্য হলো শিল্প, শিক্ষা, অ্যাক্টিভিজম এবং
+            পরিবেশবান্ধব কার্যক্রমের মাধ্যমে টেকসই সামাজিক পরিবর্তন ঘটানো।
         </p>
     </div>
 
-    <!-- FOCUS AREA -->
+    <!-- Focus Area -->
     <div class="content-box">
         <h2>Our Focus Area</h2>
         <p>YOUbiquity মূলত চার ধরনের কাজকে অগ্রাধিকার দেয়:</p>
@@ -227,8 +266,9 @@
         </ul>
     </div>
 
-    <!-- GOALS -->
+    <!-- Goals -->
     <div class="content-box">
+        <div class="section-icon">🚀</div>
         <h2>Our Goals</h2>
         <ul>
             <li>যুব সমাজকে এক্টিভিজমে যুক্ত করে সমাজ পরিবর্তনে ভূমিকা রাখা।</li>
@@ -238,28 +278,39 @@
         </ul>
     </div>
 
-    <!-- RUNNING ACTIVITIES -->
+    <!-- Running Activities -->
     <div class="content-box">
+        <div class="section-icon">🔥</div>
         <h2>Running Activities</h2>
         <ul>
             <li>কমিউনিটি থিয়েটার ও স্ট্রিট ড্রামা।</li>
-            <li>স্কুল–কলেজে বই পড়া প্রচার কার্যক্রম।</li>
+            <li>পাড়া-মহল্লায় বই পড়া প্রচার কার্যক্রম।</li>
             <li>মাসিক পরিচ্ছন্নতা ক্যাম্পেইন (Clean Bangladesh)।</li>
             <li>নিরাপদ যাতায়াত ও নারী অধিকার বিষয়ে ক্যাম্পেইন।</li>
             <li>মাসব্যাপী বৃক্ষরোপণ ও পরিবেশ সচেতনতা কার্যক্রম।</li>
         </ul>
     </div>
 
+    <!-- Coordinator Message -->
+    <div class="coord-box">
+        <h3>Message from the Coordinator</h3>
+        <p>
+            “YOUbiquity বিশ্বাস করে—সামাজিক পরিবর্তন শুরু হয় ছোট উদ্যোগ থেকে।  
+            আমরা শুধু ভিজ্যুয়াল স্টোরিটেলিং করি না, বরং মানুষের পাশে দাঁড়াই,  
+            কথা বলি, কাজ করি এবং পরিবর্তনের পথ তৈরি করি।”  
+        </p>
+    </div>
+
 </div>
 
-<!-- Falling Leaves (Generated Automatically) -->
+<!-- Falling Leaves -->
 <script>
 for(let i=0; i<20; i++){
     let leaf = document.createElement("div");
     leaf.classList.add("leaf");
-    leaf.style.left = Math.random() * 100 + "vw";
-    leaf.style.animationDuration = (6 + Math.random()*6) + "s";
-    leaf.style.opacity = (0.5 + Math.random()*0.5);
+    leaf.style.left = Math.random()*100 + "vw";
+    leaf.style.animationDuration = (12 + Math.random()*8) + "s"; 
+    leaf.style.opacity = 0.25 + Math.random()*0.25;
     document.body.appendChild(leaf);
 }
 </script>
