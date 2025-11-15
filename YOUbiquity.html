@@ -4,142 +4,155 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>YOUbiquity — Social & Environmental Responsibility</title>
+<meta name="description" content="YOUbiquity (YOUniverse) - Theatre activism, reading movement, tree plantation, women empowerment, clean drives, campaign activism across Bangladesh.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
-  :root{
-    --accent:#0a6f3c;
-    --accent-2:#0b8a4b;
-    --muted:#1a3f2a;
-    --card:#ffffffee;
-    --bg-top:#eef7ee;
-    --bg-bottom:#e6f5e8;
-    --max-width:1250px;
-    --sidebar-w:240px;
-    --side-gap:48px;
-    --body-text:#163b2a;
-    --soft-shadow:0 12px 30px rgba(6,50,20,0.06);
-    --radius:14px;
-  }
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:"Inter","Merriweather","Noto Sans Bengali",sans-serif;
-    background: linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
-    color:var(--body-text);
-    overflow-x:hidden;
-    line-height:1.65;
-  }
+:root{
+  --accent:#0a6f3c;
+  --accent-2:#0b8a4b;
+  --muted:#1a3f2a;
+  --card:#ffffffee;
+  --bg-top:#ecf8ee;
+  --bg-bottom:#e5f4e9;
+  --max-width:1250px;
+  --sidebar-w:240px;
+  --side-gap:48px;
+  --body-text:#163b2a;
+  --radius:14px;
+  --soft-shadow:0 12px 30px rgba(6,50,20,0.06);
+}
 
-  /* 🌿 NEW: subtle paired leaf background (fully CSS — no image) */
-  body::before{
-    content:"";
-    position:fixed; inset:0; z-index:0;
-    background-image:
-      radial-gradient(circle at 20% 30%, rgba(46,125,65,0.10) 0 18px, transparent 24px),
-      radial-gradient(circle at 23% 33%, rgba(46,125,65,0.12) 0 12px, transparent 18px),
-      radial-gradient(circle at 80% 70%, rgba(46,125,65,0.12) 0 20px, transparent 26px),
-      radial-gradient(circle at 77% 73%, rgba(46,125,65,0.10) 0 12px, transparent 20px);
-    background-repeat: repeat;
-    opacity:0.06;
-    pointer-events:none;
-  }
 
-  .back-btn{
-    position:fixed; left:18px; top:16px; z-index:100;
-    background:var(--accent); color:#fff; padding:10px 16px; border-radius:30px;
-    text-decoration:none; font-weight:700;
-  }
+/* GENERAL */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Inter","Noto Sans Bengali",sans-serif;
+  background:
+    url('https://i.ibb.co/ZVqmT6G/leaf-pattern-light.png') repeat,
+    linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+  background-size:500px;
+  color:var(--body-text);
+  line-height:1.65;
+  overflow-x:hidden;
+}
 
-  .page{
-    max-width:var(--max-width);
-    margin:100px auto 120px;
-    padding:0 22px;
-    z-index:5;
-    position:relative;
-  }
+/* BACK BUTTON */
+.back-btn{
+  position:fixed;left:18px;top:14px;z-index:160;
+  background:var(--accent);color:#fff;padding:10px 14px;
+  border-radius:28px;text-decoration:none;font-weight:700;
+  box-shadow:0 8px 26px rgba(4,80,35,0.12);
+}
+.back-btn:hover{background:var(--accent-2)}
 
-  @media(min-width:1000px){
-    .page{
-      padding-left:calc(var(--sidebar-w) + var(--side-gap));
-      padding-right:calc(var(--sidebar-w) + var(--side-gap));
-    }
-  }
+/* PAGE */
+.page{
+  max-width:var(--max-width);
+  margin:92px auto 100px;
+  padding:0 22px;
+  position:relative;z-index:5;
+}
+@media(min-width:1000px){
+  .page{padding-left:calc(var(--sidebar-w)+var(--side-gap));padding-right:calc(var(--sidebar-w)+var(--side-gap));}
+}
 
-  .header{text-align:center;margin-bottom:12px;}
-  .logo{width:160px;margin-bottom:8px;}
-  .tagline{font-style:italic;color:var(--muted);margin-top:4px;}
+/* HEADER */
+.header{text-align:center;margin-bottom:12px}
+.logo{width:160px;margin-bottom:8px}
+.tagline{color:var(--muted);font-size:15px;font-style:italic;margin-bottom:18px}
 
-  /* CARD */
-  .card{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:26px;
-    margin:22px 0;
-    box-shadow:var(--soft-shadow);
-    position:relative;
-  }
 
-  /* ❗ UPDATED — icon background removed */
-  .section-icon{
-    font-size:30px;
-    opacity:0.75;
-    position:absolute;
-    top:12px;
-    left:12px;
-  }
+/* CARDS */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:24px;margin:22px 0;
+  box-shadow:var(--soft-shadow);
+  position:relative;
+}
+.card h2{color:var(--accent);font-size:26px;margin-bottom:10px;font-weight:800}
 
-  .card h2{
-    color:var(--accent);
-    font-size:26px;
-    font-weight:800;
-    margin-left:40px;
-    margin-bottom:12px;
-  }
+/* ICON (white bg removed) */
+.section-icon{
+  font-size:26px;
+  position:absolute;left:6px;top:6px;
+  background:none !important;
+  box-shadow:none !important;
+}
 
-  /* SIDEBAR */
-  .sidebar{
-    position:fixed; top:120px; width:var(--sidebar-w);
-    display:flex; flex-direction:column; gap:16px; z-index:20;
-  }
-  .left{left:18px;}
-  .right{right:18px;}
 
-  .side-card{
-    background:#fff;
-    border-radius:14px;
-    padding:16px;
-    text-align:center;
-    box-shadow:var(--soft-shadow);
-    height:190px;                      /* exact equal height */
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-  }
+/* SIDE CARDS FIXED HEIGHT + FULL TEXT */
+.side-card{
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+  box-shadow:var(--soft-shadow);
+  min-height:250px; 
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:8px;
+}
+.side-card .icon{font-size:34px;margin-bottom:4px}
+.side-card .title{font-weight:800;color:#044f2a;font-size:15.5px}
+.side-card .desc{
+  font-size:14.2px;
+  line-height:1.4;
+  margin-top:6px;
+}
 
-  .side-card .icon{font-size:38px;}
-  .side-card .title{font-weight:800;margin-top:4px;color:#0a5c2e;}
-  .side-card .desc{
-    margin-top:8px;
-    font-size:14px;
-    overflow:hidden;
-    display:-webkit-box;
-    -webkit-line-clamp:4;
-    -webkit-box-orient:vertical;
-  }
+/* REMOVE text clipping */
+.side-card .desc{
+  overflow:visible !important;
+  display:block !important;
+  -webkit-line-clamp:unset !important;
+  -webkit-box-orient:unset !important;
+}
 
-  @media(max-width:920px){
-    .sidebar{display:none;}
-    .page{padding:30px 16px;}
-  }
+
+/* SIDEBARS */
+.sidebar{
+  position:fixed;top:120px;width:var(--sidebar-w);
+  z-index:140;display:flex;flex-direction:column;
+  gap:14px;padding:8px;
+}
+.left{left:18px}
+.right{right:18px}
+
+.sidebar .theatre{background:linear-gradient(135deg,#ffe7f1,#fff4f8)}
+.sidebar .reading{background:linear-gradient(135deg,#fff8e6,#fffdf1)}
+.sidebar .tree{background:linear-gradient(135deg,#e7ffef,#f2fff7)}
+.sidebar .women{background:linear-gradient(135deg,#edf5ff,#f8fbff)}
+.sidebar .clean{background:linear-gradient(135deg,#fff3ea,#fff8f3)}
+.sidebar .campaign{background:linear-gradient(135deg,#f3fff5,#f9fff9)}
+
+
+/* MOBILE */
+@media(max-width:920px){
+  .sidebar{display:none}
+  .page{padding:36px 16px;margin-top:80px}
+}
+
+.coord{
+  display:flex;gap:18px;align-items:center;
+  padding:18px;border-radius:12px;
+  background:var(--card);box-shadow:var(--soft-shadow);
+}
+.coord img{width:118px;height:118px;border-radius:50%;object-fit:cover}
+.coord h3{margin-bottom:8px;color:var(--accent)}
+.coord .name{margin-top:10px;font-weight:700}
+
 </style>
 </head>
-
 <body>
 
 <a class="back-btn" href="index.html">← Back</a>
+
 
 <!-- LEFT SIDEBAR -->
 <aside class="sidebar left">
@@ -162,12 +175,13 @@
   </div>
 </aside>
 
+
 <!-- RIGHT SIDEBAR -->
 <aside class="sidebar right">
   <div class="side-card women">
     <div class="icon">🚺</div>
     <div class="title">Women Empowerment</div>
-    <div class="desc">নারী ও কিশোরীদের জন্য নেতৃত্ব বিকাশ, জীবন দক্ষতা (life skills), নিরাপত্তা সচেতনতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধির প্রশিক্ষণ আয়োজন।</div>
+    <div class="desc">নারী ও কিশোরীদের জন্য নেতৃত্ব বিকাশ, জীবন দক্ষতা, নিরাপত্তা সচেতনতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধির প্রশিক্ষণ আয়োজন।</div>
   </div>
 
   <div class="side-card clean">
@@ -183,62 +197,82 @@
   </div>
 </aside>
 
+
 <!-- MAIN -->
 <main class="page">
 
-  <header class="header">
-    <img src="images/YOUbiquity_logo.png" class="logo">
-    <div class="tagline">“Together for Social & Environmental Change”</div>
-  </header>
+<header class="header">
+  <img src="images/YOUbiquity_logo.png" class="logo">
+  <div class="tagline">“Together for Social & Environmental Change”</div>
+</header>
 
-  <!-- ABOUT -->
-  <article class="card">
-    <div class="section-icon">🌍</div>
-    <h2>About YOUbiquity</h2>
+
+<!-- ABOUT -->
+<article class="card">
+  <div class="section-icon">🌍</div>
+  <h2>About YOUbiquity</h2>
+  <p>
+    YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং।
+    আমরা শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে টেকসই
+    সামাজিক পরিবর্তন আনতে কাজ করি। স্থানীয় ভাষা ও সাংস্কৃতিক প্রেক্ষাপটে
+    আমাদের কার্যক্রম মানুষের সঙ্গে সরাসরি যুক্ত হয়ে পরিবর্তনকে স্থিতিশীল করে।
+  </p>
+</article>
+
+
+<!-- FOCUS -->
+<article class="card">
+  <div class="section-icon">🎯</div>
+  <h2>Our Focus Area</h2>
+  <ul>
+    <li>কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
+    <li>পরিবেশ সুরক্ষা ও বৃক্ষরোপণ</li>
+    <li>সামাজিক ইস্যুতে জনসচেতনতা ও ক্যাম্পেইন</li>
+    <li>নারী ও যুব নেতৃত্ব বিকাশ</li>
+  </ul>
+</article>
+
+
+<!-- GOALS -->
+<article class="card">
+  <div class="section-icon">🚀</div>
+  <h2>Our Goals</h2>
+  <ul>
+    <li>শিল্পের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনতে সহায়তা করা।</li>
+    <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও স্থানীয় নেতৃত্ব তৈরি।</li>
+    <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম বাস্তবায়ন।</li>
+    <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিত করা।</li>
+  </ul>
+</article>
+
+
+<!-- RUNNING -->
+<article class="card">
+  <div class="section-icon">🔥</div>
+  <h2>Running Activities</h2>
+  <ul>
+    <li>কমিউনিটি থিয়েটার ট্যুর ও লোকাল ওয়ার্কশপ।</li>
+    <li>কমিউনিটি লাইব্রেরি ও স্কুল ভিত্তিক রিডিং প্রোগ্রাম।</li>
+    <li>পরিচ্ছন্নতা অভিযান ও বর্জ্য বাছাই অ্যাক্টিভিটি।</li>
+    <li>বৃক্ষরোপণ ক্যাম্প ও তরুণদের জলবায়ু ট্রেনিং।</li>
+  </ul>
+</article>
+
+
+<!-- COORDINATOR -->
+<section class="card coord">
+  <img src="image_5_12.png" alt="">
+  <div>
+    <h3>Message from the Coordinator</h3>
     <p>
-      YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং।  
-      আমরা শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে  
-      টেকসই সামাজিক পরিবর্তন আনতে কাজ করি। স্থানীয় ভাষা ও সাংস্কৃতিক প্রেক্ষাপটে  
-      আমাদের কার্যক্রম মানুষের সঙ্গে সরাসরি যুক্ত হয়ে পরিবর্তনকে স্থিতিশীল করে।
+      YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে একটি চলমান
+      আন্দোলন গড়ে তোলার প্রচেষ্টা। আমরা বিশ্বাস করি সত্যিকারের পরিবর্তন আসে
+      মানুষের কণ্ঠস্বরকে সামনে এনে, তাদের অংশগ্রহণ নিশ্চিত করে আর শিল্প ও গল্পকে
+      মধ্যগতি হিসেবে ব্যবহার করলে। চলুন একসঙ্গে পথ চলি এবং টেকসই পরিবর্তন গড়ি।
     </p>
-  </article>
-
-  <!-- FOCUS -->
-  <article class="card">
-    <div class="section-icon">🎯</div>
-    <h2>Our Focus Area</h2>
-    <p>WHERE WE FOCUS:</p>
-    <ul>
-      <li>কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
-      <li>পরিবেশ সুরক্ষা ও বৃক্ষরোপণ</li>
-      <li>সামাজিক ইস্যুতে জনসচেতনতা ও ক্যাম্পেইন</li>
-      <li>নারী ও যুব নেতৃত্ব বিকাশ</li>
-    </ul>
-  </article>
-
-  <!-- GOALS -->
-  <article class="card">
-    <div class="section-icon">🚀</div>
-    <h2>Our Goals</h2>
-    <ul>
-      <li>শিল্পের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনতে সহায়তা করা।</li>
-      <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও স্থানীয় নেতৃত্ব তৈরি।</li>
-      <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম বাস্তবায়ন।</li>
-      <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিত করা।</li>
-    </ul>
-  </article>
-
-  <!-- RUNNING -->
-  <article class="card">
-    <div class="section-icon">🔥</div>
-    <h2>Running Activities</h2>
-    <ul>
-      <li>কমিউনিটি থিয়েটার ট্যুর ও লোকাল ওয়ার্কশপ।</li>
-      <li>কমিউনিটি লাইব্রেরি ও স্কুল ভিত্তিক রিডিং প্রোগ্রাম।</li>
-      <li>পরিচ্ছন্নতা অভিযান ও বর্জ্য বাছাই অ্যাক্টিভিটি।</li>
-      <li>বৃক্ষরোপণ ক্যাম্প ও তরুণদের জলবায়ু ট্রেনিং।</li>
-    </ul>
-  </article>
+    <div class="name">— Tabassum Binte Shahid</div>
+  </div>
+</section>
 
 </main>
 
