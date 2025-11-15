@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>YOUbiquity — Social & Environmental Responsibility</title>
-<meta name="description" content="YOUbiquity (YOUniverse) - Theatre activism, reading movement, tree plantation, women empowerment, clean drives, campaign activism across Bangladesh.">
-<!-- Google Font + Font Awesome for crisp icons -->
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
 <style>
   :root{
     --accent:#0a6f3c;
@@ -27,28 +27,27 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{
-    font-family: "Inter", "Merriweather", "Noto Sans Bengali", sans-serif;
+    font-family:"Inter","Merriweather","Noto Sans Bengali",sans-serif;
     background: linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
     color:var(--body-text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-x:hidden;
     line-height:1.65;
+    overflow-x:hidden;
   }
 
-  /* subtle decorative background: stylized trees & community circles */
+  /* UPDATED — background leafy pattern */
   body::before{
     content:"";
     position:fixed; inset:0; z-index:0;
     background-image:
-      radial-gradient(circle at 10% 20%, rgba(6,80,30,0.06) 0 6%, transparent 8%),
-      radial-gradient(circle at 85% 30%, rgba(9,110,46,0.04) 0 8%, transparent 12%),
-      radial-gradient(circle at 70% 85%, rgba(12,80,38,0.03) 0 8%, transparent 14%),
-      linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      url('images/leaf-pattern.png'),
+      radial-gradient(circle at 15% 25%, rgba(6,80,30,0.04) 0 6%, transparent 60%),
+      radial-gradient(circle at 85% 30%, rgba(9,110,46,0.04) 0 8%, transparent 60%);
+    background-size: 260px, auto, auto;
+    background-repeat: repeat, no-repeat, no-repeat;
     pointer-events:none;
+    opacity:0.08;
   }
 
-  /* page container */
   .back-btn{
     position:fixed; left:18px; top:14px; z-index:160;
     background:var(--accent); color:#fff; padding:10px 14px; border-radius:28px;
@@ -58,23 +57,23 @@
 
   .page{
     max-width:var(--max-width);
-    margin: 92px auto 100px;
-    padding: 0 22px;
-    position:relative;
+    margin:92px auto 100px;
+    padding:0 22px;
     z-index:5;
+    position:relative;
   }
 
-  /* set wider body area on desktop */
   @media(min-width:1000px){
-    .page{ padding-left: calc(var(--sidebar-w) + var(--side-gap)); padding-right: calc(var(--sidebar-w) + var(--side-gap)); }
+    .page{
+      padding-left:calc(var(--sidebar-w) + var(--side-gap));
+      padding-right:calc(var(--sidebar-w) + var(--side-gap));
+    }
   }
 
-  /* header */
   .header{ text-align:center; margin-bottom:12px }
-  .logo{ width:160px; display:inline-block; margin-bottom:8px; }
-  .tagline{ color:var(--muted); font-size:15px; font-style:italic; margin-bottom:18px; }
+  .logo{ width:160px; display:inline-block; margin-bottom:8px }
+  .tagline{ color:var(--muted); font-size:15px; font-style:italic; margin-bottom:18px }
 
-  /* cards */
   .card{
     background:var(--card);
     border-radius:var(--radius);
@@ -84,237 +83,158 @@
     position:relative;
     overflow:hidden;
   }
-  .card h2{ color:var(--accent); font-size:26px; margin-bottom:10px; font-weight:800 }
-  .card p, .card li{ color:var(--body-text); font-size:15.6px }
-  .card ul{ margin-left:18px; margin-top:8px }
 
+  /* UPDATED — icon background removed */
   .section-icon{
-    position:absolute; left:-14px; top:-14px;
-    background:#fff; padding:10px 12px; border-radius:12px; font-size:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    position:absolute;
+    left:0; top:0;
+    font-size:30px;
+    padding:0;
+    background:none !important;
+    box-shadow:none !important;
+    opacity:0.7;
+    transform:translate(-4px,-4px);
   }
 
-  /* Coordinator style */
-  .coord{
-    display:flex; gap:18px; align-items:center;
-    padding:18px; border-radius:12px; background:var(--card); box-shadow:var(--soft-shadow);
-  }
-  .coord img{ width:118px; height:118px; object-fit:cover; border-radius:50%; box-shadow:0 10px 26px rgba(0,0,0,0.08) }
-  .coord h3{ margin:0 0 8px; color:var(--accent); font-size:20px }
-  .coord p{ margin:0; font-size:15.6px; color:var(--body-text) }
-  .coord .name{ margin-top:10px; font-weight:700; color:#044f2a }
+  .card h2{ font-size:26px; color:var(--accent); font-weight:800; margin-bottom:12px }
 
-  /* SIDEBARS (desktop) */
+  /* Sidebar */
   .sidebar{
-    position:fixed; top:120px; width:var(--sidebar-w); z-index:140; display:flex; flex-direction:column; gap:14px; padding:8px;
-    transition:transform .25s ease;
+    position:fixed; top:120px; width:var(--sidebar-w); z-index:100;
+    display:flex; flex-direction:column; gap:16px;
   }
   .left{ left:18px }
   .right{ right:18px }
 
   .side-card{
-    background:linear-gradient(180deg, #ffffff, rgba(255,255,255,0.96));
-    border-radius:12px; padding:12px; text-align:center; box-shadow:0 10px 24px rgba(0,0,0,0.06);
-    display:flex; flex-direction:column; gap:8px; align-items:center;
-    min-height:92px;
+    background:#fff;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 10px 24px rgba(0,0,0,0.06);
+    display:flex; flex-direction:column;
+    justify-content:flex-start;
+    height:180px;              /* UPDATED → uniform height */
   }
-  .side-card .icon{ font-size:36px; }
-  .side-card .title{ font-weight:800; color:#044f2a; font-size:15.5px }
-  .side-card .desc{ font-size:13.4px; color:#165134; line-height:1.35; text-align:center }
 
-  /* colored variations for cards */
-  .side-card.theatre{ background: linear-gradient(135deg,#ffe6f0,#fff1f6); border:1px solid rgba(255,120,160,0.06) }
-  .side-card.reading{ background: linear-gradient(135deg,#fff8e6,#fffdf1); border:1px solid rgba(255,190,50,0.06) }
-  .side-card.tree{ background: linear-gradient(135deg,#e9fff0,#e6fef0); border:1px solid rgba(60,190,120,0.06) }
-  .side-card.women{ background: linear-gradient(135deg,#f0f7ff,#f6fbff); border:1px solid rgba(80,140,220,0.05) }
-  .side-card.clean{ background: linear-gradient(135deg,#fff6f0,#fff8f3); border:1px solid rgba(240,150,60,0.04) }
-  .side-card.campaign{ background: linear-gradient(135deg,#f6fff7,#f7fff9); border:1px solid rgba(80,200,120,0.04) }
-
-  /* set minimal desc to avoid scroll and keep unified height */
-  .side-card .desc{ max-height: 58px; overflow:hidden; text-overflow:ellipsis }
-
-  /* mobile grid for activism */
-  .mobile-grid{ display:none; gap:12px; margin-top:10px }
-  .mobile-grid .side-card { padding:12px }
-
-  /* soft tree silhouettes on sides (decorative) */
-  .tree-deco-left, .tree-deco-right{
-    position:fixed; top:0; width:220px; height:100vh; z-index:1; pointer-events:none; opacity:0.06;
-    background-repeat:no-repeat; background-position: center top;
+  .side-card .icon { font-size:38px }
+  .side-card .title{ font-size:16px; font-weight:800; margin-top:4px; color:#044f2a }
+  .side-card .desc{
+    font-size:13.6px;
+    margin-top:6px;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
-  .tree-deco-left{ left:0; background-image:
-    radial-gradient(circle at 30% 10%, rgba(10,100,40,0.12) 0 40px, transparent 60px),
-    radial-gradient(circle at 60% 55%, rgba(8,80,35,0.08) 0 50px, transparent 70px); }
-  .tree-deco-right{ right:0; background-image:
-    radial-gradient(circle at 70% 10%, rgba(8,90,38,0.10) 0 40px, transparent 60px),
-    radial-gradient(circle at 30% 55%, rgba(6,70,30,0.06) 0 50px, transparent 70px); }
 
-  /* leaf (very subtle) */
-  .leaf{ position:fixed; width:18px; height:18px; border-radius:50%; background: radial-gradient(circle,#c8efc1,#4fb44d); opacity:0.04; pointer-events:none; z-index:2; transform:translateY(-10vh); animation:leaf 18s linear infinite }
-  @keyframes leaf{ 0%{ transform:translateY(-10vh) rotate(0deg) } 100%{ transform:translateY(120vh) rotate(360deg) } }
-
-  /* Responsive */
   @media(max-width:920px){
     .sidebar{ display:none }
-    .tree-deco-left, .tree-deco-right { display:none }
     .page{ padding:36px 16px; margin-top:80px }
-    .mobile-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
-    .coord{ flex-direction:column; text-align:center; gap:14px }
-    .coord img{ width:120px; height:120px }
   }
 
-  /* small accessibility + focus */
-  a, button { outline-color: rgba(4,110,45,0.14) }
 </style>
 </head>
+
 <body>
 
-  <!-- subtle decorative tree silhouettes -->
-  <div class="tree-deco-left" aria-hidden="true"></div>
-  <div class="tree-deco-right" aria-hidden="true"></div>
+<a class="back-btn" href="index.html">← Back</a>
 
-  <a class="back-btn" href="index.html" aria-label="Back to Home">← Back</a>
+<!-- LEFT SIDEBAR -->
+<aside class="sidebar left">
+  <div class="side-card theatre">
+    <div class="icon">🎭</div>
+    <div class="title">Theatre Activism</div>
+    <div class="desc">নাটক, স্টোরিটেলিং ও পারফর্মেটিভ আর্টসের মাধ্যমে সচেতনতা।</div>
+  </div>
 
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar left" aria-hidden="false" role="complementary" aria-label="Activism left">
-    <div class="side-card theatre" role="group" aria-label="Theatre Activism">
-      <div class="icon">🎭</div>
-      <div class="title">Theatre Activism</div>
-      <div class="desc">নাটক, স্টোরিটেলিং ও পারফর্মেটিভ আর্টসের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি এবং কমিউনিটির অংশগ্রহণ নিশ্চিত করা।</div>
-    </div>
+  <div class="side-card reading">
+    <div class="icon">📚</div>
+    <div class="title">Reading Movement</div>
+    <div class="desc">লাইব্রেরি, রিডিং ক্লাব ও বুক-ড্রাইভ।</div>
+  </div>
 
-    <div class="side-card reading" role="group" aria-label="Reading Movement">
-      <div class="icon">📚</div>
-      <div class="title">Reading Movement</div>
-      <div class="desc">শিক্ষা ও পাঠাভ্যাস বৃদ্ধির লক্ষ্যে কমিউনিটি লাইব্রেরি, স্কুলভিত্তিক রিডিং ক্লাব ও বুক-ড্রাইভ আয়োজন করে শিশু ও তরুণদের পড়ার অভ্যাসকে উৎসাহিত করা।</div>
-    </div>
+  <div class="side-card tree">
+    <div class="icon">🌱</div>
+    <div class="title">Tree Plantation</div>
+    <div class="desc">বৃক্ষরোপণ, পরিচর্যা ও জলবায়ু সচেতনতা।</div>
+  </div>
+</aside>
 
-    <div class="side-card tree" role="group" aria-label="Tree Plantation">
-      <div class="icon">🌱</div>
-      <div class="title">Tree Plantation</div>
-      <div class="desc">পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্পেইন, গাছের পরিচর্যা, যুব জলবায়ু দল গঠন এবং টেকসই পরিবেশগত আচরণ গড়ে তোলার উদ্যোগ।</div>
-    </div>
-  </aside>
+<!-- RIGHT SIDEBAR -->
+<aside class="sidebar right">
+  <div class="side-card women">
+    <div class="icon">🚺</div>
+    <div class="title">Women Empowerment</div>
+    <div class="desc">নারী নেতৃত্ব, নিরাপত্তা ও জীবনদক্ষতা।</div>
+  </div>
 
-  <!-- RIGHT SIDEBAR -->
-  <aside class="sidebar right" aria-hidden="false" role="complementary" aria-label="Activism right">
-    <div class="side-card women" role="group" aria-label="Women Empowerment">
-      <div class="icon">🚺</div>
-      <div class="title">Women Empowerment</div>
-      <div class="desc">নারী ও কিশোরীদের জন্য নেতৃত্ব বিকাশ, জীবন দক্ষতা (life skills), নিরাপত্তা সচেতনতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধির প্রশিক্ষণ আয়োজন।</div>
-    </div>
+  <div class="side-card clean">
+    <div class="icon">🧹</div>
+    <div class="title">Cleanliness Drives</div>
+    <div class="desc">স্কুল ও কমিউনিটি পরিচ্ছন্নতা ক্যাম্পেইন।</div>
+  </div>
 
-    <div class="side-card clean" role="group" aria-label="Cleanliness Drives">
-      <div class="icon">🧹</div>
-      <div class="title">Cleanliness Drives</div>
-      <div class="desc">পরিচ্ছন্নতা, বর্জ্য বাছাই, পরিবেশবান্ধব আচরণ ও হাইজিন সচেতনতা বৃদ্ধির জন্য স্কুল ও কমিউনিটি পর্যায়ে নিয়মিত অ্যাক্টিভিটি পরিচালনা।</div>
-    </div>
+  <div class="side-card campaign">
+    <div class="icon">📢</div>
+    <div class="title">Campaign Activism</div>
+    <div class="desc">মাঠভিত্তিক ও ডিজিটাল সচেতনতা উদ্যোগ।</div>
+  </div>
+</aside>
 
-    <div class="side-card campaign" role="group" aria-label="Campaign Activism">
-      <div class="icon">📢</div>
-      <div class="title">Campaign Activism</div>
-      <div class="desc">সামাজিক ও পরিবেশগত ইস্যুতে ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন, কমিউনিটি আউটরিচ ও নলেজ-শেয়ারিং ক্যাম্পেইন পরিচালনা।</div>
-    </div>
-  </aside>
+<!-- MAIN -->
+<main class="page">
 
-  <!-- MAIN PAGE -->
-  <main class="page" role="main" aria-labelledby="title">
-    <header class="header">
-      <img src="images/YOUbiquity_logo.png" alt="YOUbiquity logo" class="logo">
-      <div class="tagline">“Together for Social & Environmental Change”</div>
-    </header>
+  <header class="header">
+    <img src="images/YOUbiquity_logo.png" class="logo" alt="logo">
+    <div class="tagline">“Together for Social & Environmental Change”</div>
+  </header>
 
-    <!-- mobile grid shown in narrow view -->
-    <section class="mobile-grid" aria-hidden="true">
-      <div class="side-card theatre"><div class="icon">🎭</div><div class="title">Theatre</div><div class="desc">থিয়েটার ও স্টোরিটেলিং</div></div>
-      <div class="side-card reading"><div class="icon">📚</div><div class="title">Reading</div><div class="desc">মোবাইল লাইব্রেরি</div></div>
-      <div class="side-card tree"><div class="icon">🌱</div><div class="title">Tree</div><div class="desc">বৃক্ষরোপণ</div></div>
-      <div class="side-card women"><div class="icon">🚺</div><div class="title">Women</div><div class="desc">নেতৃত্ব</div></div>
-      <div class="side-card clean"><div class="icon">🧹</div><div class="title">Clean</div><div class="desc">পরিচ্ছন্নতা</div></div>
-      <div class="side-card campaign"><div class="icon">📢</div><div class="title">Campaign</div><div class="desc">ক্যাম্পেইন</div></div>
-    </section>
+  <!-- ABOUT -->
+  <article class="card">
+    <div class="section-icon">🌍</div>
+    <h2>About YOUbiquity</h2>
+    <p>
+      YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং।
+      শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে আমরা টেকসই সামাজিক পরিবর্তনে কাজ করি।
+    </p>
+  </article>
 
-    <!-- ABOUT -->
-    <article class="card" aria-labelledby="about-heading">
-      <div class="section-icon" aria-hidden="true">🌍</div>
-      <h2 id="about-heading">About YOUbiquity</h2>
-      <p>
-        YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং। আমরা শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে
-        টেকসই সামাজিক পরিবর্তন আনতে কাজ করি। স্থানীয় ভাষা ও সাংস্কৃতিক প্রেক্ষাপটে আমাদের কার্যক্রম মানুষের সঙ্গে সরাসরি যুক্ত হয়ে পরিবর্তনকে স্থিতিশীল করে।
-      </p>
-    </article>
+  <!-- FOCUS -->
+  <article class="card">
+    <div class="section-icon">🎯</div>
+    <h2>Our Focus Area</h2>
+    <ul>
+      <li>কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
+      <li>পরিবেশ সুরক্ষা ও বৃক্ষরোপণ</li>
+      <li>সামাজিক সচেতনতা ও ক্যাম্পেইন</li>
+      <li>নারী ও যুব নেতৃত্ব বিকাশ</li>
+    </ul>
+  </article>
 
-    <!-- FOCUS AREA -->
-    <article class="card" aria-labelledby="focus-heading">
-      <div class="section-icon" aria-hidden="true">🎯</div>
-      <h2 id="focus-heading">Our Focus Area</h2>
-      <p>WHERE WE FOCUS:</p>
-      <ul>
-        <li>কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
-        <li>পরিবেশ সুরক্ষা ও বৃক্ষরোপণ</li>
-        <li>সামাজিক ইস্যুতে জনসচেতনতা ও ক্যাম্পেইন</li>
-        <li>নারী ও যুব নেতৃত্ব বিকাশ</li>
-      </ul>
-    </article>
+  <!-- GOALS -->
+  <article class="card">
+    <div class="section-icon">🚀</div>
+    <h2>Our Goals</h2>
+    <ul>
+      <li>শিল্পের মাধ্যমে ইতিবাচক সামাজিক পরিবর্তন।</li>
+      <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও নেতৃত্ব বিকাশ।</li>
+      <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম।</li>
+      <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিতকরণ।</li>
+    </ul>
+  </article>
 
-    <!-- GOALS -->
-    <article class="card" aria-labelledby="goals-heading">
-      <div class="section-icon" aria-hidden="true">🚀</div>
-      <h2 id="goals-heading">Our Goals</h2>
-      <ul>
-        <li>শিল্পের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনতে সহায়তা করা।</li>
-        <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও স্থানীয় নেতৃত্ব তৈরি।</li>
-        <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম বাস্তবায়ন।</li>
-        <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিত করা।</li>
-      </ul>
-    </article>
+  <!-- RUNNING -->
+  <article class="card">
+    <div class="section-icon">🔥</div>
+    <h2>Running Activities</h2>
+    <ul>
+      <li>কমিউনিটি থিয়েটার ট্যুর ও কর্মশালা</li>
+      <li>লাইব্রেরি সেটআপ ও রিডিং প্রোগ্রাম</li>
+      <li>পরিচ্ছন্নতা ও বর্জ্য ব্যবস্থাপনা কর্মসূচি</li>
+      <li>বৃক্ষরোপণ ও যুব জলবায়ু প্রশিক্ষণ</li>
+    </ul>
+  </article>
 
-    <!-- RUNNING ACTIVITIES -->
-    <article class="card" aria-labelledby="running-heading">
-      <div class="section-icon" aria-hidden="true">🔥</div>
-      <h2 id="running-heading">Running Activities</h2>
-      <ul>
-        <li>কমিউনিটি থিয়েটার ট্যুর ও লোকাল ওয়ার্কশপ।</li>
-        <li>কমিউনিটি লাইব্রেরি ও স্কুল ভিত্তিক রিডিং প্রোগ্রাম।</li>
-        <li>পরিচ্ছন্নতা অভিযান ও বর্জ্য বাছাই অ্যাক্টিভিটি।</li>
-        <li>বৃক্ষরোপণ ক্যাম্প ও তরুণদের জলবায়ু ট্রেনিং।</li>
-      </ul>
-    </article>
-
-    <!-- COORDINATOR MESSAGE -->
-    <section class="card coord" aria-labelledby="coord-heading">
-      <img src="image_5_12.png" alt="Tabassum Binte Shahid — Coordinator">
-      <div>
-        <h3 id="coord-heading">Message from the Coordinator</h3>
-        <p>
-          YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে একটি চলমান আন্দোলন গড়ে তোলার প্রচেষ্টা। আমরা বিশ্বাস করি সত্যিকারের পরিবর্তন আসে মানুষের কণ্ঠস্বরকে সামনে এনে,
-          তাদের অংশগ্রহণ নিশ্চিত করে আর শিল্প ও গল্পকে মধ্যগতি হিসেবে ব্যবহার করলে। চলুন একসঙ্গে পথ চলি এবং টেকসই পরিবর্তন গড়ি।
-        </p>
-        <div class="name">— Tabassum Binte Shahid</div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- subtle leaves (very light) -->
-  <script>
-    (function(){
-      const count = 8; // subtle
-      for(let i=0;i<count;i++){
-        const el = document.createElement('div');
-        el.className = 'leaf';
-        el.style.left = (4 + Math.random()*92) + 'vw';
-        el.style.top = (-6 - Math.random()*10) + 'vh';
-        const size = 10 + Math.random()*18;
-        el.style.width = size+'px';
-        el.style.height = size+'px';
-        el.style.opacity = 0.02 + Math.random()*0.05;
-        el.style.animationDuration = (14 + Math.random()*12) + 's';
-        el.style.animationDelay = (Math.random()*6) + 's';
-        document.body.appendChild(el);
-      }
-    })();
-  </script>
+</main>
 
 </body>
 </html>
