@@ -20,44 +20,42 @@
     --sidebar-w:240px;
     --side-gap:48px;
     --body-text:#163b2a;
-    --soft-shadow: 0 12px 30px rgba(6,50,20,0.06);
+    --soft-shadow:0 12px 30px rgba(6,50,20,0.06);
     --radius:14px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
   body{
     font-family:"Inter","Merriweather","Noto Sans Bengali",sans-serif;
     background: linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
     color:var(--body-text);
-    line-height:1.65;
     overflow-x:hidden;
+    line-height:1.65;
   }
 
-  /* UPDATED — background leafy pattern */
+  /* 🌿 NEW: subtle paired leaf background (fully CSS — no image) */
   body::before{
     content:"";
     position:fixed; inset:0; z-index:0;
     background-image:
-      url('images/leaf-pattern.png'),
-      radial-gradient(circle at 15% 25%, rgba(6,80,30,0.04) 0 6%, transparent 60%),
-      radial-gradient(circle at 85% 30%, rgba(9,110,46,0.04) 0 8%, transparent 60%);
-    background-size: 260px, auto, auto;
-    background-repeat: repeat, no-repeat, no-repeat;
+      radial-gradient(circle at 20% 30%, rgba(46,125,65,0.10) 0 18px, transparent 24px),
+      radial-gradient(circle at 23% 33%, rgba(46,125,65,0.12) 0 12px, transparent 18px),
+      radial-gradient(circle at 80% 70%, rgba(46,125,65,0.12) 0 20px, transparent 26px),
+      radial-gradient(circle at 77% 73%, rgba(46,125,65,0.10) 0 12px, transparent 20px);
+    background-repeat: repeat;
+    opacity:0.06;
     pointer-events:none;
-    opacity:0.08;
   }
 
   .back-btn{
-    position:fixed; left:18px; top:14px; z-index:160;
-    background:var(--accent); color:#fff; padding:10px 14px; border-radius:28px;
-    text-decoration:none; font-weight:700; box-shadow:0 8px 26px rgba(4,80,35,0.12);
+    position:fixed; left:18px; top:16px; z-index:100;
+    background:var(--accent); color:#fff; padding:10px 16px; border-radius:30px;
+    text-decoration:none; font-weight:700;
   }
-  .back-btn:hover{ background:var(--accent-2) }
 
   .page{
     max-width:var(--max-width);
-    margin:92px auto 100px;
+    margin:100px auto 120px;
     padding:0 22px;
     z-index:5;
     position:relative;
@@ -70,67 +68,72 @@
     }
   }
 
-  .header{ text-align:center; margin-bottom:12px }
-  .logo{ width:160px; display:inline-block; margin-bottom:8px }
-  .tagline{ color:var(--muted); font-size:15px; font-style:italic; margin-bottom:18px }
+  .header{text-align:center;margin-bottom:12px;}
+  .logo{width:160px;margin-bottom:8px;}
+  .tagline{font-style:italic;color:var(--muted);margin-top:4px;}
 
+  /* CARD */
   .card{
     background:var(--card);
     border-radius:var(--radius);
-    padding:24px;
+    padding:26px;
     margin:22px 0;
     box-shadow:var(--soft-shadow);
     position:relative;
-    overflow:hidden;
   }
 
-  /* UPDATED — icon background removed */
+  /* ❗ UPDATED — icon background removed */
   .section-icon{
-    position:absolute;
-    left:0; top:0;
     font-size:30px;
-    padding:0;
-    background:none !important;
-    box-shadow:none !important;
-    opacity:0.7;
-    transform:translate(-4px,-4px);
+    opacity:0.75;
+    position:absolute;
+    top:12px;
+    left:12px;
   }
 
-  .card h2{ font-size:26px; color:var(--accent); font-weight:800; margin-bottom:12px }
+  .card h2{
+    color:var(--accent);
+    font-size:26px;
+    font-weight:800;
+    margin-left:40px;
+    margin-bottom:12px;
+  }
 
-  /* Sidebar */
+  /* SIDEBAR */
   .sidebar{
-    position:fixed; top:120px; width:var(--sidebar-w); z-index:100;
-    display:flex; flex-direction:column; gap:16px;
+    position:fixed; top:120px; width:var(--sidebar-w);
+    display:flex; flex-direction:column; gap:16px; z-index:20;
   }
-  .left{ left:18px }
-  .right{ right:18px }
+  .left{left:18px;}
+  .right{right:18px;}
 
   .side-card{
     background:#fff;
-    border-radius:12px;
-    padding:12px;
+    border-radius:14px;
+    padding:16px;
     text-align:center;
-    box-shadow:0 10px 24px rgba(0,0,0,0.06);
-    display:flex; flex-direction:column;
+    box-shadow:var(--soft-shadow);
+    height:190px;                      /* exact equal height */
+    display:flex;
+    flex-direction:column;
     justify-content:flex-start;
-    height:180px;              /* UPDATED → uniform height */
   }
 
-  .side-card .icon { font-size:38px }
-  .side-card .title{ font-size:16px; font-weight:800; margin-top:4px; color:#044f2a }
+  .side-card .icon{font-size:38px;}
+  .side-card .title{font-weight:800;margin-top:4px;color:#0a5c2e;}
   .side-card .desc{
-    font-size:13.6px;
-    margin-top:6px;
+    margin-top:8px;
+    font-size:14px;
     overflow:hidden;
-    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
   }
 
   @media(max-width:920px){
-    .sidebar{ display:none }
-    .page{ padding:36px 16px; margin-top:80px }
+    .sidebar{display:none;}
+    .page{padding:30px 16px;}
   }
-
 </style>
 </head>
 
@@ -143,19 +146,19 @@
   <div class="side-card theatre">
     <div class="icon">🎭</div>
     <div class="title">Theatre Activism</div>
-    <div class="desc">নাটক, স্টোরিটেলিং ও পারফর্মেটিভ আর্টসের মাধ্যমে সচেতনতা।</div>
+    <div class="desc">নাটক, স্টোরিটেলিং ও পারফর্মেটিভ আর্টসের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি এবং কমিউনিটির অংশগ্রহণ নিশ্চিত করা।</div>
   </div>
 
   <div class="side-card reading">
     <div class="icon">📚</div>
     <div class="title">Reading Movement</div>
-    <div class="desc">লাইব্রেরি, রিডিং ক্লাব ও বুক-ড্রাইভ।</div>
+    <div class="desc">শিক্ষা ও পাঠাভ্যাস বৃদ্ধির লক্ষ্যে কমিউনিটি লাইব্রেরি, স্কুলভিত্তিক রিডিং ক্লাব ও বুক-ড্রাইভ আয়োজন করে শিশু ও তরুণদের পড়ার অভ্যাসকে উৎসাহিত করা।</div>
   </div>
 
   <div class="side-card tree">
     <div class="icon">🌱</div>
     <div class="title">Tree Plantation</div>
-    <div class="desc">বৃক্ষরোপণ, পরিচর্যা ও জলবায়ু সচেতনতা।</div>
+    <div class="desc">পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্পেইন, গাছের পরিচর্যা, যুব জলবায়ু দল গঠন এবং টেকসই পরিবেশগত আচরণ গড়ে তোলার উদ্যোগ।</div>
   </div>
 </aside>
 
@@ -164,19 +167,19 @@
   <div class="side-card women">
     <div class="icon">🚺</div>
     <div class="title">Women Empowerment</div>
-    <div class="desc">নারী নেতৃত্ব, নিরাপত্তা ও জীবনদক্ষতা।</div>
+    <div class="desc">নারী ও কিশোরীদের জন্য নেতৃত্ব বিকাশ, জীবন দক্ষতা (life skills), নিরাপত্তা সচেতনতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধির প্রশিক্ষণ আয়োজন।</div>
   </div>
 
   <div class="side-card clean">
     <div class="icon">🧹</div>
     <div class="title">Cleanliness Drives</div>
-    <div class="desc">স্কুল ও কমিউনিটি পরিচ্ছন্নতা ক্যাম্পেইন।</div>
+    <div class="desc">পরিচ্ছন্নতা, বর্জ্য বাছাই, পরিবেশবান্ধব আচরণ ও হাইজিন সচেতনতা বৃদ্ধির জন্য স্কুল ও কমিউনিটি পর্যায়ে নিয়মিত অ্যাক্টিভিটি পরিচালনা।</div>
   </div>
 
   <div class="side-card campaign">
     <div class="icon">📢</div>
     <div class="title">Campaign Activism</div>
-    <div class="desc">মাঠভিত্তিক ও ডিজিটাল সচেতনতা উদ্যোগ।</div>
+    <div class="desc">সামাজিক ও পরিবেশগত ইস্যুতে ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন, কমিউনিটি আউটরিচ ও নলেজ-শেয়ারিং ক্যাম্পেইন পরিচালনা।</div>
   </div>
 </aside>
 
@@ -184,7 +187,7 @@
 <main class="page">
 
   <header class="header">
-    <img src="images/YOUbiquity_logo.png" class="logo" alt="logo">
+    <img src="images/YOUbiquity_logo.png" class="logo">
     <div class="tagline">“Together for Social & Environmental Change”</div>
   </header>
 
@@ -193,8 +196,10 @@
     <div class="section-icon">🌍</div>
     <h2>About YOUbiquity</h2>
     <p>
-      YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং।
-      শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে আমরা টেকসই সামাজিক পরিবর্তনে কাজ করি।
+      YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং।  
+      আমরা শিল্প, থিয়েটার, স্টোরিটেলিং ও কমিউনিটি-মোবিলাইজেশনের মাধ্যমে  
+      টেকসই সামাজিক পরিবর্তন আনতে কাজ করি। স্থানীয় ভাষা ও সাংস্কৃতিক প্রেক্ষাপটে  
+      আমাদের কার্যক্রম মানুষের সঙ্গে সরাসরি যুক্ত হয়ে পরিবর্তনকে স্থিতিশীল করে।
     </p>
   </article>
 
@@ -202,10 +207,11 @@
   <article class="card">
     <div class="section-icon">🎯</div>
     <h2>Our Focus Area</h2>
+    <p>WHERE WE FOCUS:</p>
     <ul>
       <li>কমিউনিটি থিয়েটার ও আর্ট-বেইজড অ্যাক্টিভিজম</li>
       <li>পরিবেশ সুরক্ষা ও বৃক্ষরোপণ</li>
-      <li>সামাজিক সচেতনতা ও ক্যাম্পেইন</li>
+      <li>সামাজিক ইস্যুতে জনসচেতনতা ও ক্যাম্পেইন</li>
       <li>নারী ও যুব নেতৃত্ব বিকাশ</li>
     </ul>
   </article>
@@ -215,10 +221,10 @@
     <div class="section-icon">🚀</div>
     <h2>Our Goals</h2>
     <ul>
-      <li>শিল্পের মাধ্যমে ইতিবাচক সামাজিক পরিবর্তন।</li>
-      <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও নেতৃত্ব বিকাশ।</li>
-      <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম।</li>
-      <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিতকরণ।</li>
+      <li>শিল্পের মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনতে সহায়তা করা।</li>
+      <li>প্রান্তিক জনগোষ্ঠীর ক্ষমতায়ন ও স্থানীয় নেতৃত্ব তৈরি।</li>
+      <li>পরিবেশগত সচেতনতা ও টেকসই কার্যক্রম বাস্তবায়ন।</li>
+      <li>নারীর অধিকার ও নিরাপত্তা নিশ্চিত করা।</li>
     </ul>
   </article>
 
@@ -227,10 +233,10 @@
     <div class="section-icon">🔥</div>
     <h2>Running Activities</h2>
     <ul>
-      <li>কমিউনিটি থিয়েটার ট্যুর ও কর্মশালা</li>
-      <li>লাইব্রেরি সেটআপ ও রিডিং প্রোগ্রাম</li>
-      <li>পরিচ্ছন্নতা ও বর্জ্য ব্যবস্থাপনা কর্মসূচি</li>
-      <li>বৃক্ষরোপণ ও যুব জলবায়ু প্রশিক্ষণ</li>
+      <li>কমিউনিটি থিয়েটার ট্যুর ও লোকাল ওয়ার্কশপ।</li>
+      <li>কমিউনিটি লাইব্রেরি ও স্কুল ভিত্তিক রিডিং প্রোগ্রাম।</li>
+      <li>পরিচ্ছন্নতা অভিযান ও বর্জ্য বাছাই অ্যাক্টিভিটি।</li>
+      <li>বৃক্ষরোপণ ক্যাম্প ও তরুণদের জলবায়ু ট্রেনিং।</li>
     </ul>
   </article>
 
