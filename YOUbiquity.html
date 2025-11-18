@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f3f8f3; /* Light banana-leaf tone */
+    background: #f3f8f3;
     color: #222;
 }
 .top-bar {
@@ -43,17 +43,36 @@ body {
 }
 .side-box {
     width: 220px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.side-box .activity-box {
     padding: 18px;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-.side-box.left {
+.side-box.left .activity-box:nth-child(1) {
     background: linear-gradient(135deg, #e1f5e9, #f3faf4);
 }
-.side-box.right {
+.side-box.left .activity-box:nth-child(2) {
+    background: linear-gradient(135deg, #d0f0ff, #f3faff);
+}
+.side-box.left .activity-box:nth-child(3) {
     background: linear-gradient(135deg, #fff4e6, #fdf7f3);
 }
+.side-box.right .activity-box:nth-child(1) {
+    background: linear-gradient(135deg, #ffe4e1, #fff7f3);
+}
+.side-box.right .activity-box:nth-child(2) {
+    background: linear-gradient(135deg, #e7ffe7, #f0fff0);
+}
+.side-box.right .activity-box:nth-child(3) {
+    background: linear-gradient(135deg, #fff4df, #fff9f3);
+}
+
 .content {
     width: 680px;
     background: white;
@@ -65,6 +84,11 @@ h2 {
     margin-top: 0;
     color: #1a4d2e;
     font-size: 24px;
+    text-align: center;
+}
+.content p {
+    text-align: justify;
+    line-height: 1.6;
 }
 .number-boxes {
     display: flex;
@@ -141,6 +165,15 @@ h2 {
     .number-boxes {
         flex-direction: column;
     }
+    .side-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .side-box .activity-box {
+        flex: 1 1 45%;
+        margin: 5px;
+    }
 }
 </style>
 </head>
@@ -153,12 +186,9 @@ h2 {
 <div class="container">
 
 <div class="side-box left">
-<b>🎭 Theatre Activism</b><br>
-নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।<br><br>
-<b>📚 Reading Movement</b><br>
-স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।<br><br>
-<b>🌱 Tree Plantation</b><br>
-পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
+    <div class="activity-box"><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।</div>
+    <div class="activity-box"><b>📚 Reading Movement</b><br>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।</div>
+    <div class="activity-box"><b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।</div>
 </div>
 
 <div class="content">
@@ -202,12 +232,9 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
 </div>
 
 <div class="side-box right">
-<b>🚺 Women Empowerment</b><br>
-নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।<br><br>
-<b>🧹 Cleanliness Drives</b><br>
-বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।<br><br>
-<b>📢 Campaign Activism</b><br>
-ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।
+    <div class="activity-box"><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
+    <div class="activity-box"><b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</div>
+    <div class="activity-box"><b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</div>
 </div>
 
 </div>
