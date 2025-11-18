@@ -47,6 +47,7 @@ body {
     justify-content: center;
     margin-top: 30px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .side-box {
     width: 220px;
@@ -61,32 +62,28 @@ body {
     font-size: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 .activity-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
-.side-box.left .activity-box:nth-child(1) {
-    background: linear-gradient(135deg, #e1f5e9, #f3faf4);
+.activity-box img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
 }
-.side-box.left .activity-box:nth-child(2) {
-    background: linear-gradient(135deg, #d0f0ff, #f3faff);
-}
-.side-box.left .activity-box:nth-child(3) {
-    background: linear-gradient(135deg, #fff4e6, #fdf7f3);
-}
-.side-box.right .activity-box:nth-child(1) {
-    background: linear-gradient(135deg, #ffe4e1, #fff7f3);
-}
-.side-box.right .activity-box:nth-child(2) {
-    background: linear-gradient(135deg, #e7ffe7, #f0fff0);
-}
-.side-box.right .activity-box:nth-child(3) {
-    background: linear-gradient(135deg, #fff4df, #fff9f3);
-}
+.side-box.left .activity-box:nth-child(1) {background: linear-gradient(135deg, #e1f5e9, #f3faf4);}
+.side-box.left .activity-box:nth-child(2) {background: linear-gradient(135deg, #d0f0ff, #f3faff);}
+.side-box.left .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4e6, #fdf7f3);}
+.side-box.right .activity-box:nth-child(1) {background: linear-gradient(135deg, #ffe4e1, #fff7f3);}
+.side-box.right .activity-box:nth-child(2) {background: linear-gradient(135deg, #e7ffe7, #f0fff0);}
+.side-box.right .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4df, #fff9f3);}
 
 .content {
-    width: 680px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 680px;
     background: white;
     border-radius: 14px;
     padding: 25px;
@@ -116,18 +113,17 @@ h2::after {
     display: flex;
     gap: 10px;
     margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .num-card {
-    flex: 1;
+    flex: 1 1 150px;
     padding: 15px;
     text-align: center;
     background: #e8f0ff;
     border-radius: 12px;
     font-weight: bold;
-    transition: transform 0.3s;
-}
-.num-card:hover {
-    transform: scale(1.05);
+    font-size: 16px;
 }
 .impact-grid {
     display: grid;
@@ -139,11 +135,7 @@ h2::after {
     background: #fff4df;
     padding: 15px;
     border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.impact-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    text-align: center;
 }
 .volunteer-box {
     background: #e7ffe7;
@@ -161,11 +153,11 @@ h2::after {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.2s, background 0.3s;
 }
 .volunteer-box button:hover {
-    background: #1f7a30;
     transform: scale(1.05);
+    background: #1f7a30;
 }
 .testimonial {
     background: #f4f9ff;
@@ -177,21 +169,17 @@ h2::after {
 }
 .partners {
     display: flex;
+    overflow-x: auto;
     gap: 15px;
-    margin-top: 20px;
+    padding-bottom: 10px;
 }
 .partner-card {
-    flex: 1;
+    flex: 0 0 180px;
     background: #f0f0f0;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
     font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 footer {
     background: #e8f4e5;
@@ -206,28 +194,12 @@ footer a {
     margin: 0 8px;
 }
 @media(max-width:900px){
-    .container{
-        flex-direction: column;
-        align-items: center;
-    }
-    .side-box, .content{
-        width: 90%;
-    }
-    .impact-grid {
-        grid-template-columns: 1fr;
-    }
-    .number-boxes {
-        flex-direction: column;
-    }
-    .side-box {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .side-box .activity-box {
-        flex: 1 1 45%;
-        margin: 5px;
-    }
+    .container{flex-direction: column; align-items: center;}
+    .side-box, .content{width: 90%;}
+    .impact-grid {grid-template-columns: 1fr;}
+    .number-boxes {flex-direction: column;}
+    .side-box {flex-direction: row; flex-wrap: wrap; justify-content: center;}
+    .side-box .activity-box {flex: 1 1 45%; margin: 5px;}
 }
 </style>
 </head>
@@ -247,22 +219,22 @@ footer a {
 
 <div class="container">
 <div class="side-box left">
-    <div class="activity-box"><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।</div>
-    <div class="activity-box"><b>📚 Reading Movement</b><br>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।</div>
-    <div class="activity-box"><b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।</div>
+    <div class="activity-box"><img src="images/theatre.png" alt=""><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে জনসচেতনতা।</div>
+    <div class="activity-box"><img src="images/reading.png" alt=""><b>📚 Reading Movement</b><br>পাঠাভ্যাস গড়ে তোলা।</div>
+    <div class="activity-box"><img src="images/tree.png" alt=""><b>🌱 Tree Plantation</b><br>বৃক্ষরোপণ ও জলবায়ু দল গঠন।</div>
 </div>
 
 <div class="content">
 <h2>About YOUbiquity</h2>
 <p>
-YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট ও আচরণগত পরিবর্তন ত্বরান্বিত করি। স্থানীয় প্রেক্ষাপট, সাংস্কৃতিক মানচিত্র ও কমিউনিটির অভিজ্ঞতাকে কেন্দ্র করে আমরা সমস্যা বিশ্লেষণ, সমাধান উন্নয়ন এবং দীর্ঘমেয়াদি ইমপ্যাক্ট তৈরির জন্য কাজ করি। আমাদের কার্যক্রম সামাজিক অন্তর্ভুক্তি, পরিবেশগত স্থায়িত্ব, যুব নেতৃত্ব এবং নারীর ক্ষমতায়নকে অগ্রাধিকার দেয়। কমিউনিটি-ড্রিভেন উদ্যোগ ও আর্ট-বেইজড অ্যাক্টিভিজমের মাধ্যমে আমরা স্থানীয় জনগোষ্ঠীর সক্ষমতা বৃদ্ধি করি। তথ্যনির্ভর সিদ্ধান্ত গ্রহণ, অংশীদারিত্ব ও সক্ষমতা উন্নয়নকে আমরা প্রতিটি প্রকল্পের মূল ভিত্তি হিসেবে গ্রহণ করি।
+YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করি।
 </p>
 
 <h2>📊 Numerical Impact Report</h2>
 <div class="number-boxes">
-<div class="num-card">🎭 32+ Theatre Shows</div>
-<div class="num-card">📚 1200+ Readers</div>
-<div class="num-card">🌱 4500+ Trees Planted</div>
+<div class="num-card" data-target="32">🎭 0 Theatre Shows</div>
+<div class="num-card" data-target="1200">📚 0 Readers</div>
+<div class="num-card" data-target="4500">🌱 0 Trees Planted</div>
 </div>
 
 <h2>🔥 Running Activities</h2>
@@ -275,7 +247,6 @@ YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়
 
 <div class="volunteer-box">
 <h3>🤝 Become a Volunteer</h3>
-আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
 <button>Join Now</button>
 </div>
 
@@ -289,15 +260,16 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
 <div class="partner-card">YOUniverse</div>
 <div class="partner-card">Community Clubs</div>
 <div class="partner-card">Youth Groups</div>
+<div class="partner-card">Local NGOs</div>
+<div class="partner-card">Schools</div>
 </div>
 </div>
 
 <div class="side-box right">
-    <div class="activity-box"><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
-    <div class="activity-box"><b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</div>
-    <div class="activity-box"><b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</div>
+    <div class="activity-box"><img src="images/women.png" alt=""><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
+    <div class="activity-box"><img src="images/clean.png" alt=""><b>🧹 Cleanliness Drives</b><br>পরিচ্ছন্নতা ও সচেতনতা অভিযান।</div>
+    <div class="activity-box"><img src="images/campaign.png" alt=""><b>📢 Campaign Activism</b><br>ডিজিটাল কনটেন্ট ও কমিউনিটি ক্যাম্পেইন।</div>
 </div>
-
 </div>
 
 <footer>
@@ -307,6 +279,25 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
     Follow us: 
     <a href="#">FB</a> <a href="#">IG</a> <a href="#">LN</a>
 </footer>
+
+<script>
+// Counter animation
+const counters = document.querySelectorAll('.num-card');
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText.replace(/\D/g,'');
+        const increment = target / 100;
+        if(current < target){
+            counter.innerText = counter.innerText.replace(/\d+/, Math.ceil(current + increment));
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = counter.innerText.replace(/\d+/, target);
+        }
+    };
+    updateCount();
+});
+</script>
 
 </body>
 </html>
