@@ -4,72 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YOUbiquity – Social & Environmental Activism</title>
-<!-- Font Awesome for Social Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f8f3;
-    color: #222;
-}
-.top-bar {
-    width: 100%;
-    padding: 12px 20px;
-    background: #e8f4e5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-}
-.top-bar a { text-decoration: none; color: #1a4d2e; }
-.social-icons a { margin-left: 10px; color: #1a4d2e; font-weight: bold; transition: transform 0.2s, color 0.3s; }
-.social-icons a:hover { color: #28a745; transform: scale(1.2); }
-.logo { display: block; margin: 20px auto 0 auto; width: 120px; }
-.tagline { text-align: center; font-size: 22px; margin-top: 10px; color: #2d5e3f; font-weight: bold; }
-.container { display: flex; justify-content: center; margin-top: 30px; gap: 20px; flex-wrap: wrap; }
-.side-box { width: 220px; padding: 0; display: flex; flex-direction: column; gap: 15px; }
-.activity-box {
-    padding: 18px;
-    border-radius: 14px;
-    font-size: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-.activity-box:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+body { margin:0; font-family: Arial,sans-serif; background:#f3f8f3; color:#222; }
+.top-bar { width:100%; padding:12px 20px; background:#e8f4e5; display:flex; justify-content:space-between; align-items:center; font-weight:bold; }
+.top-bar a { text-decoration:none; color:#1a4d2e; }
+.social-icons a { margin-left:10px; color:#1a4d2e; font-weight:bold; transition: transform 0.2s, color 0.3s; }
+.social-icons a:hover { color:#28a745; transform:scale(1.2); }
+.logo { display:block; margin:20px auto 0 auto; width:120px; }
+.tagline { text-align:center; font-size:22px; margin-top:10px; color:#2d5e3f; font-weight:bold; }
+.container { display:flex; justify-content:center; margin-top:30px; gap:20px; flex-wrap:wrap; }
+.side-box { width:220px; padding:0; display:flex; flex-direction:column; gap:15px; }
+.activity-box { padding:18px; border-radius:14px; font-size:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.3s,box-shadow 0.3s; text-align:center; }
+.activity-box:hover { transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.12); }
 .side-box.left .activity-box:nth-child(1) {background: linear-gradient(135deg, #e1f5e9, #f3faf4);}
 .side-box.left .activity-box:nth-child(2) {background: linear-gradient(135deg, #d0f0ff, #f3faff);}
 .side-box.left .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4e6, #fdf7f3);}
 .side-box.right .activity-box:nth-child(1) {background: linear-gradient(135deg, #ffe4e1, #fff7f3);}
 .side-box.right .activity-box:nth-child(2) {background: linear-gradient(135deg, #e7ffe7, #f0fff0);}
 .side-box.right .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4df, #fff9f3);}
-.content { flex: 1; min-width: 300px; max-width: 680px; background: white; border-radius: 14px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-h2 { margin-top: 0; color: #1a4d2e; font-size: 24px; text-align: center; position: relative; }
-h2::after { content: ''; display: block; width: 60px; height: 3px; background: #28a745; margin: 8px auto 0; border-radius: 2px; }
-.content p { text-align: justify; line-height: 1.6; }
-.number-boxes { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; justify-content: center; }
-.num-card { flex: 1 1 150px; padding: 15px; text-align: center; background: #e8f0ff; border-radius: 12px; font-weight: bold; font-size: 16px; }
-.impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
-.impact-item { background: #fff4df; padding: 15px; border-radius: 12px; text-align: center; }
-.volunteer-box { background: #e7ffe7; padding: 20px; border-radius: 14px; margin-top: 20px; text-align: center; }
-.volunteer-box button { margin-top: 10px; padding: 10px 18px; border: none; border-radius: 10px; background: #28a745; color: white; font-size: 16px; cursor: pointer; transition: transform 0.2s, background 0.3s; }
-.volunteer-box button:hover { transform: scale(1.05); background: #1f7a30; }
-.testimonial { background: #f4f9ff; padding: 20px; border-radius: 12px; margin-top: 20px; border-left: 5px solid #5fa8ff; font-style: italic; }
-.partners { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 10px; }
-.partner-card { flex: 0 0 180px; background: #f0f0f0; padding: 20px; border-radius: 12px; text-align: center; font-weight: bold; }
-.new-section { background: #f9f9f9; padding: 25px; border-radius: 14px; margin: 25px 0; }
-.new-section h3 { text-align: center; margin-bottom: 15px; color: #1a4d2e; }
-.new-section .card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin: 10px 0; }
-footer { background: #e8f4e5; padding: 20px; text-align: center; margin-top: 30px; font-size: 14px; }
-footer a { color: #1a4d2e; text-decoration: none; margin: 0 8px; }
+.content { flex:1; min-width:300px; max-width:680px; background:white; border-radius:14px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+h2 { margin-top:0; color:#1a4d2e; font-size:24px; text-align:center; position:relative; }
+h2::after { content:''; display:block; width:60px; height:3px; background:#28a745; margin:8px auto 0; border-radius:2px; }
+.content p { text-align:justify; line-height:1.6; }
+.number-boxes { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; justify-content:center; }
+.num-card { flex:1 1 150px; padding:15px; text-align:center; background:#e8f0ff; border-radius:12px; font-weight:bold; font-size:16px; }
+.impact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; margin:20px 0; }
+.impact-item { background:#fff4df; padding:15px; border-radius:12px; text-align:center; }
+.volunteer-box { background:#e7ffe7; padding:20px; border-radius:14px; margin-top:20px; text-align:center; }
+.volunteer-box button { margin-top:10px; padding:10px 18px; border:none; border-radius:10px; background:#28a745; color:white; font-size:16px; cursor:pointer; transition:transform 0.2s,background 0.3s; }
+.volunteer-box button:hover { transform:scale(1.05); background:#1f7a30; }
+.testimonial { background:#f4f9ff; padding:20px; border-radius:12px; margin-top:20px; border-left:5px solid #5fa8ff; font-style:italic; }
+.partners { display:flex; overflow-x:auto; gap:15px; padding-bottom:10px; }
+.partner-card { flex:0 0 180px; background:#f0f0f0; padding:20px; border-radius:12px; text-align:center; font-weight:bold; }
+.new-section { background:#f9f9f9; padding:25px; border-radius:14px; margin:25px 0; }
+.new-section h3 { text-align:center; margin-bottom:15px; color:#1a4d2e; }
+.new-section .card { background:white; padding:15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin:10px 0; transition: transform 0.3s; }
+.new-section .card:hover { transform:translateY(-5px); }
+.event-date { background:#28a745; color:white; padding:5px 10px; border-radius:6px; font-weight:bold; margin-bottom:5px; display:inline-block; }
+.team-card { display:flex; align-items:center; gap:15px; background:white; padding:15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin:10px 0; transition:transform 0.3s; }
+.team-card img { width:60px; height:60px; border-radius:50%; object-fit:cover; }
+.team-card:hover { transform:translateY(-5px); }
+.donor-section { background: linear-gradient(135deg,#d0ffd0,#e0f7ff); padding:25px; border-radius:14px; margin:25px 0; text-align:center; }
+.progress-bar { background:#e0e0e0; border-radius:20px; overflow:hidden; margin:10px 0; height:20px; }
+.progress-fill { height:100%; width:0%; background:#28a745; text-align:center; color:white; font-weight:bold; line-height:20px; transition:width 1s; }
+footer { background:#e8f4e5; padding:20px; text-align:center; margin-top:30px; font-size:14px; }
+footer a { color:#1a4d2e; text-decoration:none; margin:0 8px; }
 @media(max-width:900px){
-    .container{flex-direction: column; align-items: center;}
-    .side-box, .content{width: 90%;}
-    .impact-grid {grid-template-columns: 1fr;}
-    .number-boxes {flex-direction: column;}
-    .side-box {flex-direction: row; flex-wrap: wrap; justify-content: center;}
-    .side-box .activity-box {flex: 1 1 45%; margin: 5px;}
+    .container{flex-direction:column; align-items:center;}
+    .side-box, .content{width:90%;}
+    .impact-grid {grid-template-columns:1fr;}
+    .number-boxes {flex-direction:column;}
+    .side-box {flex-direction:row; flex-wrap:wrap; justify-content:center;}
+    .side-box .activity-box {flex:1 1 45%; margin:5px;}
 }
 </style>
 </head>
@@ -128,31 +115,39 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
 
 <h2>Success Stories</h2>
 <div class="new-section">
-    <div class="card"><b>কমিউনিটি থিয়েটার</b> – নাটক প্রদর্শনের মাধ্যমে ৫০টি গ্রামে সচেতনতা বৃদ্ধি।</div>
-    <div class="card"><b>Tree Plantation Drive</b> – ৪৫০০+ বৃক্ষ রোপণ এবং যুবক/যুবতীদের অংশগ্রহণ।</div>
-    <div class="card"><b>Reading Movement</b> – ১২০০+ পাঠককে অন্তর্ভুক্ত করা হয়েছে।</div>
+<div class="card"><b>কমিউনিটি থিয়েটার</b> – নাটক প্রদর্শনের মাধ্যমে ৫০টি গ্রামে সচেতনতা বৃদ্ধি।</div>
+<div class="card"><b>Tree Plantation Drive</b> – ৪৫০০+ বৃক্ষ রোপণ এবং যুবক/যুবতীদের অংশগ্রহণ।</div>
+<div class="card"><b>Reading Movement</b> – ১২০০+ পাঠককে অন্তর্ভুক্ত করা হয়েছে।</div>
 </div>
 
 <div class="new-section">
 <h3>Upcoming Events</h3>
-<div class="card">পরিবেশ সচেতনতা কর্মশালা – ২০ নভেম্বর, ২০২৫</div>
-<div class="card">নতুন কমিউনিটি থিয়েটার ট্যুর – ডিসেম্বর, ২০২৫</div>
-<div class="card">রিডিং ক্লাব সম্মেলন – জানুয়ারি, ২০২৬</div>
+<div class="card"><span class="event-date">20 Nov 2025</span>পরিবেশ সচেতনতা কর্মশালা</div>
+<div class="card"><span class="event-date">Dec 2025</span>নতুন কমিউনিটি থিয়েটার ট্যুর</div>
+<div class="card"><span class="event-date">Jan 2026</span>রিডিং ক্লাব সম্মেলন</div>
 </div>
 
 <div class="new-section">
 <h3>Newsletter / Sign-up</h3>
 <form style="text-align:center;">
 <input type="email" placeholder="আপনার ইমেইল দিন" style="padding:10px; width:70%; max-width:300px; border-radius:6px; border:1px solid #ccc;">
-<button type="submit" style="padding:10px 15px; border:none; border-radius:6px; background:#28a745; color:white; cursor:pointer; margin-left:5px;">Subscribe</button>
+<button type="submit" style="padding:10px 15px; border:none; border-radius:6px; background:linear-gradient(90deg,#28a745,#1f7a30); color:white; cursor:pointer; margin-left:5px;">Subscribe</button>
 </form>
+<p style="text-align:center; margin-top:5px;">Join 1200+ donors & volunteers!</p>
 </div>
 
 <div class="new-section">
 <h3>Meet Our Team</h3>
-<div class="card"><b>Tabassum Binte Shahid</b> – Coordinator</div>
-<div class="card"><b>Rahim Uddin</b> – Community Lead</div>
-<div class="card"><b>Ayesha Karim</b> – Program Manager</div>
+<div class="team-card"><img src="images/team1.jpg" alt="Tabassum"><b>Tabassum Binte Shahid</b> – Coordinator</div>
+<div class="team-card"><img src="images/team2.jpg" alt="Rahim"><b>Rahim Uddin</b> – Community Lead</div>
+<div class="team-card"><img src="images/team3.jpg" alt="Ayesha"><b>Ayesha Karim</b> – Program Manager</div>
+</div>
+
+<div class="donor-section">
+<h3>🌱 Support Our Cause</h3>
+<p>Help us plant 5000 trees by 2026! Your support can change lives.</p>
+<div class="progress-bar"><div class="progress-fill" id="progress">70%</div></div>
+<button style="padding:12px 20px; border:none; border-radius:10px; background:linear-gradient(90deg,#28a745,#1f7a30); color:white; cursor:pointer; font-size:16px;">Donate Now</button>
 </div>
 
 <h2>🤝 Our Partners</h2>
@@ -169,8 +164,6 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
     <div class="activity-box"><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
     <div class="activity-box"><b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</div>
     <div class="activity-box"><b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</div>
-</div>
-
 </div>
 
 <footer>
@@ -190,16 +183,19 @@ counters.forEach(counter => {
     const updateCount = () => {
         const target = +counter.getAttribute('data-target');
         const current = +counter.innerText.replace(/\D/g,'');
-        const increment = target / 100;
-        if(current < target){
-            counter.innerText = counter.innerText.replace(/\d+/, Math.ceil(current + increment));
-            setTimeout(updateCount, 20);
+        const increment = target/100;
+        if(current<target){
+            counter.innerText = counter.innerText.replace(/\d+/, Math.ceil(current+increment));
+            setTimeout(updateCount,20);
         } else {
             counter.innerText = counter.innerText.replace(/\d+/, target);
         }
     };
     updateCount();
 });
+
+// Donor progress fill animation
+window.addEventListener('load',()=>{document.getElementById('progress').style.width='70%';});
 </script>
 
 </body>
