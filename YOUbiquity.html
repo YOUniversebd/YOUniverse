@@ -20,42 +20,12 @@ body {
     align-items: center;
     font-weight: bold;
 }
-.top-bar a {
-    text-decoration: none;
-    color: #1a4d2e;
-}
-.social-icons a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: #1a4d2e;
-    font-weight: bold;
-}
-.logo {
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 120px;
-}
-.tagline {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 10px;
-    color: #2d5e3f;
-    font-weight: bold;
-}
-.container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.side-box {
-    width: 220px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+.top-bar a { text-decoration: none; color: #1a4d2e; }
+.social-icons a { margin-left: 10px; text-decoration: none; color: #1a4d2e; font-weight: bold; }
+.logo { display: block; margin: 20px auto 0 auto; width: 120px; }
+.tagline { text-align: center; font-size: 22px; margin-top: 10px; color: #2d5e3f; font-weight: bold; }
+.container { display: flex; justify-content: center; margin-top: 30px; gap: 20px; flex-wrap: wrap; }
+.side-box { width: 220px; padding: 0; display: flex; flex-direction: column; gap: 15px; }
 .activity-box {
     padding: 18px;
     border-radius: 14px;
@@ -67,11 +37,6 @@ body {
 .activity-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-.activity-box img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
 }
 .side-box.left .activity-box:nth-child(1) {background: linear-gradient(135deg, #e1f5e9, #f3faf4);}
 .side-box.left .activity-box:nth-child(2) {background: linear-gradient(135deg, #d0f0ff, #f3faff);}
@@ -105,17 +70,8 @@ h2::after {
     margin: 8px auto 0;
     border-radius: 2px;
 }
-.content p {
-    text-align: justify;
-    line-height: 1.6;
-}
-.number-boxes {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+.content p { text-align: justify; line-height: 1.6; }
+.number-boxes { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; justify-content: center; }
 .num-card {
     flex: 1 1 150px;
     padding: 15px;
@@ -125,25 +81,9 @@ h2::after {
     font-weight: bold;
     font-size: 16px;
 }
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 20px 0;
-}
-.impact-item {
-    background: #fff4df;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-}
-.volunteer-box {
-    background: #e7ffe7;
-    padding: 20px;
-    border-radius: 14px;
-    margin-top: 20px;
-    text-align: center;
-}
+.impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+.impact-item { background: #fff4df; padding: 15px; border-radius: 12px; text-align: center; }
+.volunteer-box { background: #e7ffe7; padding: 20px; border-radius: 14px; margin-top: 20px; text-align: center; }
 .volunteer-box button {
     margin-top: 10px;
     padding: 10px 18px;
@@ -155,10 +95,7 @@ h2::after {
     cursor: pointer;
     transition: transform 0.2s, background 0.3s;
 }
-.volunteer-box button:hover {
-    transform: scale(1.05);
-    background: #1f7a30;
-}
+.volunteer-box button:hover { transform: scale(1.05); background: #1f7a30; }
 .testimonial {
     background: #f4f9ff;
     padding: 20px;
@@ -167,32 +104,10 @@ h2::after {
     border-left: 5px solid #5fa8ff;
     font-style: italic;
 }
-.partners {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding-bottom: 10px;
-}
-.partner-card {
-    flex: 0 0 180px;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
-}
-footer {
-    background: #e8f4e5;
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-}
-footer a {
-    color: #1a4d2e;
-    text-decoration: none;
-    margin: 0 8px;
-}
+.partners { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 10px; }
+.partner-card { flex: 0 0 180px; background: #f0f0f0; padding: 20px; border-radius: 12px; text-align: center; font-weight: bold; }
+footer { background: #e8f4e5; padding: 20px; text-align: center; margin-top: 30px; font-size: 14px; }
+footer a { color: #1a4d2e; text-decoration: none; margin: 0 8px; }
 @media(max-width:900px){
     .container{flex-direction: column; align-items: center;}
     .side-box, .content{width: 90%;}
@@ -218,16 +133,17 @@ footer a {
 <div class="tagline">Together for Social & Environmental Change</div>
 
 <div class="container">
+
 <div class="side-box left">
-    <div class="activity-box"><img src="images/theatre.png" alt=""><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে জনসচেতনতা।</div>
-    <div class="activity-box"><img src="images/reading.png" alt=""><b>📚 Reading Movement</b><br>পাঠাভ্যাস গড়ে তোলা।</div>
-    <div class="activity-box"><img src="images/tree.png" alt=""><b>🌱 Tree Plantation</b><br>বৃক্ষরোপণ ও জলবায়ু দল গঠন।</div>
+    <div class="activity-box"><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।</div>
+    <div class="activity-box"><b>📚 Reading Movement</b><br>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।</div>
+    <div class="activity-box"><b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।</div>
 </div>
 
 <div class="content">
 <h2>About YOUbiquity</h2>
 <p>
-YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করি।
+YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট ও আচরণগত পরিবর্তন ত্বরান্বিত করি। স্থানীয় প্রেক্ষাপট, সাংস্কৃতিক মানচিত্র ও কমিউনিটির অভিজ্ঞতাকে কেন্দ্র করে আমরা সমস্যা বিশ্লেষণ, সমাধান উন্নয়ন এবং দীর্ঘমেয়াদি ইমপ্যাক্ট তৈরির জন্য কাজ করি। আমাদের কার্যক্রম সামাজিক অন্তর্ভুক্তি, পরিবেশগত স্থায়িত্ব, যুব নেতৃত্ব এবং নারীর ক্ষমতায়নকে অগ্রাধিকার দেয়। কমিউনিটি-ড্রিভেন উদ্যোগ ও আর্ট-বেইজড অ্যাক্টিভিজমের মাধ্যমে আমরা স্থানীয় জনগোষ্ঠীর সক্ষমতা বৃদ্ধি করি। তথ্যনির্ভর সিদ্ধান্ত গ্রহণ, অংশীদারিত্ব ও সক্ষমতা উন্নয়নকে আমরা প্রতিটি প্রকল্পের মূল ভিত্তি হিসেবে গ্রহণ করি। শিক্ষা, পরিবেশ, স্বাস্থ্যবিধি ও সামাজিক ন্যায়—এই চারটি ক্ষেত্রে আমরা ইমপ্যাক্টফুল প্রোগ্রাম ডিজাইন ও বাস্তবায়ন করি। মানুষের অভিজ্ঞতা, কণ্ঠস্বর এবং বাস্তবতার উপর ভিত্তি করে সমাধান তৈরি করাই আমাদের কাজের কেন্দ্রবিন্দু। আমরা বিশ্বাস করি—শিল্প ও গল্প মানুষের চিন্তা, দৃষ্টিভঙ্গি ও আচরণ পরিবর্তনের সবচেয়ে শক্তিশালী মাধ্যম। টেকসই পরিবর্তন গঠনের লক্ষ্যে YOUbiquity কমিউনিটি, যুব, অংশীদার প্রতিষ্ঠান এবং নীতিনির্ধারকদের সঙ্গে সমন্বিতভাবে কাজ করে।
 </p>
 
 <h2>📊 Numerical Impact Report</h2>
@@ -247,6 +163,7 @@ YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়
 
 <div class="volunteer-box">
 <h3>🤝 Become a Volunteer</h3>
+আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
 <button>Join Now</button>
 </div>
 
@@ -266,18 +183,19 @@ YOUbiquity কেবল একটি প্রকল্প নয় — এটি 
 </div>
 
 <div class="side-box right">
-    <div class="activity-box"><img src="images/women.png" alt=""><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
-    <div class="activity-box"><img src="images/clean.png" alt=""><b>🧹 Cleanliness Drives</b><br>পরিচ্ছন্নতা ও সচেতনতা অভিযান।</div>
-    <div class="activity-box"><img src="images/campaign.png" alt=""><b>📢 Campaign Activism</b><br>ডিজিটাল কনটেন্ট ও কমিউনিটি ক্যাম্পেইন।</div>
+    <div class="activity-box"><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
+    <div class="activity-box"><b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</div>
+    <div class="activity-box"><b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</div>
 </div>
+
 </div>
 
 <footer>
-    &copy; 2025 YOUbiquity | 
-    <a href="#">Contact</a> | 
-    <a href="#">Privacy</a> | 
-    Follow us: 
-    <a href="#">FB</a> <a href="#">IG</a> <a href="#">LN</a>
+&copy; 2025 YOUbiquity | 
+<a href="#">Contact</a> | 
+<a href="#">Privacy</a> | 
+Follow us: 
+<a href="#">FB</a> <a href="#">IG</a> <a href="#">LN</a>
 </footer>
 
 <script>
