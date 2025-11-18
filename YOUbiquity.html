@@ -1,199 +1,215 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YOUbiquity – Social & Environmental Activism</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #edf6e5; /* হালকা কলা পাতার রঙ */
-      color: #222;
-    }
-
-    /* Back Button */
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 20px auto 0;
-      padding: 10px 18px;
-      background: #2b6cb0;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    }
-
-    /* LOGO AREA */
-    .logo-area {
-      text-align: center;
-      margin-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    .logo-area img {
-      width: 110px;
-      margin-bottom: 10px;
-    }
-
-    .container {
-      display: flex;
-      gap: 20px;
-      padding: 30px;
-    }
-
-    /* Left + Right Sidebar */
-    .sidebar {
-      width: 22%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .card {
-      background: linear-gradient(135deg, #ffffff, #f3faff);
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      line-height: 1.6;
-    }
-
-    /* Middle Section Narrower */
-    .middle {
-      width: 56%;
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-    }
-
-    h2 {
-      margin-top: 0;
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .number-boxes {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .num-card {
-      flex: 1;
-      background: #e8f0ff;
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .volunteer-box {
-      background: #e7ffe7;
-      padding: 20px;
-      border-radius: 14px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .volunteer-box button {
-      margin-top: 10px;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 10px;
-      background: #28a745;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .impact-item {
-      background: #fff4df;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .partners {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .partner-card {
-      flex: 1;
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .testimonial {
-      background: #f4f9ff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
-      border-left: 5px solid #5fa8ff;
-    }
-
-    @media(max-width:900px){
-      .container{
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YOUbiquity – Social & Environmental Activism</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f8f3; /* Light banana-leaf tone */
+    color: #222;
+}
+.top-bar {
+    width: 100%;
+    padding: 12px 20px;
+    background: #e8f4e5;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+.top-bar a {
+    text-decoration: none;
+    color: #1a4d2e;
+}
+.logo {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 120px;
+}
+.tagline {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 10px;
+    color: #2d5e3f;
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+.side-box {
+    width: 220px;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-size: 15px;
+}
+.side-box.left {
+    background: linear-gradient(135deg, #e1f5e9, #f3faf4);
+}
+.side-box.right {
+    background: linear-gradient(135deg, #fff4e6, #fdf7f3);
+}
+.content {
+    width: 680px;
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+h2 {
+    margin-top: 0;
+    color: #1a4d2e;
+    font-size: 24px;
+}
+.number-boxes {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+.num-card {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background: #e8f0ff;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+.impact-item {
+    background: #fff4df;
+    padding: 15px;
+    border-radius: 12px;
+}
+.volunteer-box {
+    background: #e7ffe7;
+    padding: 20px;
+    border-radius: 14px;
+    margin-top: 20px;
+    text-align: center;
+}
+.volunteer-box button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.testimonial {
+    background: #f4f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border-left: 5px solid #5fa8ff;
+}
+.partners {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.partner-card {
+    flex: 1;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+@media(max-width:900px){
+    .container{
         flex-direction: column;
-      }
-      .sidebar, .middle{
-        width: 100%;
-      }
+        align-items: center;
     }
-  </style>
+    .side-box, .content{
+        width: 90%;
+    }
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+    .number-boxes {
+        flex-direction: column;
+    }
+}
+</style>
 </head>
-
 <body>
+<div class="top-bar">
+    <a href="#">← Back to YOUniverse</a>
+</div>
+<img src="images/YOUbiquity.png" class="logo" alt="YOUbiquity Logo" />
+<div class="tagline">Together for Social & Environmental Change</div>
+<div class="container">
 
-  <!-- BACK BUTTON -->
-  <a href="index.html" class="back-btn">← Back to YOUniverse</a>
+<div class="side-box left">
+<b>🎭 Theatre Activism</b><br>
+নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।<br><br>
+<b>📚 Reading Movement</b><br>
+স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।<br><br>
+<b>🌱 Tree Plantation</b><br>
+পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
+</div>
 
-  <!-- LOGO AREA -->
-  <div class="logo-area">
-    <img src="logo.png" alt="YOUbiquity Logo">
-    <h2>“Together for Social & Environmental Change” 🌍</h2>
-  </div>
+<div class="content">
+<h2>About YOUbiquity</h2>
+<p>
+YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট ও আচরণগত পরিবর্তন ত্বরান্বিত করি। স্থানীয় প্রেক্ষাপট, সাংস্কৃতিক মানচিত্র ও কমিউনিটির অভিজ্ঞতাকে কেন্দ্র করে আমরা সমস্যা বিশ্লেষণ, সমাধান উন্নয়ন এবং দীর্ঘমেয়াদি ইমপ্যাক্ট তৈরির জন্য কাজ করি। আমাদের কার্যক্রম সামাজিক অন্তর্ভুক্তি, পরিবেশগত স্থায়িত্ব, যুব নেতৃত্ব এবং নারীর ক্ষমতায়নকে অগ্রাধিকার দেয়। কমিউনিটি-ড্রিভেন উদ্যোগ ও আর্ট-বেইজড অ্যাক্টিভিজমের মাধ্যমে আমরা স্থানীয় জনগোষ্ঠীর সক্ষমতা বৃদ্ধি করি। তথ্যনির্ভর সিদ্ধান্ত গ্রহণ, অংশীদারিত্ব ও সক্ষমতা উন্নয়নকে আমরা প্রতিটি প্রকল্পের মূল ভিত্তি হিসেবে গ্রহণ করি। শিক্ষা, পরিবেশ, স্বাস্থ্যবিধি ও সামাজিক ন্যায়—এই চারটি ক্ষেত্রে আমরা ইমপ্যাক্টফুল প্রোগ্রাম ডিজাইন ও বাস্তবায়ন করি। মানুষের অভিজ্ঞতা, কণ্ঠস্বর এবং বাস্তবতার উপর ভিত্তি করে সমাধান তৈরি করাই আমাদের কাজের কেন্দ্রবিন্দু। আমরা বিশ্বাস করি—শিল্প ও গল্প মানুষের চিন্তা, দৃষ্টিভঙ্গি ও আচরণ পরিবর্তনের সবচেয়ে শক্তিশালী মাধ্যম। টেকসই পরিবর্তন গঠনের লক্ষ্যে YOUbiquity কমিউনিটি, যুব, অংশীদার প্রতিষ্ঠান এবং নীতিনির্ধারকদের সঙ্গে সমন্বিতভাবে কাজ করে।
+</p>
 
-  <div class="container">
+<h2>📊 Numerical Impact Report</h2>
+<div class="number-boxes">
+<div class="num-card">🎭 32+ Theatre Shows</div>
+<div class="num-card">📚 1200+ Readers</div>
+<div class="num-card">🌱 4500+ Trees Planted</div>
+</div>
 
-    <!-- LEFT SIDEBAR -->
-    <div class="sidebar">
-      <div class="card">
-        <h2>🎭 Theatre Activism</h2>
-        নাটক, স্টোরিটেলিং ও পারফর্মেটিভ আর্টসের মাধ্যমে সামাজিক ইস্যুতে সচেতনতা বৃদ্ধি।
-      </div>
+<h2>🔥 Running Activities</h2>
+<div class="impact-grid">
+<div class="impact-item">কমিউনিটি থিয়েটার ট্যুর</div>
+<div class="impact-item">রিডিং প্রোগ্রাম</div>
+<div class="impact-item">পরিচ্ছন্নতা অভিযান</div>
+<div class="impact-item">জলবায়ু ট্রেনিং</div>
+</div>
 
-      <div class="card">
-        <h2>📚 Reading Movement</h2>
-        স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
-      </div>
+<div class="volunteer-box">
+<h3>🤝 Become a Volunteer</h3>
+আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
+<button>Join Now</button>
+</div>
 
-      <div class="card">
-        <h2>🌱 Tree Plantation</h2>
-        পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্পেইন ও জলবায়ু টিম গঠন।
-      </div>
-    </div>
+<h2>🌟 Message from Coordinator</h2>
+<div class="testimonial">
+YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে টেকসই পরিবর্তন গড়ার চেষ্টা। — <b>Tabassum Binte Shahid</b>
+</div>
 
-    <!-- MIDDLE CONTENT -->
-    <div class="middle">
+<h2>🤝 Our Partners</h2>
+<div class="partners">
+<div class="partner-card">YOUniverse</div>
+<div class="partner-card">Community Clubs</div>
+<div class="partner-card">Youth Groups</div>
+</div>
+</div>
 
-      <p>
-      YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত।
-      শিল্প, থিয়েটার, গল্প ও অংশগ্রহণমূলক ন্যারেটিভ কৌশলের মাধ্যমে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট এবং আচরণগত পরিবর্তন ত্বরান্বিত করা আমাদের মূল লক্ষ্য।
-      স্থানীয় সংস্কৃতি, প্রেক্ষাপট এবং জনগোষ্ঠীর অভিজ্ঞতাকে ভিত্তি করে সমস্য
+<div class="side-box right">
+<b>🚺 Women Empowerment</b><br>
+নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।<br><br>
+<b>🧹 Cleanliness Drives</b><br>
+বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।<br><br>
+<b>📢 Campaign Activism</b><br>
+ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।
+</div>
+
+</div>
+</body>
+</html>
