@@ -1,213 +1,579 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>YOUbiquity – Social & Environmental Activism</title>
+
+<!-- Font Awesome for social icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
-body { margin:0; font-family: Arial,sans-serif; background:#f3f8f3; color:#222; }
-.top-bar { width:100%; padding:12px 20px; background:#e8f4e5; display:flex; justify-content:space-between; align-items:center; font-weight:bold; flex-wrap:wrap; }
-.top-bar a { text-decoration:none; color:#1a4d2e; }
-.social-icons a { margin-left:10px; color:#1a4d2e; font-weight:bold; transition: transform 0.2s, color 0.3s; }
-.social-icons a:hover { color:#28a745; transform:scale(1.2); }
-.logo { display:block; margin:20px auto 0 auto; width:120px; max-width:100%; }
-.tagline { text-align:center; font-size:22px; margin-top:10px; color:#2d5e3f; font-weight:bold; }
-.container { display:flex; justify-content:center; margin-top:30px; gap:20px; flex-wrap:wrap; }
-.side-box { display:flex; flex-direction:column; gap:15px; }
-.activity-box { padding:18px; border-radius:14px; font-size:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.3s,box-shadow 0.3s; text-align:center; }
-.activity-box:hover { transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.12); }
-/* Left side boxes gradients */
-.side-box.left .activity-box:nth-child(1) {background: linear-gradient(135deg, #e1f5e9, #f3faf4);}
-.side-box.left .activity-box:nth-child(2) {background: linear-gradient(135deg, #d0f0ff, #f3faff);}
-.side-box.left .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4e6, #fdf7f3);}
-/* Right side boxes gradients */
-.side-box.right .activity-box:nth-child(1) {background: linear-gradient(135deg, #ffe4e1, #fff7f3);}
-.side-box.right .activity-box:nth-child(2) {background: linear-gradient(135deg, #e7ffe7, #f0fff0);}
-.side-box.right .activity-box:nth-child(3) {background: linear-gradient(135deg, #fff4df, #fff9f3);}
-.content { flex:1; min-width:300px; max-width:680px; background:white; border-radius:14px; padding:25px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-h2 { margin-top:0; color:#1a4d2e; font-size:24px; text-align:center; position:relative; }
-h2::after { content:''; display:block; width:60px; height:3px; background:#28a745; margin:8px auto 0; border-radius:2px; }
-.content p { text-align:justify; line-height:1.6; }
-.number-boxes { display:flex; gap:10px; margin:20px 0; flex-wrap:wrap; justify-content:center; }
-.num-card { flex:1 1 120px; padding:15px; text-align:center; background:#e8f0ff; border-radius:12px; font-weight:bold; font-size:16px; }
-.impact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; margin:20px 0; }
-.impact-item { background:#fff4df; padding:15px; border-radius:12px; text-align:center; }
-.volunteer-box { background:#e7ffe7; padding:20px; border-radius:14px; margin-top:20px; text-align:center; }
-.volunteer-box button { margin-top:10px; padding:10px 18px; border:none; border-radius:10px; background:#28a745; color:white; font-size:16px; cursor:pointer; transition:transform 0.2s,background 0.3s; }
-.volunteer-box button:hover { transform:scale(1.05); background:#1f7a30; }
-.testimonial { background:#f4f9ff; padding:20px; border-radius:12px; margin-top:20px; border-left:5px solid #5fa8ff; font-style:italic; }
-.partners { display:flex; overflow-x:auto; gap:15px; padding-bottom:10px; }
-.partner-card { flex:0 0 180px; background:#f0f0f0; padding:20px; border-radius:12px; text-align:center; font-weight:bold; }
-.new-section { background:#f9f9f9; padding:25px; border-radius:14px; margin:25px 0; }
-.new-section h3 { text-align:center; margin-bottom:15px; color:#1a4d2e; }
-.new-section .card { background:white; padding:15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin:10px 0; transition: transform 0.3s; }
-.new-section .card:hover { transform:translateY(-5px); }
-.event-date { background:#28a745; color:white; padding:5px 10px; border-radius:6px; font-weight:bold; margin-bottom:5px; display:inline-block; }
-.team-card { display:flex; align-items:center; gap:15px; background:white; padding:15px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin:10px 0; transition:transform 0.3s; flex-wrap:wrap; }
-.team-card img { width:60px; height:60px; border-radius:50%; object-fit:cover; }
-.team-card b { flex:1 1 auto; margin-top:10px; }
-.team-card:hover { transform:translateY(-5px); }
-.donor-section { background: linear-gradient(135deg,#d0ffd0,#e0f7ff); padding:25px; border-radius:14px; margin:25px 0; text-align:center; }
-.progress-bar { background:#e0e0e0; border-radius:20px; overflow:hidden; margin:10px 0; height:20px; }
-.progress-fill { height:100%; width:0%; background:#28a745; text-align:center; color:white; font-weight:bold; line-height:20px; transition:width 1s; }
-footer { background:#e8f4e5; padding:20px; text-align:center; margin-top:30px; font-size:14px; flex-wrap:wrap; display:flex; justify-content:center; gap:5px; }
-footer a { color:#1a4d2e; text-decoration:none; margin:0 8px; }
-input, button { max-width:100%; box-sizing:border-box; }
-@media(max-width:900px){
-    .container{flex-direction:column; align-items:center;}
-    .side-box, .content{width:95%;}
-    .impact-grid {grid-template-columns:1fr;}
-    .number-boxes {flex-direction:column;}
-    .side-box {flex-direction:row; flex-wrap:wrap; justify-content:center;}
-    .side-box .activity-box {flex:1 1 45%; margin:5px;}
-    .team-card {flex-direction:column; align-items:center; text-align:center;}
-    .team-card img {margin-bottom:10px;}
+:root{
+  --bg: #f3f8f3;
+  --card: #ffffff;
+  --muted: #6b6b6b;
+  --accent: #28a745; /* primary */
+  --accent-2: #1f7a30;
+  --soft: #e8f4e5;
+  --glass: rgba(255,255,255,0.7);
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --max-width: 1100px;
+  --container-padding: 20px;
+  --text: #222;
+}
+
+/* Reset & base */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+}
+
+/* Page wrapper */
+.page {
+  max-width: var(--max-width);
+  margin: 28px auto;
+  padding: 0 var(--container-padding) 48px;
+}
+
+/* Top bar / header */
+.header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:var(--soft);
+  padding:10px 16px;
+  border-radius:10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-bottom:18px;
+}
+.header .left { display:flex; align-items:center; gap:14px; }
+.logo {
+  width:110px;
+  height:auto;
+  display:block;
+}
+.back-link { color:var(--accent-2); text-decoration:none; font-weight:700; }
+.top-social { display:flex; gap:10px; align-items:center; }
+.top-social a { color:var(--accent-2); font-size:18px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; transition:all .18s ease; }
+.top-social a:focus, .top-social a:hover { transform:translateY(-3px); background:rgba(0,0,0,0.03); color:var(--accent); outline:none; }
+
+/* Tagline */
+.tagline {
+  text-align:center;
+  font-weight:700;
+  color: #214d35;
+  margin:10px 0 22px;
+  font-size:20px;
+}
+
+/* Main 3-column layout: left activities, center content, right activities */
+.main-grid {
+  display:grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap:20px;
+  align-items:start;
+  width:100%;
+}
+
+/* Side boxes */
+.side {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.activity {
+  background:linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.6));
+  padding:14px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transition: transform .22s ease, box-shadow .22s ease;
+  text-align:left;
+  font-weight:600;
+  color:#163f2a;
+}
+.activity small { display:block; font-weight:400; margin-top:8px; color:var(--muted); font-size:14px; }
+
+/* specific gentle gradients for 6 boxes for visual identity */
+.side.left .activity:nth-child(1){ background: linear-gradient(135deg,#e9f7ee,#f7fbf8); }
+.side.left .activity:nth-child(2){ background: linear-gradient(135deg,#e7f1ff,#f8fbff); }
+.side.left .activity:nth-child(3){ background: linear-gradient(135deg,#fff9ef,#fffdf9); }
+.side.right .activity:nth-child(1){ background: linear-gradient(135deg,#fff0f0,#fff9f9); }
+.side.right .activity:nth-child(2){ background: linear-gradient(135deg,#f0fff4,#f7fff9); }
+.side.right .activity:nth-child(3){ background: linear-gradient(135deg,#fff9ec,#fffefb); }
+
+.activity:hover { transform:translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.08); }
+
+/* Center content card */
+.content {
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+/* Headings consistently centered with accent bar */
+.content h2 {
+  margin:0 0 14px;
+  text-align:center;
+  color:#1c4f36;
+  font-size:22px;
+  position:relative;
+}
+.content h2 .emoji { margin-right:8px; }
+.content h2::after {
+  content:"";
+  display:block;
+  width:64px;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  border-radius:4px;
+  margin:10px auto 0;
+}
+
+/* Paragraphs justified */
+.content p{ text-align:justify; color:#2b2b2b; margin:10px 0 18px; }
+
+/* Number cards (counters) */
+.stats {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.stat {
+  background: linear-gradient(180deg,#f1f7ff,#eef4ff);
+  border-radius:12px;
+  padding:12px 16px;
+  min-width:120px;
+  text-align:center;
+  box-shadow: 0 6px 18px rgba(15,64,120,0.04);
+}
+.stat .num { display:block; font-size:20px; font-weight:800; color:var(--accent-2); }
+.stat .label { font-size:13px; color:var(--muted); margin-top:6px; }
+
+/* Impact grid */
+.impact-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:14px 0;
+}
+.impact-item {
+  background:linear-gradient(180deg,#fff7ea,#fff4df);
+  padding:12px;
+  border-radius:10px;
+  font-weight:600;
+  color:#6b3f00;
+  text-align:center;
+}
+
+/* Volunteer CTA */
+.volunteer {
+  background: linear-gradient(180deg,#ecfff0,#e7fff2);
+  padding:16px;
+  border-radius:10px;
+  text-align:center;
+  margin-top:10px;
+}
+.btn {
+  display:inline-block;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;
+  padding:10px 16px;
+  border-radius:10px;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(39,121,62,0.12);
+  transition: transform .16s ease, box-shadow .16s ease, opacity .12s;
+  text-decoration:none;
+}
+.btn:hover { transform:translateY(-4px); opacity:0.98; }
+
+/* Testimonial */
+.testimonial {
+  margin-top:16px;
+  padding:14px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#f4fbff,#f0f6ff);
+  border-left:4px solid #6fb0ff;
+  font-style:italic;
+}
+
+/* New sections styling */
+.section {
+  margin-top:18px;
+}
+.cards {
+  display:grid;
+  gap:12px;
+}
+.success-card {
+  background:linear-gradient(135deg,#fff,#f7fbff);
+  padding:12px;
+  border-radius:10px;
+  box-shadow: 0 8px 20px rgba(10,40,80,0.04);
+  transition:transform .18s ease;
+}
+.success-card:hover { transform:translateY(-6px); }
+
+/* Events */
+.event-card { display:flex; gap:12px; align-items:flex-start; }
+.event-badge {
+  min-width:84px; padding:8px; border-radius:8px; color:white; font-weight:800; background:linear-gradient(180deg,#28a745,#1f7a30); text-align:center;
+  font-size:13px;
+}
+
+/* Newsletter */
+.newsletter { display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+.newsletter input[type="email"]{
+  padding:10px 12px; border-radius:8px; border:1px solid #d3dbe1; min-width:220px; max-width:360px; outline:none;
+}
+.newsletter input:focus { box-shadow: 0 6px 18px rgba(40,167,69,0.08); border-color:var(--accent); }
+.newsletter .btn { padding:10px 14px; }
+
+/* Team */
+.team-grid { display:grid; gap:10px; margin-top:10px; }
+.team-card {
+  display:flex; gap:12px; align-items:center; background:linear-gradient(180deg,#ffffff,#fbfffb); padding:12px; border-radius:10px; box-shadow:var(--shadow);
+}
+.avatar {
+  width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; color:white;
+  background:linear-gradient(180deg,#2a8a4b,#1f7a30);
+  flex:0 0 56px; overflow:hidden;
+}
+.avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Donor / progress */
+.donor {
+  padding:14px; border-radius:12px; background: linear-gradient(135deg,#f0fff0,#e8f6ff); text-align:center; box-shadow:var(--shadow);
+}
+.progress {
+  width:100%; background:#e9eef0; height:18px; border-radius:999px; overflow:hidden; margin:10px 0;
+}
+.progress > span {
+  display:block; height:100%; width:0; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; font-weight:700; text-align:center; font-size:12px;
+  line-height:18px; transition: width 1s ease;
+}
+
+/* Partners carousel (scroll-snap) */
+.partners {
+  display:flex; gap:12px; overflow-x:auto; padding:8px 6px; scroll-snap-type:x mandatory;
+}
+.partner {
+  min-width:160px; background:#fff; border-radius:10px; padding:12px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); flex:0 0 auto; scroll-snap-align:center; text-align:center;
+}
+
+/* Footer */
+.footer {
+  margin-top:26px; background:var(--soft); padding:14px 18px; border-radius:10px; text-align:center; font-size:13px; color:var(--muted);
+}
+
+/* small screens adjustments (mobile-first already) */
+@media (max-width:980px){
+  .main-grid{ grid-template-columns: 1fr; }
+  .side { order:2; width:100%; }
+  .side.right { order:3; }
+  .content { order:1; width:100%; }
+  .impact-grid{ grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .partners { justify-content:flex-start; }
+  .top-social { gap:8px; }
+}
+@media (min-width:981px){
+  .team-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
 <body>
+<div class="page" role="main">
 
-<div class="top-bar">
-    <a href="https://youniverse.org">← Back to YOUniverse</a>
-    <div class="social-icons">
-        <a href="https://facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/YourPage" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/YourPage" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <!-- Header -->
+  <header class="header" role="banner" aria-label="Header">
+    <div class="left">
+      <a class="back-link" href="https://youniverse.org" aria-label="Back to YOUniverse">← Back to YOUniverse</a>
     </div>
-</div>
 
-<img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo" />
-<div class="tagline">Together for Social & Environmental Change</div>
+    <img class="logo" src="images/YOUbiquity_logo.png" alt="YOUbiquity logo" />
 
-<div class="container">
-<div class="side-box left">
-    <div class="activity-box"><b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।</div>
-    <div class="activity-box"><b>📚 Reading Movement</b><br>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।</div>
-    <div class="activity-box"><b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।</div>
-</div>
+    <div class="top-social" aria-hidden="false">
+      <a href="https://facebook.com/YourPage" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/YourPage" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/YourPage" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </header>
 
-<div class="content">
-<h2>About YOUbiquity</h2>
-<p>
+  <div class="tagline">Together for Social & Environmental Change</div>
+
+  <!-- Main grid -->
+  <div class="main-grid" role="region" aria-label="Main content">
+
+    <!-- Left side activities -->
+    <aside class="side left" aria-label="Activities left">
+      <div class="activity"><span>🎭 Theatre Activism</span><small>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।</small></div>
+      <div class="activity"><span>📚 Reading Movement</span><small>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।</small></div>
+      <div class="activity"><span>🌱 Tree Plantation</span><small>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।</small></div>
+    </aside>
+
+    <!-- Center content -->
+    <section class="content" aria-label="Main content center">
+      <h2>About YOUbiquity</h2>
+      <p>
 YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট ও আচরণগত পরিবর্তন ত্বরান্বিত করি। স্থানীয় প্রেক্ষাপট, সাংস্কৃতিক মানচিত্র ও কমিউনিটির অভিজ্ঞতাকে কেন্দ্র করে আমরা সমস্যা বিশ্লেষণ, সমাধান উন্নয়ন এবং দীর্ঘমেয়াদি ইমপ্যাক্ট তৈরির জন্য কাজ করি। আমাদের কার্যক্রম সামাজিক অন্তর্ভুক্তি, পরিবেশগত স্থায়িত্ব, যুব নেতৃত্ব এবং নারীর ক্ষমতায়নকে অগ্রাধিকার দেয়। কমিউনিটি-ড্রিভেন উদ্যোগ ও আর্ট-বেইজড অ্যাক্টিভিজমের মাধ্যমে আমরা স্থানীয় জনগোষ্ঠীর সক্ষমতা বৃদ্ধি করি। তথ্যনির্ভর সিদ্ধান্ত গ্রহণ, অংশীদারিত্ব ও সক্ষমতা উন্নয়নকে আমরা প্রতিটি প্রকল্পের মূল ভিত্তি হিসেবে গ্রহণ করি। শিক্ষা, পরিবেশ, স্বাস্থ্যবিধি ও সামাজিক ন্যায়—এই চারটি ক্ষেত্রে আমরা ইমপ্যাক্টফুল প্রোগ্রাম ডিজাইন ও বাস্তবায়ন করি। মানুষের অভিজ্ঞতা, কণ্ঠস্বর এবং বাস্তবতার উপর ভিত্তি করে সমাধান তৈরি করাই আমাদের কাজের কেন্দ্রবিন্দু। আমরা বিশ্বাস করি—শিল্প ও গল্প মানুষের চিন্তা, দৃষ্টিভঙ্গি ও আচরণ পরিবর্তনের সবচেয়ে শক্তিশালী মাধ্যম। টেকসই পরিবর্তন গঠনের লক্ষ্যে YOUbiquity কমিউনিটি, যুব, অংশীদার প্রতিষ্ঠান এবং নীতিনির্ধারকদের সঙ্গে সমন্বিতভাবে কাজ করে।
-</p>
+      </p>
 
-<h2>📊 Numerical Impact Report</h2>
-<div class="number-boxes">
-<div class="num-card" data-target="32">🎭 0 Theatre Shows</div>
-<div class="num-card" data-target="1200">📚 0 Readers</div>
-<div class="num-card" data-target="4500">🌱 0 Trees Planted</div>
-</div>
+      <!-- Numerical impact -->
+      <div class="stats" aria-hidden="false">
+        <div class="stat" aria-label="Theatre shows">
+          <span class="num" data-target="32">0</span>
+          <span class="label">Theatre Shows</span>
+        </div>
+        <div class="stat" aria-label="Readers">
+          <span class="num" data-target="1200">0</span>
+          <span class="label">Readers</span>
+        </div>
+        <div class="stat" aria-label="Trees planted">
+          <span class="num" data-target="4500">0</span>
+          <span class="label">Trees Planted</span>
+        </div>
+      </div>
 
-<h2>🔥 Running Activities</h2>
-<div class="impact-grid">
-<div class="impact-item">কমিউনিটি থিয়েটার ট্যুর</div>
-<div class="impact-item">রিডিং প্রোগ্রাম</div>
-<div class="impact-item">পরিচ্ছন্নতা অভিযান</div>
-<div class="impact-item">জলবায়ু ট্রেনিং</div>
-</div>
+      <!-- Running activities -->
+      <h2>🔥 Running Activities</h2>
+      <div class="impact-grid" role="list">
+        <div class="impact-item" role="listitem">কমিউনিটি থিয়েটার ট্যুর</div>
+        <div class="impact-item" role="listitem">রিডিং প্রোগ্রাম</div>
+        <div class="impact-item" role="listitem">পরিচ্ছন্নতা অভিযান</div>
+        <div class="impact-item" role="listitem">জলবায়ু ট্রেনিং</div>
+      </div>
 
-<div class="volunteer-box">
-<h3>🤝 Become a Volunteer</h3>
-আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
-<button>Join Now</button>
-</div>
+      <!-- Volunteer CTA -->
+      <div class="volunteer" role="region" aria-label="Volunteer">
+        <div style="font-weight:700; margin-bottom:6px;">🤝 Become a Volunteer</div>
+        <div style="color:var(--muted); margin-bottom:10px;">আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।</div>
+        <button class="btn" id="volunteerBtn" aria-label="Join as volunteer">Join Now</button>
+      </div>
 
-<h2>🌟 Message from Coordinator</h2>
-<div class="testimonial">
-YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে টেকসই পরিবর্তন গড়ার চেষ্টা। — <b>Tabassum Binte Shahid</b>
-</div>
+      <!-- Coordinator message -->
+      <h2>🌟 Message from Coordinator</h2>
+      <div class="testimonial">YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে টেকসু পরিবর্তন গড়ার চেষ্টা। — <strong>Tabassum Binte Shahid</strong></div>
 
-<!-- Success Stories -->
-<div class="new-section">
-<h3>Success Stories</h3>
-<div class="card"><b>কমিউনিটি থিয়েটার</b> – নাটক প্রদর্শনের মাধ্যমে ৫০টি গ্রামে সচেতনতা বৃদ্ধি।</div>
-<div class="card"><b>Tree Plantation Drive</b> – ৪৫০০+ বৃক্ষ রোপণ এবং যুবক/যুবতীদের অংশগ্রহণ।</div>
-<div class="card"><b>Reading Movement</b> – ১২০০+ পাঠককে অন্তর্ভুক্ত করা হয়েছে।</div>
-</div>
+      <!-- Success stories -->
+      <div class="section" aria-label="Success stories">
+        <h2>Success Stories</h2>
+        <div class="cards">
+          <div class="success-card"><strong>কমিউনিটি থিয়েটার</strong> – নাটক প্রদর্শনের মাধ্যমে ৫০টি গ্রামে সচেতনতা বৃদ্ধি।</div>
+          <div class="success-card"><strong>Tree Plantation Drive</strong> – ৪৫০০+ বৃক্ষ রোপণ এবং যুবক/যুবতীদের অংশগ্রহণ।</div>
+          <div class="success-card"><strong>Reading Movement</strong> – ১২০০+ পাঠককে অন্তর্ভুক্ত করা হয়েছে।</div>
+        </div>
+      </div>
 
-<!-- Upcoming Events -->
-<div class="new-section">
-<h3>Upcoming Events</h3>
-<div class="card"><span class="event-date">20 Nov 2025</span>পরিবেশ সচেতনতা কর্মশালা</div>
-<div class="card"><span class="event-date">Dec 2025</span>নতুন কমিউনিটি থিয়েটার ট্যুর</div>
-<div class="card"><span class="event-date">Jan 2026</span>রিডিং ক্লাব সম্মেলন</div>
-</div>
+      <!-- Events -->
+      <div class="section" aria-label="Upcoming events">
+        <h2>Upcoming Events</h2>
+        <div class="cards">
+          <div class="success-card event-card">
+            <div class="event-badge">20 Nov 2025</div>
+            <div><strong>পরিবেশ সচেতনতা কর্মশালা</strong><div style="color:var(--muted); margin-top:6px;">Community hall, Shariatpur</div></div>
+          </div>
+          <div class="success-card event-card">
+            <div class="event-badge">Dec 2025</div>
+            <div><strong>নতুন কমিউনিটি থিয়েটার ট্যুর</strong><div style="color:var(--muted); margin-top:6px;">Regional tour across 6 districts</div></div>
+          </div>
+          <div class="success-card event-card">
+            <div class="event-badge">Jan 2026</div>
+            <div><strong>রিডিং ক্লাব সম্মেলন</strong><div style="color:var(--muted); margin-top:6px;">Youth library meet-up</div></div>
+          </div>
+        </div>
+      </div>
 
-<!-- Newsletter -->
-<div class="new-section">
-<h3>Newsletter / Sign-up</h3>
-<form style="text-align:center;">
-<input type="email" placeholder="আপনার ইমেইল দিন" style="padding:10px; width:70%; max-width:300px; border-radius:6px; border:1px solid #ccc;">
-<button type="submit" style="padding:10px 15px; border:none; border-radius:6px; background:linear-gradient(90deg,#28a745,#1f7a30); color:white; cursor:pointer; margin-left:5px;">Subscribe</button>
-</form>
-<p style="text-align:center; margin-top:5px;">Join 1200+ donors & volunteers!</p>
-</div>
+      <!-- Newsletter -->
+      <div class="section" aria-label="Newsletter">
+        <h2>Newsletter / Sign-up</h2>
+        <form id="newsletterForm" class="newsletter" onsubmit="return false;">
+          <input id="emailInput" type="email" placeholder="আপনার ইমেইল দিন" aria-label="Email">
+          <button class="btn" id="subscribeBtn" aria-label="Subscribe">Subscribe</button>
+        </form>
+        <div id="newsletterMsg" style="text-align:center; color:var(--muted); margin-top:8px; font-size:13px;">Join 1200+ donors & volunteers!</div>
+      </div>
 
-<!-- Team -->
-<div class="new-section">
-<h3>Meet Our Team</h3>
-<div class="team-card"><img src="images/team1.jpg" alt="Tabassum"><b>Tabassum Binte Shahid</b> – Coordinator</div>
-<div class="team-card"><img src="images/team2.jpg" alt="Rahim"><b>Rahim Uddin</b> – Community Lead</div>
-<div class="team-card"><img src="images/team3.jpg" alt="Ayesha"><b>Ayesha Karim</b> – Program Manager</div>
-</div>
+      <!-- Team -->
+      <div class="section" aria-label="Team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <span class="avatar" aria-hidden="true"><img src="images/team1.jpg" alt="Tabassum" onerror="this.style.display='none'; this.parentElement.textContent='T'">T</span>
+            <div><strong>Tabassum Binte Shahid</strong><div style="color:var(--muted); font-size:13px;">Coordinator</div></div>
+          </div>
 
-<!-- Donor Section -->
-<div class="donor-section">
-<h3>🌱 Support Our Cause</h3>
-<p>Help us plant 5000 trees by 2026! Your support can change lives.</p>
-<div class="progress-bar"><div class="progress-fill" id="progress">70%</div></div>
-<button style="padding:12px 20px; border:none; border-radius:10px; background:linear-gradient(90deg,#28a745,#1f7a30); color:white; cursor:pointer; font-size:16px;">Donate Now</button>
-</div>
+          <div class="team-card">
+            <span class="avatar" aria-hidden="true"><img src="images/team2.jpg" alt="Rahim" onerror="this.style.display='none'; this.parentElement.textContent='R'">R</span>
+            <div><strong>Rahim Uddin</strong><div style="color:var(--muted); font-size:13px;">Community Lead</div></div>
+          </div>
 
-<h2>🤝 Our Partners</h2>
-<div class="partners">
-<div class="partner-card">YOUniverse</div>
-<div class="partner-card">Community Clubs</div>
-<div class="partner-card">Youth Groups</div>
-<div class="partner-card">Local NGOs</div>
-<div class="partner-card">Schools</div>
-</div>
-</div>
+          <div class="team-card">
+            <span class="avatar" aria-hidden="true"><img src="images/team3.jpg" alt="Ayesha" onerror="this.style.display='none'; this.parentElement.textContent='A'">A</span>
+            <div><strong>Ayesha Karim</strong><div style="color:var(--muted); font-size:13px;">Program Manager</div></div>
+          </div>
+        </div>
+      </div>
 
-<div class="side-box right">
-    <div class="activity-box"><b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</div>
-    <div class="activity-box"><b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</div>
-    <div class="activity-box"><b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</div>
-</div>
+      <!-- Donor support -->
+      <div class="section">
+        <h2>🌱 Support Our Cause</h2>
+        <div class="donor">
+          <div style="font-weight:700;">Help us plant 5000 trees by 2026! Your support can change lives.</div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" aria-label="Donation progress">
+            <span id="progressBar">0%</span>
+          </div>
+          <div style="margin-top:8px;">
+            <a class="btn" href="#" id="donateBtn" aria-label="Donate now">Donate Now</a>
+          </div>
+        </div>
+      </div>
 
-<footer>
-&copy; 2025 YOUbiquity | 
-<a href="#">Contact</a> | 
-<a href="#">Privacy</a> | 
-Follow us: 
-<a href="https://facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a> 
-<a href="https://instagram.com/YourPage" target="_blank"><i class="fab fa-instagram"></i></a> 
-<a href="https://linkedin.com/in/YourPage" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-</footer>
+      <!-- Partners carousel -->
+      <div class="section">
+        <h2>🤝 Our Partners</h2>
+        <div class="partners" id="partners">
+          <div class="partner">YOUniverse</div>
+          <div class="partner">Community Clubs</div>
+          <div class="partner">Youth Groups</div>
+          <div class="partner">Local NGOs</div>
+          <div class="partner">Schools</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Right side activities -->
+    <aside class="side right" aria-label="Activities right">
+      <div class="activity"><span>🚺 Women Empowerment</span><small>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।</small></div>
+      <div class="activity"><span>🧹 Cleanliness Drives</span><small>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।</small></div>
+      <div class="activity"><span>📢 Campaign Activism</span><small>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।</small></div>
+    </aside>
+
+  </div> <!-- main-grid -->
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    &copy; 2025 YOUbiquity &mdash; Together for Social & Environmental Change &nbsp;|&nbsp;
+    <a href="#" aria-label="Contact">Contact</a> &nbsp;|&nbsp;
+    <a href="#" aria-label="Privacy">Privacy</a>
+    <div style="margin-top:8px;">
+      <a href="https://facebook.com/YourPage" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/YourPage" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/YourPage" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+</div><!-- page -->
 
 <script>
-// Counter animation
-const counters = document.querySelectorAll('.num-card');
-counters.forEach(counter => {
-    const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText.replace(/\D/g,'');
-        const increment = target/100;
-        if(current<target){
-            counter.innerText = counter.innerText.replace(/\d+/, Math.ceil(current+increment));
-            setTimeout(updateCount,20);
-        } else {
-            counter.innerText = counter.innerText.replace(/\d+/, target);
-        }
+/* ---------- Animated counters (robust) ---------- */
+function animateCounters(){
+  const nodes = document.querySelectorAll('.num');
+  nodes.forEach(node => {
+    const target = parseInt(node.getAttribute('data-target') || '0', 10);
+    let current = 0;
+    const duration = 1100; // total time ms
+    const stepTime = Math.max(Math.floor(duration / (target || 1)), 12);
+    const step = () => {
+      current += Math.ceil(target / (duration / stepTime));
+      if(current >= target){ node.textContent = target.toLocaleString(); }
+      else { node.textContent = current.toLocaleString(); setTimeout(step, stepTime); }
     };
-    updateCount();
+    step();
+  });
+}
+
+/* Run counters when visible (simple) */
+function onVisible(el, fn){
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ fn(); o.disconnect(); }
+    });
+  }, { threshold: 0.2 });
+  obs.observe(el);
+}
+const statsBlock = document.querySelector('.stats');
+if(statsBlock) onVisible(statsBlock, animateCounters);
+
+/* ---------- Progress bar fill (from data or set percent) ---------- */
+(function fillProgress(){
+  const p = document.getElementById('progressBar');
+  const percent = 70; // set real percent here
+  // set initial text, animate width
+  p.style.width = '0%';
+  p.textContent = '0%';
+  setTimeout(()=> {
+    p.style.width = percent + '%';
+    p.textContent = percent + '%';
+    // update aria-valuenow on wrapper
+    const bar = p.parentElement;
+    if(bar) bar.setAttribute('aria-valuenow', percent);
+  }, 260);
+})();
+
+/* ---------- Partners gentle auto-scroll (non-intrusive) ---------- */
+(function autoScrollPartners(){
+  const wrap = document.getElementById('partners');
+  if(!wrap) return;
+  let pos = 0;
+  const max = wrap.scrollWidth - wrap.clientWidth;
+  let dir = 1;
+  setInterval(()=> {
+    if(max <= 0) return;
+    pos += dir * 2;
+    if(pos >= max) dir = -1;
+    if(pos <= 0) dir = 1;
+    wrap.scrollTo({ left: pos, behavior: 'smooth' });
+  }, 2200);
+})();
+
+/* ---------- Newsletter form basic validation ---------- */
+const form = document.getElementById('newsletterForm');
+if(form){
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = document.getElementById('emailInput');
+    const msg = document.getElementById('newsletterMsg');
+    const email = input.value.trim();
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!ok){
+      msg.textContent = 'দয়া করে একটি বৈধ ইমেইল লিখুন।';
+      msg.style.color = '#c04';
+      input.focus();
+      return;
+    }
+    // visual success (no backend)
+    msg.style.color = '#2b7a3b';
+    msg.textContent = 'ধন্যবাদ! আপনি সফলভাবে সাবস্ক্রাইব করেছেন।';
+    input.value = '';
+  });
+}
+
+/* ---------- Volunteer CTA quick handler ---------- */
+document.getElementById('volunteerBtn').addEventListener('click', ()=>{
+  alert('ধন্যবাদ! আপনি ভলান্টিয়ার ইমেইল পাঠাতে পারবেন: contact@youniverse.org (demo)।');
 });
 
-// Donor progress fill animation
-window.addEventListener('load',()=>{document.getElementById('progress').style.width='70%';});
+/* ---------- Donate CTA ---------- */
+document.getElementById('donateBtn').addEventListener('click', (e)=>{
+  e.preventDefault();
+  alert('Donate flow not connected in this demo. আপনি অনলাইন পেমেন্ট বা ব্যাংক ট্রান্সফার যোগ করতে পারেন।');
+});
 </script>
-
 </body>
 </html>
