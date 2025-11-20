@@ -131,6 +131,113 @@ h2, h3 { text-align: center; margin-top: 0; color: #1a4d2e; font-size: 24px; }
     }
 }
 
+    /* ---------- PROCESS / HOW WE WORK ---------- */
+.process-section {
+  margin: 30px 0;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(245,255,250,0.6));
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(10, 30, 10, 0.06);
+}
+
+.process-section h2 {
+  text-align: center;
+  color: #165a3b;
+  margin: 6px 0 18px 0;
+  font-size: 22px;
+}
+
+/* Steps container */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Single step */
+.process-step {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: visible;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* badge (number) */
+.step-badge {
+  position: absolute;
+  left: 14px;
+  top: -12px;
+  background: linear-gradient(135deg,#2d9a67,#1a7b4a);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(27,95,56,0.18);
+}
+
+/* icon */
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 6px auto 8px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(10, 80, 40, 0.04), rgba(90, 170, 120, 0.03));
+}
+
+/* heading & text */
+.process-step h3 {
+  margin: 8px 0 6px 0;
+  font-size: 16px;
+  color: #124f34;
+}
+.process-step p {
+  font-size: 14px;
+  color: #334;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* hover effect */
+.process-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(10,40,20,0.12);
+}
+
+/* connecting line (desktop) */
+.process-steps::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 420px);
+  right: calc(50% - 420px);
+  top: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(30,140,60,0.12), rgba(30,140,60,0.2));
+  z-index: 0;
+  display: none;
+}
+
+/* make sure badges appear above line */
+.process-step { z-index: 2; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  .process-steps::before { display: none; }
+  .step-badge { left: 16px; top: 8px; }
+}
+
 
 /* VOLUNTEER */
 .volunteer-box {
@@ -296,6 +403,67 @@ h2, h3 { text-align: center; margin-top: 0; color: #1a4d2e; font-size: 24px; }
     </div>
 </div>
 
+        <!-- OUR PROCESS / HOW WE WORK (4-step Visual Flow) -->
+<div class="process-section">
+  <h2>🔁 Our Process — How We Work</h2>
+
+  <div class="process-steps">
+
+    <div class="process-step">
+      <div class="step-badge">1</div>
+      <div class="step-icon" aria-hidden="true">
+        <!-- Awareness / Megaphone SVG -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 11v2a2 2 0 002 2h1l4 3V6L6 9H5a2 2 0 00-2 2z" fill="#1a4d2e"/>
+          <path d="M16.5 7.5L22 5v14l-5.5-2.5" stroke="#1a4d2e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Awareness</h3>
+      <p>কমিউনিটিতে সমস্যা এবং সম্ভাব্য সমাধান সম্পর্কে জনসচেতনতা সৃষ্টি করা।</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-badge">2</div>
+      <div class="step-icon" aria-hidden="true">
+        <!-- Engagement / Hands SVG -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 11c0-2 1-4 4-4s4 2 4 4v6H7v-6z" fill="#2d5e3f"/>
+          <path d="M4 14s1-3 4-3" stroke="#2d5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Engagement</h3>
+      <p>লোকাল অংশগ্রহণ, ওয়ার্কশপ ও থিয়েটার/রিডিং সেশন দিয়ে মানুষকে যুক্ত করা।</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-badge">3</div>
+      <div class="step-icon" aria-hidden="true">
+        <!-- Capacity / Gear+People SVG -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 7a3 3 0 100 6 3 3 0 000-6z" fill="#5fa8ff"/>
+          <path d="M4 18c1-3 4-4 8-4s7 1 8 4" stroke="#5fa8ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Capacity Building</h3>
+      <p>প্রশিক্ষণ, দক্ষতা উন্নয়ন ও স্থানীয় নেতৃত্ব তৈরি করে সক্ষম করা।</p>
+    </div>
+
+    <div class="process-step">
+      <div class="step-badge">4</div>
+      <div class="step-icon" aria-hidden="true">
+        <!-- Sustainability / Leaf & Check SVG -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2c3.5 0 6.4 2.2 7.6 5.3-2 0-4.6.8-6.2 2.6-1.6 1.8-2.6 4-4.9 5.1C8.6 11.1 6 9.5 6 6c0-.4.02-.8.07-1.2C7.3 3 9.5 2 12 2z" fill="#28a745"/>
+          <path d="M9 13l2 2 4-4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Sustainability</h3>
+      <p>দীর্ঘমেয়াদি পরিবর্তন নিশ্চিত করতে পাঠ, নীতি ও লোকাল সিস্টেম শক্ত করা।</p>
+    </div>
+
+  </div> <!-- .process-steps -->
+</div>
+        
         <div class="volunteer-box">
             <h3>🤝 Become a Volunteer</h3>
             আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
