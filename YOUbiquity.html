@@ -1,214 +1,298 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YOUbiquity</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YOUbiquity – Social & Environmental Activism</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:"Noto Sans Bengali", sans-serif;
-    }
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body{
-        background: linear-gradient(120deg, #f5faff, #fff5f8, #f2fff6);
-        padding:30px;
-    }
+/* PAGE BACKGROUND */
+body {
+    background: linear-gradient(135deg, rgba(210,240,210,0.5), rgba(220,230,255,0.4)),
+                url("images/social-bg.png"),
+                url("images/environment-bg.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: left top, left center, right center;
+    background-size: cover, 380px, 380px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
 
-    /* HEADER */
-    .header{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        margin-bottom:25px;
-    }
-    .title{
-        font-size:38px;
-        font-weight:800;
-        color:#333;
-    }
-    .social-icons a{
-        margin-left:12px;
-        font-size:22px;
-        text-decoration:none;
-    }
+/* PAGE WRAPPER */
+.page { width: 100%; display: flex; justify-content: center; }
+.inner-page { width: 100%; max-width: 1100px; padding: 10px 20px; }
 
-    /* MAIN GRID – 2 Columns */
-    .main-grid{
-        display:grid;
-        grid-template-columns:260px 1fr;
-        gap:25px;
-        margin-top:30px;
-    }
+/* TOP BAR */
+.top-bar {
+    width: 100%;
+    padding: 12px 20px;
+    background: #e8f4e5;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-bar a { text-decoration: none; color: #1a4d2e; }
 
-    /* Activity Boxes */
-    .side-all .activity-box{
-        background:#fff;
-        padding:15px;
-        border-radius:15px;
-        margin-bottom:12px;
-        font-size:15px;
-        line-height:1.4;
-        box-shadow:0 3px 8px rgba(0,0,0,0.08);
-    }
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
 
-    /* Content Section */
-    .content{
-        background:#ffffffaa;
-        padding:25px;
-        border-radius:20px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
+/* LOGO */
+.logo { display: block; margin: 20px auto 0; width: 140px; }
+.tagline { text-align: center; margin: 10px 0; font-size: 22px; font-weight: bold; color: #2d5e3f; }
 
-    .section-title{
-        font-size:24px;
-        font-weight:700;
-        margin-bottom:12px;
-        color:#333;
-    }
+/* MAIN GRID – 2 COLUMNS */
+.main-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
 
-    /* HOW WE WORK */
-    .process-grid{
-        display:grid;
-        grid-template-columns: repeat(4,1fr);
-        gap:15px;
-        margin-top:15px;
-    }
+/* SIDE BOX CONTAINER */
+.side-box { display: flex; flex-direction: column; gap: 12px; }
 
-    .process-box{
-        background:#fff;
-        padding:18px;
-        border-radius:15px;
-        text-align:center;
-        font-size:15px;
-        box-shadow:0 3px 10px rgba(0,0,0,0.08);
-    }
+.activity-box {
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    color: #222;
+}
 
-    .process-box span{
-        font-size:26px;
-        display:block;
-        margin-bottom:8px;
-    }
+/* UNIQUE GRADIENT COLORS */
+.box1 { background: linear-gradient(135deg,#ffe5e5,#ffcccc); }
+.box2 { background: linear-gradient(135deg,#e0f7ff,#c0e0ff); }
+.box3 { background: linear-gradient(135deg,#e6ffe6,#c0ffc0); }
+.box4 { background: linear-gradient(135deg,#fff0e6,#ffd9b3); }
+.box5 { background: linear-gradient(135deg,#fff6e6,#ffe0b3); }
+.box6 { background: linear-gradient(135deg,#ffe6f2,#ffb3d9); }
 
-    /* MOBILE */
-    @media(max-width:900px){
-        .main-grid{
-            grid-template-columns:1fr;
-        }
-        .process-grid{
-            grid-template-columns:1fr 1fr;
-        }
-    }
+/* CONTENT */
+.content {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.content h2, .content h3 {
+    text-align: center;
+    color: #1a4d2e;
+    margin-bottom: 10px;
+}
+.content p { text-align: justify; line-height: 1.6; }
 
-    @media(max-width:500px){
-        .process-grid{
-            grid-template-columns:1fr;
-        }
-    }
+/* NUMBER CARDS */
+.number-boxes { display: flex; gap: 10px; margin: 20px 0; }
+.num-card {
+    flex: 1; background: #e8f0ff; padding: 15px; border-radius: 12px;
+    text-align: center; font-weight: bold;
+}
+
+/* IMPACT GRID */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+.impact-item {
+    background: #fff4df;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* VOLUNTEER */
+.volunteer-box {
+    background: #e7ffe7;
+    padding: 20px;
+    border-radius: 14px;
+}
+.volunteer-box button {
+    margin-top: 10px;
+    background: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    margin-top: 20px;
+    background: #f4f9ff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #5fa8ff;
+}
+
+/* PARTNERS */
+.partners {
+    display: flex; gap: 12px; padding: 10px; background: #fff;
+    border-radius: 12px; margin-top: 20px; overflow: hidden;
+}
+.partner {
+    background: #f0f0f0;
+    padding: 18px;
+    border-radius: 12px;
+    min-width: 140px;
+    text-align: center;
+}
+
+/* OUR PROCESS */
+.process-section {
+    margin-top: 40px;
+}
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+.step {
+    padding: 18px;
+    background: linear-gradient(135deg,#e8f8ff,#e4ffe9);
+    border-radius: 14px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+.footer { text-align: center; margin-top: 40px; padding: 20px; color: #555; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .main-grid { grid-template-columns: 1fr; }
+    .number-boxes { flex-direction: column; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:500px){
+    .process-steps { grid-template-columns: 1fr; }
+}
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <div class="title">YOUbiquity</div>
+<div class="page">
+<div class="inner-page">
 
-    <!-- SOCIAL -->
+<!-- TOP BAR -->
+<div class="top-bar">
+    <a href="https://youniversebd.com">← Back to YOUniverse</a>
+
     <div class="social-icons">
-        <a href="#">🔵</a>
-        <a href="#">🟣</a>
-        <a href="#">🔗</a>
-        <a href="#">❤️</a>
+        <a><img src="icons/facebook.svg"></a>
+        <a><img src="icons/instagram.svg"></a>
+        <a><img src="icons/linkedin.svg"></a>
+        <a><img src="icons/youtube.svg"></a>
     </div>
 </div>
 
+<!-- LOGO -->
+<img src="images/YOUbiquity_logo.png" class="logo" />
+<div class="tagline">Together for Social & Environmental Change</div>
 
 <!-- MAIN GRID -->
 <div class="main-grid">
 
-    <!-- LEFT + RIGHT Boxes Combined -->
-    <div class="side-all">
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#ffe5e5,#ffcccc);">
-            <b>🎭 Theatre Activism</b><br>
-            নাটক ও পারফরম্যান্সের মাধ্যমে জনসচেতনতা বৃদ্ধি।
+    <!-- SIDE BOXES (All 6 stacked) -->
+    <div class="side-box">
+        <div class="activity-box box1">
+            <b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে সামাজিক ইস্যুতে জনসচেতনতা বৃদ্ধি।
         </div>
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#e0f7ff,#c0e0ff);">
-            <b>📚 Reading Movement</b><br>
-            রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
+        <div class="activity-box box2">
+            <b>📚 Reading Movement</b><br>স্কুলভিত্তিক রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
         </div>
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#e6ffe6,#c0ffc0);">
-            <b>🌱 Tree Plantation</b><br>
-            পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
+        <div class="activity-box box3">
+            <b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
         </div>
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#fff0e6,#ffd9b3);">
-            <b>🚺 Women Empowerment</b><br>
-            নারী নেতৃত্ব, নিরাপত্তা ও জীবনদক্ষতা বৃদ্ধি।
+        <div class="activity-box box4">
+            <b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।
         </div>
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#fff6e6,#ffe0b3);">
-            <b>🧹 Cleanliness Drives</b><br>
-            পরিচ্ছন্নতা অভিযান ও বর্জ্য সচেতনতা।
+        <div class="activity-box box5">
+            <b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।
         </div>
-
-        <div class="activity-box" style="background: linear-gradient(135deg,#ffe6f2,#ffb3d9);">
-            <b>📢 Campaign Activism</b><br>
-            ডকুমেন্টেশন, ডিজিটাল কনটেন্ট ও কমিউনিটি অ্যাক্টিভেশন।
+        <div class="activity-box box6">
+            <b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।
         </div>
-
     </div>
 
-
-    <!-- CONTENT -->
+    <!-- MAIN CONTENT -->
     <div class="content">
 
-        <!-- MISSION -->
-        <div class="section-title">🎯 Mission</div>
-        <p>
-            তরুণদেরকে সামাজিক ও পরিবেশগত পরিবর্তনের নেতৃত্বে ক্ষমতায়ন করা,  
-            যাতে তারা সক্রিয়ভাবে সমাজ উন্নয়নে অংশ নিতে পারে।
-        </p><br>
+        <h2>About YOUbiquity</h2>
+        <p>YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং...</p>
 
-        <!-- VISION -->
-        <div class="section-title">🌍 Vision</div>
-        <p>
-            এমন একটি টেকসই, সচেতন ও অন্তর্ভুক্তিমূলক সমাজ যেখানে প্রতিটি মানুষই  
-            পরিবর্তনের অংশ হিসেবে কাজ করে।
-        </p><br>
+        <h2>📊 Numerical Impact Report</h2>
+        <div class="number-boxes">
+            <div class="num-card">🎭 32+ Theatre Shows</div>
+            <div class="num-card">📚 1200+ Readers</div>
+            <div class="num-card">🌱 4500+ Trees Planted</div>
+        </div>
 
-        <!-- HOW WE WORK -->
-        <div class="section-title">⚙️ How We Work</div>
+        <h2>🔥 Running Activities</h2>
+        <div class="impact-grid">
+            <div class="impact-item">কমিউনিটি থিয়েটার ট্যুর</div>
+            <div class="impact-item">রিডিং প্রোগ্রাম</div>
+            <div class="impact-item">পরিচ্ছন্নতা অভিযান</div>
+            <div class="impact-item">জলবায়ু ট্রেনিং</div>
+        </div>
 
-        <div class="process-grid">
-            <div class="process-box">
-                <span>📢</span>
-                Awareness  
-            </div>
+        <div class="volunteer-box">
+            <h3>🤝 Become a Volunteer</h3>
+            আমাদের কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।
+            <br><button>Join Now</button>
+        </div>
 
-            <div class="process-box">
-                <span>🤝</span>
-                Engagement  
-            </div>
+        <h2>🌟 Message from Coordinator</h2>
+        <div class="testimonial">
+            YOUbiquity কেবল একটি প্রকল্প নয় — এটি মানুষের সঙ্গে কাজ করে টেকসই পরিবর্তন গড়ার চেষ্টা। — 
+            <b>Tabassum Binte Shahid</b>
+        </div>
 
-            <div class="process-box">
-                <span>📘</span>
-                Capacity Building  
-            </div>
+        <h2>🤝 Our Partners</h2>
+        <div class="partners">
+            <div class="partner">YOUniverse</div>
+            <div class="partner">Community Clubs</div>
+            <div class="partner">Youth Groups</div>
+        </div>
 
-            <div class="process-box">
-                <span>🌱</span>
-                Sustainability  
+        <!-- OUR PROCESS SECTION -->
+        <div class="process-section">
+            <h2>🔄 Our Process – How We Work</h2>
+            <div class="process-steps">
+                <div class="step">1️⃣ Discover<br>Field Research & Listening</div>
+                <div class="step">2️⃣ Design<br>Community-Driven Solutions</div>
+                <div class="step">3️⃣ Implement<br>Programs & Activism</div>
+                <div class="step">4️⃣ Evaluate<br>Impact Measurement</div>
             </div>
         </div>
 
     </div>
+</div>
 
+<footer class="footer">
+© YOUbiquity • YOUniverse • All Rights Reserved
+</footer>
+
+</div>
 </div>
 
 </body>
