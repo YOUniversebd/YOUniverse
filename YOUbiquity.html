@@ -40,11 +40,7 @@ html, body {
 .top-bar a { text-decoration: none; color: #1a4d2e; }
 .social-icons a { margin-left: 10px; display: inline-flex; align-items:center; }
 
-/* LOGO + TAGLINE */
-.logo { display: block; margin: 18px auto 6px auto; width: 140px; }
-.tagline { text-align: center; font-size: 22px; margin-top: 6px; color: #2d5e3f; font-weight: bold; }
-
-/* MAIN GRID - UPDATED: 2 columns (sidebar + content) */
+/* MAIN GRID - 2 columns (sidebar + content) */
 .main-grid {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -52,18 +48,17 @@ html, body {
     margin-top: 20px;
 }
 
-/* SIDE BOXES: stacked - contains both left+right boxes in order */
+/* SIDE BOXES */
 .side-box {
     padding: 12px;
     border-radius: 14px;
-    /* transparent bg so page bg images show subtly */
     background: transparent;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* INDIVIDUAL ACTIVITY BOXES - gradients kept as requested */
+/* INDIVIDUAL ACTIVITY BOXES */
 .activity-box {
     padding: 14px;
     border-radius: 12px;
@@ -71,9 +66,12 @@ html, body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     color: #111;
     background-clip: padding-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Unique gradients (left three + right three preserved visually) */
+/* Unique gradients (preserve look) */
 .activity-box:nth-child(1) { background: linear-gradient(135deg, #ffe5e5, #ffcccc); }
 .activity-box:nth-child(2) { background: linear-gradient(135deg, #e0f7ff, #c0e0ff); }
 .activity-box:nth-child(3) { background: linear-gradient(135deg, #e6ffe6, #c0ffc0); }
@@ -81,12 +79,37 @@ html, body {
 .activity-box:nth-child(5) { background: linear-gradient(135deg, #fff6e6, #ffe0b3); }
 .activity-box:nth-child(6) { background: linear-gradient(135deg, #ffe6f2, #ffb3d9); }
 
-/* CONTENT CARD - widened and visually elevated */
+/* Activity images (match box width) */
+.activity-box img {
+    width: 100%;
+    height: 140px; /* fixed height to match visual box size */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* CONTENT CARD */
 .content {
     background: rgba(255,255,255,0.95);
     border-radius: 14px;
     padding: 25px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Centered logo + tagline above About & Numerical Impact */
+.center-logo {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.center-logo img {
+    width: 140px;
+    display: inline-block;
+}
+.center-logo .tagline {
+    font-size: 18px;
+    margin-top: 8px;
+    color: #2d5e3f;
+    font-weight: bold;
 }
 
 /* Headings */
@@ -189,7 +212,12 @@ h2, h3 {
     background: #f4f9ff; padding: 20px; border-radius: 12px; margin-top: 20px;
     border-left: 5px solid #5fa8ff;
 }
-.partners { display: flex; gap: 12px; background: #ffffff; padding: 10px; border-radius: 12px; overflow: hidden; margin-top:20px;}
+
+/* PARTNERS centered nicely */
+.partners { 
+    display: flex; gap: 12px; background: #ffffff; padding: 10px; border-radius: 12px; overflow: visible; margin-top:20px;
+    justify-content: center; align-items: center; flex-wrap: wrap;
+}
 .partner { min-width: 140px; background: #f0f0f0; padding: 18px; text-align: center; border-radius: 12px; font-weight: bold; flex-shrink: 0; }
 
 /* FOOTER */
@@ -203,6 +231,13 @@ h2, h3 {
     .mv-section { flex-direction: column; }
     .process-steps { grid-template-columns: 1fr; }
     .logo { width: 120px; }
+
+    /* make activity images slightly shorter on mobile */
+    .activity-box img { height: 120px; }
+
+    /* center content spacing */
+    .side-box { order: 0; }
+    .content { order: 1; }
 }
 </style>
 </head>
@@ -281,45 +316,54 @@ h2, h3 {
     </div>
 </div>
 
-<!-- LOGO -->
-<img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo" />
-<div class="tagline">Together for Social & Environmental Change</div>
-
 <!-- MAIN GRID -->
 <div class="main-grid">
 
-    <!-- SIDE BOXES (LEFT 3 then RIGHT 3 stacked — content preserved exactly) -->
+    <!-- SIDE BOXES (LEFT 6 activities preserved exactly) -->
     <div class="side-box">
 
         <div class="activity-box">
             <b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে বিভিন্ন ইস্যুতে জনসচেতনতা বৃদ্ধি।
+            <!-- image placeholder: change src to your actual image -->
+            <img src="images/theatre.jpg" alt="Theatre Activism">
         </div>
 
         <div class="activity-box">
             <b>📚 Reading Movement</b><br>রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
+            <img src="images/reading.jpg" alt="Reading Movement">
         </div>
 
         <div class="activity-box">
             <b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
+            <img src="images/tree.jpg" alt="Tree Plantation">
         </div>
 
-        <!-- Right-side boxes moved below (kept exact text) -->
+        <!-- Right-side boxes (kept exact text) -->
         <div class="activity-box">
             <b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।
+            <img src="images/women.jpg" alt="Women Empowerment">
         </div>
 
         <div class="activity-box">
             <b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।
+            <img src="images/clean.jpg" alt="Cleanliness Drives">
         </div>
 
         <div class="activity-box">
             <b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।
+            <img src="images/campaign.jpg" alt="Campaign Activism">
         </div>
 
     </div>
 
     <!-- CONTENT MIDDLE (text preserved exactly as you provided) -->
     <div class="content">
+
+        <!-- CENTERED LOGO + TAGLINE (placed right above About & Numerical Impact) -->
+        <div class="center-logo" aria-hidden="false">
+            <img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo" />
+            <div class="tagline">Together for Social & Environmental Change</div>
+        </div>
 
         <h2>About YOUbiquity</h2>
         <p>
@@ -363,7 +407,6 @@ h2, h3 {
             <div class="process-step">
               <div class="step-badge">1</div>
               <div class="step-icon" aria-hidden="true">
-                <!-- Awareness / Megaphone SVG -->
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 11v2a2 2 0 002 2h1l4 3V6L6 9H5a2 2 0 00-2 2z" fill="#1a4d2e"/>
                   <path d="M16.5 7.5L22 5v14l-5.5-2.5" stroke="#1a4d2e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -376,7 +419,6 @@ h2, h3 {
             <div class="process-step">
               <div class="step-badge">2</div>
               <div class="step-icon" aria-hidden="true">
-                <!-- Engagement / Hands SVG -->
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7 11c0-2 1-4 4-4s4 2 4 4v6H7v-6z" fill="#2d5e3f"/>
                   <path d="M4 14s1-3 4-3" stroke="#2d5e3f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -389,7 +431,6 @@ h2, h3 {
             <div class="process-step">
               <div class="step-badge">3</div>
               <div class="step-icon" aria-hidden="true">
-                <!-- Capacity / Gear+People SVG -->
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 7a3 3 0 100 6 3 3 0 000-6z" fill="#5fa8ff"/>
                   <path d="M4 18c1-3 4-4 8-4s7 1 8 4" stroke="#5fa8ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -402,7 +443,6 @@ h2, h3 {
             <div class="process-step">
               <div class="step-badge">4</div>
               <div class="step-icon" aria-hidden="true">
-                <!-- Sustainability / Leaf & Check SVG -->
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 2c3.5 0 6.4 2.2 7.6 5.3-2 0-4.6.8-6.2 2.6-1.6 1.8-2.6 4-4.9 5.1C8.6 11.1 6 9.5 6 6c0-.4.02-.8.07-1.2C7.3 3 9.5 2 12 2z" fill="#28a745"/>
                   <path d="M9 13l2 2 4-4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
