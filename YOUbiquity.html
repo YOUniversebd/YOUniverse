@@ -6,6 +6,15 @@
 <title>YOUbiquity – Social & Environmental Activism</title>
 
 <style>
+:root{
+  --bg-start:#e0f7e9;
+  --bg-end:#e8f4ff;
+  --card-bg: rgba(255,255,255,0.95);
+  --accent:#1a4d2e;
+  --muted:#5fa8ff;
+  --radius:12px;
+}
+
 /* GLOBAL RESET */
 * {
     box-sizing: border-box;
@@ -17,27 +26,28 @@ html, body {
     overflow-x: hidden !important;
     font-family: Arial, sans-serif;
     color: #222;
-    background: linear-gradient(to bottom right, #e0f7e9, #e8f4ff);
+    background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
+    -webkit-font-smoothing:antialiased;
 }
 
 /* PAGE CENTER WRAPPER */
 .page { display: flex; justify-content: center; width: 100%; }
-.inner-page { width: 100%; max-width: 1100px; padding: 12px; }
+.inner-page { width: 100%; max-width: 1100px; padding: 16px; }
 
 /* TOP BAR */
 .top-bar {
     width: 100%;
-    padding: 12px 20px;
-    background: rgba(255,255,255,0.9);
+    padding: 14px 20px;
+    background: rgba(255,255,255,0.92);
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 8px;
-    margin-top: 10px;
+    border-radius: var(--radius);
+    margin-top: 12px;
 }
-.top-bar a { text-decoration: none; color: #1a4d2e; }
+.top-bar a { text-decoration: none; color: var(--accent); }
 .social-icons a { margin-left: 10px; display: inline-flex; align-items:center; }
 
 /* MAIN GRID - 2 columns (sidebar + content) */
@@ -51,7 +61,7 @@ html, body {
 /* SIDE BOXES */
 .side-box {
     padding: 12px;
-    border-radius: 14px;
+    border-radius: var(--radius);
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -61,7 +71,7 @@ html, body {
 /* INDIVIDUAL ACTIVITY BOXES */
 .activity-box {
     padding: 14px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     font-size: 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     color: #111;
@@ -69,7 +79,9 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform .22s ease, box-shadow .22s ease, opacity .22s ease;
 }
+.activity-box:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,50,25,0.08); }
 
 /* Unique gradients (preserve look) */
 .activity-box:nth-child(1) { background: linear-gradient(135deg, #ffe5e5, #ffcccc); }
@@ -82,7 +94,7 @@ html, body {
 /* Activity images (match box width) */
 .activity-box img {
     width: 100%;
-    height: 140px; /* fixed height to match visual box size */
+    height: 140px;
     object-fit: cover;
     border-radius: 10px;
     display: block;
@@ -90,10 +102,10 @@ html, body {
 
 /* CONTENT CARD */
 .content {
-    background: rgba(255,255,255,0.95);
-    border-radius: 14px;
-    padding: 25px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 26px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 
 /* Centered logo + tagline above About & Numerical Impact */
@@ -108,7 +120,7 @@ html, body {
 .center-logo .tagline {
     font-size: 18px;
     margin-top: 8px;
-    color: #2d5e3f;
+    color: var(--accent);
     font-weight: bold;
 }
 
@@ -116,31 +128,34 @@ html, body {
 h2, h3 {
     text-align: center;
     margin-top: 0;
-    color: #1a4d2e;
+    color: var(--accent);
     font-size: 24px;
 }
 
 /* Paragraphs */
 .content p {
     text-align: justify;
-    line-height: 1.6;
+    line-height: 1.65;
     color:#222;
+    font-size:16px;
 }
 
 /* NUMERICAL IMPACT */
 .number-boxes {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin: 20px 0;
 }
 .num-card {
     flex: 1;
-    padding: 15px;
+    padding: 16px;
     text-align: center;
     background: #e8f0ff;
     border-radius: 12px;
-    font-weight: bold;
+    font-weight: 700;
+    transition: transform .18s ease;
 }
+.num-card:hover { transform: translateY(-6px); }
 
 /* ACTIVITY GRID */
 .impact-grid {
@@ -166,10 +181,10 @@ h2, h3 {
     background: linear-gradient(135deg, #e8fff1, #f5fff7);
     padding: 20px;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     text-align: center;
 }
-.mv-card h3 { margin-bottom: 10px; color: #1a4d2e; font-size: 20px; }
+.mv-card h3 { margin-bottom: 10px; color: var(--accent); font-size: 20px; }
 .mv-card p { line-height: 1.6; font-size: 15px; text-align: center; }
 
 /* PROCESS / HOW WE WORK */
@@ -219,7 +234,8 @@ h2, h3 {
     justify-content: center; align-items: center; flex-wrap: wrap;
 }
 .partner { min-width: 140px; background: #f0f0f0; padding: 18px; text-align: center; border-radius: 12px; font-weight: bold; flex-shrink: 0; }
-    /* CTA SUPPORT SECTION */
+
+/* CTA SUPPORT SECTION */
 .cta-support {
     margin-top: 80px;
     padding: 60px 20px;
@@ -261,6 +277,7 @@ h2, h3 {
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(29,78,216,0.18);
 }
 
 .btn-primary:hover {
@@ -270,7 +287,7 @@ h2, h3 {
 /* Outline Button */
 .btn-outline {
     background: white;
-    color: #d2ddfc;
+    color: #1d4ed8;
     padding: 12px 28px;
     border-radius: 10px;
     font-size: 1rem;
@@ -303,6 +320,21 @@ h2, h3 {
     .side-box { order: 0; }
     .content { order: 1; }
 }
+
+/* Accessibility helpers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* CTA Support Standard Color Update */
+#cta-support {background:#e8f3ec !important;border:1px solid #c9e3d7 !important;border-radius:14px !important;}
+#cta-support h2 {color:#1a4d2e !important;}
+#cta-support p {color:#2a4d3a !important;}
+
+/* Capacity Building Icon Color Fix */
+#cta-support .capacity-icon, .capacity-icon {color:#1a4d2e !important;}
+
+/* Mobile Image Fix */
+img {object-fit:contain !important;width:100%;height:auto;}
+.activity-box img {object-fit:contain !important;height:auto !important;}
 </style>
 </head>
 
@@ -311,12 +343,12 @@ h2, h3 {
 <div class="inner-page">
 
 <!-- TOP BAR -->
-<div class="top-bar">
+<div class="top-bar" role="banner">
     <a href="https://youniversebd.com">← Back to YOUniverse</a>
 
-    <div class="social-icons">
+    <div class="social-icons" role="navigation" aria-label="Social media links">
         <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
                 <path d="M22.675 0h-21.35C.597 0 0 .597 0 
                 1.325v21.351C0 23.403.597 24 1.325 
                 24h11.495v-9.294H9.691V11.01h3.129V8.413c0-3.1 
@@ -329,7 +361,7 @@ h2, h3 {
             </svg>
         </a>
         <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#E4405F">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#E4405F" aria-hidden="true">
                 <path d="M12 2.163c3.204 0 3.584.012 
                 4.85.07 1.17.054 1.97.24 2.427.403a4.92 
                 4.92 0 0 1 1.75 1.145 4.92 4.92 0 0 1 
@@ -353,7 +385,7 @@ h2, h3 {
             </svg>
         </a>
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#0077B5">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#0077B5" aria-hidden="true">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 
                 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.047c.477-.9 
                 1.637-1.85 3.368-1.85 3.598 0 4.263 2.368 
@@ -363,7 +395,7 @@ h2, h3 {
             </svg>
         </a>
         <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-            <svg width="26" height="22" viewBox="0 0 24 24" fill="#FF0000">
+            <svg width="26" height="22" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true">
                 <path d="M23.498 6.186a2.974 2.974 0 0 0-2.09-2.103C19.691 
                 3.5 12 3.5 12 3.5s-7.691 0-9.408.583a2.974 
                 2.974 0 0 0-2.09 2.103A31.533 31.533 
@@ -384,58 +416,58 @@ h2, h3 {
 <div class="main-grid">
 
     <!-- SIDE BOXES (LEFT 6 activities preserved exactly) -->
-    <div class="side-box">
+    <div class="side-box" aria-labelledby="activities-heading">
 
         <div class="activity-box">
             <b>🎭 Theatre Activism</b><br>নাটক ও পারফরম্যান্সের মাধ্যমে বিভিন্ন ইস্যুতে জনসচেতনতা বৃদ্ধি।
             <!-- image placeholder: change src to your actual image -->
-            <img src="images/Theatre Activism.png" alt="Theatre Activism">
+            <img src="images/Theatre Activism.png" alt="Theatre Activism" loading="lazy">
         </div>
 
         <div class="activity-box">
-            <b>📚 Reading Movement</b><br>রিডিং ক্লাব ও কমিউনিটি লাইব্রেরির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
-            <img src="images/Reading Movement.png" alt="Reading Movement">
+            <b>📚 Reading Movement</b><br>রিডিং ক্লাব ও কমিউনিটি লাইব্রির মাধ্যমে পাঠাভ্যাস গড়ে তোলা।
+            <img src="images/Reading Movement.png" alt="Reading Movement" loading="lazy">
         </div>
 
         <div class="activity-box">
             <b>🌱 Tree Plantation</b><br>পরিবেশ সুরক্ষায় বৃক্ষরোপণ ক্যাম্প ও জলবায়ু দল গঠন।
-            <img src="images/Tree Plantation.png" alt="Tree Plantation">
+            <img src="images/Tree Plantation.png" alt="Tree Plantation" loading="lazy">
         </div>
 
         <!-- Right-side boxes (kept exact text) -->
         <div class="activity-box">
             <b>🚺 Women Empowerment</b><br>নারী নেতৃত্ব, নিরাপত্তা, জীবনদক্ষতা ও অর্থনৈতিক সক্ষমতা বৃদ্ধি।
-            <img src="images/Women Empowerment.png" alt="Women Empowerment">
+            <img src="images/Women Empowerment.png" alt="Women Empowerment" loading="lazy">
         </div>
 
         <div class="activity-box">
             <b>🧹 Cleanliness Drives</b><br>বর্জ্য বাছাই, পরিচ্ছন্নতা ও পরিবেশ সচেতনতা অভিযান।
-            <img src="images/Cleanliness Drives.png" alt="Cleanliness Drives">
+            <img src="images/Cleanliness Drives.png" alt="Cleanliness Drives" loading="lazy">
         </div>
 
         <div class="activity-box">
             <b>📢 Campaign Activism</b><br>ডকুমেন্টেশন, ডিজিটাল কনটেন্ট, অ্যাক্টিভেশন ও কমিউনিটি ক্যাম্পেইন।
-            <img src="images/Campaign Activism.png" alt="Campaign Activism">
+            <img src="images/Campaign Activism.png" alt="Campaign Activism" loading="lazy">
         </div>
 
     </div>
 
     <!-- CONTENT MIDDLE (text preserved exactly as you provided) -->
-    <div class="content">
+    <div class="content" role="main">
 
         <!-- CENTERED LOGO + TAGLINE (placed right above About & Numerical Impact) -->
         <div class="center-logo" aria-hidden="false">
-            <img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo" />
+            <img src="images/YOUbiquity_logo.png" class="logo" alt="YOUbiquity Logo" loading="lazy" />
             <div class="tagline">Together for Social & Environmental Change</div>
         </div>
 
-        <h2>About YOUbiquity</h2>
+        <h2 id="about">About YOUbiquity</h2>
         <p>
         YOUbiquity হলো YOUniverse-এর সোশ্যাল ও এনভায়রনমেন্টাল রেসপন্সিবিলিটি উইং, যা টেকসই উন্নয়ন ও সমতাভিত্তিক সমাজ গঠনে নিবেদিত। আমরা শিল্প, থিয়েটার, গল্প এবং অংশগ্রহণমূলক ন্যারেটিভ পদ্ধতি ব্যবহার করে জনসচেতনতা, কমিউনিটি এনগেজমেন্ট ও আচরণগত পরিবর্তন ত্বরান্বিত করি। স্থানীয় প্রেক্ষাপট, সাংস্কৃতিক মানচিত্র ও কমিউনিটির অভিজ্ঞতাকে কেন্দ্র করে আমরা সমস্যা বিশ্লেষণ, সমাধান উন্নয়ন এবং দীর্ঘমেয়াদি ইমপ্যাক্ট তৈরির জন্য কাজ করি। আমাদের কার্যক্রম সামাজিক অন্তর্ভুক্তি, পরিবেশগত স্থায়িত্ব, যুব নেতৃত্ব এবং নারীর ক্ষমতায়নকে অগ্রাধিকার দেয়। কমিউনিটি-ড্রিভেন উদ্যোগ ও আর্ট-বেইজড অ্যাক্টিভিজমের মাধ্যমে আমরা স্থানীয় জনগোষ্ঠীর সক্ষমতা বৃদ্ধি করি। তথ্যনির্ভর সিদ্ধান্ত গ্রহণ, অংশীদারিত্ব ও সক্ষমতা উন্নয়নকে আমরা প্রতিটি প্রকল্পের মূল ভিত্তি হিসেবে গ্রহণ করি। শিক্ষা, পরিবেশ, স্বাস্থ্যবিধি ও সামাজিক ন্যায়—এই চারটি ক্ষেত্রে আমরা ইমপ্যাক্টফুল প্রোগ্রাম ডিজাইন ও বাস্তবায়ন করি। মানুষের অভিজ্ঞতা, কণ্ঠস্বর এবং বাস্তবতার উপর ভিত্তি করে সমাধান তৈরি করাই আমাদের কাজের কেন্দ্রবিন্দু। আমরা বিশ্বাস করি—শিল্প ও গল্প মানুষের চিন্তা, দৃষ্টিভঙ্গি ও আচরণ পরিবর্তনের সবচেয়ে শক্তিশালী মাধ্যম। টেকসই পরিবর্তন গঠনের লক্ষ্যে YOUbiquity কমিউনিটি, যুব, অংশীদার প্রতিষ্ঠান এবং নীতিনির্ধারকদের সঙ্গে সমন্বিতভাবে কাজ করে।
         </p>
 
         <h2>📊 Numerical Impact Report</h2>
-        <div class="number-boxes">
+        <div class="number-boxes" aria-hidden="false">
             <div class="num-card">🎭 05+ Theatre Shows</div>
             <div class="num-card">📚 100+ Readers</div>
             <div class="num-card">🌱 1200+ Trees Planted</div>
@@ -522,7 +554,7 @@ h2, h3 {
         <div class="volunteer-box">
             <h3>🤝 Become a Volunteer</h3>
             আমাদের সামাজিক ও পরিবেশগত উন্নয়ন কার্যক্রমের অংশ হয়ে বাস্তব পরিবর্তনের সহযাত্রী হোন।<br>
-            <button>Join Now</button>
+            <button aria-label="Join as volunteer">Join Now</button>
         </div>
 
         <h2>🌟 Message from Coordinator</h2>
@@ -531,11 +563,11 @@ h2, h3 {
         </div>
 
         <h2>🤝 Our Partners</h2>
-        <div class="partners">
-            <div class="partner">YOUniverse</div>
-            <div class="partner">Community Clubs</div>
-            <div class="partner">Youth Groups</div>
-            <div class="partner">Educational Institute</div>
+        <div class="partners" role="list">
+            <div class="partner" role="listitem">YOUniverse</div>
+            <div class="partner" role="listitem">Community Clubs</div>
+            <div class="partner" role="listitem">Youth Groups</div>
+            <div class="partner" role="listitem">Educational Institute</div>
         </div>
 
         <!-- CTA SUPPORT SECTION -->
@@ -547,8 +579,8 @@ h2, h3 {
     </p>
 
     <div class="cta-buttons">
-        <a href="#" class="btn-primary">আমাদের উদ্যোগে সহায়তা করুন</a>
-        <a href="#" class="btn-outline">পার্টনার হতে চান?</a>
+        <a href="#" class="btn-primary" role="button">আমাদের উদ্যোগে সহায়তা করুন</a>
+        <a href="#" class="btn-outline" role="button">পার্টনার হতে চান?</a>
     </div>
 </section>
 
@@ -557,7 +589,7 @@ h2, h3 {
 </div>
 
 <!-- FOOTER -->
-<div class="footer">
+<div class="footer" role="contentinfo">
     © YOUbiquity • YOUniverse • All Rights Reserved
 </div>
 
