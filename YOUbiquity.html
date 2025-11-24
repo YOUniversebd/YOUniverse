@@ -388,8 +388,68 @@ h2, h3 {
     background: #e8edff;
 }
 
-/* FOOTER */
-.footer { margin-top: 40px; text-align: center; padding: 20px; color: #555; font-size: 14px; }
+/* FOOTER DESIGN */
+.youbiquity-footer {
+    background: #e8ffe8; /* Light green tint */
+    padding: 40px 0 0;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    border-top: 5px solid #7AC943;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.footer-section h3 {
+    color: #7AC943;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #7AC943;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    background: #7AC943;
+    color: white;
+    font-size: 14px;
+}
 
 /* RESPONSIVE */
 @media(max-width: 900px){
@@ -708,10 +768,44 @@ img {object-fit:contain !important;width:100%;height:auto;}
 
 </div>
 
-<!-- FOOTER -->
-<div class="footer" role="contentinfo">
-    © YOUbiquity • YOUniverse • All Rights Reserved
-</div>
+<footer class="youbiquity-footer">
+    <div class="footer-container">
+
+        <!-- Logo + About -->
+        <div class="footer-section about">
+            <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo" class="footer-logo">
+            <p>
+                YOUbiquity is a youth-led non-profit organization in Bangladesh dedicated 
+                to community development, environmental sustainability, education, and 
+                social empowerment across rural and urban areas.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#programs">Our Programs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#contact">Get Involved</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section contact">
+            <h3>Contact</h3>
+            <p>Email: info@youbiquity.org</p>
+            <p>Phone: +880 123 456 789</p>
+            <p>Address: Dhaka, Bangladesh</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 YOUbiquity — All Rights Reserved.</p>
+    </div>
+</footer>
 
 </div>
 </div>
