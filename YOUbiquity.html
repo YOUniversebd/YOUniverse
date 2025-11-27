@@ -38,7 +38,7 @@ html, body {
 .top-bar {
     width: 100%;
     padding: 14px 20px;
-    background: #1a4d2e;
+    background: #8AC92E; /* YOUbiquity লোগোর ডমিন্যান্ট সবুজ */
     font-size: 16px;
     font-weight: 700;
     display: flex;
@@ -46,9 +46,40 @@ html, body {
     align-items: center;
     border-radius: var(--radius);
     margin-top: 12px;
+
+    /* Smooth glow gradient effect */
+    background: linear-gradient(90deg, #8AC92E, #7DC227, #8AC92E);
+    background-size: 200% 200%;
+    animation: topbarGlow 6s ease infinite;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.top-bar a { text-decoration: none; color: var(--accent); }
-.social-icons a { margin-left: 10px; display: inline-flex; align-items:center; }
+
+/* Text / links inside top bar */
+.top-bar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.top-bar a:hover {
+    opacity: 0.85;
+}
+
+/* Social icons spacing */
+.social-icons a {
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Glow Motion Animation */
+@keyframes topbarGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 /* MAIN GRID - 2 columns (sidebar + content) */
 .main-grid {
