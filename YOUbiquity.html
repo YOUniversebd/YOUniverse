@@ -423,10 +423,11 @@ h2, h3 {
 .youbiquity-footer {
     background: #00E676; /* Exact YOUbiquity logo green */
     color: #ffffff;
-    padding: 50px 0 25px;
+    padding: 60px 0 25px;
     font-family: Arial, sans-serif;
 }
 
+/* Container */
 .footer-container {
     width: 90%;
     max-width: 1200px;
@@ -437,15 +438,30 @@ h2, h3 {
     gap: 40px;
 }
 
-/* Footer Sections */
+/* Sections */
 .footer-section {
     flex: 1;
     min-width: 250px;
 }
 
+/* LEAF SHAPE BEHIND LOGO */
+.leaf-shape {
+    background: #ffffff;
+    width: 180px;
+    height: 180px;
+    border-radius: 120px 50px 120px 50px; /* Smooth leaf shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    /* subtle shadow */
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Logo */
 .footer-logo {
-    width: 150px;
-    margin-bottom: 15px;
+    width: 120px;
 }
 
 /* About text */
@@ -823,12 +839,11 @@ img {object-fit:contain !important;width:100%;height:auto;}
 
         <!-- Logo + About -->
         <div class="footer-section about">
-            <div class="footer-logo-wrapper">
-                <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo">
+            <div class="leaf-shape">
+                <img src="images/YOUbiquity_logo.png" alt="YOUbiquity Logo" class="footer-logo">
             </div>
             <p>
-                টেকসই উন্নয়ন ও সামাজিক অন্তর্ভুক্তিকে সামনে রেখে আমরা শিল্প, গল্প ও অংশগ্রহণমূলক পদ্ধতির মাধ্যমে 
-                সচেতনতা বৃদ্ধি এবং আচরণগত পরিবর্তন সহায়ক কার্যক্রম পরিচালনা করি।
+                টেকসই উন্নয়ন ও সামাজিক অন্তর্ভুক্তিকে সামনে রেখে আমরা শিল্প, গল্প ও অংশগ্রহণমূলক পদ্ধতির মাধ্যমে সচেতনতা বৃদ্ধি এবং আচরণগত পরিবর্তন সহায়ক কার্যক্রম পরিচালনা করি।
             </p>
         </div>
 
@@ -852,7 +867,6 @@ img {object-fit:contain !important;width:100%;height:auto;}
             <p>Phone: +61 0424592866</p>
             <p>Head Office:<br>7 Edge Street, Wiley Park, NSW 2195<br>Australia</p>
         </div>
-
     </div>
 
     <div class="footer-bottom">
