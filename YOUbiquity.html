@@ -353,29 +353,34 @@ h2, h3 {
 }
 .partner { min-width: 140px; background: #f0f0f0; padding: 18px; text-align: center; border-radius: 12px; font-weight: bold; flex-shrink: 0; }
 
-/* CTA SUPPORT SECTION */
-.cta-support {
-    margin-top: 80px;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #d9e8ff, #f1f6ff);
-    border-radius: 20px;
+.cta-section {
+    background: linear-gradient(135deg, #004aad, #007bff);
+    padding: 80px 20px;
+    color: #fff;
     text-align: center;
+    margin-top: 40px;
 }
 
-.cta-support h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a2a47;
-    margin-bottom: 15px;
-}
-
-.cta-support p {
-    max-width: 700px;
+.cta-box {
+    max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
-    color: #3d4b66;
-    line-height: 1.6;
-    margin-bottom: 35px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.cta-box p {
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .cta-buttons {
@@ -385,38 +390,31 @@ h2, h3 {
     flex-wrap: wrap;
 }
 
-/* Primary Button */
-.btn-primary {
-    background: #1d4ed8;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 8px 20px rgba(29,78,216,0.18);
-}
-
-.btn-primary:hover {
-    background: #153eac;
-}
-
-/* Outline Button */
-.btn-outline {
-    background: white;
-    color: #1d4ed8;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid #1d4ed8;
+    font-size: 18px;
+    font-weight: bold;
     transition: 0.3s ease;
 }
 
-.btn-outline:hover {
-    background: #e8edff;
+.cta-btn.primary {
+    background: #ffb300;
+    color: #000;
+}
+
+.cta-btn.primary:hover {
+    background: #ffc733;
+}
+
+.cta-btn.secondary {
+    background: #fff;
+    color: #004aad;
+}
+
+.cta-btn.secondary:hover {
+    background: #e8e8e8;
 }
 
 /* BASE FOOTER DESIGN */
