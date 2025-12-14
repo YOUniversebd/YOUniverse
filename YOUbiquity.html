@@ -420,6 +420,70 @@ h2, h3 {
     background: #ffe4d6;
 }
 
+  /* WE EXPERIMENT, WE LEARN */
+.experiment-section {
+  margin: 50px 0 40px 0;
+  padding: 10px 0;
+}
+
+.experiment-card {
+  background: linear-gradient(135deg, #f0fff7, #ffffff);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 26px rgba(10,40,25,0.08);
+  text-align: center;
+}
+
+.experiment-card h2 {
+  color: var(--accent);
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.experiment-intro {
+  max-width: 820px;
+  margin: 0 auto 28px auto;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #243a2f;
+}
+
+.experiment-flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.flow-item {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.flow-item:hover {
+  transform: translateY(-4px);
+}
+
+.experiment-note {
+  font-size: 15px;
+  color: #355c47;
+  max-width: 700px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .experiment-card {
+    padding: 28px 18px;
+  }
+}
+
 /* BASE FOOTER DESIGN */
 .clean-footer {
     background: #ffffff;
@@ -818,6 +882,34 @@ img {object-fit:contain !important;width:100%;height:auto;}
     </div>
 
 </div>
+
+  <!-- WE EXPERIMENT, WE LEARN SECTION -->
+<section class="experiment-section" aria-labelledby="experiment-heading">
+  <div class="experiment-card">
+
+    <h2 id="experiment-heading">🧪 We Experiment, We Learn</h2>
+
+    <p class="experiment-intro">
+      YOUbiquity কোনো ফিক্সড মডেল বা রেডিমেড সমাধান নয়।
+      আমরা নাটক, পাঠচক্র, গল্প এবং কমিউনিটি অংশগ্রহণের মাধ্যমে
+      ছোট ছোট এক্সপেরিমেন্ট করি—যেখানে শেখা, প্রশ্ন করা
+      এবং নতুন পথ খোঁজাই সবচেয়ে গুরুত্বপূর্ণ।
+    </p>
+
+    <div class="experiment-flow">
+      <div class="flow-item">🎭 Art sparks dialogue</div>
+      <div class="flow-item">📚 Reading builds reflection</div>
+      <div class="flow-item">💬 Stories surface realities</div>
+      <div class="flow-item">🧠 Learning shapes next steps</div>
+    </div>
+
+    <p class="experiment-note">
+      আমরা এখনো শিখছি। প্রতিটি কার্যক্রম আমাদের জন্য একটি নোট,
+      একটি প্রশ্ন এবং একটি সম্ভাবনার দরজা খুলে দেয়।
+    </p>
+
+  </div>
+</section>
 
 <footer class="clean-footer">
     <div class="footer-wrapper">
