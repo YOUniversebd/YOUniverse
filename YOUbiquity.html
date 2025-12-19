@@ -434,6 +434,124 @@ h2, h3 {
     .cta-card {
         padding: 30px 20px;
     }
+
+  /* CTA SECTION */
+.cta-clean {
+  padding: 60px 20px;
+  background: #f2f7f4;
+}
+
+.cta-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 42px 36px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(10,40,25,0.08);
+  text-align: center;
+}
+
+.cta-card h2 {
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.cta-card p {
+  font-size: 17px;
+  color: #2f4a3d;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.cta-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-main-btn,
+.cta-sub-btn {
+  padding: 12px 28px;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.cta-main-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+.cta-sub-btn {
+  border: 2px solid rgba(0,0,0,0.15);
+  color: var(--accent);
+}
+
+.cta-main-btn:hover,
+.cta-sub-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 30px 26px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.modal-box h3 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
 }
 
   /* WE EXPERIMENT, WE LEARN */
@@ -887,10 +1005,14 @@ img {object-fit:contain !important;width:100%;height:auto;}
             <h2>একটি সুন্দর বাংলাদেশ তথা পৃথিবী বিনির্মাণে অংশ নিন</h2>
             <p>শিক্ষা, সংস্কৃতি ও যুব উন্নয়ন কার্যক্রমের মাধ্যমে আমরা একটি সৃজনশীল, শান্তিপূর্ণ ও সক্ষম প্রজন্ম গড়ে তুলতে কাজ করছি।</p>
 
-            <div class="cta-btn-group">
-                <a href="#" class="cta-main-btn">আমাদের উদ্যোগে সহায়তা করুন</a>
-                <a href="#" class="cta-sub-btn">পার্টনার হতে চান?</a>
-            </div>
+           <div class="cta-btn-group">
+  <a href="javascript:void(0)" class="cta-main-btn" onclick="openSupportForm()">
+    আমাদের উদ্যোগে সহায়তা করুন
+  </a>
+  <a href="javascript:void(0)" class="cta-sub-btn" onclick="openPartnerForm()">
+    পার্টনার হতে চান?
+  </a>
+</div>
         </div>
     </div>
 </section>
@@ -965,6 +1087,38 @@ img {object-fit:contain !important;width:100%;height:auto;}
         © 2025 YOUbiquity — Empowering Communities Through Art & Participation.
     </div>
 </footer>
+
+  <!-- SUPPORT FORM MODAL -->
+<div class="modal-overlay" id="supportForm">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeForms()">×</span>
+    <h3>আমাদের উদ্যোগে সহায়তা করুন</h3>
+
+    <form>
+      <input type="text" placeholder="আপনার নাম" required>
+      <input type="email" placeholder="ইমেইল" required>
+      <input type="text" placeholder="মোবাইল নম্বর">
+      <textarea placeholder="আপনি কীভাবে সহায়তা করতে চান?" rows="4"></textarea>
+      <button type="submit">ফর্ম জমা দিন</button>
+    </form>
+  </div>
+</div>
+
+<!-- PARTNER FORM MODAL -->
+<div class="modal-overlay" id="partnerForm">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeForms()">×</span>
+    <h3>পার্টনার হতে চান?</h3>
+
+    <form>
+      <input type="text" placeholder="সংস্থার নাম / আপনার নাম" required>
+      <input type="email" placeholder="ইমেইল" required>
+      <input type="text" placeholder="পার্টনারশিপের ধরন">
+      <textarea placeholder="আপনার প্রস্তাব সংক্ষেপে লিখুন" rows="4"></textarea>
+      <button type="submit">প্রস্তাব পাঠান</button>
+    </form>
+  </div>
+</div>
 
 </div>
 </div>
