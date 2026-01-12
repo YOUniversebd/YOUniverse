@@ -730,6 +730,63 @@ h2, h3 {
 /* Mobile Image Fix */
 img {object-fit:contain !important;width:100%;height:auto;}
 .activity-box img {object-fit:contain !important;height:auto !important;}
+  /* ===== MODAL FORMS ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #ffffff;
+  padding: 30px 26px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.modal-box h3 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -1088,6 +1145,50 @@ img {object-fit:contain !important;width:100%;height:auto;}
     </div>
 </footer>
 
+  <!-- ===== SUPPORT FORM MODAL ===== -->
+<div class="modal-overlay" id="supportModal">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeModals()">×</span>
+    <h3>আমাদের উদ্যোগে সহায়তা করুন</h3>
+    <form>
+      <input type="text" placeholder="আপনার নাম" required>
+      <input type="email" placeholder="ইমেইল" required>
+      <input type="text" placeholder="মোবাইল">
+      <textarea rows="4" placeholder="আপনি কীভাবে সহায়তা করতে চান?"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== PARTNER FORM MODAL ===== -->
+<div class="modal-overlay" id="partnerModal">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeModals()">×</span>
+    <h3>পার্টনার হতে চান?</h3>
+    <form>
+      <input type="text" placeholder="সংস্থার নাম" required>
+      <input type="text" placeholder="যোগাযোগ ব্যক্তি">
+      <input type="email" placeholder="ইমেইল" required>
+      <textarea rows="4" placeholder="আপনি কী ধরনের পার্টনারশিপ চান?"></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openSupportForm(){
+  document.getElementById("supportModal").style.display="flex";
+}
+function openPartnerForm(){
+  document.getElementById("partnerModal").style.display="flex";
+}
+function closeModals(){
+  document.getElementById("supportModal").style.display="none";
+  document.getElementById("partnerModal").style.display="none";
+}
+</script>
+
+  
 </div>
 </div>
 </body>
