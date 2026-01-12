@@ -1145,49 +1145,77 @@ img {object-fit:contain !important;width:100%;height:auto;}
     </div>
 </footer>
 
-  <!-- ===== SUPPORT FORM MODAL ===== -->
+ <!-- Hidden iframe for Google Form submit -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<script>
+  var submitted = false;
+</script>
+
+<!-- ===== SUPPORT FORM MODAL ===== -->
 <div class="modal-overlay" id="supportModal">
   <div class="modal-box">
     <span class="modal-close" onclick="closeModals()">×</span>
     <h3>আমাদের উদ্যোগে সহায়তা করুন</h3>
-    <form>
-      <input type="text" placeholder="আপনার নাম" required>
-      <input type="email" placeholder="ইমেইল" required>
-      <input type="text" placeholder="মোবাইল">
-      <textarea rows="4" placeholder="আপনি কীভাবে সহায়তা করতে চান?"></textarea>
+
+    <form 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSccVbKfPJCmwl3A4bqwerUe7WF4lzF_75CYx27x62nR4voyqw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
+
+      <input name="entry.2005620554" type="text" placeholder="আপনার নাম" required>
+
+      <input name="entry.1045781291" type="email" placeholder="ইমেইল" required>
+
+      <input name="entry.1166974658" type="text" placeholder="মোবাইল">
+
+      <textarea name="entry.839337160" rows="4" placeholder="আপনি কীভাবে সহায়তা করতে চান?"></textarea>
+
       <button type="submit">Submit</button>
     </form>
   </div>
 </div>
+
 
 <!-- ===== PARTNER FORM MODAL ===== -->
 <div class="modal-overlay" id="partnerModal">
   <div class="modal-box">
     <span class="modal-close" onclick="closeModals()">×</span>
     <h3>পার্টনার হতে চান?</h3>
-    <form>
-      <input type="text" placeholder="সংস্থার নাম" required>
-      <input type="text" placeholder="যোগাযোগ ব্যক্তি">
-      <input type="email" placeholder="ইমেইল" required>
-      <textarea rows="4" placeholder="আপনি কী ধরনের পার্টনারশিপ চান?"></textarea>
+
+    <form 
+      action="https://docs.google.com/forms/d/e/1FAIpQLScXCF0J9420nZKWAwGu3zNcmDk73Np5vTbtouERqO7QGzdAsw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
+
+      <input name="entry.1065046570" type="text" placeholder="সংস্থার নাম" required>
+
+      <input name="entry.201858941" type="text" placeholder="যোগাযোগ ব্যক্তি">
+
+      <input name="entry.1045781291" type="email" placeholder="ইমেইল" required>
+
+      <textarea name="entry.839337160" rows="4" placeholder="আপনি কী ধরনের পার্টনারশিপ চান?"></textarea>
+
       <button type="submit">Send Request</button>
     </form>
   </div>
 </div>
 
+
+<!-- ===== MODAL CONTROL SCRIPT ===== -->
 <script>
 function openSupportForm(){
-  document.getElementById("supportModal").style.display="flex";
+  document.getElementById("supportModal").style.display = "flex";
 }
 function openPartnerForm(){
-  document.getElementById("partnerModal").style.display="flex";
+  document.getElementById("partnerModal").style.display = "flex";
 }
 function closeModals(){
-  document.getElementById("supportModal").style.display="none";
-  document.getElementById("partnerModal").style.display="none";
+  document.getElementById("supportModal").style.display = "none";
+  document.getElementById("partnerModal").style.display = "none";
 }
 </script>
-
   
 </div>
 </div>
