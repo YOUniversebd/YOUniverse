@@ -495,63 +495,6 @@ h2, h3 {
 .cta-sub-btn:hover {
   transform: translateY(-2px);
 }
-
-/* MODAL */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.modal-box {
-  background: #fff;
-  padding: 30px 26px;
-  border-radius: 18px;
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.modal-box h3 {
-  text-align: center;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.modal-box input,
-.modal-box textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 14px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-
-.modal-box button {
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 22px;
-  cursor: pointer;
-}
 }
 
   /* WE EXPERIMENT, WE LEARN */
@@ -730,63 +673,7 @@ h2, h3 {
 /* Mobile Image Fix */
 img {object-fit:contain !important;width:100%;height:auto;}
 .activity-box img {object-fit:contain !important;height:auto !important;}
-  /* ===== MODAL FORMS ===== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal-box {
-  background: #ffffff;
-  padding: 30px 26px;
-  border-radius: 18px;
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.modal-box h3 {
-  text-align: center;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.modal-box input,
-.modal-box textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 14px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-
-.modal-box button {
-  width: 100%;
-  padding: 12px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
+  
 </style>
 </head>
 
@@ -1063,13 +950,23 @@ img {object-fit:contain !important;width:100%;height:auto;}
             <p>শিক্ষা, সংস্কৃতি ও যুব উন্নয়ন কার্যক্রমের মাধ্যমে আমরা একটি সৃজনশীল, শান্তিপূর্ণ ও সক্ষম প্রজন্ম গড়ে তুলতে কাজ করছি।</p>
 
            <div class="cta-btn-group">
-  <a href="javascript:void(0)" class="cta-main-btn" onclick="openSupportForm()">
+
+  <a 
+    class="cta-main-btn"
+    href="https://docs.google.com/forms/d/e/1FAIpQLSccVbKfPJCmwl3A4bqwerUe7WF4lzF_75CYx27x62nR4voyqw/viewform"
+    target="_blank">
     আমাদের উদ্যোগে সহায়তা করুন
   </a>
-  <a href="javascript:void(0)" class="cta-sub-btn" onclick="openPartnerForm()">
+
+  <a 
+    class="cta-sub-btn"
+    href="https://docs.google.com/forms/d/e/1FAIpQLScXCF0J9420nZKWAwGu3zNcmDk73Np5vTbtouERqO7QGzdAsw/viewform"
+    target="_blank">
     পার্টনার হতে চান?
   </a>
+
 </div>
+
         </div>
     </div>
 </section>
@@ -1145,83 +1042,6 @@ img {object-fit:contain !important;width:100%;height:auto;}
     </div>
 </footer>
 
-<!-- ===== SUPPORT FORM MODAL ===== -->
-<div class="modal-overlay" id="supportModal">
-  <div class="modal-box">
-    <span class="modal-close" onclick="closeModals()">×</span>
-    <h3>আমাদের উদ্যোগে সহায়তা করুন</h3>
-
-    <form onsubmit="submitSupportForm(event)">
-      <input type="text" placeholder="আপনার নাম" required>
-      <input type="email" placeholder="ইমেইল" required>
-      <input type="text" placeholder="মোবাইল">
-      <textarea rows="4" placeholder="আপনি কীভাবে সহায়তা করতে চান?"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
-
-
-<!-- ===== PARTNER FORM MODAL ===== -->
-<div class="modal-overlay" id="partnerModal">
-  <div class="modal-box">
-    <span class="modal-close" onclick="closeModals()">×</span>
-    <h3>পার্টনার হতে চান?</h3>
-
-    <form onsubmit="submitPartnerForm(event)">
-      <input type="text" placeholder="সংস্থার নাম" required>
-      <input type="text" placeholder="যোগাযোগ ব্যক্তি">
-      <input type="email" placeholder="ইমেইল" required>
-      <textarea rows="4" placeholder="আপনি কী ধরনের পার্টনারশিপ চান?"></textarea>
-      <button type="submit">Send Request</button>
-    </form>
-  </div>
-</div>
-
-
-<!-- ===== GOOGLE FORM LINK SCRIPT ===== -->
-<script>
-function submitSupportForm(e){
-  e.preventDefault();
-  let f = e.target;
-
-  let url = "https://docs.google.com/forms/d/e/1FAIpQLSccVbKfPJCmwl3A4bqwerUe7WF4lzF_75CYx27x62nR4voyqw/viewform?";
-  url += "entry.2005620554=" + encodeURIComponent(f[0].value);
-  url += "&entry.1045781291=" + encodeURIComponent(f[1].value);
-  url += "&entry.1166974658=" + encodeURIComponent(f[2].value);
-  url += "&entry.839337160=" + encodeURIComponent(f[3].value);
-
-  window.open(url, "_blank");
-}
-
-function submitPartnerForm(e){
-  e.preventDefault();
-  let f = e.target;
-
-  let url = "https://docs.google.com/forms/d/e/1FAIpQLScXCF0J9420nZKWAwGu3zNcmDk73Np5vTbtouERqO7QGzdAsw/viewform?";
-  url += "entry.1065046570=" + encodeURIComponent(f[0].value);
-  url += "&entry.201858941=" + encodeURIComponent(f[1].value);
-  url += "&entry.1045781291=" + encodeURIComponent(f[2].value);
-  url += "&entry.839337160=" + encodeURIComponent(f[3].value);
-
-  window.open(url, "_blank");
-}
-</script>
-
-
-<!-- ===== MODAL CONTROL SCRIPT ===== -->
-<script>
-function openSupportForm(){
-  document.getElementById("supportModal").style.display = "flex";
-}
-function openPartnerForm(){
-  document.getElementById("partnerModal").style.display = "flex";
-}
-function closeModals(){
-  document.getElementById("supportModal").style.display = "none";
-  document.getElementById("partnerModal").style.display = "none";
-}
-</script>
   
 </div>
 </div>
