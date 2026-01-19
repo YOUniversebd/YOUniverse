@@ -758,6 +758,76 @@ img {object-fit:contain !important;width:100%;height:auto;}
   line-height: 1.6;
 }
 
+  /* === BOOKLET SECTION === */
+.booklet-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.booklet-card{
+  background:#ffffff;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.booklet-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.12);
+}
+
+.booklet-card h3{
+  color:#1a4d2e;
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+.booklet-desc{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+/* PDF Viewer */
+.booklet-viewer{
+  width:100%;
+  height:380px;
+  border:none;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom:16px;
+}
+
+/* Share Buttons */
+.share-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+}
+
+.share-btn{
+  font-size:14px;
+  padding:8px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.fb{background:#1877F2;color:#fff;}
+.msg{background:#0084FF;color:#fff;}
+.li{background:#0A66C2;color:#fff;}
+.mail{background:#5a5a5a;color:#fff;}
+.copy{background:#e8f3ec;color:#1a4d2e;border:1px solid #c9e3d7;}
+
+.share-btn:hover{opacity:.9}
+
   
 </style>
 </head>
@@ -1050,44 +1120,74 @@ img {object-fit:contain !important;width:100%;height:auto;}
     </div>
 </div>
 
-        <!-- ===== AWARENESS BOOKLET SECTION ===== -->
+       <!-- ===== AWARENESS BOOKLETS ===== -->
 <section class="impact-stories-section">
-  <h2>📘 Awareness Booklet</h2>
+  <h2>📘 Awareness Booklets</h2>
 
-  <div class="stories-grid">
+  <div class="booklet-grid">
 
-    <div class="story-card">
-      <h3 style="margin-bottom:10px;color:#1a4d2e;">
-        The Dark Side of the Inbox
-      </h3>
+    <!-- BOOKLET 1 -->
+    <div class="booklet-card">
 
-      <p class="quote">
-        ডিজিটাল ইনবক্সের আড়ালে লুকিয়ে থাকা মানসিক চাপ, তথ্য দূষণ
-        এবং অদৃশ্য ক্লান্তির গল্প।
+      <h3>The Dark Side of the Inbox</h3>
+
+      <p class="booklet-desc">
+        ডিজিটাল ইনবক্সের আড়ালে লুকিয়ে থাকা মানসিক চাপ,
+        তথ্য দূষণ, হ্যারাসমেন্ট এবং অদৃশ্য ক্লান্তি ও মুক্তি বিষয়ক সচেতনতামূলক বুকলেট।
       </p>
 
+      <!-- PDF VIEW -->
+      <iframe 
+        src="booklets/The-Dark-Side-of-the-Inbox.pdf"
+        class="booklet-viewer"
+        loading="lazy">
+      </iframe>
+
+      <!-- READ FULL -->
       <a 
         href="booklets/the-dark-side-of-the-inbox.html"
         target="_blank"
-        class="volunteer-btn"
-        style="margin-top:10px;display:inline-block;">
-        📖 Read the Booklet
+        class="volunteer-btn">
+        📖 Read as Flip Book
       </a>
 
-      <br><br>
+      <!-- SHARE -->
+      <div class="share-row">
 
-      <a 
-        href="https://www.facebook.com/sharer/sharer.php?u=https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html
-"
-        target="_blank"
-        style="font-size:14px;">
-        🔗 Share this booklet
-      </a>
+        <a class="share-btn fb"
+           target="_blank"
+           href="https://www.facebook.com/sharer/sharer.php?u=https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html">
+           Facebook
+        </a>
+
+        <a class="share-btn msg"
+           target="_blank"
+           href="https://www.facebook.com/dialog/send?link=https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html&app_id=123456">
+           Messenger
+        </a>
+
+        <a class="share-btn li"
+           target="_blank"
+           href="https://www.linkedin.com/sharing/share-offsite/?url=https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html">
+           LinkedIn
+        </a>
+
+        <a class="share-btn mail"
+           href="mailto:?subject=Awareness Booklet – The Dark Side of the Inbox&body=Read here: https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html">
+           Email
+        </a>
+
+        <button class="share-btn copy"
+          onclick="navigator.clipboard.writeText('https://youniversebd.github.io/youniverse/booklets/the-dark-side-of-the-inbox.html')">
+          Copy Link
+        </button>
+
+      </div>
+
     </div>
 
   </div>
 </section>
-
         
         <div class="volunteer-box">
             <h3>🤝 Become a Volunteer</h3>
